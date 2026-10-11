@@ -46,32 +46,40 @@ jobs:
       - name: Verify the claim registers are well formed
         run: python scripts/check_registers.py
 
+      # NOTE: every `quarto render --to <format>` clears the _book output
+      # directory, so each format's artefacts are collected immediately
+      # after it is rendered — otherwise only the last format survives.
+
       - name: Render HTML
-        run: quarto render --to html
+        run: |
+          quarto render --to html
+          mkdir -p dist
+          cp -r _book/. dist/
+          ls -la dist | head -40
 
       - name: Render PDF
-        run: quarto render --to pdf
+        run: |
+          quarto render --to pdf
+          mkdir -p dist release
+          find . -path ./.git -prune -o -type f -name '*.pdf' -exec cp {} dist/ \;
+          find . -path ./.git -prune -o -type f -name '*.pdf' -exec cp {} release/ \;
+          ls -la release
 
       - name: Render EPUB
-        run: quarto render --to epub
-
-      - name: Collect artefacts
         run: |
-          mkdir -p dist
-          cp -r _book/* dist/ 2>/dev/null || true
-          ls -la dist | head -40
+          quarto render --to epub
+          mkdir -p dist release
+          find . -path ./.git -prune -o -type f -name '*.epub' -exec cp {} dist/ \;
+          find . -path ./.git -prune -o -type f -name '*.epub' -exec cp {} release/ \;
+
+      - name: Show collected artefacts
+        run: |
+          ls -la dist release
 
       - name: Upload Pages artefact
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
-
-      - name: Gather release files
-        run: |
-          mkdir -p release
-          find . -path ./.git -prune -o -type f \( -name '*.epub' -o -name '*.pdf' \) -print
-          find . -path ./.git -prune -o -type f \( -name '*.epub' -o -name '*.pdf' \) -exec cp {} release/ \;
-          ls -la release
 
       - uses: softprops/action-gh-release@v2
         with:
