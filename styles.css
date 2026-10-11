@@ -1,0 +1,45 @@
+/* Knowing the Constant — 排版微调
+   由 Quarto 在 HTML 输出时加载（_quarto.yml: format.html.css） */
+
+:root {
+  --book-max-width: 46rem;
+}
+
+.quarto-document-content {
+  max-width: var(--book-max-width);
+}
+
+/* 正文可读性 */
+p, li {
+  line-height: 1.65;
+}
+
+/* 图注与图片 */
+figure {
+  margin: 1.6rem auto;
+}
+
+figcaption,
+.figure-caption {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* 行内代码与代码块 */
+code {
+  font-size: 0.9em;
+}
+
+pre.sourceCode {
+  border-radius: 4px;
+}
+
+/* 表格 */
+table {
+  font-size: 0.95rem;
+}
+
+/* 章节标题层级略收紧 */
+h2 {
+  margin-top: 2.2rem;
+}
