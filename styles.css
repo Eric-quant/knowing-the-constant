@@ -1,45 +1,225 @@
-/* Knowing the Constant — 排版微调
-   由 Quarto 在 HTML 输出时加载（_quarto.yml: format.html.css） */
+/* ==========================================================================
+   Knowing the Constant — HTML 站点样式
+   与 _quarto.yml 的 theme: {light: cosmo, dark: darkly} 搭配使用
+   ========================================================================== */
 
 :root {
-  --book-max-width: 46rem;
+  --kc-accent:        #b8860b;
+  --kc-accent-soft:   rgba(184, 134, 11, 0.14);
+  --kc-ink:           #16212e;
+  --kc-ink-soft:      #4a5a6a;
+  --kc-rule:          rgba(22, 33, 46, 0.12);
+  --kc-body-width:    46rem;
 }
 
+[data-bs-theme="dark"] {
+  --kc-accent:        #e0b44a;
+  --kc-accent-soft:   rgba(224, 180, 74, 0.16);
+  --kc-ink:           #e8eef5;
+  --kc-ink-soft:      #a4b4c4;
+  --kc-rule:          rgba(232, 238, 245, 0.14);
+}
+
+/* --------------------------------------------------------------------------
+   版心与正文排版
+   -------------------------------------------------------------------------- */
 .quarto-document-content {
-  max-width: var(--book-max-width);
+  max-width: var(--kc-body-width);
 }
 
-/* 正文可读性 */
-p, li {
-  line-height: 1.65;
+.quarto-document-content p,
+.quarto-document-content li {
+  line-height: 1.72;
 }
 
-/* 图注与图片 */
-figure {
-  margin: 1.6rem auto;
+/* 首段稍大，作为章节的引入 */
+.quarto-document-content > p:first-of-type {
+  font-size: 1.06rem;
+}
+
+/* --------------------------------------------------------------------------
+   标题
+   -------------------------------------------------------------------------- */
+.quarto-document-content h1,
+.quarto-document-content h2,
+.quarto-document-content h3 {
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+.quarto-document-content h2 {
+  margin-top: 2.6rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--kc-rule);
+}
+
+.quarto-document-content h3 {
+  margin-top: 1.9rem;
+}
+
+/* 章号用强调色 */
+.quarto-document-content .header-section-number {
+  color: var(--kc-accent);
+  font-variant-numeric: tabular-nums;
+  margin-right: 0.35em;
+}
+
+/* 锚点链接悬停时才出现 */
+.quarto-document-content .anchor-section {
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+  color: var(--kc-accent);
+}
+
+.quarto-document-content h2:hover .anchor-section,
+.quarto-document-content h3:hover .anchor-section {
+  opacity: 0.7;
+}
+
+/* --------------------------------------------------------------------------
+   链接
+   -------------------------------------------------------------------------- */
+.quarto-document-content a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.quarto-document-content a:hover {
+  color: var(--kc-accent);
+}
+
+/* --------------------------------------------------------------------------
+   引用块
+   -------------------------------------------------------------------------- */
+.quarto-document-content blockquote {
+  border-left: 3px solid var(--kc-accent);
+  background: var(--kc-accent-soft);
+  padding: 0.6rem 1rem;
+  margin: 1.5rem 0;
+  font-style: normal;
+  color: var(--kc-ink-soft);
+}
+
+.quarto-document-content blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------------------------
+   图表
+   -------------------------------------------------------------------------- */
+.figure-img,
+.quarto-figure img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure.quarto-float {
+  margin: 2rem auto;
+  text-align: center;
 }
 
 figcaption,
-.figure-caption {
-  font-size: 0.9rem;
-  opacity: 0.85;
+.figure-caption,
+.quarto-float-caption {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: var(--kc-ink-soft);
+  margin-top: 0.6rem;
+  text-align: left;
 }
 
-/* 行内代码与代码块 */
-code {
-  font-size: 0.9em;
+.figure-caption code,
+figcaption code {
+  font-size: 0.85em;
 }
 
-pre.sourceCode {
+/* 图号用强调色 */
+.quarto-float-caption strong,
+.figure-caption strong {
+  color: var(--kc-accent);
+}
+
+/* --------------------------------------------------------------------------
+   表格
+   -------------------------------------------------------------------------- */
+.quarto-document-content table {
+  font-size: 0.94rem;
+  border-top: 2px solid var(--kc-rule);
+  border-bottom: 2px solid var(--kc-rule);
+}
+
+.quarto-document-content table thead th {
+  border-bottom: 1px solid var(--kc-rule);
+  font-weight: 600;
+}
+
+.quarto-document-content table td,
+.quarto-document-content table th {
+  padding: 0.5rem 0.7rem;
+  vertical-align: top;
+}
+
+.quarto-document-content table tbody tr:hover {
+  background: var(--kc-accent-soft);
+}
+
+/* --------------------------------------------------------------------------
+   行内代码与代码块
+   -------------------------------------------------------------------------- */
+.quarto-document-content code:not(pre code) {
+  background: var(--kc-accent-soft);
+  padding: 0.09em 0.34em;
+  border-radius: 3px;
+  font-size: 0.88em;
+}
+
+.quarto-document-content pre.sourceCode {
   border-radius: 4px;
+  border-left: 3px solid var(--kc-accent);
+  font-size: 0.86rem;
+  line-height: 1.55;
 }
 
-/* 表格 */
-table {
-  font-size: 0.95rem;
+/* --------------------------------------------------------------------------
+   侧边栏 / 目录
+   -------------------------------------------------------------------------- */
+.sidebar-navigation .sidebar-item-text.sidebar-link.active,
+.sidebar-navigation .sidebar-link.active {
+  border-left-color: var(--kc-accent);
+  font-weight: 600;
 }
 
-/* 章节标题层级略收紧 */
-h2 {
-  margin-top: 2.2rem;
+.sidebar-title {
+  letter-spacing: -0.01em;
+}
+
+.sidebar-navigation a:hover {
+  color: var(--kc-accent);
+}
+
+/* --------------------------------------------------------------------------
+   章节导航（上一章 / 下一章）
+   -------------------------------------------------------------------------- */
+.page-navigation .pagination-link {
+  border-color: var(--kc-rule);
+}
+
+.page-navigation .pagination-link:hover {
+  border-color: var(--kc-accent);
+  color: var(--kc-accent);
+}
+
+/* --------------------------------------------------------------------------
+   返回顶部
+   -------------------------------------------------------------------------- */
+#quarto-back-to-top {
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+/* --------------------------------------------------------------------------
+   打印
+   -------------------------------------------------------------------------- */
+@media print {
+  :root { --kc-body-width: 100%; }
 }

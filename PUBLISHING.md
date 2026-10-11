@@ -1,6 +1,21 @@
 # Publishing this repository
 
-**Status: deferred. The manuscript comes first.**
+**Status: published.** This file is kept as the record of how publication was planned. The plan has
+since been executed:
+
+- Account: **Eric-quant** — created.
+- Repository: <https://github.com/Eric-quant/knowing-the-constant> — created and pushed.
+- First CI run: **passed** — the style gate, the register check, the build-input check, and the
+  HTML, PDF and EPUB renders all succeeded.
+- Live site: <https://eric-quant.github.io/knowing-the-constant/>
+- Downloads: the PDF and EPUB are attached to each [release](https://github.com/Eric-quant/knowing-the-constant/releases).
+
+The sections below record the original plan and the questions that were open at the time. They are
+no longer blockers; they are kept because the reasoning is part of the record.
+
+---
+
+**Original status: deferred. The manuscript comes first.**
 
 The decision, recorded so that it is auditable rather than implicit: publication is paused until the
 book is finished, and the two blockers below are recorded but not acted on.
