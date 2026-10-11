@@ -58,8 +58,7 @@ book:
     - book/appendix-c-registers.qmd
     - book/appendix-d-further-reading.qmd
 bibliography: verify/refs.bib
-csl: https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl
-
+csl: verify/chicago-author-date.csl
 crossref:
   fig-prefix: Figure
   tbl-prefix: Table
