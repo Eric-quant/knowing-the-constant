@@ -1,0 +1,467 @@
+# The Estimator Problem {#sec-estimators}
+
+Here is an experiment that costs nothing and changes how you read empirical work.
+
+Take a series of returns. Estimate its tail exponent. Now change one decision — where the fit
+starts — and estimate it again. Then change the estimator, keeping the window fixed. Then change
+the window again, keeping the estimator fixed.
+
+You will get a set of numbers that differ from each other by more than any of the reported standard
+errors. Every one of them was produced by a defensible procedure. If you publish the first one,
+you are not lying. You are reporting an artefact of three choices, two of which you will not
+mention.
+
+This chapter is about why that happens, what can be done about it, and why the honest answer is
+usually less satisfying than the dishonest one.
+
+## What an estimator can get wrong
+
+Textbook treatments separate two sources of error. **Bias** is the systematic distance between what
+an estimator returns on average and the quantity it targets. **Variance** is the spread around that
+average. The classical trade-off, and the classical fix — more data reduces variance without
+changing bias — is the foundation of applied statistics.
+
+There is a third source that the classical framework treats as a specification choice rather than
+an error, and it is the one that does the damage here: **window sensitivity.** The estimate depends
+on choices made before estimation, such as which observations enter the fit and over what range a
+relationship is assumed to hold.
+
+Window sensitivity is a different kind of problem. You cannot reduce it with more data, because the
+window is a modelling decision, not a sample. You can only reduce it by reporting it.
+
+| Source | What it is | Reduced by |
+| --- | --- | --- |
+| Bias | Systematic offset from the target | Better estimator; correction; different method |
+| Variance | Spread across samples | More data |
+| Window sensitivity | Dependence on pre-estimation choices | Reporting the choices; testing several |
+
+That third row is why this chapter exists, and why it is placed before the chapters on survival. A
+decision procedure that assumes the inputs are precise will fail for a reason that has nothing to
+do with the decision procedure.
+
+## Why exponents are worse than means
+
+The ordinary sample mean has a property that exponents do not share. Its error shrinks at a known
+rate, and the rate does not depend on unknown features of the distribution, at least to a first
+approximation.
+
+Exponents are different, and the reason is where their information lives. A tail exponent is
+identified by the largest observations. A long-memory parameter is identified by correlations at
+long lags. In both cases, the quantity of interest is carried by a small and shrinking part of the
+sample: as you go further into the tail, or further out in lag, there is less data and each point
+matters more.
+
+Formally, the effective sample size is far smaller than the nominal one. Informally, the estimate
+rests on the handful of observations that make the plot's right-hand tail, and those observations
+are correlated with each other in ways that depend on the very structure you are trying to
+estimate.
+
+**An exponent is estimated from the part of the data where there is least of it, and where the
+usual large-sample guarantees have not yet arrived.**
+
+## What the comparisons found
+
+The systematic comparison of long-memory estimators by Taqqu, Teverovsky and Willinger is the
+standard reference on this, and its findings are unflattering to all of the methods it examines:
+the estimators carry biases, and the results depend strongly on the method chosen and on the range
+of scales included in the fit [@taqqu1995]. I have verified the citation record and the direction
+of the finding, not the paper's tables.
+
+Seventeen years later, Franzke and coauthors asked the complementary question: what happens when
+the data are not Gaussian? The answer is that the estimators behave differently again
+[@franzke2012]. Since financial returns, network traffic, and most natural series are not Gaussian,
+this is not a corner case.
+
+The two results together support a generalisation worth stating plainly. **For scale-dependent
+quantities, the estimator and the estimation window are part of the result, not part of the
+method.** A number without them is not a weaker version of the finding. It is a different claim.
+
+## The same data, two windows
+
+The demonstration is easy to run and worth running once by hand.
+
+Generate a series with a known tail exponent of 1.7 — a value in the middle of the range usually
+reported for financial data. Now fit the exponent twice: once using the top five percent of
+observations, once using the top one percent.
+
+The second fit will use perhaps a few hundred points. The first will use a few thousand. They will
+disagree, and the direction of the disagreement depends on how the far tail deviates from the power
+law you assumed.
+
+Now repeat the exercise on a sample of realistic length containing one crisis period. The two fits
+will disagree more. The crisis observations will dominate the far-tail fit, and their presence or
+absence will move the answer by more than the entire range of exponents reported across markets in
+the published literature.
+
+This is the point at which readers usually ask for a rule about which window to use. There is no
+such rule, and the request is a symptom of the problem: **if a rule existed, the answer would not
+depend on the window.**
+
+## Finding five: what the reporting convention should be
+
+The book's scale-span rule says an exponent travels with its window. That leaves open what to
+report when the window cannot be chosen on principle. Three options are available, and they should
+be tried in this order.
+
+**Report bounds.** Run the estimate over a grid of windows and estimators. Report the range. This
+is honest and it is cheap, and the range is often wide enough to be the finding itself.
+
+**Report the disagreement.** Where a grid is impractical, report the estimates from at least two
+methods and say that the difference is not attributable to sampling error.
+
+**Report nothing.** Where the spread is wider than the range of values that would change any
+decision, the estimate has no decision content and reporting it invites misuse. Saying "we cannot
+measure this reliably enough to act on" is a finding.
+
+The third option is the one most resisted, because it looks like a failure of the researchers. It
+is not. It is a report about the identifiability of a quantity, which is a fact about the world and
+the data, not about the analyst.
+
+## Identifiability is not uncertainty
+
+The two get treated as synonyms in applied writing, and the difference determines whether more data
+helps.
+
+**Uncertainty** is the spread of an estimate that would shrink with a larger sample drawn from the
+same process. It is a property of your knowledge. It is about you.
+
+**Identifiability** is whether the data-generating process can be distinguished from its
+alternatives given the observations you can obtain. It is a property of the pair, process and data. It is about the world.
+
+A quantity can be uncertain and identifiable: the mean of a well-behaved series is exactly this
+case. It can be identifiable and precisely estimated: most parameters in a controlled experiment
+are here.
+
+And it can be poorly identified while appearing uncertain, which is the case that causes trouble.
+Here the estimator returns a number with a standard error, the standard error is computed correctly
+given the model, and both are misleading, because the model's alternatives produce the same data.
+**The reported uncertainty is real. It is just uncertainty about the wrong object.**
+
+For tail and memory exponents, the alternatives are not exotic: a power law and a stretched
+exponential, a single long-memory process and a short-memory process with a trend, are all
+candidates over the spans typically available. That is a statement about identifiability, not about
+sample size.
+
+## Why more data does not always help
+
+Two cases are worth keeping apart, because the intuitive remedies differ.
+
+**Case one: the sample is short and the process is stable.** More data helps, at the usual rate.
+This is the ordinary case, and the ordinary machinery applies.
+
+**Case two: the sample is long and the process is not stable.** Here more data can make things
+worse. Pooling observations from different regimes produces an estimate of an average of exponents,
+which corresponds to no regime the analyst will ever face.
+
+The second case is the one that obtains in markets, and it is why long historical samples are less
+informative than they look. A hundred years of daily returns contains many regimes. The exponent
+estimated across all of them describes a mixture, and the mixture's exponent is not the exponent
+that governs the next decade.
+
+**More data does not buy precision when the target is moving.** It buys an average of targets. That is worse than useless.
+
+## A grid protocol, stated so that it can be executed
+
+The previous section recommended reporting ranges instead of points. Here is the protocol, in
+enough detail to run.
+
+**Step one: fix the estimator family.** Choose at least two, with different assumptions: for a tail,
+a Hill-type estimator and a regression on the upper tail; for memory, rescaled range and a
+periodogram method.
+
+**Step two: define a window grid.** For a series with a measurable scale range, choose a set of
+lower cut-offs spanning what the data supports — five values is usually enough — and keep the upper
+end fixed at the end of the data.
+
+**Step three: compute the matrix.** Every estimator against every window. This costs a few minutes
+of computation and produces a table most papers do not contain.
+
+**Step four: report the matrix, or its envelope.** The envelope is the range across the grid, which
+is the number with decision content.
+
+**Step five: state whether the decision changes.** Compare the envelope to the range of values that
+would alter what you intend to do. If the envelope is narrower, report the midpoint and say why the
+spread does not matter. If it is wider, the spread is the finding.
+
+The protocol is not sophisticated. That is deliberate: it can be run by anyone who can fit a line,
+and it converts a vague worry about robustness into a table.
+
+## Claim and tool
+
+There is no new claim here about markets. The chapter assembles a result that is familiar to
+anyone who has estimated a tail: these quantities are hard to recover from data, and the difficulty
+is structural.
+
+The tool, and this is the book's contribution at this point, is to treat estimator and window as
+part of the reported object. That has a consequence well beyond tail estimation: it changes what a
+finding looks like. A finding is no longer a number. It is a number plus the space of choices that
+produced it.
+
+Everything in Part II assumes that inputs arrive in that form. Where they do not, Part II's
+procedure is not applicable, and saying so is part of the procedure.
+
+## Boundary conditions
+
+The chapter's argument assumes that exponents are the kind of quantity whose estimate depends on a
+window. For quantities with a natural fixed window — a mean over a specified interval, a count in a
+defined period — none of this applies, and the ordinary error framework is correct.
+
+It assumes that the process is stationary within the window, which is what makes an exponent a
+property of anything at all.
+
+And it does not claim that all estimates are unreliable. It claims that reliability is a property
+to be demonstrated rather than assumed, and that for scale-dependent quantities the demonstration
+is the grid.
+
+## Two estimators, and what a disagreement means
+
+The book's operational standard for estimability is that two methods with different assumptions be
+run and their answers compared. This section says how to run the comparison and how to read the
+result, because the practice is more delicate than the standard suggests.
+
+**Choose methods that differ in their assumptions, not in their arithmetic.** Not arithmetic. Two variants of the
+same estimator will agree by construction and the agreement will mean nothing. The useful pairs
+disagree for a reason: a likelihood fit against a rank-based estimate, a regression on a log-log plot
+against a spectral estimate, an estimator that assumes a fixed cut-off against one that selects the
+cut-off from the data.
+
+**Report both numbers and the gap.** The gap matters more. The gap is the quantity of interest, and it is more
+informative than either estimate. A gap small relative to the effect the decision depends on is a
+licence to proceed; a gap of the same order as the effect means the decision cannot be made on this
+quantity.
+
+**Read the disagreement in one of three ways, and say which.** The readings call for different
+responses.
+
+**Noise.** More data helps. The two methods are sampling the same underlying quantity and differ because both are
+imprecise. The response is more data, or a wider interval, and the diagnosis is confirmed by the gap
+narrowing as the sample grows.
+
+**Bias.** Find the defect. One method is systematically wrong for reasons that can be identified — a cut-off that
+discards information, an assumption that the tail is exactly Pareto when it is not. The response is to
+understand which one is wrong, and the diagnosis is confirmed when the biased method's answer moves
+toward the other as the known defect is corrected.
+
+**A different object.** Stop estimating. The two methods are not estimating the same thing. This is the reading that
+matters most and the one most often missed, and it does not resolve with more data because there is
+nothing to converge to.
+
+Chapter 12 supplies the clean example. A power-law fit and a lognormal fit to the same tail can
+disagree about the mean — not about its value, about whether it exists — and the disagreement is not
+noise, because the two families define different objects. No sample size settles which one the data
+came from. **The disagreement is the finding.**
+
+**What to do when the reading is unclear.** Treat it as the third case. Two estimators that cannot be
+reconciled by increasing the sample or by correcting a known defect are estimating different objects
+as far as the decision is concerned, and the correct response is to bound rather than to point
+estimate. **This is the conservative default that the grid of Chapter 14 formalises.**
+
+## Why the standard error is not enough
+
+The estimator comparison is the book's operational test, and the reason a reported standard error does
+not substitute for it is worth stating precisely.
+
+**The standard error measures one source of variation.** It describes how much the estimate would move
+if the sample were redrawn from the same generating process. It is silent about whether that process is
+the right description.
+
+**Three sources it excludes.**
+**Model uncertainty.** The estimate's distribution under a different family may be centred elsewhere
+entirely, and the standard error computed under the assumed family cannot see this.
+**Specification uncertainty.** The cut-off, the window, the treatment of zeroes: choices made before
+estimation and rarely reflected in the reported error.
+**Regime uncertainty.** Whether the parameter was constant over the sample.
+
+**Why the omission matters more in this material than in most.** Because the quantities this book cares
+about — tail exponents, memory parameters, long-horizon edges — are exactly the ones whose estimates
+are most sensitive to model and specification choices.
+
+**What to report instead.** The standard error, plus the estimate under a second specification, plus
+the estimate on the second half of the sample, plus a sentence on which of the three moved the answer
+most. **Four numbers and a sentence is more informative than a coefficient with a standard error in
+parentheses, and it is the minimum a decision should be permitted to rely on.**
+
+**Why the convention resists it.** Because a table of coefficients with errors is a format, and a
+format is what a review process can request. **The four-number report is a different format, and
+adopting it means changing what gets filed.**
+
+## When the two estimators agree
+
+The operational test in this book treats disagreement as informative. Agreement is also informative, and the
+mistakes made with it are different.
+
+**What agreement does not establish.** Anything, if the assumptions match. That the estimate is right. **Two methods sharing a common assumption
+will agree while both are wrong**, and the assumption is often invisible: a shared cut-off, a shared
+stationarity premise, a shared data-cleaning rule.
+
+**Three ways agreement is spurious.**
+
+**Shared specification.** The usual cause. A rank-based and a likelihood estimator applied to the same truncated sample share
+the truncation. **The truncation is the assumption that matters, and it is held constant across both.**
+
+**Shared data defects.** Both affected. Both methods use the same records. A reporting convention, a corporate action, or a
+survivorship filter affects both identically.
+
+**Insufficient sensitivity.** Agreement by accident. Some quantities are estimated with enough noise that two methods will agree by
+accident at small samples. **Agreement at n equals fifty is much weaker evidence than agreement at n equals
+five thousand, and the distinction is rarely reported.**
+
+**What to do about it. Two rules.**
+
+**Choose methods that differ where it matters.** Not by algorithm. Where the decision
+depends on whether a moment exists, the two methods should differ in their tail treatment specifically.
+
+**Construct the disagreement.** Deliberately. If the two estimators agree, the next step is not to conclude
+that the quantity is estimable but to find the assumption they share and vary it. **The third estimate, under
+different truncation, is where the information is.**
+
+**Why this section is here.** Because the book's standard is "run two estimators", and a practitioner who
+implements the standard mechanically will use two methods that share the assumption they should be testing.
+**The test is a comparison of assumptions, not of algorithms.**
+
+## The estimator problem in a regulatory context
+
+The book's material on estimation is addressed to analysts. Its most consequential application is where
+estimates become rules, and the setting changes what matters.
+
+**Three features of the regulatory case.**
+
+**The estimate is made public and then fixed.** A capital requirement, a threshold, a limit. **An estimate
+revised annually is a different object from one embedded in a rule.**
+
+**The object being estimated responds to the estimate.** Where the rule changes behaviour, the relationship
+being estimated changes with it. **This is reflexivity, and it is the analogue of the observer effect in a
+setting where the observation is a regulation.**
+
+**The cost of an error is borne by parties who did not make the estimate.** Which changes the burden of proof
+rather than the statistics.
+
+**What the estimation analysis implies for regulation. Three rules.**
+
+**Prefer quantities whose estimators agree.** Where two reasonable methods diverge, the quantity should not be
+embedded in a rule. **This is the grid's second question used as a design criterion.**
+
+**Report the range and revise on a schedule.** A rule indexed to the estimate rather than fixed at it retains
+the ability to adapt without a formal revision.
+
+**Where the quantity is not estimable, use a structure.** A cap, a buffer requirement, a disclosure obligation.
+**Structural instruments do not require the estimate to be right, which is why they are preferred where the
+estimate is weak.**
+
+**What the chapter contributes here.** The point that a standard error is not an evidential status. **A
+regulator who is told that an estimate has a small standard error has been told about one source of variation
+and nothing about the other three, and the disclosure that matters is which of the four are quantified.**
+
+## The estimator comparison in four lines
+
+The comparison is the book's measurement standard. Its output in a document is four lines, and the form is worth
+stating because the standard is otherwise demanding and vague.
+
+**Line one. The estimate under method A.** With the assumption that distinguishes A.
+
+**Line two. The estimate under method B.** With the assumption that distinguishes B.
+
+**Line three. Which assumption drove the difference.** Not which method is better: which assumption the answer
+depends on. **Which is the line that turns two numbers into a finding.**
+
+**Line four. The decision's sensitivity.** What changes if the quantity sits at the low end of the two rather
+than at the midpoint.
+
+**What the four lines accomplish. Two things.**
+
+**They make the comparison auditable.** A reader can see which assumptions were varied and re-run the comparison
+with a third.
+
+**They connect the estimate to the decision.** The fourth line is the one that determines whether the
+disagreement matters at all.
+
+**What the four lines do not include. A recommendation.** Which method to use is a decision that depends on the
+setting. **The comparison supplies the disagreement and the sensitivity, and the choice is made by whoever
+knows the decision.**
+
+**Why four lines rather than a table.** Because the comparison is usually about one quantity, and a table
+implies a set of them. **Four lines beside the number, which is where a reader will look.**
+
+**How to use the lines when the estimates agree.** Report the agreement and state what assumption was shared.
+**An agreement between methods with a common assumption is weaker evidence than the four lines make it look,
+and the shared assumption is the useful output.**
+
+**What the standard costs.** An hour for the second estimate, and the third and fourth lines are arithmetic. **The
+cost is the second estimation, which is why the standard is demanding and why stating its output form makes it
+executable.**
+
+## The estimator problem and three sources of disagreement
+
+When two estimators disagree, the source of the disagreement determines the response. Three sources appear in
+the material.
+
+**Different estimators. Statistical.** The two methods weight the data differently and would converge with more
+of it. **Which is the benign case and the one the comparison is designed to detect.**
+
+**Different assumptions. Specification.** One method truncates at a cut-off the other does not, or assumes a
+family the other does not. **Which does not converge with data and requires the assumption to be varied rather
+than the sample to be extended.**
+
+**Different objects. Category.** The two methods are estimating quantities that are not the same. **Which is the
+case the book's tail-versus-lognormal example illustrates, and it does not resolve at all.**
+
+**What the three require. Increasingly structural responses.**
+
+**Statistical. More data, or a wider interval.**
+
+**Specification. A third estimate under a different assumption.**
+
+**Category. A bound, and a statement of which object the decision needs.**
+
+**How to tell them apart. One test each.** Does the disagreement shrink with the sample. Does it change when a
+single assumption is varied. Does the pair of estimates correspond to two different definitions. **Three tests,
+each cheap, and the third requires writing the two definitions down.**
+
+**Why the distinction matters for a decision.** Because the first two are about precision and the third is about
+reference. **A quantity whose two estimates refer to different objects cannot be made decision-ready by better
+data, and the response is a substitution rather than an estimate.**
+
+**What to record. Two items.** The two estimates and the source of their disagreement. **Which is a line and
+which tells a reader whether the number in the report is precise, contingent, or about something else.**
+
+## The estimator problem and three ways to report it
+
+The comparison produces two numbers. Three reporting conventions appear, and each loses something.
+
+**The point estimate alone. The most common.** Which conceals the disagreement entirely. **And which is what most
+reporting conventions require, since a table of coefficients has one column per quantity.**
+
+**The estimate with a standard error. The statistical convention.** Which reports one source of uncertainty and
+implies it is the relevant one. **Which is the failure the chapter names, because the standard error is silent
+about the model and the specification.**
+
+**The estimate with its comparison and its sensitivity. The book's convention.** Which reports what the decision
+needs and is longer than a table row. **Which is why it is rare and why the chapter's four-line form exists: the
+convention has to be short enough to be adopted.**
+
+**What the three lose. Increasingly less.** The first loses the uncertainty; the second loses the specification;
+the third loses nothing that is available.
+
+**What the third costs. One row and an hour.** The row is the comparison; the hour is the second estimation.
+**Which is the argument for the form: the cost is an hour per quantity, not a research programme.**
+
+**Why the first two conventions persist.** Because they fit a table. **A coefficient with a standard error in
+parentheses is a format, and a format is what a review process can request.**
+
+**How to adopt the third without abandoning the format. One addition.** A footnote per quantity giving the second
+estimate and the driving assumption. **Which keeps the table and adds the information the decision needs, and it
+is the smallest change that a journal or a firm can implement.**
+
+**What the footnote should contain. Two clauses.** The second estimate and the assumption that produces the
+difference. **Which is a sentence and which is what the four-line form is for.**
+
+## A note on what this chapter could not check
+
+The two estimator comparisons cited here are described at the level of their records and the
+direction of their findings. Their tables were not available to me, and no numerical result is
+quoted from either.
+
+The worked demonstration in the middle of the chapter is described rather than shown, because the
+figure belongs to the next chapter, where the exercise is set out with its parameters so that the
+reader can run it. Nothing in the description depends on the specific numbers, which is the point
+of the exercise: the disagreement appears for any parameter choice in the plausible range.

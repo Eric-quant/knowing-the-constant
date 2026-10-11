@@ -1,0 +1,486 @@
+# The Irreversibility Ledger {#sec-ledger}
+
+Part II has arrived at a place where the useful questions have stopped being numerical. The
+existence grid says which numerical reasoning is available; the convexity chapter says the sign of
+your response to dispersion. Neither produces a decision.
+
+This chapter supplies the instrument that does, and it is deliberately primitive. It is a two-sided
+account.
+
+**On one side: exposures you can exit at an acceptable cost. On the other: exposures that can
+produce an absorbing state — a position from which there is no continuing.**
+
+The rule for using it is one sentence: **the irreversible side is closed to new entries until it is
+empty or bounded.**
+
+## Why an account rather than a criterion
+
+The idea of avoiding ruin is not new, and stating it as a criterion invites the obvious objection
+that everyone already tries to avoid ruin. The difficulty is not knowing the principle. It is
+noticing, in a live situation with a hundred competing considerations, which of the exposures on the
+table belong on the second side.
+
+An account forces that noticing, in the same way that a balance sheet forces a firm to notice what
+it owes. The instrument is boring on purpose. **Boring instruments get used; elegant criteria get
+admired.**
+
+## What makes an exposure irreversible
+
+Four mechanisms, and they are worth separating because the remedies differ.
+
+**Physical.** The state cannot be restored by spending money. Only prevention helps. A species lost, an aquifer drained, a
+patient's organ damaged. The remedy is prevention, because there is no repair.
+
+**Contractual.** Exit is possible, but only with the agreement of someone who has no reason to grant it. Terms are the remedy. A long-dated supply commitment, a lease, a loan covenant. The remedy is terms: shorter
+duration, staged commitments, break clauses.
+
+**Informational.** The exposure reveals something that cannot be un-revealed. Smallness is the remedy. A strategy becomes
+visible when scaled; a position announces itself through its own market impact. The remedy is
+deliberate smallness.
+
+**Social.** Exit costs reputation or standing, and the cost is borne by a person rather than an institution. Procedures are the remedy. Admitting an error publicly, abandoning a project one championed. The remedy is
+structural: pre-commit to a review, so that exit is a procedure rather than a confession.
+
+The fourth mechanism is the one most often missing from risk registers, and it is the one that
+explains why organisations persist with losing positions long after the arithmetic is clear. **The
+cost is real and it falls on individuals, so it belongs in the account.**
+
+## The exit-cost question
+
+For each entry, three questions, and the answers should be written down.
+
+**What is the worst-case cost of exit?** Not the current cost. The cost in the state of the world
+where you most need to exit, which is usually the state where everyone else needs to exit too.
+
+**How long does exit take?** A position that can be closed in an hour is not the same exposure as
+one that takes a year, even if the accounting value is identical.
+
+**Whose agreement is required?** Exits requiring a counterparty, a regulator, a board, or a
+co-investor are slower and more expensive than exits requiring only a decision.
+
+The systematic error here is **present-state bias**: exit costs are estimated under current
+conditions, when the relevant costs are those under stress. Every entry in the account should carry
+a stress-case exit cost, and where that estimate is unavailable, the entry should be treated as
+worse than it appears.
+
+## The bounding move
+
+Five ways to convert an irreversible exposure into a bounded one. They are the practical content of
+the chapter.
+
+| Move | What it does | Example |
+| --- | --- | --- |
+| Cap the size | Limits the maximum loss to a chosen number | Position limits, capped commitments |
+| Shorten the term | Reduces the window in which conditions can turn | Staged contracts, rolling agreements |
+| Add a second source | Removes single-point dependence | Dual suppliers, portable skills |
+| Buy the option rather than writing it | Makes the loss bounded and known | Insurance, break clauses, reversible pilots |
+| Pre-commit the exit | Converts a judgement into a procedure | Review dates, stop rules set in advance |
+
+The last move is the cheapest and the least used. A stop rule agreed before the position exists
+costs nothing and removes the social cost of exit, because the decision was made by a previous
+self. **Its value is that it addresses the fourth mechanism directly, and the fourth mechanism is
+the one that keeps people in losing positions.**
+
+## A worked entry
+
+Take the supply case from Chapter 8 and write it as an account entry.
+
+**Exposure.** Dependence on a single counterparty for a critical input.
+
+**Mechanism.** Contractual, with a secondary social component, since the relationship was championed
+internally by a specific manager.
+
+**Stress-case exit cost.** Prepayment at risk, plus a search period during which production slows.
+Under stress, alternative suppliers are themselves constrained, so the search period is longer than
+the current estimate suggests.
+
+**Stress-case exit time.** Between six and twelve months.
+
+**Whose agreement.** The counterparty's, for release; the manager's, for the reputation component.
+
+**Bounding move chosen.** A second qualified supplier developed in parallel, with a pre-committed
+review at twelve months.
+
+Note what the account did. It did not estimate a probability of counterparty failure. It did not
+produce an expected loss. **It identified an exposure whose stress-case exit is slow and whose exit
+requires the agreement of someone with a reputational interest in not exiting, and it prescribed a
+structural change.**
+
+## Refutation conditions
+
+Three ways this instrument could fail.
+
+**Exit costs are systematically underestimated, including stress-case ones.** If the account is
+populated with optimistic exit costs, the second side will be under-populated and the instrument
+will provide false comfort. The mitigation is procedural: require a stress-case figure and treat
+its absence as a red flag rather than a gap.
+
+**The instrument may collapse into a list.** A ledger that records everything classifies nothing,
+and an entry-level account of a complex organisation can become an inventory. The defence is the
+closure rule: the account is used to decide what to do next, not to document what exists.
+
+**The closure rule may be too rigid.** "Closed to new entries until empty or bounded" could block
+projects whose irreversible components are small relative to their value. The rule is meant to force
+the bounding conversation, not to prohibit action, and a reader who applies it as a prohibition has
+misread it.
+
+## The ledger applied to itself
+
+**What transformation should it survive?** Changes of domain: it should work for a firm, a
+household, and a public body.
+
+**Does it?** The four mechanisms and the bounding moves are domain-general, and they require no
+quantities. What does not travel cleanly is the standard for "acceptable cost", which depends on
+resources and on appetite. The account's output is a structure, not a threshold.
+
+**Verdict.** A grade II construction, like the others in this book.
+
+## Claim and tool
+
+The claim: irreversible exposures require separate accounting, because they are not comparable to
+reversible ones and because they are systematically missed in ordinary risk review.
+
+The tool: the two-sided account, the four mechanisms, the stress-case exit questions, and the five
+bounding moves.
+
+Registered as B-007, with the refutation conditions above attached. It is the instrument Part IV
+uses to order decisions, and it is the second half of the book's central metaphor: **the Constant
+tells you what survives; the Ledger tells you what you cannot afford to lose while finding out.**
+
+## Boundary conditions
+
+The account presumes that exposures and their exit costs can be identified, which is itself a
+judgement and often contested inside organisations.
+
+It presumes that someone is willing to write entries that name individuals' social costs, which
+requires a culture that tolerates being explicit about them.
+
+And it does not weigh the two sides against each other. The closure rule is a rule, not a
+calculation, and it is meant to be followed before the comparison is made rather than after.
+
+## Populating a ledger without it becoming a form
+
+The ledger's value depends entirely on the quality of its entries, and the quality depends on how the
+exercise is run.
+
+**Do it in a group.** Written first, discussed second. The reason is the fourth
+mechanism: the social exposures are precisely the ones that individuals are reluctant to name in front
+of the sponsor of the project. Written entries collected before discussion produce different and better
+lists than a facilitated conversation.
+
+**Require a stress-case exit cost.** Its absence is a finding. An entry without one is
+either a misunderstanding or a hope, and saying so in the room is the instrument's main contribution
+to a project that is going well.
+
+**Separate exposure from response.** Two passes. The exercise goes wrong when each exposure is immediately
+paired with a mitigation, because the pairing converts the accounting into a negotiation. The first
+pass lists exposures and mechanisms; the second pass, run separately, generates the bounding moves.
+
+**Name the date before the meeting ends.** Always. A pre-committed exit is only pre-committed if it is
+recorded somewhere before the position exists, and the recording is the whole of the mechanism.
+
+**What good looks like.** One page. A one-page list with four columns, entries that name individuals' social
+costs without embarrassment, at least one exposure that the sponsor did not know about, and a review
+date. **If every entry is marked bounded, the exercise has failed and the failure is visible on the
+page.**
+
+## The ledger and the fourth quadrant
+
+The two devices are separated in this book by several chapters and they belong together, so the
+connection is worth stating explicitly.
+
+The fourth quadrant describes a class of problems: fat-tailed outcomes with payoffs that depend on
+magnitude. The ledger is an instrument for one property of those problems, the existence of an
+absorbing state.
+
+**What the ledger adds.** The action, not the map. The quadrant map tells you that the standard apparatus does not apply. It
+does not tell you what to do. The ledger supplies the action: enumerate the irreversible exposures,
+bound the ones that can be bounded, and remove the ones that cannot.
+
+**What the quadrant adds.** Shape, not size. A ledger with no notion of distribution shape will treat a
+bounded exposure under a thin-tailed process and a bounded exposure under a fat-tailed one as
+equivalent, and they are not: the second has a meaningfully higher chance of the bound being reached.
+**Bounding limits the loss; the shape of the tail determines how often the limit is approached.**
+
+**Why the order is ledger first, then quadrant.** Because the ledger's question is structural and
+answerable without data, while the quadrant assignment requires judgements about tail behaviour that
+are contested. **Front-loading the structural question means the decision is already safer before any
+contested judgement is made.**
+
+## Ledger entries for a household
+
+The ledger is presented in this book with institutional examples. Its most direct use is smaller, and
+the smaller version is a better introduction to the instrument.
+
+**A house. Physical and financial.** Irreversible in the sense that selling takes months and the price
+is not chosen. Mechanism: contractual and physical combined. **Stress-case exit cost: the price in the
+state of the world where the household must sell, which is usually the state where the local labour
+market has weakened.** Bounding move: the equity buffer, which is the only one available.
+
+**A specialised career. Informational and social.** Irreversible in the informational sense: the skill
+becomes visible and its applicability narrows. **Stress-case exit cost: the time to rebuild
+transferable capability, not the salary foregone.** Bounding move: portable credentials, documented
+work, and a network that does not depend on one employer.
+
+**A health decision with a permanent component. Physical.** No bounding move available on the harm side,
+so the screen is applied to the timing: is there a reversible trial, a second opinion with a stopping
+rule, a waiting period that changes nothing.
+
+**A public commitment. Social.** The cost falls on the person rather than the institution, and the
+remedy is structural: **pre-commit the review, so that the exit is a procedure rather than a
+confession.**
+
+**What the four share.** Each is a case where the decision is usually made on the merits and the
+irreversibility is not discussed. **Writing the third column takes ten minutes per entry, and the third
+column is where the surprise is.**
+
+## The ledger as a negotiating instrument
+
+The ledger is described as an analytical device for the decision-maker. It is also an instrument for
+negotiation, and the second use is often the more consequential.
+
+**What the ledger gives a negotiator.** A named list of exposures with mechanisms, exit costs and required
+agreements. **Three of those four fields are facts about the other side of the transaction, and facts of
+that kind are leverage.**
+
+**Three specific applications.**
+
+**Exit costs and counterparty behaviour.** A stress-case exit cost that requires the counterparty's
+agreement is a cost the counterparty controls. **Naming it converts an implicit dependency into a term to be
+negotiated, which is how break clauses get written.**
+
+**The social mechanism.** An exposure whose exit cost is reputational for a specific person is not
+negotiable with the institution, and identifying it changes who the conversation is with. **This is the most
+practical use of the fourth mechanism and the one least often described.**
+
+**The residual category.** Exposures that cannot be enumerated must be bounded by structure, and caps are
+negotiable. **A request for a cap is easier to secure than a request for a forecast, and it addresses the
+same risk.**
+
+**What the ledger does not do in a negotiation.** It does not establish that the deal is bad. It converts
+unstated dependencies into stated ones, which changes the terms rather than the decision. **The distinction
+matters because a party who presents the ledger as an objection will lose the benefits of presenting it as a
+specification.**
+
+**Why this belongs in the chapter.** Because the instrument's adoption in practice depends on someone
+carrying it into a room where the terms are set, and a tool presented only as a private discipline will stay
+private.
+
+## The ledger for a committee
+
+The ledger works for an individual and changes character in a group, and the changes are worth anticipating.
+
+**Three dynamics in a committee.**
+
+**Exposures are under-named.** Each member can see exposures that touch their own remit and is reluctant to
+name exposures that implicate someone else's. **The result is a complete-looking list that omits the social
+and informational exposures, which is exactly the category the instrument exists to surface.**
+
+**Bounding moves are proposed too early.** A committee's instinct is to solve. **The pairing of exposure with
+remedy converts the accounting into a negotiation, and the list is never finished.**
+
+**The residual category is treated as an admission of ignorance.** Members prefer a list that looks complete.
+**The honest answer — that some exposures cannot be enumerated — reads as incompetence in a group setting.**
+
+**Three procedural responses.**
+
+**Collect written entries before the discussion.** Each member submits exposures separately.
+
+**Separate the two passes.** Exposures and mechanisms first; bounding moves in a later session.
+
+**Require the residual category explicitly.** A named cell for exposures that cannot be enumerated, with a
+structural bound attached. **Making it a required field converts an admission into a deliverable.**
+
+**What the committee version produces.** A longer list than the individual version and a more honest one.
+**The instrument's value in a group is not the analysis; it is the fact that the fourth mechanism becomes
+sayable.**
+
+## The ledger after a failure
+
+The instrument is presented for decisions. Its most instructive use is after an irreversible failure, when the
+question is what the account would have shown.
+
+**What the retrospective exercise reveals. Three things.**
+
+**Which exposures were named and which were invisible.** The entries a firm would have written before the failure
+are usually fewer and milder than the situation warranted. **The gap is the instrument's diagnostic value, and it
+is specific: the missing entries cluster in one of the four mechanisms.**
+
+**Which bounding moves were available.** Almost always at least one, and usually one that would have bounded the
+loss without abandoning the activity. **The availability of a bounding move is the difference between a failure
+and a catastrophe.**
+
+**Which review dates would have intervened.** A pre-committed review scheduled before the failure would have
+forced the question at a moment when the answer could still change. **The absence of a review is the most common
+finding, and it is the cheapest to fix.**
+
+**How to run the exercise. Three steps.**
+
+**Reconstruct the account as it was.** From documents and decisions made at the time, not from memory after the
+fact.
+
+**Mark the entries that were missing.** Name them and their mechanisms.
+
+**Ask what the review would have asked.** Not what the firm should have known, but what a scheduled review would
+have surfaced.
+
+**What the exercise is not.** An attribution exercise. **Its purpose is to improve future lists, and an exercise
+that identifies a person's failure produces defensiveness and no improvement. An exercise that identifies a
+missing mechanism produces a longer list next time.**
+
+**Why this section matters for adoption.** Because an instrument that has never been used retrospectively is
+believed on the strength of its argument. **An instrument that has been applied to a known failure has a track
+record, and a short one is better than none.**
+
+## The ledger and the option to wait
+
+Waiting is a decision, and the ledger has a specific contribution to make to it: the recognition that delay is
+itself an exposure.
+
+**Three ways delay creates exposure.**
+
+**Option value decays.** An opportunity not taken is often gone, and the ledger's own logic applies to it.
+**Waiting is irreversible in one direction, which is the direction of not having acted.**
+
+**The world moves.** Conditions favorable to the decision can change while the review proceeds. **A delayed
+decision is made under different conditions from the ones it was deferred for.**
+
+**The social mechanism operates during the delay.** The longer a project waits, the more its sponsors are
+invested in it, and the harder the eventual refusal becomes. **Delay is not neutral with respect to the fourth
+mechanism.**
+
+**What the ledger says about waiting. One rule.** Treat the delay as an entry. **Name what is being given up,
+estimate the cost of the delay in the same three fields as any other exposure, and record the date by which
+waiting stops being free.**
+
+**What the rule prevents. Two failures.**
+
+**Waiting as an unexamined default.** Which is the common case: a decision deferred because deferring is
+costless in the short run.
+
+**Waiting justified by a quantity that will not improve.** The deferral fallacy of the second interlude, and
+the ledger supplies the addition that the delay itself has a cost.
+
+**What the rule does not do.** Decide. **It converts waiting from a non-decision into a decision with a cost,
+and the conversion is what the ledger is for.**
+
+**Why this entry is often missing from the list.** Because delay is not usually described as an exposure, and
+the ledger's four mechanisms are read as applying to commitments rather than to withholdings. **A list that
+includes only the commitments will systematically favour waiting, which is a bias the instrument can correct
+once it is pointed out.**
+
+## The ledger and the smallest decision
+
+The instrument is presented for decisions with stakes. Its cheapest and most frequent use is on decisions that
+look too small to warrant it.
+
+**The case. A small commitment.** A contract renewal, a hire, a tool adoption, a supplier change. **Each is
+individually unremarkable and the four mechanisms apply to all of them.**
+
+**What the ninety seconds produce. Two questions.**
+
+**Is any part of this irreversible.** A renewal at a higher price, a hire with notice periods, a tool with data
+lock-in, a supplier with a qualification cycle. **The answer is usually yes in a smaller way than the earlier
+examples and the same in kind.**
+
+**What is the exit cost under stress.** Which is where the small decisions differ from the large ones: the
+stress-case cost is usually bounded, and the exercise's value is confirming that rather than assuming it.
+
+**Why the small decisions matter in aggregate.** Because they are numerous. **A firm's exposure profile is
+determined by its ordinary commitments more than by its exceptional ones, and the ordinary ones are the ones
+nobody lists.**
+
+**Three signs a small decision needs the ledger.**
+
+**The exit requires someone else's agreement.** A notice period, a counterparty's release, a regulator's
+approval. **The first field of the instrument.**
+
+**The knowledge involved lives in one person.** The informational mechanism.
+
+**The commitment was championed internally.** The social mechanism. **Which is the most common and the least
+noticed in small decisions, because the champion is usually a colleague rather than an executive.**
+
+**What the ledger does not require for small decisions.** A page. **Two questions and an answer, recorded in
+whatever document the decision already uses. The instrument's value in this range is that it converts a habit
+into a check, and the check is what stops the aggregate exposure from accumulating unexamined.**
+
+**Why the section is short.** Because the application is short. **A method whose cheapest case takes ninety
+seconds is one that can be applied to ordinary decisions, and the ordinary decisions are where the exposures
+come from.**
+
+## The ledger and the four mechanisms in one table
+
+The four mechanisms are presented with examples. Their remedies, costs and monitoring differ, and a table of the
+differences is what a practitioner needs.
+
+**Physical. Remedy: prevention.** Cost: the activity foregone. Monitoring: the state of the physical system.
+**The only mechanism with no bounding move on the harm side, which is why prevention is the whole remedy and why
+the exposure is bounded before the activity rather than during it.**
+
+**Contractual. Remedy: terms.** Cost: the price of the flexibility, paid in the negotiation. Monitoring: the
+clause and the counterparty's standing. **The mechanism most amenable to bounding, because terms are written
+before the commitment.**
+
+**Informational. Remedy: size.** Cost: the return foregone by staying small. Monitoring: public data, which is
+where the exposure would appear. **The mechanism whose remedy is a scale rather than a structure.**
+
+**Social. Remedy: procedure.** Cost: the effort of a pre-committed review. Monitoring: whether the review
+happened. **The mechanism that is invisible in risk registers and that explains persistence in losing
+positions.**
+
+**What the table shows. One asymmetry.** Three of the four have remedies that are chosen before the commitment;
+the physical one does not. **Which is why the physical mechanism's exposures must be bounded by not taking them,
+and why the other three can be managed after the decision to proceed.**
+
+**How to use the table. One pass per exposure.** Name the mechanism, then read the remedy and the monitoring off
+the row. **Which takes a minute and replaces the general question "what could go wrong" with a specific one.**
+
+**What the table cannot supply. The exit cost.** Which requires the three questions of the instrument's earlier
+section and is the field most often missing. **The table gives the remedy and the monitoring; the exit cost is
+computed per exposure.**
+
+**Why the table is worth having.** Because the four mechanisms are otherwise read as a list of examples, and the
+list gives no guidance. **Four rows, one remedy each, and the social row is the one that practitioners do not
+already have.**
+
+## The ledger and three comparisons it makes unnecessary
+
+The instrument's value is often stated as a benefit. Three specific analyses it makes unnecessary are worth
+naming, because each is expensive and each is avoided.
+
+**Estimating the probability of the absorbing event.** Which is usually impossible and which the ledger's rule
+avoids by requiring the exposure to be bounded regardless. **The rule does not need the probability, which is why
+it applies where the probability cannot be estimated.**
+
+**Valuing the irreversible exposure in present-value terms.** Which requires a discount rate over an indefinite
+horizon. **The ledger replaces the valuation with two questions about mechanism and exit cost, and neither
+requires a rate.**
+
+**Optimising the portfolio of exposures against a utility function.** Which requires preferences over states the
+organisation may never see. **The ledger's rule is a constraint rather than an objective, and a constraint can be
+applied without a utility function.**
+
+**What the three have in common. One property.** Each is an analysis the standard framework requires and the
+ledger avoids. **Which is the instrument's efficiency claim: it substitutes structure for estimation where
+estimation is unavailable.**
+
+**What the ledger gives up by avoiding them. Two things.** The ranking of exposures by severity, and any
+comparison with risks that are reversible. **Both are real losses and neither is available in the cases the
+ledger addresses.**
+
+**How to state the trade. One sentence.** The ledger trades a ranking for a constraint. **Which is the right trade
+where the exposures are unbounded and the wrong one where they are not, which is why the instrument's first
+question is whether the exposure is irreversible at all.**
+
+**Why the three are worth naming.** Because the ledger is presented as a discipline and its practical appeal is
+that it avoids expensive analyses. **Three unnecessary analyses, one constraint, and the avoidance is the reason
+the instrument is usable in the settings where the others are not.**
+
+## A note on what this chapter could not check
+
+The instrument is proposed by this book. There is a substantial literature on real options and on
+irreversibility in investment, which the chapter does not survey, and I make no claim that the four
+mechanisms are exhaustive.
+
+The example is constructed from the Chapter 8 case rather than drawn from a documented episode, and
+the stress-case exit estimates in it are illustrative.

@@ -1,0 +1,472 @@
+# Appendix A: A Timeline of the Material {#app-timeline}
+
+The entries below are limited to items this book discusses. Date, item, reason. Nothing else. Where a date is contested or the item is a preprint, the text says so. Bibliographic
+details and verification status are in the registers described in Appendix C.
+
+## The foundations
+
+**1951 — Hurst, transactions of the American Society of Civil Engineers.** Harold Edwin Hurst's
+study of Nile flood records reports that the range of cumulative departures from the mean grows
+faster than the square root of the record length would suggest. The book uses it as the origin of the
+long-memory problem and treats the specific exponent attributed to it as a secondary claim.
+
+**1956 — Kelly, *Bell System Technical Journal*.** A different field. The paper that defines the growth-optimal
+criterion, in a setting unrelated to betting: the rate of information transmission over a noisy
+channel. **Every sizing argument in this book descends from this paper rather than from any finance source.** That is the point.
+
+**1961 — Richardson, *General Systems Yearbook*.** Lewis Fry Richardson's posthumous compilation of
+coastline measurements, reporting lengths that depend on the measuring stick. Published after his
+death, in a yearbook with a small circulation, and the source of the problem that Chapter 2 works
+through.
+
+**1961 — Thorp, *Proceedings of the National Academy of Sciences*.** Two pages. Two pages arguing that a finite
+deck dealt without replacement creates states in which the player's expectation is positive. The
+paper whose citation count is small and whose consequences were large.
+
+## The Mandelbrot papers
+
+**1963 — Mandelbrot, *Journal of Business*.** The stable Paretian hypothesis for commodity prices,
+with a tail exponent below two. The claim was abandoned; the practice of examining tails directly was
+not.
+
+**1963 — Fama, doctoral work at Chicago.** Transmission and departure. The diffusion of Mandelbrot's argument into the efficient
+markets literature, which was both a transmission of the tool and a departure from the claim. Fama
+later moved toward alternative models.
+
+**1965 — Fama, *Journal of Business*.** A treatment of the behaviour of stock market prices that
+takes up the fat-tailed empirical finding while questioning the stable family specifically. The book
+treats the turn as documented but does not quote the wording, which could not be verified.
+
+**1967 — Mandelbrot, *Science*.** The coastline paper. The claim of a specific dimension value is
+method-dependent; the move from a quantity to its scale behaviour survived and is used in fields far
+from geography.
+
+**1968 — Mandelbrot and Van Ness, *SIAM Review*.** Defined by its properties. Fractional Brownian motion defined by its
+properties rather than by a construction, with the Hurst parameter as the long-memory index. The book
+notes that later work in finance uses this family with the opposite sign of dependence, which is the
+clearest instance of a tool outliving its motivating claim.
+
+**1972 — Mandelbrot, *Journal of Business*.** A correction. A correction to the 1963 tabulation. Its existence is
+recorded in this book because it is evidence about how the original claim was received, and because
+it is the kind of detail that citation-count-based accounts omit.
+
+## The Thorp papers and the Kelly literature
+
+**1969 — Thorp, *Review of the International Statistical Institute*.** Optimal gambling systems for
+favourable games: the growth criterion applied where the parameters are computable, and the practical
+exposition of the interior optimum.
+
+**1969 — Merton, *Review of Economics and Statistics*.** Continuous-time portfolio choice, which
+arrives at related results from a different direction. The book cites it as the parallel development
+rather than as a source of the criterion.
+
+**1971 — Samuelson, *PNAS*.** The sceptical response to growth-optimal betting, arguing that
+maximising the geometric mean is not the unique rational objective for a single decision-maker. The
+critique is about the objective function rather than the mathematics, which is why it recurs.
+
+**1978 and 1979 — Latané and Ophir, *Journal of Business Finance*.** Two exchanges in the same journal
+over the validity of the geometric mean criterion, which the book cites as evidence that the debate
+has a documented venue rather than being anecdotal.
+
+**1979 — Samuelson, *Journal of Banking and Finance*.** The second of his contributions to the same
+argument. Together with the 1971 paper, these establish the sceptical position that Chapter 21's
+discount has to answer.
+
+**1988 — Algoet and Cover, *Annals of Probability*.** The theoretical results establishing the
+asymptotic optimality of the growth criterion. The book cites them as the mathematical foundation and
+notes that the results are asymptotic, which is the caveat the same authors state.
+
+**1997 — Thorp, conference paper, later collected.** Friction, at last. The practical rules: costs, capacity, being
+noticed, and the discount. Twenty years after deriving an optimum, the author wrote about friction.
+
+**2010 — MacLean, Thorp and Ziemba, *Quantitative Finance*.** A retrospective on the Kelly criterion
+by its principal expositors, followed in 2011 by the collected volume. The book cites these as the
+authoritative secondary sources on the criterion's interpretation.
+
+## The modern literature
+
+**1994 — Leland, *Journal of Finance*.** The first result showing that transaction costs can rescue
+the option-pricing framework under conditions where the continuous-time construction fails.
+
+**1995 — Taqqu, in the Mandelbrot *Selected Works*.** A review of long-memory processes from inside
+the Mandelbrot tradition, used in this book as a check on the secondary literature's attributions.
+
+**1997 — Rogers, *Mathematical Finance*.** Argues that fractional Brownian motion is unsuitable for
+modelling price processes because of arbitrage. The precise statement of the difficulty.
+
+**2003 — Cheridito, *Finance and Stochastics*.** Extends the arbitrage difficulty.
+
+**2006 — Guasoni, *Mathematical Finance*.** Shows that transaction costs restore a no-arbitrage
+property in a broad class of cases. Together with Leland, this is the material Chapter 3 uses to
+avoid a common error: the long-memory debate is not settled by the absence of a frictionless
+construction.
+
+**2009 — Taleb, *International Journal of Forecasting*.** The fourth quadrant paper. The book records
+that it is a full article in the journal rather than a discussion paper, that I found no commentary
+attached to it in the issue records, and that its most-quoted sentence could not be verified.
+
+**2012 — Franzke, in *Climate Dynamics*.** The extension of the long-memory diagnosis to atmospheric
+time series, and an instance of the tool travelling across fields.
+
+**2014 — Taleb, Read, Douady, Norman and Bar-Yam, arXiv.** One version only. The precautionary principle preprint, one
+version, submitted 17 October 2014. Public criticism from August 2014 onward (Novella), a technical
+review in late November (Charles), and the authors' reply the following day.
+
+**2018 — Gatheral and coauthors, *Quantitative Finance*.** The rough-volatility literature, which
+uses a long-memory-style construction with the opposite sign of dependence, and which the book cites
+as evidence that the tool survives while the claim does not.
+
+**2020 — Cirillo and Taleb, *Nature Physics*.** Tail risk of contagious diseases; the claim that the
+expected death toll may not exist for some epidemic classes.
+
+**2020 — Corral, arXiv preprint.** The distributional objection: lognormal and power-law tails are
+difficult to distinguish in finite samples, with different implications for whether the mean exists.
+
+**2022 — Ioannidis, Cripps and Tanner, and Taleb, Bar-Yam and Cirillo, *International Journal of
+Forecasting*.** Two contributions at adjacent page ranges in the same issue, agreeing that early
+pandemic point forecasts failed and diverging on what follows.
+
+## What the timeline shows about the shape of a literature
+
+Read as a sequence rather than as a list, the entries display three regularities, each of which bears on how
+the book's material should be used.
+
+**Regularity one. The tools move faster than the claims.** The criterion of 1956 reaches its applied
+exposition in 1969 and its practical retrospective in 1997. The coastline measurement of 1967 reaches network
+and image analysis decades later. The tail argument of 1963 is absorbed into practice within a generation
+while the family that carried it is abandoned. **The lag between a result and its use is unrelated to the
+lag between a result and its verification, and the two are routinely confused in assessments of impact.**
+
+**Regularity two. The scepticism is contemporaneous.** Samuelson's objections to growth-optimal betting
+arrive within two years of Merton's related results. The arbitrage objections to fractional Brownian motion
+arrive before much of its adoption. The criticisms of the 2014 precautionary principle preprint arrive within
+months, including one published before the preprint was submitted. **The standard narrative in which a theory
+is proposed, applied and eventually criticised is wrong in this material, and the correction changes what a
+reader should look for when a claim is new: the objections are usually already there, and the question is
+whether they were answered.**
+
+**Regularity three. The corrections are more informative than the original papers.** Mandelbrot's 1972
+tabulation correction, the responses to the 2014 preprint, the exchange between Latané and Ophir in a journal
+in 1978 and 1979: in each case the exchange reveals the structure of the disagreement in a way that the
+original statement does not. **A reader with limited time should read a paper and one response to it rather
+than two papers.**
+
+**What the three regularities imply for reading.** Ask what the tool is, separately from what the claim is.
+Ask what objections existed at the time and whether they were addressed. Ask what the paper had to correct.
+**Three questions, answerable from a bibliography and an abstract in twenty minutes, and they predict most
+of what a careful reading will find.**
+
+**What the timeline cannot show.** Selection. The entries are the papers this book uses, and the historical
+record contains many contemporaneous results that were wrong, forgotten, or both. **A timeline constructed
+by an author with an argument is evidence about the argument's structure, not about the field's
+development.**
+
+
+## The timeline as a test of a claim
+
+A chronology is usually read as background. This one has a use: it dates a claim's boundary, and dating a
+boundary is how a reader decides whether an argument is still live.
+
+**The operation.** Three steps. Only three.
+
+**Locate the claim's origin in the timeline.** Which tells you what was known when it was made. **A 1963 claim
+about tails was made before the conditional-variance models existed, and a reader who forgets that will misjudge
+the claim's ambition.**
+
+**Locate the objections.** Note the date. Which tells you whether the argument was contested from the start or only later. **In
+this material the objections are usually contemporaneous, which changes what a reader should look for in the
+original paper.**
+
+**Locate the most recent entry.** Dated. Which dates the state of the argument. **A claim whose literature
+stops fifteen years ago is not refuted; it is unexamined, and the difference matters for how much weight it can
+carry.**
+
+**Three applications.** From this book's material.**
+
+**The stable Paretian hypothesis.** Contested at once. Origin 1963, objections within two years, correction 1972, replacement
+practice through the 1980s. **A claim that was contested immediately and abandoned gradually.**
+
+**Long memory in finance.** Restored by frictions. Origin 1968, arbitrage objections 1997, friction-based responses 1994 and 2006.
+**A construction whose usability was restored by a change in the setting rather than in the construction.**
+
+**The precautionary principle.** Core settled. Scope not. Preprint 2014, criticism within months, responses continuing. **An argument
+whose technical core is settled and whose scope is not.**
+
+**What it cannot do.** Resolve nothing. Only date. It dates a boundary; it does not tell you where to place
+it. **But a boundary that cannot be dated cannot be monitored, and monitoring is what the book's devices require
+of every claim they use.**
+
+**Why this is the appendix's most practical section.** Because a reader with the timeline in hand can answer the
+question that decides whether to keep reading a literature: has anything happened since. **That question is
+answerable in minutes from the entries above, and it is usually left unasked.**
+
+
+## Two dates that change how a paper reads
+
+The timeline's most practical use is dating two boundaries that readers routinely misplace, and the two cases
+are worth stating because the misplacement changes an interpretation.
+
+**The first date. 1963 and the models that did not exist.** Mandelbrot's stable Paretian proposal was made
+before conditional-variance models were available as an alternative. **Reading the paper as a rejection of
+volatility clustering misreads it: clustering had not been formalised as a competitor.**
+
+**The second date. 1997 and the friction literature that preceded it.** The arbitrage objection to fractional
+Brownian motion is often read as having closed the question. **Leland's transaction-cost result came three
+years earlier and Guasoni's general treatment came later, so the objection was addressed in the same period
+rather than after it.**
+
+**What the misplacements have in common. One mechanism.** A reader imports the state of the field at the time
+of reading into the paper's moment. **Which makes the paper look less sophisticated than it was, or more
+settled than it is.**
+
+**How the timeline prevents it. By being dated.** A chronology read alongside a paper locates the paper's
+alternatives. **The question to ask is not whether the paper was right but what else was available to it, and
+that question is answerable from the entries.**
+
+**Three further applications of the same operation.**
+
+**The Hurst exponent and the Nile data.** The analysis predates the statistical machinery now used to criticise
+it.
+
+**Fama's turn from the stable family.** Which occurred within a few years and is dated in the entries.
+
+**The 2020 tail-risk paper and its 2022 exchange.** Two years, and the exchange is the state of the argument.
+
+**Why the appendix is worth reading before the papers rather than after.** Because a reader who knows what was
+available will ask the right question of each paper, and a reader who does not will ask whether it was right.
+**The first question has an answer in the material; the second often does not.**
+
+
+## Where the timeline is thin
+
+A chronology invites the assumption that it is complete. This one is not, and the shape of its gaps is worth
+stating because the gaps cluster.
+
+**Thin before 1960.** The entries begin with Hurst and Kelly and give the impression that the material starts
+there. **It does not: the statistical treatment of heavy tails has earlier roots, and the book omits them
+because they do not bear on the nine papers.**
+
+**Thin outside the anglophone literature.** The bibliography is anglophone by the accident of the author's
+access and by the databases used. **A reader of another tradition will find the omissions substantive rather
+than incidental, and the register's coverage is uneven for the same reason.**
+
+**Thin after 2022.** Two entries, both about the same exchange. **Recent material is under-represented by
+construction: the book was written while it was current, and the register records what was available.**
+
+**Thin in the middle of strands.** A line of work that produced no specific paper the book cites appears as
+an absence rather than as a gap. **Conduct research on maximum drawdowns is an example: it is used in two
+chapters and it has no entry, because no single paper grounds the claim.**
+
+**What the gaps imply for a reader. One caution.** A chronology read as a record of a field will mislead.
+**It is a record of the papers this book uses, and the density of entries measures the book's reliance rather
+than the field's activity.**
+
+**How to use it despite the gaps.** Take the entries as a set of dates to check against a paper. **The
+question the appendix answers is "what else was available at this date", and that question does not require a
+complete chronology.**
+
+**Why the gaps are stated rather than repaired.** Because repairing them would take a year and change the
+book's argument not at all. **A dated boundary is useful; an exhaustive one is a different project, and saying
+which is on offer is the honest move.**
+
+
+## A short chronology of one disagreement
+
+The timeline lists events. A single strand of it, followed across entries, shows how an argument develops,
+and the growth criterion's strand is the clearest in the material.
+
+**The sequence. Six entries.**
+
+**1956. Kelly defines the criterion.** In a paper about information transmission, with no application to
+betting.
+
+**1969. Thorp applies it to favourable games.** Where the parameters are computable, the criterion becomes a
+practical rule.
+
+**1969. Merton reaches related results.** From continuous-time portfolio choice, independently and in the
+same year.
+
+**1971. Samuelson objects.** Not to the mathematics but to the claim that the criterion is the rational
+objective for any decision-maker.
+
+**1979. Samuelson objects again.** After a journal exchange, which is the evidence that the objection was
+taken seriously rather than dismissed.
+
+**1997. Thorp writes about friction.** Twenty years after the optimum, about costs, capacity and being
+noticed.
+
+**What the strand shows. Three things.**
+
+**The mathematics was never in dispute.** The disagreement is about the objective function.
+
+**The practical literature and the theoretical objection developed in parallel.** Neither settled the other,
+and both are still cited for what they establish.
+
+**The applied version moved away from the optimum while the theory stayed where it was.** Which is the
+pattern the book's four-column protocol describes: the tool survived and the claim about the objective
+narrowed.
+
+**How to use the strand. One reading order.** Kelly, Thorp, Samuelson, Thorp 1997. **Four papers in
+chronological order, and the reader will have seen a criterion proposed, applied, contested and then
+described by its own author in terms that concede the contest.**
+
+**Why this strand rather than another.** Because it is the one where the primary documents are short and the
+disagreement is explicit. **The long-memory strand and the precaution strand both require more reading and
+both arrive at the same shape, which is why one demonstration is enough.**
+
+
+## The timeline as a set of reading pairs
+
+A chronology is usually read in order. Its most efficient use is in pairs, and four pairs cover most of what a
+reader needs.
+
+**Pair one. 1963 and 1972.** The stable Paretian proposal and its correction. **The pair shows a claim adopted
+quickly, used before it was fully checked, and corrected nine years later by its author.**
+
+**Pair two. 1967 and 1968.** The coastline measurement and the long-memory construction. **The pair shows the
+same author moving from a geometric description to a process definition within a year, and the two papers have
+different fates: the first's numbers became method-dependent, the second's construction was contested and
+later restored by changes in the setting.**
+
+**Pair three. 1969 and 1971.** The applied criterion and the first objection. **Two years, and the pair is the
+best evidence in the material that the scepticism was contemporaneous with the application rather than
+subsequent to it.**
+
+**Pair four. 2009 and 2022.** The fourth-quadrant paper and the two adjacent contributions in the forecasting
+journal. **Thirteen years, and the pair shows the argument's continuation into a specific empirical dispute.**
+
+**What the pairs accomplish. Two things.**
+
+**They date a claim's contested period.** Which is more useful than knowing the date of publication.
+
+**They are four evenings of reading.** Each pair is two items, and one item in each pair is short.
+
+**How to use a pair. One question.** Did the second item settle, narrow, or reject the first. **Which is
+answerable in a sentence and is the difference between a literature that progressed and one that
+accumulated.**
+
+**Why pairs rather than a linear reading.** Because a linear reading produces a survey and pairs produce
+judgements. **The timeline's entries are ordered by date for reference; the pairs are ordered by argument for
+reading.**
+
+**What the pairs leave out.** Everything not in the eight items. **Which is most of the material, and the four
+pairs are chosen to cover the four claims the book's argument depends on rather than to represent the
+field.**
+
+
+## Using the timeline to date a practice
+
+The entries date papers. They also date practices, and three practices the book's material depends on have
+dates that a reader may need.
+
+**The practice of reporting a window alongside an exponent.** Which is recent and not universal. **The 1967
+paper reports its rulers; the practice of doing so as a matter of course is a later development, and a paper
+that omits it is not being careless by the standards of its time.**
+
+**The practice of running two estimators.** Which is this book's requirement rather than a field convention.
+**Which means the standard is the book's own, and a paper that fails it is failing a test the book invented
+rather than a test the field applies.**
+
+**The practice of reporting a standard error for a tail estimate.** Which is more recent than the estimates
+themselves. **Early work reported exponents without uncertainty, and the omission is a property of the era
+rather than of the author.**
+
+**What dating a practice accomplishes. Two things.**
+
+**It prevents anachronistic criticism.** A paper cannot be faulted for not using a convention that did not
+exist when it was written. **Which is the most common form of misread paper in this material.**
+
+**It identifies which criticisms are still live.** A practice that has since become standard makes the
+criticism trivial; one that has not makes it substantive.
+
+**How to use the dates. One question per paper.** Which of the book's standards were available when it was
+written. **The answer changes the paper's grade rather than its content, and the grades are what the book's
+argument runs on.**
+
+**What the approach costs. Ten minutes per paper.** Which is the price of not criticising a paper for lacking
+something it could not have had. **The timeline's dates are the input and the register's statuses are the
+output, and the two are what make the book's readings checkable.**
+
+
+## Two entries that are easy to misread
+
+The timeline has entries whose dates invite a specific misreading. Two are worth flagging because the misreading
+changes the argument they are cited for.
+
+**Entry one. 1968, the fractional Brownian motion construction.** Read as the paper that introduced long memory
+into finance. **It defines a process by its properties; the empirical question of whether prices exhibit long
+memory is a different matter, and the timeline's later entries on the arbitrage objections are what determine the
+construction's usability.**
+
+**Entry two. 2014, the precautionary principle preprint.** Read as a policy paper. **It is a probability-theoretic
+argument whose authors say so in their reply to reviewers, and the timeline's entries for the responses are what
+establish the paper's subject matter. A reader who takes it as policy will misjudge both the argument and the
+criticisms.**
+
+**What the two misreadings have in common. One mechanism.** The entry's title and date are read without the
+responses that follow it. **Which is what a chronology without a reading order produces.**
+
+**How the timeline should be read for these two entries. In pairs.**
+
+**1968 with the 1997 objection and the later friction results.**
+
+**2014 with the late-2014 review and the authors' reply of the following day.**
+
+**What the pairs establish.**
+
+**That a construction's usability is a property of the setting, not of the construction.**
+
+**That an argument's subject matter is established by its authors and its critics together, not by its title.**
+
+**Why flagging two entries is better than flagging all of them.** Because most entries can be read alone. **Two
+entries require their neighbours, and a reader who knows which two will read the rest correctly by default.**
+
+**What the appendix cannot do about misreadings. Prevent them.** A reader determined to cite a date for a
+conclusion will find the date. **What the entries can do is make the misreading visible to a second reader who
+checks the neighbouring entries, which is the same function the registers perform for the claims.**
+
+
+## The timeline and three ways to use a date
+
+A date in a chronology is used in three ways, and only one of them requires the entry to be precise.
+
+**As a marker of priority. Rarely needed.** Who published first. **Which the book uses once, for the criterion's
+origin, and which matters less than the material's popular accounts suggest.**
+
+**As a boundary for what was available. Frequently needed.** What alternatives existed when the paper was written.
+**Which is the use the appendix recommends and which a year's precision supports.**
+
+**As a decay indicator. Occasionally needed.** How long ago the last relevant work appeared. **Which requires only
+the decade, and which determines how much weight a claim can carry.**
+
+**What the three have in common. One property.** Each concerns the context of a date rather than the date itself.
+**Which is why a chronology that lists publication years without their neighbours is of limited use.**
+
+**Which use requires precision. The first.** Priority disputes turn on months, which is why the entries record the
+2014 preprint's submission date. **The other two tolerate a year.**
+
+**What the timeline is therefore for. The second and third uses.** Which are the ones a reader of this book
+needs. **The first is recorded once and does not require the chronology.**
+
+**How to use a date in an argument. One test.** Ask what else was available at that date. **Which is a question
+the neighbouring entries answer and which prevents the most common anachronism, which is criticising a paper for
+lacking a convention that did not exist.**
+
+**Why the three uses are worth separating.** Because a chronology is often read for priority and is useful for
+context. **Three uses, one of which needs precision, and the useful two are the ones the appendix's entries were
+selected for.**
+
+
+## How to read the timeline
+
+Two patterns. Both matter.
+
+**The gaps between a result and its use are long.** Long indeed. The criterion of 1956 reaches its practical
+exposition in 1969 and its retrospective in 2010. The coastline paper of 1967 reaches network and
+image analysis decades later. **A result's usefulness is not visible at its publication date**, which is the practical argument for the four-column protocol of Chapter 28, and which also explains why a reader who judges a paper by its immediate reception will misjudge almost every paper in this book's bibliography.
+
+**The sceptical contributions are concurrent, not subsequent.** Concurrent, not later. Samuelson's objections arrived within
+two years of Merton's results; the arbitrage objections to fractional Brownian motion arrived before
+much of its use. **The standard narrative in which a theory is proposed, applied, and then criticised
+is wrong in this material**, and the correction matters because it changes what a reader should look
+for when reading a new claim.

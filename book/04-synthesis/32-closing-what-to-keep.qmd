@@ -1,0 +1,472 @@
+# Closing: What to Keep {#sec-what-to-keep}
+
+Nine papers, four parts, and a set of constructed devices. This chapter says what survives.
+
+Three sections. the structure the book has been building, the things the three authors agree
+about and the things they do not, and what a reader should do with any of it.
+
+## The three-layer structure
+
+The book's material arranges itself into three layers, and each constrains the next in one
+direction only.
+
+**The worldview layer asks what kind of world this is.** Shape first. Thin or fat tailed, stationary or not,
+independent or long-memoried. This layer constrains which models can be used, because a model
+premised on a light tail is not a candidate in a heavy-tailed world regardless of how well it fits.
+
+**The epistemology layer asks what can be known.** Then knowledge. Existence, estimability, and the sampling limits
+on detecting skill. This layer constrains how much can be staked, because a stake is a claim on
+knowledge, and the knowledge may not be available.
+
+**The action layer asks what to do.** Action last. Screening irreversible exposures, choosing the form of the
+output, sizing with a discount. This layer constrains which opportunities are worth pursuing.
+
+The constraint runs downward. Only downward. **A worldview judgement rules out models; a knowledge judgement rules
+out stakes; an action judgement rules out opportunities.**
+
+The reverse direction is a test rather than a constraint, and it is the more useful half. **If a
+proposed model requires a light tail, ask what the worldview layer says about tails. If a proposed
+stake requires a precise estimate, ask what the epistemology layer says about precision. If a
+proposed opportunity requires an irreversible exposure, ask what the action layer says about
+reversibility.**
+
+That test is the practical content of the whole book, and it fits in a sentence: **when something
+requires what an earlier layer denies, the something is wrong.**
+
+## What happens if you learn only one of them
+
+The three authors overlap substantially and diverge on important points, and a reader who studies one
+and skips the others inherits a specific distortion.
+
+**Mandelbrot alone** gives the shape of the problem and no guidance on action. A reader who stops
+here has a vocabulary for tails and no procedure, and is likely to conclude that measurement is
+impossible — which is the over-reading Chapter 7 documented. **The missing piece is Thorp's
+demonstration that in a computable setting, an edge exists and can be sized.**
+
+**Taleb alone** gives the survival rules and the caution, plus a polemical edge that makes strong
+claims easy to over-apply. A reader who stops here will screen everything, run nothing, and find
+precaution everywhere. **The missing piece is Mandelbrot's insistence that the tail has a shape, which
+is what makes measurement possible in a bounded range, and Thorp's demonstration that a
+probabilistic edge can be found and used.**
+
+**Thorp alone** gives the operational method and the sizing rules, in a register so practical that the
+premises disappear. A reader who stops here will size carefully on the basis of edges that may not
+exist, because the calculability of the casino has been generalised into a world where the edge must
+be estimated. **The missing piece is Mandelbrot's warning about what the estimates can carry and
+Taleb's insistence that the fourth quadrant is different in kind.**
+
+| Only this author | You gain | You are left believing |
+| --- | --- | --- |
+| Mandelbrot | The shape of the problem | Nothing can be measured |
+| Taleb | The survival rules | Nothing should be attempted |
+| Thorp | The operational method | Everything can be estimated |
+
+**The three distortions are not random. Each is the shape of one author's contribution taken as a
+complete account.**
+
+## What they agree on
+
+Five points, and they are the book's most defensible content because three authors working from
+different methods reached them.
+
+**Distribution shape matters more than central tendency.** All three agree. None of the three treats an average as the
+primary object.
+
+**Summary statistics have domains of validity.** All three agree. None treats a variance, an expectation, or a
+correlation as universally meaningful.
+
+**Ruin is different in kind from loss.** All three agree. All three treat the absorbing state as categorically
+separate, and none attempts to price it.
+
+**The estimation problem is central rather than incidental.** All three agree. Mandelbrot showed it for exponents,
+Taleb for the fourth quadrant, Thorp for the parameters of his own criterion.
+
+**Survival constraints come before optimisation.** All three agree. The ordering of Chapter 29 is a formalisation of
+something all three practice.
+
+## Where they disagree
+
+Three disagreements. Stated, not resolved.
+
+**Whether the world is fundamentally unmeasurable or merely hard to measure.** Mandelbrot's programme
+sought a better description; Taleb's mature position is closer to a limit on what description can
+accomplish. **The difference matters because it determines whether research is the right response to
+uncertainty.**
+
+**Whether optimisation is available at all.** Thorp optimises a fraction and describes the result as
+a practical tool. Taleb's anti-optimisation stance treats the search for an optimum as a source of
+fragility. **Chapter 21's discount is an attempt at a middle position, and a reader who finds it
+unsatisfying is in good company: the two authors would not agree with each other either.**
+
+**How much weight to put on the most extreme outcomes.** Mandelbrot's mathematics gives tails a
+structure and quantifies them. Taleb's fourth quadrant treats the extreme as the case that decides,
+and treats quantification of it as unreliable. **The book has followed each where its material
+demanded, which is not the same as resolving the difference.**
+
+## How to use the book
+
+Three suggestions, in order of how much they ask.
+
+**Use the ordering as a checklist.** Three questions. Three questions, in order, before any number is computed. The
+first one costs minutes and requires no data.
+
+**Use the registers.** They are separate on purpose. The verification file and the construction file are separate on purpose. Any
+claim in this book that is not in the first was not verified, and every device in Part IV is in the
+second, which means none of them has been tested.
+
+**Check the fourth column.** Including here. For anything you read — here or elsewhere — ask who benefits if it is
+believed, and what would have to be true for it to be wrong. **The book's own constructions are in
+that set, including its central one.**
+
+## The closing rule
+
+The one sentence worth carrying out of this book is not about tails or sizing.
+
+**For any judgement you read, first ask who bears the consequences.**
+
+An author writing about a risk they do not take is producing description. A practitioner who takes it
+is producing a decision under a constraint the author did not face. **The two can agree on every
+proposition and differ in what they say, because one is describing and the other is choosing.**
+
+This is not an argument against theory. It is an argument for reading the consequences column. The
+nine papers in this book are worth reading because their authors, in different ways, faced them:
+Mandelbrot measuring a market he did not trade, Taleb taking positions on the risk he described,
+Thorp computing an edge he then staked money on.
+
+## What remains unverified
+
+The book's registers record the following classes of entry, and a reader who wants to know the
+evidential status of any claim should consult them.
+
+**Verified metadata** — bibliographic facts, checked against databases.
+
+**Verified via text** — claims read in the source or in an accessible version of it.
+
+**Verified via secondary source** — claims described at one remove, with the remove stated.
+
+**Constructed** — the book's own devices, none of them tested.
+
+**Unverified, and deliberately uncited** — items that would have strengthened the argument and could
+not be checked. Several are named in the chapters where they would have appeared.
+
+**The registers are the book's own audit.** They include the entries that weaken it.
+
+## Claim and tool
+
+The claim: the material arranges into three layers with one-way constraints, and the three authors
+agree on five points and disagree on three.
+
+The tool: the reverse test — when something requires what an earlier layer denies, it is wrong.
+
+## The three layers as a reading order
+
+The layers were presented as a structure. They are also an order in which to read the material, and the
+order differs from the book's own arrangement.
+
+**First the epistemology. Fast.** What can be known: existence, estimability, sampling limits. This is
+Part I plus the grid, and it is available from about forty pages of primary material. A reader who
+understands only this layer will not be misled by a point estimate again.
+
+**Then the action layer. Slower.** What to do: screen irreversibility, choose the output form, size with
+a discount. This is Parts II and III, and it takes longer because it requires practice rather than
+reading. The ninety-minute exercise of Chapter 27 is the fastest route in.
+
+**Finally the worldview layer. Slowest.** What kind of world this is: tails, memory, stationarity. This
+is the hardest layer, it is the most contested, and it is also the one whose conclusions are least
+necessary for practical decisions, because the structural screening does not depend on them.
+
+**Why the order is reversed relative to the book.** The book proceeds from the world to the decision,
+because the argument runs that way. A reader with a decision to make should proceed from what can be
+known to what to do, and can leave the worldview questions for later.
+
+**What a reader loses by taking this order.** The appreciation of why the structural devices exist — the
+tail arguments are their foundations. A practitioner who skips the worldview layer will use the devices
+correctly without being able to defend them, which is adequate for personal decisions and insufficient
+for teaching.
+
+
+## The book's own failure conditions, in one place
+
+The closing chapter of a book that insists on refutation conditions should carry its own. Four, stated
+plainly.
+
+**If the papers' claims were not weakened.** The whole arrangement rests on the pattern of claims
+weakening while tools survive. A reader who checks the verification register and finds the claims
+standing is entitled to dismiss the framing, and the register is designed to permit exactly that check.
+
+**If the structural screen does not change decisions.** Part IV exists because screening is claimed to
+alter which options are on the table. Where it usually does not, the method is overhead.
+
+**If the devices cannot be used badly, or cannot be used well.** A device with unreachable refutation
+conditions is not testable, and a device whose correct use cannot be distinguished from its misuse by
+anyone outside the room is not a device but a vocabulary.
+
+**If the reader's situation fails a premise.** Which premise fails is the test given in the previous
+chapter. **A book that tells you when to put it down has done more than one that does not.**
+
+**What the book asks of a reader.** One check and one exercise. Check the verification register against
+a source. Run the ninety-minute procedure on a live decision. Both take under two hours in total, and
+either is enough to establish whether the material is worth more of the reader's time.
+
+
+## The one-page version of the whole book
+
+A reader who wants the argument in a single page, without the nine papers.
+
+**On the world.** Three graded statements. Tails are thicker than the standard machinery assumes, the shape of the tail is
+estimable only over a range, and some quantities that decision-makers rely on do not exist. **The three
+statements are graded: the first is robust, the second is measured, the third is contested at its
+boundary.**
+
+**On knowledge.** Precision is not status. An estimate's precision is not its evidential status. Two estimators that disagree by
+more than the decision's tolerance leave the quantity unusable whatever the standard error says, and the
+most consequential features of a distribution are the least well estimated by construction, because they
+live in the rare events.
+
+**On action.** Three stages. In order. Screen irreversible exposures first, because the screening requires no data and removes the
+options that could end the sequence. Then determine whether the quantities exist and can be estimated. Only
+then size, with a discount that reflects how well the edge is known.
+
+**On edges.** Decaying assets. An edge is a decaying asset whose use contributes to its decay, and its discovery is a
+research process rather than a purchase. Where the edge is estimated rather than computed, everything in
+Parts I and III applies, including the arithmetic that says a decade of data is needed to detect a
+plausible edge.
+
+**On method.** One direction only. The three layers constrain one direction: the world constrains the models, the models
+constrain the stakes, the stakes constrain the opportunities. **The test runs the other way: when something
+requires what an earlier layer denies, the something is wrong.**
+
+**On reading.** Four columns. A result decomposes into a claim, a tool, a vocabulary and a technique, and the four age
+differently. Trust transfers from claim to tool over time, and the transfer should be deliberate. **The
+question to carry away is not whether a judgement is true but who bears the consequences of its being
+wrong.**
+
+**What the page omits.** Every qualification, the registers, the refutation conditions of six constructed
+devices, and the argument that the nine papers' claims were weakened while their tools survived. **The page
+is a summary of a book whose central claim is that summaries lose the conditions, and it should be read
+with that in mind.**
+
+
+## What to do on Monday
+
+The book closes with a reading rule and an argument. A reader who wants an action has this section, and it is
+deliberately small.
+
+**Three things, in order of cost.**
+
+**Take one live decision and run stage one.** Exposures, mechanisms, stress-case exit costs, bounding moves.
+**Ninety minutes, no data, and the output is a changed option set.**
+
+**Take one quantity the decision depends on and write its defining expression.** Then ask whether it converges.
+**Fifteen minutes, and the answer sometimes changes the method rather than the estimate.**
+
+**Write down the coefficient of variation of the edge estimate, if there is one.** **The number forces the
+judgement that the discount requires and that practitioners avoid.**
+
+**What each produces.**
+
+The first changes what is on the table. The second changes what kind of output is appropriate. The third changes
+the size. **None requires the book's vocabulary, and none requires accepting any of its constructions.**
+
+**What to do about the constructions themselves. One thing.** Attack one. Every device in Part IV is registered
+with its refutation condition, and a reader who meets one has done the most useful thing the book makes
+possible. **A proposal that survives an attempted refutation is worth more than one that is merely plausible,
+and the attempt is the reader's contribution rather than the author's.**
+
+**What not to do. Three things.**
+
+Do not adopt the vocabulary without the questions. **Words without the discipline are what this book criticises
+in the material it covers.**
+
+Do not apply the procedure to reversible low-stakes decisions. **The overhead exceeds the benefit, and the
+habit is worse than the overhead.**
+
+Do not treat the devices as validated. **Nothing in the constructed register has been tested, and the register
+says so on every row.**
+
+**Why the list is short.** Because the book's central claim is about the conditions attached to claims, and a
+closing list of actions that dropped the conditions would contradict it. **Three actions with their costs
+stated, and the rest is reading.**
+
+
+## The book in one table
+
+A closing chapter that has argued for tables should end with one, and this is the book's whole apparatus on a
+page.
+
+| Question | The device | Where | What it returns |
+| --- | --- | --- | --- |
+| Can this end the sequence? | Irreversibility ledger | 16, 27 | A bounded or reduced option set |
+| Does the quantity exist? | Existence check | 13, 14 | A conditional statement, or a substitution |
+| Can it be estimated? | Two-estimator comparison | 5, 14 | A cell, hence a method |
+| What shape is my exposure? | Convexity audit | 15 | A sign, not a magnitude |
+| Which method applies? | Four quadrants | 9 | A form of argument |
+| Which matter does the claim survive? | The Constant's grades | 26 | A level, from I to III |
+| What part of this do I keep? | Four-column protocol | 28 | A row, hence what to monitor |
+| How much? | Discounted fraction | 20, 21 | A stake, a bound, or a refusal |
+| In what order? | The ordering | 29 | The sequence itself |
+
+**How to read the table. Downward.** Each row's answer determines which later rows apply. **A decision that ends
+at row one needs nothing below it; one that reaches row eight has been screened twice and classified once.**
+
+**What the table does not contain.** Any of the evidence. **The nine papers, the registers, and the arguments
+that connect them are what the table presupposes, and the table is a map of the apparatus rather than of the
+material.**
+
+**What a reader should notice about the column headings.** Three of the nine rows return a non-numeric output:
+an option set, a conditional statement, a sign. **Which is the book's substantive claim about decisions,
+expressed as a table of outputs.**
+
+**Why a table at the end rather than the beginning.** Because the devices were built in response to problems, and
+a table presented first would look like a framework looking for applications. **Presented last, it is a summary
+of nine responses to nine specific failures, which is what it is.**
+
+**The one thing to do with it.** Take a live decision and walk down the rows, stopping where the answer becomes
+determinate. **That is the ninety-minute procedure of Chapter 27, and the table is its index.**
+
+
+## The three habits the book is trying to install
+
+A book that ends with a reading rule and an argument should say what it hopes a reader will do without
+thinking, because habits outlast rules.
+
+**One. Ask whether the quantity exists.** Before precision, before method, before data. **The question costs
+minutes and changes what the rest of the analysis can claim.**
+
+**Two. Ask who bears the consequences.** Of any judgement, including the reader's own. **The question
+separates description from decision and is the reason a practitioner's advice and an academic's advice can
+differ while agreeing on every proposition.**
+
+**Three. Ask what would have to stay the same.** Of any regularity being relied on. **Which converts an
+assumption into a monitorable condition and gives the claim a duration.**
+
+**What the three have in common. One property.** They are askable by someone who has read none of the book's
+apparatus. **No registers, no vocabulary, no cells. Three questions and a minute.**
+
+**How the habits differ from the rules.** A rule is applied deliberately; a habit is applied before the
+deliberation starts. **The rules in this book need a page and a decision; the habits need a sentence and a
+conversation.**
+
+**What the habits cannot do.** Supply a method. **They identify which questions matter and leave the answering
+to the apparatus, which is the right division: the questions are portable and the apparatus is not.**
+
+**Why the book ends here rather than with the table.** Because the table is the book's apparatus and the
+habits are its residue in a reader. **An apparatus can be adopted and abandoned; three questions installed in
+a reader survive the book's arguments, including the ones that turn out to be wrong.**
+
+**What a reader should do if they take nothing else.** Ask the three questions on the next decision. **Which
+is a five-minute commitment and the only part of this material whose value does not depend on trusting the
+author.**
+
+
+## The three things that would change this book
+
+A closing chapter that has argued for refutation conditions should say what would change the book itself, and
+the three candidates are specific.
+
+**One. A study of device use.** Coding a sample of applied risk analyses by which cell each quantity occupies,
+and by whether the structural screening altered the decision. **Which would either support the book's central practical claim or show that the Replace cell is empty in practice, and it is the study the refutation sections keep asking for.**
+
+**Two. A register of retired edges.** Lifetimes and mechanisms of death, by source. **Which would replace the chapter's reasoned durability ordering with a measured one, and it is the cheapest of the three for a firm to produce.**
+
+**Three. A comparison of screened and unscreened decisions.** Where the procedure's recommendation differs from the ordinary one, and which was better over time. **Which is the sufficient condition the book admits it lacks, and which no amount of further reading in this material can supply.**
+
+**What the three have in common. One property.** Each is empirical, each is cheap relative to the argument it
+tests, and none has been run. **Which is the honest state of a book whose apparatus is checkable and whose
+constructions are not.**
+
+**What a reader can do about them. Two things.**
+
+**Run the third on their own decisions.** Not as a study: as a practice. **A log of screened decisions with their outcomes is the individual version of the comparison.**
+
+**Attack a device at its fourth field.** Which is the cheapest contribution and the one the registers are
+built to receive.
+
+**Why the book ends with its own refutation conditions rather than with a summary.** Because a summary would
+imply the argument is closed, and it is not. **Three studies that would settle the questions the book raises,
+named precisely enough to be run, which is the most a book of this kind can offer.**
+
+**What the book claims about itself in closing. One sentence.** That nine results were weakened in their claims
+while their tools survived, that structural screening changes decisions, and that the size of a position is
+limited by how well its inputs are known. **Three claims, each with a stated test, and the tests are the
+book's invitation.**
+
+
+## The book's three questions and its one method
+
+The closing chapter has collected habits, a table and refutation conditions. The minimum version is three
+questions and one method, and it is worth stating as such.
+
+**The questions.**
+
+**Does the quantity exist.** Ask before precision, before method, before data.
+
+**Who bears the consequences.** Ask of any judgement, including the reader's own.
+
+**What would have to stay the same.** Ask of any regularity being relied on.
+
+**The method.**
+
+**Screen the irreversible exposures first.** Then classify the quantities. Then size, with a discount.
+
+**Why three questions and one method rather than six devices.** Because the devices implement the method and
+the questions test it. **A reader who has the questions can evaluate someone else's analysis; a reader who has
+the method can produce one.**
+
+**What the minimum leaves out. The apparatus.** The registers, the graders, the protocols. **Which are the
+book's evidence rather than its advice, and a reader who takes the minimum has the advice.**
+
+**Why the minimum is worth stating.** Because a book's practical content is what survives compression. **Three
+questions, one method, and everything else in this book is the argument for why they are the right ones.**
+
+**What the minimum cannot do. Settle anything.** The questions identify what matters and the method produces an
+output. **Which is the correct division of labour and the reason the book ends with both.**
+
+**How to test whether the minimum has been adopted. One observation.** Whether the questions are asked before
+the method is applied. **Asked afterwards, they become a critique; asked first, they change what gets produced.**
+
+
+## The book's claims and three grades
+
+The closing chapter states three claims. Each has a grade, and the grades are what a reader should carry.
+
+**The nine papers' claims were weakened while their tools survived.** Grade II. **Robust across the nine cases and
+contested at its boundary, since the reading is the author's and the register is the evidence.**
+
+**Structural screening changes decisions.** Grade II, and the weaker of the two. **Argued from the devices'
+logic and from three constructed cases; the sufficient condition — that screened decisions are better over time —
+is untested.**
+
+**The size of a position is limited by how well its inputs are known.** Grade I in its arithmetic and II in its
+application. **The interior optimum is a property of the objective function; the discount's form is a
+proposal.**
+
+**What the three grades imply for use. One instruction.** Rely on the third for the arithmetic, treat the first
+two as arguments with their evidence attached, and attack the devices at their fourth fields. **Which is what the
+book's four-column protocol would prescribe for any other work.**
+
+**What a reader should notice about the three. One property.** The two grade II claims are the book's substantial
+content and the grade I content is arithmetic borrowed from elsewhere. **Which is the honest description: the
+book's contribution is two empirical readings and a set of constructions, and the arithmetic it uses is
+standard.**
+
+**Why stating the grades in closing is worth a section.** Because a reader who has followed nine weakened claims
+deserves the same treatment applied to the book. **Three claims, three grades, and the grades are what a reader
+carries when the arguments are no longer in front of them.**
+
+**What would raise a grade. One thing per claim.** For the first, a check of the register entries against the
+sources. For the second, the study the refutation sections keep naming. For the third, a derivation of the
+discount rather than its proposal. **Three specific things, named, and none of them is reading more of this
+book.**
+
+
+## Boundary conditions
+
+The three-layer structure is an organisation of this book's material, not a claim about how the three
+authors saw their own work. None of them stated it in these terms.
+
+The agreement and disagreement lists are the book's reading. A scholar of any of the three would
+draw the lists differently, and the registers record which entries rest on the authors' own words and
+which do not.
+
+A last line. Ask the three questions. Run the one method. Write it down. Then decide. Nothing more is needed. Nothing less will do.

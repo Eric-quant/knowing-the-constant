@@ -1,0 +1,477 @@
+# Appendix D: Further Reading {#app-further-reading}
+
+Four paths. Ordered by what a reader wants. Each names what to read first and
+what it will cost.
+
+## Path one: the mathematics of tails and scale
+
+**Start with Mandelbrot 1963** if you want the empirical problem, and Mandelbrot 1967 if you want the
+scaling argument in its most accessible form. The second is four pages and requires no statistics.
+
+**Then read the sceptical literature rather than more of the supportive literature.** Mandelbrot and
+Van Ness 1968 defines the long-memory family; Rogers 1997 and Cheridito 2003 explain why that family
+is difficult to use for prices; Guasoni 2006 and Leland 1994 show how frictions change the conclusion.
+**Reading the objections alongside the construction is the fastest way to understand what the
+construction does.**
+
+**For the estimation problem, the crucial experience is trying it.** Do it once. Compute a tail index from a long
+sample, then from two halves of the same sample, and compare. The disagreement is the lesson, and it
+takes an afternoon.
+
+## Path two: survival and the fourth quadrant
+
+**Start with Taleb 2009.** The article, not the book. It is a journal article rather than a trade book, it is short, and it
+contains the two-axis structure that most second-hand accounts flatten.
+
+**Then read Taleb, Read, Douady, Norman and Bar-Yam 2014**, which is where the argument becomes a
+decision rule with conditions — and read at least one response to it, because the strongest objection
+is that the rule's conditions are asserted rather than established, and it is more convincing in the
+critic's words than in summary.
+
+**For the tail-moment problem, Cirillo and Taleb 2020** and **Corral 2020** should be read together.
+The first argues that an expectation may not exist; the second argues that whether it exists depends
+on a distributional choice that finite samples cannot settle. **The pair is a complete education in
+how a claim about tails survives its own boundary.**
+
+## Path three: sizing and execution
+
+**Start with Kelly 1956.** Nothing to do with betting, and the origin of everything that follows.
+
+**Then Thorp 1969** for the applied version, and **the Samuelson objections of 1971 and 1979** for the
+reason the criterion is not the unique rational choice. **Reading Thorp without Samuelson gives the
+impression that the criterion is forced; reading both shows that the objective function is chosen.**
+Chapter 20 of this book rests on that distinction.
+
+**For the objective-function debate in its full form**, MacLean, Thorp and Ziemba 2010 and the 2011
+collection are the authoritative secondary sources, and the Latané–Ophir exchange of 1978 and 1979 is
+the primary record of the dispute at its sharpest.
+
+**Then Thorp 1997.** Read it once the formula is understood. It is about everything the formula leaves out.
+
+## Path four: verification practice
+
+This path is about reading claims. No mathematics required.
+
+**Take any paper in this book's bibliography and fill in the four columns of Chapter 28.** The
+exercise takes twenty minutes and usually ends with an empty fourth column, which is the finding.
+
+**Then check one number.** Just one. Pick a citation count in the register and reproduce it in the database
+named there, with the date attached. **A claim that cannot be reproduced this way is a claim to hold
+loosely, however confidently it is repeated.**
+
+**Then read a correction.** Any correction. Mandelbrot 1972 is the example this book uses.
+Corrections are where the mechanics of a literature become visible, because someone had to notice.
+
+## What this book did not read
+
+The gap list. A reading list that hides its gaps has an agenda.
+
+**The full text of the 1961 and 1969 Thorp papers, and of the 1997 conference paper.** The arguments
+in Chapters 18, 20 and 23 follow their titles, abstracts, citation records, and the author's later
+expositions, and the chapters say so.
+
+**The appendix of the 2014 precautionary principle preprint.** No derivation from it is reproduced.
+
+**The body of Cirillo and Taleb 2020**, so no numerical estimate from that paper appears here.
+
+**The full text of the Corral preprint and of the two 2022 journal contributions.** They are
+described at the level of their stated arguments.
+
+**The literature on portfolio optimisation under parameter uncertainty.** Chapter 22's central
+empirical claim is attributed to it without a specific citation, and the chapter flags that as a claim
+to check rather than one to accept.
+
+**Any study of how practitioners actually behave.** The book's claims about institutions — the demand
+for a number, device shopping, the persistence of decayed edges — are reasoned from incentives rather
+than measured.
+
+## Three short courses
+
+The reading paths are organised by interest. These are organised by time, for a reader who wants to know
+whether the material is worth a longer commitment.
+
+**Two hours. The gate.** Mandelbrot 1967, four pages, and the first chapter of this book. **Outcome: you
+will know whether scaling arguments are useful to you, and you will have seen one measured rather than
+asserted.**
+
+**A weekend. The core.** The 1961 Thorp paper, the 2009 fourth-quadrant article, and Chapter 12 of this book.
+Three items, each short, and together they contain the two ideas the book is built on: **that a favourable
+state can be computed when the rules are known, and that a quantity's failure to exist is a different
+problem from its being hard to measure.**
+
+**A month. The argument.** Add the 1968 fractional Brownian motion paper with the Rogers and Guasoni
+responses, Thorp 1969 with the Samuelson objections, and the 2020 tail-risk paper with the Corral preprint.
+**Outcome: you will have seen four claims weakened by their own literatures and four tools surviving, which
+is the book's central observation and the reason the four-column protocol exists.**
+
+**What none of the three includes.** The constructed devices. They are the book's own, they are untested, and
+a reader can evaluate the material without them. **They are presented in Part IV with their refutation
+conditions so that a reader who wants to attack them has something to attack.**
+
+**What to do after the month.** Pick a decision you are facing and run the ninety-minute procedure from
+Chapter 27. **The exercise is the only part of the book whose value can be assessed without trusting the
+author, and it is the right note to finish on.**
+
+
+## What to read if you disagree
+
+The reading paths assume a sympathetic reader. A reader who thinks the material overstates its case has a
+different starting point, and it is worth naming.
+
+**If you think tails are thinner.** Thinner than what? Read the conditional-variance literature and the
+empirical work establishing that volatility clusters and that unconditional distributions are heavy-tailed as a
+consequence. **The disagreement is often about whether the heaviness is unconditional or conditional, and the
+distinction changes what follows for risk management without changing the empirical facts.**
+
+**If you think estimation is easier.** Try it once. Read the forecasting literature's record on out-of-sample
+performance, and then attempt one long-horizon estimate yourself. **The literature is large and the exercise is
+more persuasive than the literature.**
+
+**If you think precaution means paralysis.** Read the list. Read the source paper's own
+discrimination list and check whether any of the excluded cases would have been excluded by a framework you
+would prefer. **The list is the strongest part of the argument and the most frequently ignored.**
+
+**If you think sizing rules are impractical.** Count who uses them. Read the retrospective record of institutions that scaled
+successful strategies, and count how many were following an explicit sizing rule when they did so. **The
+practical objection is usually an accurate description of practice rather than an argument about the
+arithmetic.**
+
+**If you think the devices are unfalsifiable.** Attack one. Take one device and attack it at the fourth field
+of its register entry. **Each entry states its refutation condition, and a challenge that meets one is the most
+useful thing this repository can receive.**
+
+**What the four disagreements have in common.** None is about the mathematics. Each is about the conditions
+under which the mathematics applies, which is what the book argues about and what a reader should argue back
+about. **The material is not improved by more agreement; it is improved by a specific disagreement, and the
+reading lists above are arranged to make one possible.**
+
+
+## A reading order for someone who will read only one paper
+
+The paths assume a reader with time. The common case is a reader with one paper's worth of attention, and for
+that case the recommendation is specific.
+
+**Read Mandelbrot 1967.** Four pages. No statistics. Four pages, no statistics, and it establishes the pattern the rest of the book
+depends on: a quantity whose value depends on the instrument, reported with the procedure attached. **The
+reader who takes this one thing away will notice the pattern in every subsequent measurement claim.**
+
+**What to watch for.** Two things. On the page. Where the rulers appear in the argument, and where the conclusion
+changes from a length to a scaling description. **That transition is the paper's contribution, and it is
+visible on the page rather than inferred.**
+
+**What to skip.** The dimension values. Most quoted, least useful. The discussion of dimension values, which later work made method-dependent. **It is the part
+most often quoted and the part least worth carrying.**
+
+**What to read next, if the first one lands.** Thorp 1961, two pages, for the demonstration that a favourable
+state can be computed when the rules are known. **The pair gives the reader both halves of the book's opening
+argument: that measurement has limits, and that some situations remain computable despite them.**
+
+**What the reader will not get.** The rest of the book. The constructed devices, the registers, and the argument about
+claims decaying while tools survive. **Those require the book, and a reader who has the pattern from the
+coastline paper will find the rest of the book easier to disagree with productively, which is the outcome the
+book is designed to make possible.**
+
+**Why so specific.** Stated plainly. A decision, not a list. Because a general reading list is a courtesy and a single-paper
+recommendation is a decision. **The decision is that the coastline paper is the highest-value thirty minutes in
+this material, and the claim is falsifiable by reading it.**
+
+
+## What the book does not ask you to read
+
+A reading list that omits nothing is a list of obligations. This appendix closes with the material the book
+used and does not expect a reader to consult.
+
+**Databases and citation records.** Machinery, not subject. They are the book's verification machinery, not its subject. **A reader
+who wants to check a number will look one up; nobody needs to browse a database in order to follow the
+argument.**
+
+**The corpus papers.** Unavailable to me. Several are cited for a single claim and are unavailable to me. **The
+chapters say which ones and what was used instead, so a reader knows where the gaps are without filling
+them.**
+
+**Estimator literature.** Not taught here. The book uses two-estimator comparisons as a standard and does
+not teach the estimators. **A reader who needs the methods should go to that literature directly, and the
+book's contribution there is the requirement rather than the technique.**
+
+**The policy literature around the precautionary principle.** The book treats one paper and its immediate
+responses. **The surrounding debate is large, it is political as much as technical, and the chapter says
+plainly that the general critiques are not counted as criticisms of the paper.**
+
+**Why a list of exclusions is worth printing.** Because a reader who assumes the book covers a field will
+either distrust it or waste time looking for what it does not contain. **The exclusions are short, they are
+stated once, and they let the reading paths above end where they should rather than at the edge of an
+unstated bibliography.**
+
+**What a reader should take from it.** The book is a reading of nine results and a set of proposals. **It is
+not a survey, and the difference is visible in what it leaves out rather than in what it includes.**
+
+
+## How to read a paper in this material
+
+The reading paths say what to read. This section says how, because the material rewards a particular
+approach and punishes the one most readers bring.
+
+**Before reading.** Two sentences of context. Nothing else. What problem the paper addresses and what it claims to have
+shown. **A reader who cannot write those two sentences from the abstract is not ready to read the paper, and
+the gap is the reading task.**
+
+**While reading.** Three things to mark. Mark them.
+
+**The range of every quantitative claim.** Where the measurement applies, over what span, and from what data.
+**A claim without a range is the paper's weakness and the reader's opportunity.**
+
+**The procedure behind every reported number.** Estimator, window, cut-off. **Papers often state these in a
+methods section rather than beside the number, and connecting them is most of the work.**
+
+**The limitations paragraph, read as evidence rather than as ritual.** What the authors say their result does
+not cover is usually accurate and frequently ignored. **The limitations are where the paper tells the reader
+where the boundary is, and they are the most quoted-from and least read-on part of any paper.**
+
+**After reading.** One question. Written down. What would have to be true for this to be wrong. **An answer that cannot be
+written is not a criticism; it is an indication that the paper has not been understood well enough to be
+criticised.**
+
+**What it costs.** An hour per paper. Worth it once. Which is more than the fifteen minutes a reader spends on an
+abstract and a conclusions section. **The hour is the price of the thing this book is trying to teach, and a
+reader who spends it once will notice the difference in the second paper.**
+
+**Why it is in the appendix.** Because it is advice about reading, and
+advice about reading placed before the reading is encouragement rather than instruction. **After nine papers,
+the reader has something to apply it to.**
+
+
+## Reading the responses rather than the papers
+
+A path through this material that is faster than the one above: read the exchanges instead of the original
+statements.
+
+**Why exchanges are more informative. Three reasons.**
+
+**They contain the objection and the answer.** A paper states a position; an exchange shows the position
+under pressure. **The pressure is where the boundary of the claim becomes visible.**
+
+**They are shorter.** A response is usually a fraction of the length of the work it answers, and it is written
+for readers who have not memorised the original. **A competent response is the best available summary of both
+sides.**
+
+**They date the state of the argument.** A paper is a snapshot; an exchange shows which objections were live at
+the time and which had already been settled. **For the reader asking whether a criticism has been answered,
+this is the only direct evidence.**
+
+**Four exchanges worth reading. In this order.**
+
+**The growth criterion.** Thorp 1969 against the Samuelson objections of 1971 and 1979. **The disagreement is
+about the objective function rather than the arithmetic, and it is the cleanest example in the book.**
+
+**Long memory in finance.** Mandelbrot and Van Ness against the arbitrage objections of Rogers and the
+transaction-cost responses. **A tool surviving a claim's difficulty, documented in four papers.**
+
+**The tail of contagious diseases.** The 2020 paper against the distributional objection. **A case where the
+qualitative conclusion survives and the quantitative one does not.**
+
+**The precautionary principle.** The 2014 preprint against its reviewers. **The crux is stated by the authors
+themselves: they did probability theory, the reviewers asked for statistics.**
+
+**What the path gives up.** The primary statements. **A reader who has read only the exchanges knows what was
+contested and not what was originally claimed, which is adequate for judging whether an argument is settled and
+inadequate for citing it.**
+
+**Why the path is worth offering.** Because most readers will not read nine papers, and an exchange is the
+densest available form of the same material. **Reading four exchanges is a weekend and leaves a reader able to
+locate the live disagreements.**
+
+
+## What to read if you have one hour and no time to spare
+
+The paths assume a reader who intends to read. This section assumes the opposite and offers the smallest useful
+exposure.
+
+**Ten minutes. The coastline paper.** Four pages, plus the time to notice where the rulers enter the argument.
+**Outcome: a reader who will never again accept a length, an exponent or an index without asking how it was
+measured.**
+
+**Twenty more minutes. The first chapter of this book.** Which connects the measurement problem to prices and to
+the moment an exponent becomes a forecast. **Outcome: the pattern applied once, outside geography.**
+
+**Fifteen more minutes. The 1961 Thorp paper.** Two pages. **Outcome: the other half of the opening argument,
+which is that some situations remain computable even when measurement is limited.**
+
+**Fifteen more minutes. The register entries for one paper.** Not the paper: the entries. **Outcome: a sense of
+what checkable means in this book, which is the claim the repository makes about itself.**
+
+**What the hour produces. Three things.**
+
+**A pattern.** Measurements carry their procedures or they do not mean anything.
+
+**A counterweight.** Computability is not always unavailable, and the boundary is where the interesting cases
+live.
+
+**A test.** Whether a claim's status can be stated. **Which is the test the book applies to nine results and to
+itself.**
+
+**Why the minimum is stated.** Because a reading list that assumes time is a list for someone else. **An hour is
+what most readers have, and the four items above are the highest-value hour in the material.**
+
+**What the hour does not produce.** Any of the constructed devices. **Those require the book, and a reader with
+the pattern from the first ten minutes will be able to evaluate them rather than merely receive them.**
+
+
+## What to read for the method rather than the material
+
+The paths are organised around the nine results. A reader interested in the book's method rather than in tails
+has a shorter route, and this section states it.
+
+**Four items. In order.**
+
+**The constructed register.** Thirteen entries with definitions, motivations, preconditions and refutation
+tests. **Which is the method in its most compressed form and the only part of the book that can be attacked
+directly.**
+
+**Chapter 29, the ordering.** The sequence and the argument that it is forced. **Which is the method's
+skeleton.**
+
+**Chapter 31, where it fails.** Three requirements, four abandonment settings, and the failure table's signals.
+**Which is the method's boundary, and reading it second is deliberate.**
+
+**Chapter 5, the estimator problem.** Two estimators with different assumptions as the operational definition
+of estimability. **Which is the method's only measurement procedure.**
+
+**What the four items establish. One thing.** The method's claims, its ordering, its limits and its one
+measurement rule. **None requires the nine papers, and a reader can evaluate the method on its own terms.**
+
+**What the reader will lack. The evidence.** Which is what the other paths supply. **A judgement about whether
+the method is useful can be made from the four items; a judgement about whether it is motivated requires the
+material.**
+
+**How to test the method with no reading at all. One exercise.** Take the ninety-minute procedure of Chapter 27
+and run it on a live decision. **Which is the only part of the book whose value can be assessed without
+trusting the author, and it requires no prior reading beyond the procedure's page.**
+
+**Why the method has its own path.** Because the book's two halves are separable and the preface says so. **A
+reader who wants a decision procedure can have one, and a reader who wants to know what happened to nine
+results can have that, and the two readers need different lists.**
+
+
+## What to read before writing anything quantitative
+
+The paths are for readers. This section is for writers, and the four items are what a writer needs before
+producing a claim about a heavy-tailed quantity.
+
+**One. The window rule.** A scaling claim carries its window or it carries nothing. **Which is one sentence in the
+methods section and the difference between a checkable claim and a slogan.**
+
+**Two. The two-estimator rule.** Where a quantity is estimated rather than computed, at least two methods with
+different assumptions. **Which is a sentence and a table row, and it is the book's operational definition of
+estimability.**
+
+**Three. The existence check.** Write the defining expression and check that it converges. **Which takes
+minutes and is the step most often skipped, because the standard machinery computes through a non-existent
+object without signalling.**
+
+**Four. The boundary clause.** Every regularity being relied on carries what would have to stay the same. **Which
+converts an assumption into a monitorable condition and gives the claim a duration.**
+
+**What the four items produce. A different paper.** One whose claims are checkable, whose method is stated, and
+whose conditions are on the page. **Which is not a higher standard of rigour; it is a different set of
+sentences.**
+
+**What they cost. Three sentences and ten minutes.** Which is the argument for adopting them: none requires new
+data, new methods, or new analysis.
+
+**Where they are most likely to change a conclusion. The existence check.** Because it is the one that can
+reveal that a quantity the analysis depends on does not exist, and the revelation arrives before the analysis
+rather than after review.
+
+**Why the four are listed for writers rather than readers.** Because a reader can recover a window from a
+source and a writer's omission cannot be recovered by anyone downstream. **Four sentences at the point of
+writing, and the reading becomes possible for everyone who follows.**
+
+**What to do if only one is adopted.** The window rule. **It is the cheapest, it is visible to a reader, and a
+paper that carries its windows invites the other three questions.**
+
+
+## A note on scope
+
+Three neighbours. Not in the book.
+
+**The technical literature on rough volatility.** Chapter 3 uses it as evidence about the fate of a
+tool, and does not survey it.
+
+**The behavioural literature on decision-making under uncertainty.** Kahneman's work is the register
+this book borrows, not its subject; the mechanisms of judgement are assumed rather than examined.
+
+**The machine-learning literature on estimation in high dimensions**, which has its own results about
+shrinkage, regularisation and out-of-sample failure. Chapter 22's argument would be strengthened by
+reading it, and I have not.
+
+**A reader who wants one recommendation**: read Mandelbrot 1967, then Thorp 1969, then Taleb 2009,
+then Corral 2020 in that order. It is a hundred pages of primary material, it is the spine of this
+book, and it ends with the most instructive disagreement in the sequence.
+
+## Three items for a reader who writes about risk
+
+The paths are for readers of this material. Three items are for anyone who writes about risk, and each is short
+enough to be adopted without a project.
+
+**The window rule.** Every scaling or tail claim carries the range over which it was measured. **Which is one
+clause and prevents the most common form of uncheckable claim.**
+
+**The two-estimator rule.** Every estimated quantity carries a second estimate under different assumptions, or a
+statement that one was not available. **Which is one table row and converts a claim about a number into a claim
+about a method.**
+
+**The consequence clause.** Every risk statement carries what happens if the level is exceeded. **Which is one
+sentence and is the component most often missing, because the level and the frequency are the components the
+analysis naturally produces.**
+
+**What the three have in common. One property.** Each is a clause rather than a section, and each can be added
+to a document without new analysis. **Which is why they are adoptable, and why a writer who adds them will
+produce documents that are checkable by a reader who was not involved.**
+
+**What they do not include. The existence check.** Which is a longer addition and belongs in the analysis rather
+than in the writing. **The three above are what a writer controls at the point of writing.**
+
+**How to test whether they are being used. One review.** Take a document and count the claims without windows,
+the estimates without a second method, and the risks without a consequence. **Three counts, and the third is
+usually the largest.**
+
+**Why the appendix ends with items for writers.** Because a reader can recover a window from a source and a
+writer's omission cannot be recovered by anyone downstream. **Three clauses, adopted at the point of writing,
+and the reading becomes possible for everyone who follows.**
+
+
+## Three checks before citing anything from this material
+
+The appendix lists reading paths. Three checks are for a reader who intends to cite something, and each is short
+enough to run before a draft is finished.
+
+**Check the date against the objection.** Confirm whether the criticism existed when the paper was written. **The
+timeline's neighbouring entries answer this in minutes and prevent the most common anachronism in this
+material.**
+
+**Check the claim's boundary in the source.** Read the paragraph that states the result and find the range. **Where
+the source states none, the citation must supply one or acknowledge its absence, and acknowledging it is the
+honest option.**
+
+**Check whether the citation relies on the claim or the tool.** Which determines what the citation needs. **A tool
+citation can survive the claim's failure; a claim citation cannot, and the distinction is invisible in a
+reference list.**
+
+**What the three checks have in common. One property.** Each is answered by looking at the source rather than at
+the secondary literature. **Which is the difference between citing a result and citing a summary of it.**
+
+**Which check is most often skipped. The third.** Because it requires deciding what the citation is doing. **Which
+is a decision the author can make in a sentence and which no reviewer can make for them.**
+
+**What the checks cost. Twenty minutes per citation.** Which is more than most drafting allows and less than the
+cost of the errors they prevent. **Three checks, and the third is the one that changes what a citation's
+supporting text must say.**
+
+**Why this section closes the appendix.** Because the reading paths are for understanding and the checks are for
+use. **A reader who has followed the paths and runs the checks is in a position to write about this material
+rather than to paraphrase it.**
+
+
+## If you read only this page
+
+Thirty minutes. One paper. Mandelbrot 1967. Then the first chapter of this book. Then one register entry. That is the whole of it. Nothing else is required. No apparatus. No vocabulary. No figures to check.

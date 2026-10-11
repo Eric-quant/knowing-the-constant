@@ -1,0 +1,438 @@
+# The Burden of Proof {#sec-burden-of-proof}
+
+In October 2014, five authors posted a preprint to arXiv under a title that reads like a legal
+doctrine and is treated as one: "The Precautionary Principle (with Application to the Genetic
+Modification of Organisms)" [@taleb2014precautionary]. The authors are Taleb, Read, Douady, Norman
+and Bar-Yam, and their affiliations span engineering, physics, complex systems and philosophy. The
+paper exists in a single version, submitted on 17 October 2014 and never revised. OpenAlex records 46 citations for it. A small number. A load-bearing argument.
+
+This is the least cited paper in the book and the most contested. It argues for severe limits on a
+technology, and it does so by turning an ethical slogan into a decision rule with conditions. Two conditions.
+
+The chapter takes the rule apart, states what it does and does not license, and reports the
+criticisms. In the book's vocabulary from Chapter 26, the rule is a **grade III claim with a grade
+II argument attached**, which is the weakest combination in the scheme — and the chapter says so
+before the critics do.
+
+## Two versions of the principle
+
+The precautionary principle is usually stated loosely: if an action might cause serious or
+irreversible harm, do not take it until its safety is established.
+
+Stated that way it is unusable, and the paper says so itself. Any action might cause harm. The
+version that follows from the loose statement is "do nothing", which the authors call the paralysis
+fallacy and dispose of in a section of its own.
+
+What they propose instead is a **restricted version**, with two conditions that must hold together:
+
+**The risk must be systemic rather than local.** First condition. A local risk has a boundary: the damage occurs
+somewhere, can be isolated, can be cleaned up, and can be accounted for afterwards. A systemic risk
+has no boundary; once it occurs it propagates through a network.
+
+**The distribution must be fat-tailed.** Second condition. The extremal outcomes must be capable of ending the game
+rather than merely being unlikely.
+
+Where both hold, the paper calls the situation a **ruin problem**, and it argues that the standard
+apparatus does not apply. Where either fails, ordinary cost-benefit analysis is appropriate.
+
+| | Thin-tailed | Fat-tailed |
+| --- | --- | --- |
+| **Local exposure** | Safe: cost-benefit analysis applies | Safe, but requires strict risk management |
+| **Systemic exposure** | Safe: consequences can be isolated and measured | **The domain of the precautionary principle: the burden of proof moves to the proposer** |
+
+The table's value is that it is also a **list of where the principle does not apply**. Three of the
+four cells say ordinary analysis is fine. That is what distinguishes a rule from a slogan: it can be
+used to refuse, and it can be used to refuse the refusal.
+
+## Why infinite damage cannot be averaged
+
+The paper's hardest argument concerns permanence, and it is worth following because it is where the
+rule stops being a matter of taste.
+
+If the harm extends over all future times, the sum of the harm across time does not converge. The
+integral diverges. That is not rhetoric; it is the same divergence that produced the variance
+problem in Chapter 1, applied to a different integral.
+
+Once the harm is infinite, something follows with no counterpart in ordinary risk analysis.
+**any non-zero probability multiplied by an infinite harm is still infinite.** A small probability
+does not tame an unbounded consequence.
+
+The conclusion the authors draw is not "the action must never be taken". It is narrower and more
+interesting: **in these problems, cost-benefit analysis is not an available tool**, because its two
+sides are not in the same units. A finite benefit divided by an infinite harm is zero. The
+comparison is not conservative or aggressive; it is undefined.
+
+Alongside this sits a citation to the ruin theorems: a strategy that repeatedly accepts a small
+probability of total loss will, with probability one, eventually suffer it. The point is not that
+small probabilities are large. It is that **repetition converts a small per-trial probability into
+a certainty, and serial decision-makers are in the repetition business.**
+
+## The burden of proof, and why it moves
+
+Standard practice distributes the burden: the proposer shows the benefit, the opponent shows the
+harm. The paper argues that in ruin problems this allocation fails for a reason about the timing of
+evidence rather than about anyone's incentives.
+
+The sentence I would put on the cover of the paper is this one, paraphrased from the text: in ruin
+problems, the claim that experience has so far provided no evidence of ruin is not a valid argument,
+because **by the time the evidence arrives it will by definition be too late**. A diagnosis after
+death is not a diagnosis.
+
+From this the paper derives the rule that gives the principle its name: the burden of showing the
+absence of harm falls on whoever proposes the action, not on whoever opposes it.
+
+A second sentence matters as much: **the absence of observed harm is not evidence of the absence of
+hidden risk.** That is the direct link back to Part I. Tail events are rare by construction; their
+non-appearance in a sample is exactly what the distribution predicts, so non-appearance carries
+almost no information.
+
+## Where the paper says the principle does not apply
+
+This is the part most often dropped in discussion, and dropping it converts the paper into
+something it argues against.
+
+**Vaccination is excluded.** Deliberately. The paper's criterion is systemic risk, and vaccination does not
+present that structure.
+
+**Nuclear energy is split.** Small-scale applications have harms that are comparatively limited and
+better characterised, so they can be handled by cost-benefit analysis. Large-scale deployment falls
+under the principle.
+
+**Genetically modified organisms fall under it,** on the authors' argument, on systemic grounds: the authors argue that such
+organisms have a propensity to spread without control, that cross-breeding prevents disentangling
+modified from wild populations, and that the consequences are therefore system-wide and
+irreversible. They also name a second risk source that is easy to overlook — monoculture, which
+reduces the buffering capacity of the biological system independently of the modification itself.
+
+The authors' own statement of scope is broader than the application: the aim, they write, is to
+place precaution within a formal statistical and risk structure so that decision-makers can
+distinguish the cases that require it from the cases where invoking it is inappropriate. The
+project page says the same: applies to, but not limited to, transgenics.
+
+**The three-way discrimination is the paper's real contribution.** Same criterion, opposite
+conclusions in adjacent domains. A framework that only ever points one way is a position; one that
+can refuse its own application is a tool.
+
+## The criticisms, with their provenance
+
+Public responses arrived within months, and they came in three forms which are worth separating
+because they carry different evidential weight.
+
+**A public critique from a scientist.** On 25 August 2014, Steven Novella, a neurologist, published
+a response that is worth quoting precisely because it grants the mathematics and attacks the
+application: the argument is mathematically rigorous, he wrote, but too absolute, and biologically
+naive. His specific objections were that natural systems have homeostatic mechanisms so damage is
+unlikely to be total, and that treating any permanent harm as infinite ignores the fact that
+severity varies and that the alternatives carry risks of their own.
+
+**A technical review and a response.** In late November 2014, Trevor Charles reviewed the paper,
+questioning among other things the absence of a definition of "genetically modified", the assertion
+of uncontrolled spread without citation, and the conflation of monoculture with modification. The
+following day the five authors published a point-by-point response. One sentence from it identifies
+the real disagreement: they state that they did not perform a statistical analysis but a rigorous
+analysis of risk as derived from probability theory. **That is the crux. Two disciplines, two questions. The reviewers asked for
+data; the authors answered that their subject was the structure of the argument.**
+
+**The authors' own assessment**, which must be labelled as such: on their project page they state
+that they had received no credible or relevant technical comment. This is a party's account of its
+own reception, not a finding, and it is recorded here as a position rather than as fact.
+
+| When | Who | Substance | Status |
+| --- | --- | --- | --- |
+| 2014-08-25 | Novella, public blog | Mathematical rigour granted; absolute and biologically naive; treats all permanent harm as infinite | Public criticism |
+| 2014-11-27 | Charles, technical review | Undefined terms; uncited spread claim; monoculture conflation | Peer-style review |
+| 2014-11-28 | The five authors | Point-by-point reply; characterises the work as probability-theoretic rather than statistical | Author response |
+| Undated | Authors' project page | States no credible technical comment received | **Party's own account** |
+
+One common attribution should be avoided. The best-known attacks on precaution as a policy
+principle — on its costs, and on its coherence — are general critiques of the idea. I found no
+evidence that they were aimed at this paper, and they are not counted here as criticisms of it.
+**Attaching a general objection to a specific paper is the commonest distortion in this literature.**
+
+## Grading the rule
+
+Using the vocabulary of Chapter 26.
+
+**The criterion is a construction.** A filter, not a finding. No evidence attaches to it. Nothing about the intersection of systemic exposure and fat
+tails is an empirical finding. It is a proposed filter, and its authors present it as one.
+
+**The infinite-harm argument is a grade II claim.** It survives changes of distribution family,
+because it rests on divergence rather than on a parameter, and it does not survive a change of the
+object: for a reversible harm, the integral converges and the argument evaporates.
+
+**The procedural rule is grade III.** The weakest grade. "In irreversible situations the burden falls on the proposer"
+refers to no measurable quantity. It cannot be supported by data in the way lower grades can, which
+is exactly the weakness the last round of critique identified.
+
+The combination is uncomfortable and worth naming. **A grade III prescription resting on a grade II
+argument is the standard shape of a policy paper, and it is the shape most vulnerable to the
+objection that the prescription is doing more work than the argument supports.**
+
+## Claim and tool
+
+The claim: that precaution, properly restricted, identifies a class of decisions where the standard
+apparatus is structurally inapplicable rather than merely imprecise.
+
+The tool: the two-condition filter, the ruin framing, the burden-of-proof shift, and — most
+durably — the discrimination list, which demonstrates that the filter can be applied against the
+interests of whoever is invoking it.
+
+## Boundary conditions
+
+The rule applies only where systemic exposure and fat tails coincide, and both conditions must be
+argued rather than asserted. Where exposure is local, the rule is silent and cost-benefit analysis
+resumes.
+
+It fails where the harm is reversible, because the divergence argument requires permanence.
+
+It fails as a general policy filter, because most policy problems are local in the relevant sense.
+**The paper's own three-way discrimination is the proof that it cannot be used as a blanket
+doctrine.**
+
+And it inherits the estimation problem of Part I: deciding whether a risk is systemic is a
+judgement about mechanisms and networks, often made with less information than the judgement
+deserves.
+
+## The cost of shifting the burden
+
+The burden-of-proof rule is a procedural instruction, and like every procedural instruction it has
+costs. Stating them is part of using the rule honestly.
+
+**It slows beneficial deployment.** That is the price. A proposer who must demonstrate the absence of harm
+before proceeding will proceed less often, and some of what does not proceed would have been
+beneficial. The framework does not measure this cost, and its critics are right that the cost is real.
+
+**It rewards the status quo asymmetrically.** Usually. The rule applies to proposals for change, and the
+existing arrangement is not required to demonstrate its own safety. Where the status quo carries the
+same systemic exposure as the proposal, the asymmetry is arbitrary and the rule should be applied
+against the incumbent instead. **The criterion's indifference to whether the action is doing or
+refraining is what makes that application possible, and it is also what makes it rare.**
+
+**It can be captured.** Any burden can. A rule that requires demonstration of safety is a rule that can be used to
+delay a competitor. This is a general property of procedural burdens rather than a defect of this
+one, and the defence is the same as for every device in this book: the record of who invoked it and
+for what.
+
+**The cost that the rule is buying protection against.** Where the exposure is genuinely systemic and
+irreversible, the cost of a delayed benefit is paid in the currency of foregone improvement, and the
+cost of a premature deployment is paid in the currency of an absorbing state. **The rule's claim is
+that the second currency is different in kind, not that it is larger.**
+
+**What would weaken the rule substantially.** Evidence that the screening cases are rare — that most
+technologies and policies are local and reversible, so that the rule's scope is narrow and its costs
+are borne by a few decisions rather than many. **I think that is probably true, and it is an argument
+for the rule being applied sparingly rather than an argument against its existence.**
+
+## The rule as a test of the proposer
+
+The burden-of-proof rule is usually read as a constraint on proposals. Read the other way, it is a
+diagnostic that a proposer can apply to their own case, and the diagnostic is more useful than the
+constraint.
+
+**Three questions a proposer can ask.**
+
+**What is the failure mode if I am wrong, and is it bounded?** First question. Where the failure is bounded, the
+burden allocation is irrelevant and the ordinary case for the proposal stands.
+
+**Can I demonstrate the absence of the harm, or only its low probability?** Second question. The rule
+asks for the former. **A proposer who can only offer the latter is asking to be permitted a risk rather
+than demonstrating its absence, which is a different request and should be made explicitly.**
+
+**Would I accept the same argument from the opposite side?** Third question. The symmetry test. Where the
+argument works only in one direction, it is advocacy.
+
+**What the diagnostic changes.** A proposer who runs it either arrives at a bounded failure mode — in
+which case the proposal proceeds on ordinary grounds — or discovers that the failure mode is
+unbounded, at which point the useful move is to change the proposal rather than to argue about the
+rule.
+
+**Two examples of the second outcome.**
+
+**A deployment with an exit the organisation cannot secure.** Unbounded in time. The failure mode
+is unbounded in time, not in damage. The remedy is contractual: secure the exit before deploying.
+
+**A visible commitment.** Self-fulfilling. The failure mode is social and
+irreversible. The remedy is the pre-committed review, which converts a later judgement into a decision
+made now.
+
+**Why this framing is worth the section.** Because the burden rule is otherwise a demand made of other
+people, and a demand made of other people is resisted. **A test a proposer runs on their own case is
+adopted; a rule imposed on the proposer is litigated.**
+
+## The three ways the rule is evaded
+
+Procedural rules fail through evasion more often than through disagreement, and the three evasions of the
+burden rule are worth naming because each has a recognisable form.
+
+**Evasion one. Redefine the exposure as local.** The claim that consequences are confined to identifiable
+parties, made without examining the network. **The tell is that the confinement is asserted rather than
+demonstrated, and the demonstration is usually a diagram nobody has drawn.**
+
+**Evasion two. Move the demonstration to a later stage.** Commit now, demonstrate safety later, with the
+promise of an exit if the demonstration fails. **The tell is that the exit requires an agreement, and the
+agreement has not been obtained.**
+
+**Evasion three. Treat the absence of observed harm as the demonstration.** This is the evasion the rule
+exists to block, and it is the most common. **The tell is a sample whose size is described but whose
+sensitivity is not, since the argument depends on how much harm the sample would have detected.**
+
+**How to test for each.** One question apiece.
+
+**Evasion one.** Name the propagation path or state that it does not exist. **An actor who cannot name either
+has asserted locality rather than established it.**
+
+**Evasion two.** Exit needs consent. Name who must agree and whether they have. **If the counterparty's agreement is
+required and has not been sought, the exit is not an exit.**
+
+**Evasion three.** Say what magnitude of harm the sample would have detected with reasonable probability. **A
+sample that could not have detected the harm carries no information, and computing the detectable magnitude
+takes a power calculation rather than a new dataset.**
+
+**Why the evasions are worth listing.** Because the rule is otherwise a principle that everyone agrees with
+and nobody applies, and the evasions are what applying it looks like from the inside. **Three questions turn a
+principle into a check, which is what the rule needs to be in a meeting.**
+
+## Precaution and the regulator's problem
+
+The rule's costs fall on proposers. Regulators face the mirror image, and their situation is worth stating
+because it explains why the rule is applied inconsistently.
+
+**The regulator's asymmetry.** Structural, not moral. Incentives, again. Approving something harmful is a visible failure with an
+identifiable decision behind it. Refusing something beneficial is an invisible failure with no decision to
+point at. **The incentive therefore favours refusal, and the cost is borne by whoever would have benefited.**
+
+**Three consequences.**
+
+**Approval standards drift upward.** Each approved risk that materialises adds a requirement, and no
+countervailing pressure removes requirements. The drift is not corruption; it is the accumulation of
+visible failures.
+
+**Beneficial innovations are delayed by the length of the review rather than by its outcome.** The delay
+costs lives in the aggregate and appears in no record.
+
+**The burden shifts to small proposers.** Compliance costs are fixed, so they fall hardest on those with the
+least capacity. **A rule intended to protect the public can function as a barrier to entry, and the effect
+is invisible in the rule's text.**
+
+**What the framework contributes.** Not a correction of the incentive, which is structural. What it
+contributes is a vocabulary for stating the trade: **which exposure is systemic, which is local, and what
+scale is available between refusal and full deployment.** The scale question is the regulator's real
+instrument, because a pilot with monitoring is neither approval nor refusal.
+
+**What it cannot contribute.** The exchange rate. The exchange rate between a delayed benefit and an avoided harm. **That is a
+political question, and the framework's value is to make it explicit rather than to settle it.**
+
+## The rule and the cost of being wrong twice
+
+The burden rule shifts who must demonstrate safety. Its weakest point is the case where the harm is avoided and
+the benefit is lost, and the loss is invisible.
+
+**The asymmetry restated. Two errors.**
+
+**Approving a harmful exposure.** Visible, attributable, and followed by a tightening of standards.
+
+**Refusing a beneficial one.** Invisible, unattributable, and followed by nothing.
+
+**Why the second is larger in aggregate.** Because approvals are individually scrutinised and refusals are not.
+**Each decision is small and the accumulation is not, and no actor's record reflects the aggregate.**
+
+**Three mechanisms that amplify the invisibility.**
+
+**No counterfactual.** The benefit not realised leaves no trace in any dataset.
+
+**Diffuse beneficiaries.** The losers from a refusal are many and unorganised; the potential losers from an
+approval are identifiable and mobilised.
+
+**Selection in the record.** Approved risks that materialise generate evidence; refused benefits do not.
+**The historical record is therefore biased toward the case for caution, and the bias is structural.**
+
+**What the framework offers against this.** The negative list, which is the only part of the apparatus that names
+the cases where the answer is to proceed. **A framework whose output is always caution is not a framework, and
+the list is what distinguishes one from a disposition.**
+
+**What it cannot offer.** An estimate of the aggregate cost of refusals. **That quantity would require a
+counterfactual record that no institution keeps, and its absence is itself the reason the asymmetry
+persists.**
+
+**The practical implication.** A practitioner applying the rule should ask, for each case, what the cost of a
+wrong refusal would be, and write it down. **Writing it down does not make the cost visible to the institution,
+but it makes it visible to the decision.**
+
+## The rule and the record it leaves
+
+The burden rule is a procedural instrument, and procedures are judged by the record they generate. This
+section states what a good record contains, because a rule with no record is a rule that cannot be audited.
+
+**Three items per decision.**
+
+**One. Which condition was examined, and by whom.** Systemic exposure or not, fat tailed or not. **The
+examiner's identity matters: a condition examined by the proposer is examined differently from one examined
+independently.**
+
+**Two. What evidence was offered for the examination.** A diagram of the propagation path, a measurement of
+the tail, or an assertion. **The three are distinguishable in a record and indistinguishable in a summary.**
+
+**Three. What the proposer was required to demonstrate, and what was accepted.** Which is where the burden
+rule is either applied or evaded. **The evasions of the earlier section leave specific traces: a locality
+asserted, an exit promised without consent, a sample whose sensitivity was not stated.**
+
+**What the record prevents. Two failures.**
+
+**The rule being cited without being applied.** A minute that says the principle was considered is not a
+record of an examination.
+
+**The conditions being re-litigated at each stage.** A record of what was examined, and when, is what stops
+the same argument from being run again at the review.
+
+**What the record cannot do.** Make the examination correct. **It makes the examination visible, which is the
+most a procedural instrument can achieve and the reason the rule is worth having.**
+
+**Why the record is the chapter's practical output.** Because the rule is a principle that everyone agrees
+with, and its application is the three items above. **A principle without a record is a disposition; a
+principle with one is a procedure.**
+
+## The rule and three kinds of demonstration
+
+The burden shifts to the proposer. What counts as a demonstration differs by case, and three kinds appear.
+
+**A demonstration that the exposure is local.** A propagation path that stops, or an argument that it cannot
+start. **Which answers the first condition and is the commonest form, and the one most often asserted rather than
+shown.**
+
+**A demonstration that the harm is reversible.** A recovery time, a clean-up cost, a restorable state. **Which
+answers the third condition and is the form most often available and least often offered.**
+
+**A demonstration that the scale is bounded.** A pilot, a cap, a staged commitment. **Which answers neither
+condition and satisfies the rule anyway, because a bounded exposure is not a ruin problem.**
+
+**What the three have in common. One property.** Each is structural and none requires a probability. **Which is
+what makes the rule applicable where the quantities may not exist, and it is the reason the framework belongs in
+the same part as the ledger.**
+
+**Which is strongest. The third.** Because it does not depend on any empirical claim about propagation or
+reversibility and can be adopted unilaterally by the proposer. **Which is why the book's practical advice is often
+a scale.**
+
+**Which is weakest. The first.** Because locality is easy to assert and hard to establish, and the assertion is
+the framework's own evasion. **The demonstration requires a path or a reason, not a boundary drawn on a
+diagram.**
+
+**What a proposer should offer. The third, plus whichever of the first two is available.** Which is a pilot with a
+bounded loss and a stated recovery time, and which satisfies the burden in a paragraph. **Three demonstrations,
+and the one that requires no empirical claim is the one to lead with.**
+
+Three demonstrations. Locality. Reversibility. Scale. Offer the third. Then the others.
+
+## A note on what this chapter could not check
+
+The derivation in the paper's appendix was not available to me, and none of its formulas are
+reproduced here. The arguments above are taken from the paper's text as available, from the authors'
+separate exposition, and from the published responses; where the book paraphrases rather than
+quotes, it says so.
+
+The 2018 citations to a "precautionary principle" paper that appear in some later work are, on the
+evidence available, secondary citations of this 2014 preprint rather than references to a separate
+2018 text. This book therefore cites the preprint, and does not treat a 2018 paper as existing.
+
+And the content of the two responses is described at the level of their published summaries and the
+authors' reply. I read neither in full.

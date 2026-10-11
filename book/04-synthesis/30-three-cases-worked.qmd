@@ -1,0 +1,494 @@
+# Three Cases, Worked {#sec-three-cases}
+
+The previous chapter stated the ordering. This one runs it, three times, on decisions of different
+kinds.
+
+The cases are chosen so that each ends in a different cell: one reaches sizing, one is bounded, and
+one ends in a refusal. **A procedure that is only ever illustrated with cases it handles well is a
+brochure.**
+
+The specifics are constructed rather than drawn from documented episodes, and they are generic by
+design. What matters is the shape of the reasoning, not the particulars.
+
+## Case one: allocating to a strategy with a documented edge
+
+A firm is considering allocating capital to a quantitative strategy. The strategy has four years of
+live results, a described mechanism, and a capacity estimate from the manager.
+
+**Stage one, ruin.** What can end the sequence? The allocation itself is bounded — capital at risk is
+limited to the amount committed and the strategy does not use leverage beyond a stated multiple.
+There is one irreversible exposure, and it is not financial: **the strategy is run by a single
+individual, and if that person leaves the capability leaves with them.** The mechanism is
+informational and social: the knowledge is not documented and the departure would be negotiated by
+someone with a reputational interest in the outcome.
+
+The bounding moves available are unglamorous: require documentation, secure a key-person clause,
+or commit a smaller amount. The ledger's rule applies, and the option set changes before any
+estimate is made.
+
+**Stage two, estimability.** The quantity to be estimated is the expected excess return. Four years
+of data, an annualised excess return of a few percent, and a volatility of about ten percent. Using
+the detection arithmetic of Chapter 24, the ratio is well below the level at which four years is
+informative.
+
+Two estimators give different answers. A sample average of the excess return gives one number; a
+mechanism-based estimate — how large would the mispricing be, given what creates it and who else can
+exploit it — gives another, and the two disagree by more than the effect the allocation depends on.
+
+**Cell: Bound.** The output is a range and a decision rule, not a point estimate.
+
+**Stage three.** Because the cell is Bound, the sizing machinery is not applicable. The output is a
+cap: allocate at a size where the strategy's failure has no consequence for the firm, and set a
+review date tied to the documentation requirement.
+
+**What produced the answer.** A key-person exposure identified structurally, a detection calculation
+that required no data beyond the volatility, and a cap. No forecast was made.
+
+## Case two: deploying a technology whose failure mode is not yet bounded
+
+An organisation considers adopting a technology across its operations. A pilot is available, and the
+vendor's reference customers report favourable results.
+
+**Stage one, ruin.** The exposures: a contractual commitment to a vendor, an operational dependency
+on a single provider, and an informational exposure if the adoption reveals strategic details about
+the organisation's processes.
+
+None of these is physically irreversible. All three are reversible at a cost, and the cost is
+estimable in the way Chapter 16 requires: the contractual exit cost under stress, the time to exit,
+and whose agreement is needed. The answers place two of the three on the bounded side after
+reshaping — a shorter term with a break clause, a second provider qualified in parallel.
+
+The third — the informational exposure — cannot be bounded by contract. It is handled by the
+bounding move of deliberate smallness: the pilot is kept below the scale at which the exposure
+becomes material.
+
+**Stage two, estimability.** What must be estimated to decide? The productivity differential. It
+exists. Two estimators disagree: the vendor's case studies and the organisation's own pilot data,
+with the former more favourable. The pilot is small, so its estimate is weak.
+
+**Cell: Bound.**
+
+**Stage three.** No sizing machinery. The output is a decision rule: expand while the differential
+exceeds a stated threshold, at a scale that keeps the informational exposure below the materiality
+line, with a review at a fixed date.
+
+**What the three stages produced that ordinary analysis would not.** The pilot, which the economic
+case supported anyway, is now tied to two structural conditions — a documented exit and a
+materiality cap on the informational exposure — that a cost-benefit comparison would have no reason
+to mention.
+
+## Case three: a decision that ends in a refusal
+
+A person is offered a position that would require relocating, ending a professional relationship, and
+committing to a five-year contract with a non-compete clause.
+
+**Stage one, ruin.** The exposures: the non-compete is contractual and would restrict the ability to
+work in the field for a period; the relocation is physically and socially disruptive but reversible
+at a cost; the ending of the professional relationship is social and, on one reading, irreversible.
+
+The non-compete cannot be bounded by the individual — it is a term of an offer, and the only bounding
+move available is refusal. The relocation's exit cost is estimable. The social exposure's cost is
+borne by the person and cannot be bounded by contract.
+
+**Stage two, estimability.** Here the procedure stops, and the reason is worth stating carefully.
+
+What would need to be estimated? The value of the position. It is not clear that this quantity
+exists, because it depends on a five-year trajectory of which the position is one input, and the
+comparison against the counterfactual — the relationship not ended, the relocation not made — is not
+a well-defined quantity. Two estimators cannot be constructed, because there is no common scale on
+which the alternatives can be placed.
+
+**Cell: Avoid.**
+
+**Stage three.** No sizing, no range, no rule. **The output is the refusal.**
+
+And the refusal is not a failure of the procedure. **It says that this decision cannot be made by
+the method the procedure provides** — which is a genuine finding about the decision, arrived at in an
+hour, and which is more useful than a number computed from the two options' salary differentials.
+
+Nothing about this outcome says the person should decline the offer. It says that a decision on the
+merits requires a different kind of reasoning: values, priorities, and the things the person is
+unwilling to trade. **The procedure's contribution is to identify that fact quickly, before a
+comforting calculation is performed that would obscure it.**
+
+## What the three cases share
+
+Each began with structure rather than estimation. None produced a forecast. Each ended in a cell, and
+the cell determined the form of the output. And in two of the three, the stage that produced the
+decisive insight required no data at all.
+
+| | Case one | Case two | Case three |
+| --- | --- | --- | --- |
+| Stage-one finding | Key-person exposure | Vendor lock-in and informational exposure | Non-compete that cannot be bounded |
+| Cell | Bound | Bound | Avoid |
+| Output | Cap and review date | Decision rule with materiality cap | Refusal |
+| Estimates used | One volatility figure | None required for the screen | None |
+
+## Where they differ, and what that shows
+
+The cases differ in the availability of a scale. In cases one and two, the quantities being estimated
+are comparable across alternatives: a return against a return, a productivity differential against a
+baseline. In case three, the alternatives do not share a unit.
+
+**That difference, not the domain, determines whether the procedure reaches stage three.** A personal
+decision with comparable options — which of two jobs pays more for the same work — would reach it. An
+institutional decision without a common scale — how much institutional autonomy to trade for
+resources — would not.
+
+**The cell is a property of the quantity and the decision, not of the seriousness of the subject.**
+
+## Refutation conditions
+
+The worked cases are illustrations and can fail in the ways illustrations do.
+
+**If the stage-one findings are wrong.** Each case's decisive step is a judgement about what is
+irreversible, and judgements of that kind are contestable. A reader who disagrees about whether the
+key-person exposure or the informational exposure is truly irreversible will reach a different
+option set.
+
+**If the cases are unrepresentative.** Three cases selected to fill three cells will demonstrate that
+three cells can be filled. They do not establish that the assignment is usually clear, and in my
+experience it often is not.
+
+**If the procedure produces the same answers as ordinary practice.** This is the most serious
+objection and it cannot be settled by construction. **The claim that the sequence adds something
+requires cases where the ordinary method's recommendation differs from the screened one and one of
+them is better over time.** That evidence does not exist, and the book does not have it.
+
+## Claim and tool
+
+The claim: the ordering can be run on decisions of different kinds, and it produces the form of the
+output rather than only a number.
+
+The tool: the three cases as templates, and the observation that the availability of a common scale
+determines the cell.
+
+## Boundary conditions
+
+The cases assume an enumerable set of exposures and a decision-maker able to act on structure. Both
+fail in many real settings.
+
+They assume that the estimability judgement can be made in reasonable time, which holds where the
+defining quantities are simple and fails where they are not.
+
+And they say nothing about how the person in case three should decide. That is the point of the
+refusal.
+
+## What the cases leave out
+
+Three constructed cases illustrate the procedure and cannot demonstrate it. The gaps are worth naming
+so that a reader does not read more into them.
+
+**No case has an outcome.** Each ends at a decision. The procedure's claim is about the quality of the
+reasoning rather than the result, and a case with an outcome would introduce luck into the illustration.
+
+**No case is contested.** Each treats the stage-one judgement as settled. In practice the judgement is
+the contested part, and the cases are silent on how the argument is conducted.
+
+**Each case has one decision-maker.** Real decisions involve committees, and the ordering's behaviour in
+a group is different, as the previous chapter's section describes.
+
+**Each case is small.** Three exposures, one quantity. A case with thirty exposures and no clean
+quantities would illustrate a different problem: that the procedure is applicable but the enumeration
+is the hard part.
+
+**What would strengthen the material.** Cases with outcomes, drawn from documented episodes and coded
+by stage, which would also test the prediction about error sensitivity. **That study has not been run,
+and this book does not pretend that three constructed illustrations substitute for it.**
+
+**Why the cases are still worth including.** Because the procedure is easier to argue about when it has
+been run on concrete material, and because a reader who has seen three worked applications can attempt a
+fourth. **The cases are prompts rather than evidence.**
+
+## A fourth case, in outline
+
+The reader can supply the material. This section supplies the structure, as a template for the exercise.
+
+**Choose a decision that is live.** Not a retrospective one, because the temptation to fit the analysis
+to the known outcome is overwhelming.
+
+**Write the exposures before thinking about probabilities. Fast.** Five minutes, no discussion. A list
+of five to eight items is typical. If the list has more than a dozen, the decision has not been
+specified.
+
+**For each exposure, name the mechanism.** One of four: physical, contractual, informational, social.
+Where two apply, name both. This step is where the fourth mechanism is usually discovered.
+
+**For each exposure, write the stress-case exit cost.** Not the current cost. If the number is
+unavailable, write "unavailable", which is a finding.
+
+**Then, and only then, list the quantities.** One or two. For each, write the defining expression.
+
+**Attempt two estimators.** Different assumptions, not different arithmetic. Ten minutes each.
+
+**Assign the cell.** Compute, Bound, Replace or Avoid.
+
+**Write the output.** A fraction, a range with a rule, a substitute quantity, or a refusal.
+
+**End with the review date.** Within six months, tied to something observable.
+
+**What the exercise produces.** A page, and usually two surprises: an exposure from the fourth
+mechanism, and a quantity that turned out to be in a different cell than expected. **Both surprises are
+the procedure working, and neither is visible from the outside.**
+
+## A case where the procedure disagrees with ordinary practice
+
+The three worked cases showed the procedure in operation. The objection that matters is that it produces
+the same answers as ordinary practice, and the way to address it is to construct the smallest example
+where the two diverge.
+
+**The ordinary practice.** A firm evaluates a proposal on its expected net present value at a discount
+rate reflecting the project's risk class, with a sensitivity analysis over the main assumptions.
+
+**The case.** A proposal with a positive expected value, a modest downside in most states, and one state
+in which a regulatory approval fails after substantial irreversible spending. The probability of that
+state is estimated at one in twenty.
+
+**Where the ordinary practice lands.** The expected value remains positive, the sensitivity analysis shows
+the project turning negative if the downside is twice as large, and the recommendation is to proceed with
+monitoring.
+
+**Where the procedure lands.** Stage one identifies the irreversible spending as the exposure. The exit cost
+in the failure state is the full sunk amount plus the contractual commitments, and the bounding moves
+available are staged approval and a smaller initial scope. **The recommendation changes from "proceed with
+monitoring" to "proceed only with a structure in which the failure state is survivable", and the change is
+independent of the one-in-twenty probability.**
+
+**Why the divergence is the point.** The two procedures consume different inputs and produce different
+outputs. The ordinary one takes the probability as given and weights the states. The ordering takes the
+structure as given and requires the failure state to be bounded before any weighting happens. **A firm that
+runs both gets an expected value and a structure, and the structure determines whether the expected value
+is reachable.**
+
+**What the example does not show.** That the procedure produces better outcomes. It shows only that the two
+procedures differ, which is the necessary condition for the procedure to be worth running. **The sufficient
+condition — that the divergence favours the procedure over time — remains untested, and the book says so
+wherever the claim appears.**
+
+## The three cases as a template for a decision memo
+
+The cases are illustrations. Turned around, they are a format for a one-page memo, and the format is a
+deliverable an organisation can adopt without adopting the whole framework.
+
+**The shape of the memo.**
+
+**One line of context.** The decision, the deadline, who bears the consequences.
+
+**The exposures.** Four to eight entries with four fields each: exposure, mechanism, stress-case exit cost,
+bounding move adopted.
+
+**The quantities.** One or two, each with its defining expression, two estimators where applicable, and its
+cell.
+
+**The output.** A fraction with its discount, a bound with its rule, a substitute with its justification, or a
+refusal with its reason.
+
+**The review.** A date and an observable trigger.
+
+**What the format excludes. Deliberately.**
+
+**Probabilities in the first section.** They are admissible in the quantities section, where they belong.
+
+**Expected values.** If the memo reaches stage three, the sizing arises from the edge and its uncertainty
+rather than from an expected value calculation.
+
+**Scenarios of the future.** A scenario is a claim about a mechanism, and the mechanism field carries that
+instead.
+
+**What the format forces.** A reader can see, in one page, whether the decision's irreversibilities were named
+and whether each quantity's method was stated. **That is the whole review, and it takes ninety seconds.**
+
+**Why an organisation might adopt it.** Because it is short, it is comparable across decisions, and it does
+not require anyone to accept the book's epistemology. **A memo format is a low-commitment way to change what
+gets asked, and what gets asked is what changes behaviour.**
+
+## A case that fails at the first stage
+
+The three worked cases each reached a cell. The most instructive case is the one that does not, because it is
+the most common in practice and the least often written up.
+
+**The case. A commitment whose exposures cannot be enumerated.** A firm considers entering a market where its
+counterparties, its regulators and its own operational dependencies are all unfamiliar. **The decision is real,
+the stakes are material, and the enumeration stalls after three items.**
+
+**What the procedure does. It stalls.** Stage one requires a list, and the list cannot be completed. **The
+failure is not analytical; it is a property of the situation.**
+
+**Three unhelpful responses.**
+
+**Proceed with the short list.** Which produces a decision that looks screened and is not.
+
+**Abandon the procedure.** Which is defensible and usually undefended, so the decision gets made on the
+ordinary grounds without the reader knowing that the screen was skipped.
+
+**Produce a substitute list.** Risk registers, consultant frameworks, analogues from other markets. **Which
+converts an admission of ignorance into an artefact.**
+
+**The response the framework supports. One move.** Bound the residual category structurally. **A cap on total
+commitment, a staged entry, a review date that forces the enumeration to be attempted again with better
+information.**
+
+**What the case establishes. Two things.**
+
+**The residual category is not a failure of effort.** Some situations are unfamiliar enough that the exposures
+cannot be listed, and the honest output says so.
+
+**The bounding moves work without the list.** A cap and a staged entry bound an exposure whose composition is
+unknown, which is precisely what the ledger is for. **The instrument's first field requires a list; its third
+requires only a number.**
+
+**Why this case is worth including.** Because it is the one practitioners meet most often, and a worked-examples
+section that contained only cases reaching a cell would misrepresent the instrument's ordinary use. **The
+fourth case is the one where the framework's value is clearest, because it is the one where doing nothing
+analytically is a real option and the bounding move is what distinguishes it from paralysis.**
+
+## What the three cases cost to run
+
+The cases are presented as illustrations. Their practical value depends on how long they took, and the times
+are worth stating because the procedure's adoption depends on them.
+
+**The times. Approximate.**
+
+**Case one, the strategy allocation. Two hours.** Most of it on the capacity estimate and the key-person
+exposure, neither of which required data.
+
+**Case two, the technology decision. Ninety minutes.** The exposures were named quickly; the estimability
+question took longer because two estimators had to be identified.
+
+**Case three, the personal decision. Forty minutes.** It ended in a refusal, and the refusal arrived when the
+estimability question could not be answered.
+
+**What the times have in common. One property.** The bulk of the work was in stage one in two cases and in
+stage two in the third, and no case spent significant time on sizing. **Which is consistent with the chapter's
+claim that the first two stages are where the difficulty lies.**
+
+**What the times do not include.** The preparation of the material. **Case one required the strategy's
+documentation; case two required the vendor's terms. An hour of document collection per case, in practice.**
+
+**What a practitioner should take from the times. Two things.**
+
+**The procedure fits in an afternoon.** Which is the adoption question, and the answer is favourable.
+
+**The documents are the bottleneck.** Which is the practical argument for keeping the records the instrument
+chapter describes.
+
+**Why the times are stated at all.** Because the procedure's cost is its main obstacle and its benefit is
+diffuse. **A stated cost of two hours against a changed option set is a reasonable trade, and it is only
+visible if the cost is on the page.**
+
+**What the times are not. Measured.** They are the author's estimates for constructed cases, and an actual
+application may be slower. **The claim is that the procedure is an afternoon's work, not that it is
+forty minutes'.**
+
+## The cases and the two questions a reviewer asks
+
+The three cases are worked examples. What a reviewer takes from them is two questions, and they are the
+chapter's most transferable content.
+
+**Question one. Was the enumeration attempted before the analysis.** Which distinguishes a decision that was
+screened from one that was argued. **In all three cases the first stage names at least one exposure the
+ordinary analysis would not have mentioned, and the presence of that exposure in the record is the evidence
+that the stage ran.**
+
+**Question two. Is the cell stated with its method.** Which distinguishes a bounded quantity from a computed
+one. **In cases one and two the cells are Bound and the record says so; in case three the cell is Avoid and the
+output is a refusal.**
+
+**What the two questions detect. Two failures.**
+
+**A decision argued without a screen.** Which shows up as an exposure list containing only the exposures the
+ordinary analysis would have named.
+
+**A bound presented as an estimate.** Which shows up as a range with no threshold attached.
+
+**Why the questions are better than a checklist. One reason.** They are asked of the record rather than of the
+analysis. **A checklist asks whether each item is present; the two questions ask whether the record is
+consistent with the stages having been run, which cannot be satisfied by filling in fields.**
+
+**What a reviewer cannot detect. Two things.**
+
+**An incomplete enumeration.** The omissions are invisible.
+
+**A convenient cell.** A cell assigned to reach a desired method looks like one assigned honestly.
+
+**Which is why the chapter's cases end in different cells.** The three cells are the demonstration that the
+procedure's output varies, and a reviewer who sees only Compute outputs has grounds for suspicion. **Two
+questions, asked of the record, and the variation across the three cases is what makes them answerable.**
+
+**What to do when the answers are unsatisfactory.** Ask for the stage-one list. **It is one page, it is the
+procedure's first output, and its absence is the finding.**
+
+## The cases and the ordinary alternative
+
+Each case reaches an output. Comparing it with what the ordinary analysis would have produced is what makes the
+cases informative, and the comparison is short.
+
+**Case one. The strategy allocation.** Ordinary analysis: allocate in proportion to the estimated edge, monitor
+performance. **The procedure's output: a cap, a documentation requirement, and a review date tied to the
+key-person exposure. The difference is a requirement that addresses an exposure the ordinary analysis would not
+have named.**
+
+**Case two. The technology decision.** Ordinary analysis: compare the vendor's case against the internal pilot
+and decide. **The procedure's output: a shorter term with a break clause, a second provider qualified in
+parallel, and a materiality cap on the informational exposure. The difference is the two structural conditions
+attached to a favourable economic case.**
+
+**Case three. The personal decision.** Ordinary analysis: compare salary, location and prospects. **The
+procedure's output: a refusal, with the reason that the alternatives do not share a scale. The difference is that
+the ordinary analysis would have produced a number.**
+
+**What the three comparisons show. One pattern.** In each case the ordinary analysis produces a recommendation
+and the procedure produces conditions. **The conditions are what change the decision, and they are what the
+ordinary analysis has no reason to generate.**
+
+**What the comparisons do not show. That the procedure is better.** They show that it differs at the point of
+the output. **The sufficient condition — that the differences favour the procedure over time — remains untested,
+as the chapter says in its refutation section.**
+
+**Why the comparison is worth making explicitly.** Because a reader can judge for themselves whether the
+differences matter in their setting. **Three comparisons, each one sentence of ordinary output against one
+sentence of procedural output, and the judgement is the reader's.**
+
+**What to do with the comparisons. One test.** Take a decision already made and write both outputs. **Which is
+the retrospective exercise of Chapter 27 and the cheapest way to see whether the procedure would have changed
+anything.**
+
+## The cases and three ways to use them
+
+The three cases are illustrations. Three uses are available to a reader, and each requires a different amount of
+work.
+
+**As templates. The lightest use.** Take the memo format and fill it for a live decision. **Which requires an hour
+and no acceptance of the book's epistemology.**
+
+**As training. The intermediate use.** Run the three stages retrospectively on a decision whose outcome is known,
+which teaches the notation without the hindsight problem the chapter describes. **Which requires an afternoon and
+produces a capability rather than a record.**
+
+**As evidence. The heaviest use.** Compare screened and unscreened decisions over time. **Which requires years,
+a comparison group, and is the study the book says it does not have.**
+
+**What the three have in common. One property.** Each uses the cases without requiring the reader to accept the
+book's argument. **Which is what makes the cases worth publishing: they are prompts, and the argument they
+illustrate can be assessed separately.**
+
+**Which use is most valuable per hour. The first.** Because the memo format changes what gets produced
+immediately. **The second produces capability and the third produces evidence, and both are slower.**
+
+**What the first use cannot do. Test the method.** A template applied once produces a record, not a
+comparison. **Which is why the third use is named: it is the only one that bears on whether the method works.**
+
+**Why the three uses are worth separating.** Because a reader who takes the third will not start, and one who
+takes only the first will not test. **Three uses, three levels of commitment, and the chapter's cases serve all
+three.**
+
+Three cases. Three uses. Templates first. Training second. Evidence last. Start with the first.
+
+## A note on what this chapter could not check
+
+All three cases are constructed. None is drawn from a documented episode, the details are generic,
+and no outcome is reported because none occurred.
+
+The central empirical claim the cases would need to support — that the screened recommendation
+differs from the ordinary one and is better over time — is explicitly identified above as unsupported
+rather than left for a reader to infer.

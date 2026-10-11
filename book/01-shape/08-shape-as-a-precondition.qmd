@@ -1,0 +1,476 @@
+# Shape as a Precondition {#sec-shape-precondition}
+
+Part I has been about objects: what the distribution of a price change looks like, what a
+coastline's roughness does when you change the ruler, what memory does to a random walk. This
+chapter converts all of it into something Part II can use, and the conversion is the argument of
+the chapter.
+
+The conversion is this. **A claim about shape should enter a decision as a precondition, not as a
+conclusion.**
+
+The difference is not semantic. It is bookkeeping, and the reason bookkeeping matters is that a conclusion is something a reader is entitled to rely on while a precondition is something the reader is obliged to check against their own circumstances before it can be used. A conclusion is a thing you have established and can build on. A
+precondition is a thing you are assuming, which has a scope, a duration, and a failure mode that
+must be specified before it can be used. Most of the damage in applied risk work comes from
+treating the first as the second.
+
+## Three ways a shape claim gets used
+
+The same sentence — "returns are fat-tailed" — does three different jobs depending on where it
+sits.
+
+**As a finding.** It reports a property of a dataset, with a method and a scope. Harmless here. This is where the
+sentence belongs in a paper, and where it does the least damage.
+
+**As a modelling assumption.** It licenses a particular family, a particular estimator, and a particular set of tools, which is a large commitment to make on the strength of a sentence. This is where it earns its keep, and where its scope must travel with it.
+
+**As a decision constraint.** Here it changes behaviour, which is why the bookkeeping that accompanies an assumption in its second role has to travel with it into its third role, or the decision inherits a licence that was never granted. It changes what you are willing to do: how much you will hold, what
+kind of insurance you will buy, which instruments you will avoid. This is where it is most useful
+and where it is most often misapplied, because the sentence arrives without its scope.
+
+The mistake is not using a shape claim in the third role. It is using it in the third role without
+the second role's bookkeeping.
+
+## The shape sheet
+
+The book's proposal here is a small piece of paperwork. For any shape claim you intend to act on,
+write four lines.
+
+**Claim.** The sentence, in the form it was established. "Daily returns of large-capitalisation
+equity indices have tails thicker than Gaussian over the period 1926–2020."
+
+**Scope.** Where it was measured, and over what range of scales. If the claim came from a paper,
+the range is in the paper. If you cannot find it, the claim has no scope and you do not have a
+precondition.
+
+**Duration.** The period over which you are willing to assume it still holds. This is a judgement,
+and it is the line most often left blank. A claim about 1926–2020 is not a claim about next year,
+and the difference is not small.
+
+**Failure mode.** What you will do if the claim turns out to be false. A precondition without a
+failure mode is a belief.
+
+Four lines. The first two are easy. The last two change behaviour. Most practitioners can write the
+first two from memory. Writing the third forces the admission that a historical regularity has a
+shelf life, and writing the fourth forces a plan for being wrong.
+
+## The sheet in use
+
+An example with an irreversible component, worked through the four lines.
+
+A firm is considering a long-term supply contract with a single counterparty. The engineering is
+sound and the price is favourable. Losses if the counterparty fails are bounded by the prepayment,
+but the firm becomes dependent on that counterparty for a critical input, and switching costs rise
+with time.
+
+**Claim.** The counterparty is financially stable and the input will remain available at
+competitive prices.
+
+**Scope.** Stability was assessed from the counterparty's audited accounts and three years of
+delivery record; the market for the input has two other qualified suppliers at present.
+
+**Duration.** Five years, which is the contract term. The judgement here is that the counterparty's
+accounts are informative for about two years and the supplier market for longer, so the duration is
+set to the shorter of the two horizons rather than to the contract.
+
+**Failure mode.** If the counterparty defaults in year four, the firm has a prepayment exposure and
+no qualified alternative. That is not survivable at the current scale. **The sheet, having reached
+this line, has changed the decision:** the answer is not to avoid the contract but to bound the
+exposure — shorter terms, staged commitments, or a second qualified supplier developed in parallel.
+
+The point of the example is the fourth line. The first three could be written by any competent
+analyst. The fourth is the one that detects an expose whose failure is not survivable, and it does
+so without any probability estimate.
+
+## Applying it to the three claims of Part I
+
+Three worked examples, using the material of the preceding chapters.
+
+**Claim one: prices have thicker tails than the Gaussian model allows.**
+
+Scope: daily and monthly returns of liquid markets; tails characterised by an exponent that can be
+estimated over the top few percent of observations. Duration: unchanged in character since the
+1960s, though the estimated exponent moves with the method. Failure mode: if returns are Gaussian
+after all, the cost of the mistake is over-insurance, which is paid in small increments.
+
+**Claim two: roughness is scale-invariant over two to three decades in geographic and market
+series.**
+
+Scope: stated range only. Duration: structural, since the generating processes — erosion,
+heterogeneous participants — change slowly. Failure mode: outside the range, the exponent is not
+defined, so decisions that assume scaling beyond it are unsupported.
+
+**Claim three: long memory is present in volatility and contested in returns.**
+
+Scope: contested, and the estimates depend on the estimator. Duration: unknown. Failure mode: using
+a long-memory model for pricing, which the previous chapters showed to be structurally invalid
+because the process is not a semimartingale.
+
+The third example is the interesting one. It is also the reason the sheet has four lines. The claim
+is in a state where scope is unavailable and duration is unknown. Under the sheet's rules, it
+cannot enter as a precondition. **It can be used as a hypothesis to be tested, which is a different
+role with a different bookkeeping standard.**
+
+## Objection: this is ordinary risk management
+
+The sheet looks like a checklist for counterparty risk, and the objection is that the discipline
+already exists under other names.
+
+The difference is what happens when the estimate is unavailable.
+
+Ordinary risk management requires a probability, or a distribution, or at least a score. When the
+probability cannot be estimated — the case from the previous interlude — the practice degrades into
+assigning a qualitative label to a number, which is how a judgement becomes a figure that looks
+computed.
+
+The sheet does not require a probability at any line. It requires a scope, a duration, and a
+failure mode, all three of which are properties of the decision and the situation rather than
+estimates of the world. **That is the point: the discipline is available precisely where estimation
+is not.**
+
+## The duration line, examined
+
+Duration is the line left blank most often, so it is worth saying what can support it. Three things. Three things.
+
+**Mechanism stability.** Physics-based regularities last longer than behavioural ones, because the
+mechanisms change more slowly. A roughness exponent in a geological series has a longer expected
+life than a return regularity in a market.
+
+**Institutional stability.** A regularity that exists because of a rule lasts as long as the rule,
+and rules change on political timescales. Many market regularities are of this kind, which
+dramatically shortens their duration.
+
+**Statistical evidence.** A stability test across subperiods is evidence, and it is weaker than it
+looks when the subperiods are few or the statistic is noisy — as Part I showed for exponents.
+
+Where none of the three is available, the correct duration line reads "unknown", and the claim
+cannot enter as a precondition. That outcome is common, and writing it down is more useful than
+inventing a number.
+
+## What makes a shape claim usable
+
+From the three examples, a short list. A shape claim can carry a decision when:
+
+- its scope is stated in the form it was measured;
+- the transformation it survives is named, in the sense of Chapter 1's grades;
+- its duration is either argued or explicitly flagged as an assumption;
+- the cost of being wrong is stated and is survivable.
+
+None of these is exotic. All four are usually absent. All four are routinely absent, and the fourth is absent most often. **A
+precondition whose failure is unsurvivable is not a precondition; it is a bet with the stakes
+hidden.**
+
+## What Part II takes from Part I
+
+Part II turns from objects to standards, and it inherits four things.
+
+**A taxonomy of failure.** Three ways a number fails, and the diagnosis determines the remedy.
+
+**A reporting convention.** Exponents travel with their windows, and the rule has been applied to
+every exponent in this book.
+
+**A distinction between grades of robustness.** Claims survive specified transformations, or they
+do not, and the grade should be stated.
+
+**A habit.** Ask over what range, and ask what happens if the answer is wrong.
+
+The next chapter opens Part II with a paper that begins from exactly this position: an author
+dividing the world into cells according to the kind of uncertainty involved, and then arguing that
+the standard tools apply in three of the four.
+
+## Claim and tool
+
+The claim: shape claims used as preconditions require scope, duration, and a failure mode, and
+claims lacking these cannot carry decisions.
+
+The tool: the four-line sheet, and the rule that a claim without a failure mode is treated as a
+belief rather than a precondition.
+
+Both are the book's. The sheet is deliberately modest. It is a form, not a theory. It is a form, and forms are what
+organisations use when a practice needs to be checkable by someone other than the person doing it.
+
+## Boundary conditions
+
+The sheet applies to decisions that are repeated or that carry irreversibility. For a single,
+reversible decision taken once, the paperwork exceeds the stakes.
+
+It presumes that scope can be stated. Some shape claims arise from qualitative observation rather
+than measurement, and for those the sheet's second line cannot be completed, which places the claim
+outside the decision procedure rather than inside it.
+
+And it does not tell you what duration to assume. That is a judgement about the stability of the
+world, not a calculation, and pretending otherwise would be the same error the sheet exists to
+prevent.
+
+## Three ways a shape claim fails to be usable
+
+The chapter's earlier material states what makes a shape claim usable. This section states the three
+ways such a claim can fail to be usable even when it is true, because each has a different remedy and
+confusing them wastes effort.
+
+**The claim is true but unmeasurable at the relevant horizon.** Wrong horizon. Use the ordinary machinery. The tail is genuinely fat, and the
+decision's horizon is short enough that the fatness has almost no effect on the relevant
+probabilities. The remedy is not better measurement. It is to notice that the shape claim is
+irrelevant to this decision and to use the ordinary machinery, with the awareness that the horizon
+matters.
+
+**The claim is true and measurable but the mechanism is unknown.** Common case. No extrapolation. The statistic is stable, the range
+is documented, and nobody can say what generates it. The claim is usable for prediction in the
+measured range and unusable for extrapolation, because extrapolation requires knowing that the
+mechanism persists. **This is the most common state of an empirical regularity, and treating it as a
+licence to extrapolate is the most common error of the three.**
+
+**The claim is true, measurable, and mechanistically understood, but the mechanism is under pressure.** Watch the constraint. A regularity produced by a regulatory constraint lasts as long as the constraint. The
+claim is usable, its duration is estimable from the durability of the constraint, and the monitoring
+requirement is to watch the constraint rather than the statistic. This is the regime Chapter 25
+treats in detail, and it is the only one of the three cases where a precise duration can be stated
+with a reason.
+
+**How to tell them apart.** One question. Ask it first. One question, applied to whatever the shape claim is being used for:
+**what would have to stay the same for this to keep working?** If the answer is "the data-generating
+process, at a horizon I have measured", the first case applies. If the answer is "something I can
+name but not verify", the second. If the answer is "a rule or constraint with a known institutional
+life", the third.
+
+**Why this distinction matters here.** Because a precondition
+without a stated duration is a claim about the future disguised as a description of the present, and
+the disguise is what makes shape claims feel more solid than they are.
+
+## From claim to precondition in four steps
+
+This chapter has argued that a shape claim must be usable before it can be a precondition. That argument
+has four steps, and they are worth stating as a procedure.
+
+**Step one. State the shape claim with its range.** Not "the tail is fat" but "the tail index is below
+three over the range measured, by these two methods".
+
+**Step two. State the duration and its basis.** Mechanism stability, institutional stability, or
+statistical evidence. **Where none is available, write "unknown", and the claim cannot enter as a
+precondition.**
+
+**Step three. State the failure mode of the decision.** What happens if the deviation is larger than
+assumed. Where the answer is a bounded loss, the precondition is a preference. **Where the answer is an
+absorbing state, the precondition is a requirement and the bounding moves come first.**
+
+**Step four. State what would falsify the precondition.** An observable event — a rule change, a
+publication, a capacity threshold — that would move the claim out of the usable category. **A
+precondition without a falsifier is a belief with a number attached.**
+
+**What the four steps produce.** A page. The claim, its range, its duration with a reason, the
+consequence of being wrong, and the event that would overturn it. **That page is what the rest of the
+decision can be built on, and building it takes an hour.**
+
+**Why the social mechanism matters here.** The fourth step is where a project's sponsors discover that
+the precondition has an expiry date, and the discovery is usually unwelcome. **Writing the date down
+before the commitment is the whole of the technique.**
+
+## When the precondition fails after the decision
+
+A precondition is a claim with a duration, and the interesting case is the one where it fails while the
+position is open. The response is the final part of the discipline and the one least planned.
+
+**Three failure paths.**
+
+**The mechanism changes.** Abrupt path. A rule is altered, a market structure shifts, a population's composition changes.
+**This is the abrupt path and the one that the leading indicators of Chapter 25 are designed to pre-empt.**
+
+**The estimate was wrong.** Gradual path. The range or the exponent was misjudged, and the deviation appears as the position
+being more dangerous than assumed. **This is the gradual path and the more common one.**
+
+**The range stops covering the horizon.** Invisible to statistics. The precondition was true over its stated range, and
+the range is no longer the relevant one. **This path is invisible to statistics and detectable only by asking
+whether the range still covers the decision's horizon.**
+
+**What to have written down before the position opened. Three lines.**
+
+**The indicator.** One observable. What observable would tell you the precondition has failed.
+
+**The threshold.** Failure, not noise. How much deviation constitutes failure rather than noise.
+
+**The action.** Written in advance. What the position becomes when the threshold is crossed.
+
+**Why the third line is the one usually missing.** Because the action is a decision, and writing a decision
+before the position exists feels like pre-empting a judgement. **It is the same objection the pre-committed
+exit meets, and the answer is the same: the judgement made now, unemotionally, is better than the judgement
+made later by someone with a position to defend.**
+
+**What to do if none of the three was written.** Impose them now, in writing, with a date. **A precondition
+without a monitoring specification is a claim that will be replaced silently, which is how positions are held
+past the point where their justification has expired.**
+
+## A precondition checklist for a proposal
+
+The chapter's four steps are a procedure. Compressed, they are a checklist for anyone presenting a proposal whose
+justification includes a shape claim.
+
+**Four lines, on one page.**
+
+**The claim, with its range and its method.** Not "returns are fat-tailed" but the quantity, the range, and the
+two estimators.
+
+**The duration, with its basis.** Mechanism stability, institutional stability, or statistical evidence. **Where
+none is available, write "unknown", and the proposal has no precondition and must be argued on other grounds.**
+
+**The failure mode of the decision.** What happens if the precondition fails while the position is open. **A
+bounded loss is a preference; an absorbing state is a requirement.**
+
+**The trigger.** The observable whose appearance would require re-examination.
+
+**What the checklist changes about a proposal.** It converts an assumption into a monitorable condition. **A
+proposal carrying the four lines can be approved with a review date; one without them can only be approved on
+confidence in the proposer.**
+
+**What a reviewer does with it. Three questions.**
+
+Is the range the same range as the decision's horizon. **A precondition measured over the wrong range is a
+precondition for a different decision.**
+
+Is the mechanism cited one that exists, or one that would explain the pattern if it existed. **The distinction
+between a mechanism and a hypothesis is frequently blurred in proposals.**
+
+Is the trigger observable without new measurement infrastructure. **A trigger that requires a new data collection
+is not a trigger.**
+
+**Why the checklist is short.** Because the alternative to a short checklist is a longer section of the proposal
+that the reader skips. **Four lines on the first page are read; four pages in an appendix are not, and the
+placement is part of the discipline.**
+
+## Three preconditions and their durations
+
+A precondition is a shape claim plus a duration. Three kinds of duration appear in the book's material, and each
+is estimated differently.
+
+**Mechanism stability. The longest.** A regularity produced by a physical or structural mechanism lasts as long
+as the mechanism. **Estimated from the mechanism's nature: a roughness exponent in a geological series has a
+longer expected life than a return regularity in a market.**
+
+**Institutional stability. The life of a rule.** A regularity produced by a fee schedule, a settlement convention
+or a regulation lasts as long as the rule. **Estimated from the rule's political or contractual life, which is
+often knowable from documents.**
+
+**Statistical stability. The shortest and the least informative.** A regularity supported only by its history,
+with no mechanism identified. **Estimated from the record's length, which is a lower bound on nothing in
+particular.**
+
+**What the three imply for a precondition's statement. One sentence each.**
+
+**Mechanism.** "This holds as long as the mechanism does, which is expected to be decades." **Which is a claim
+about physics and is checkable in principle.**
+
+**Institution.** "This holds as long as the rule stands, and the rule is up for review in two years." **Which is
+checkable from a document and gives a monitoring date for free.**
+
+**Statistics only.** "This has held over the measured period and no mechanism has been identified." **Which is
+the honest statement and the one that keeps the claim out of the precondition role.**
+
+**Why the third case cannot serve as a precondition.** Because a precondition requires a reason to expect
+continuation, and a record supplies none. **Which is the chapter's central distinction: a shape claim is usable as
+a precondition when it is indexed to something that can be monitored, and a record cannot be monitored.**
+
+**What to do when only statistical evidence is available.** Treat the claim as an input to the analysis rather
+than as a precondition, and use a structural instrument for the exposure. **Which is the same substitution the
+book makes everywhere else, and it is why the ledger precedes the analysis.**
+
+## The precondition and three ways it can be stated
+
+A precondition is a shape claim with a duration. Three statements of it appear in the material, and each carries
+a different amount of information.
+
+**A bare shape claim.** "Returns are fat-tailed." **Which is a sentence in a paper and carries no range, no
+duration and no failure mode.**
+
+**A claim with a range and a method.** "The tail index is below three over the range measured, by these two
+methods." **Which is checkable and is what a paper's methods section supports.**
+
+**A claim with a duration and a failure mode.** "The tail index is below three over the measured range, the
+regularity is produced by a settlement convention whose review is in two years, and the decision fails if the
+index exceeds three." **Which is what a decision needs and is the form the chapter's checklist produces.**
+
+**What the three statements cost. Increasingly more.** The first is free; the second requires the analysis; the
+third requires knowing the decision. **Which is why the third is written by analysts who are close to the
+decision rather than by researchers.**
+
+**What the third statement adds. Two things.** The duration, from a named source, and the failure mode. **Both of
+which are inputs to the monitoring specification rather than to the analysis.**
+
+**How to move from the second to the third. One question.** What would have to stay the same, and what would tell
+you it had not. **Which is the whole of the addition and takes ten minutes.**
+
+**Why the third is what a proposal needs.** Because a proposal is a commitment over time, and a claim without a
+duration cannot be committed to. **Three statements, and the third is the shortest route from a research result
+to a decision that can be monitored.**
+
+**What to do when the duration is unknown.** Write "unknown" and treat the exposure structurally. **Which is the
+substitution the book makes everywhere and is preferable to a duration invented for the occasion.**
+
+One claim. One duration. One failure mode. Write all three. Then it is a precondition.
+
+## The precondition and three ways it fails to be useful
+
+A precondition can be true and useless. Three failures appear in the material, and each has a different remedy.
+
+**True and irrelevant to the decision's horizon.** The tail is fat over decades and the decision operates within
+months. **The remedy is not better measurement: it is to notice that the claim does not bear on the decision and
+to use the ordinary machinery.**
+
+**True, relevant, and with no identified mechanism.** The statistic is stable over the relevant range and nobody
+can say what produces it. **The remedy is to use the claim for prediction inside the measured range and to refuse
+extrapolation, because extrapolation requires knowing that the mechanism persists.**
+
+**True, relevant, mechanistically understood, and under pressure.** A regularity produced by a rule whose
+continuation is contested. **The remedy is a monitoring specification aimed at the rule rather than at the
+statistic, and this is the only one of the three where a duration can be stated with a reason.**
+
+**What the three have in common. One property.** Each is a case in which the precondition is not the binding
+question. **Which is why the chapter's checklist asks for the failure mode rather than for more evidence.**
+
+**How to tell them apart. One question.** What would have to stay the same for this to keep working. **The
+horizon case answers "nothing, because the decision does not reach there"; the mechanism-less case answers
+"something I cannot name"; the pressure case answers "a rule with a known review date".**
+
+**Why the distinction matters for a proposal.** Because a proposal resting on the first case is over-documented;
+one resting on the second needs a refusal of extrapolation written into its assumptions; and one resting on the
+third needs a monitoring specification. **Three failures, three remedies, and only the third can be
+scheduled.**
+
+**What to do when the case is unclear.** Treat it as the second and refuse extrapolation. **Which is the
+conservative reading and is available without knowing the mechanism.**
+
+## The precondition and three kinds of monitoring
+
+A precondition needs a monitor. Three kinds appear, and the differences determine what an organisation has to be
+able to observe.
+
+**Watch the statistic. The direct form.** Re-estimate the shape claim on a schedule. **Which requires the
+estimation capability to persist and is the slowest of the three, since a changing exponent is visible in the
+estimate long after the mechanism has moved.**
+
+**Watch the mechanism. The fast form.** Observe the rule, the network or the physical system that produces the
+regularity. **Which is faster and requires knowing what the mechanism is, and it is the form the chapter
+recommends where a mechanism has been identified.**
+
+**Watch the exposure. The structural form.** Track the position's worst case rather than the claim's input. **Which
+requires no estimate at all and is available where the claim's status is uncertain.**
+
+**What the three have in common. One property.** Each is a schedule rather than an activity. **Which is what makes
+a precondition monitorable: a claim that nobody is scheduled to re-examine is not a precondition but an
+assumption.**
+
+**How to choose among them. One condition.** Whether a mechanism has been identified. **Where one has, watch the
+mechanism; where none has, watch the exposure and refuse extrapolation.**
+
+**Why watching the statistic is the weakest.** Because it detects the failure after the position has been exposed
+to it for the duration of the estimation lag. **Which is the same argument the decay chapter makes about watching
+returns instead of the mechanisms, and it is the reason both chapters recommend the same practice.**
+
+**What to record. Two items.** The monitor and the schedule. **Which is a clause and which is what turns a
+precondition into a commitment that an organisation can keep.**
+
+## A note on what this chapter could not check
+
+The four-line sheet is a proposal, registered as part of the book's constructed material. There is
+no literature testing whether such a form improves decisions, and I have not run the experiment.
+
+The three worked examples use the material established in Chapters 1 to 6, and the scopes and
+durations assigned to them are my judgements rather than findings. A reader who disagrees with the
+duration assigned to the first claim is disagreeing about the stability of markets, which is the
+right thing to disagree about.

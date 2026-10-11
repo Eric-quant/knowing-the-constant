@@ -1,0 +1,481 @@
+# The Constant {#sec-the-constant}
+
+This chapter is written out of order, and it is worth saying why.
+
+Everything in Part IV depends on a distinction that the first three parts have been using without
+defining. The distinction is between a result that holds because the world is arranged a certain
+way and a result that holds because the conditions under which it was measured were arranged a
+certain way. Those two look identical in a paper and behave completely differently in use.
+
+I wrote this chapter before the parts that surround it, because a book that keeps using a device
+without fixing it drifts. What follows is the fixing. It is the longest constructive piece in the
+book, and the one most likely to be wrong.
+
+## The problem this chapter is trying to solve
+
+Consider four sentences, all of which appear in the literature this book covers.
+
+Prices have thicker tails than a Gaussian model allows.
+
+The fractal dimension of the west coast of Britain is about 1.25.
+
+Long memory is present in volatility.
+
+In irreversible situations, the burden of proof falls on whoever proposes the action.
+
+The sentences look like members of one class. They are statements about the world, each supported
+by some combination of data and argument. But they behave differently under pressure, and the
+difference is not about how well they are supported. It is about what each one depends on.
+
+Take the first. If you replace the Gaussian family with a Student's t family, the sentence survives
+untouched.
+
+Take the second. Replace the measuring procedure — dividers with box counting — and the number
+moves. Replace the window and it moves again. The sentence as written does not survive a change of
+instrument, though a reformulated version of it does.
+
+Take the third. Replace the sample period and it may reverse. The claim is period-specific in a way
+the sentence does not advertise.
+
+Take the fourth. It is not a claim about the world at all in the way the others are. It is a claim
+about how a decision procedure should be arranged, and it survives changes of every physical
+parameter because it does not refer to any.
+
+**Four sentences, four different kinds of robustness, and no vocabulary in common use that
+distinguishes them.** That is the gap this chapter fills, and it is a gap that costs money in a specific way: a claim whose scope is unstated cannot be audited by the person who relies on it, because the audit requires knowing what the claim was supposed to survive.
+
+## Definition
+
+Call a claim **a constant** to the degree that it survives a specified transformation of the
+observing conditions.
+
+A constant is always indexed. There is no such thing as a constant, full stop; there is a constant
+with respect to a transformation class. Four classes do most of the work in this book.
+
+| Class | The transformation | The question it answers |
+| --- | --- | --- |
+| Scale | Change the resolution or the ruler | Does the claim depend on how closely you look? |
+| Distribution | Change the assumed family | Does the claim depend on the model you assumed? |
+| Instrument | Change the measurement procedure | Does the claim depend on how it was measured? |
+| Regime | Change the period, market, population, or institution | Does the claim depend on a particular historical arrangement? |
+
+The definition is deliberately thin. Deliberately. It says nothing about truth, which is a separate question. A
+claim can be perfectly robust and perfectly false — "all swans are white" survives every
+transformation of the ruler. What the definition captures is the property that makes a claim usable
+in conditions other than the ones that produced it.
+
+## Three grades
+
+The grades are ordered by how much has to be assumed, and each has a test.
+
+### Grade I: the scale constant
+
+A grade I constant survives a change in the resolution at which it is measured.
+
+**Test.** Sweep the resolution across the range the data supports and re-measure. If the
+qualitative conclusion holds across the sweep, the claim is grade I over that range.
+
+**Example from Part I.** The statement "this series is rough in a scale-invariant way over two to
+three decades" is grade I. The statement "its exponent is 1.62" is not; the exponent survives the
+sweep only within a window, which is the content of the scale-span rule.
+
+**What grade I does not require.** It does not require the estimate to be precise. A claim can be
+grade I with wide error bars, as long as the qualitative conclusion is stable across resolutions.
+
+### Grade II: the distributional constant
+
+A grade II constant survives a change in the assumed distribution family.
+
+**Test.** Fit at least three families that differ in tail behaviour and check whether the
+qualitative conclusion survives. Chapter 1 set this out as the three-step procedure, and the
+critical step is the last: a grade II claim keeps its qualitative content and discards its
+numerical content.
+
+**Example.** "Returns have thicker tails than the Gaussian allows" is grade II. It survived the
+abandonment of the distribution family its discoverer proposed, which is the strongest form of
+evidence a grade II claim can have.
+
+**Why grade II is the workhorse grade.** Most useful empirical claims about markets are grade II.
+They describe a shape rather than a parameter, and shapes are more portable than parameters.
+
+### Grade III: the structural constant
+
+A grade III constant survives a change of regime, instrument, population, or institution.
+
+**Test.** Apply it out of sample, in a different market, or in a different period, and check that
+it still holds. This is the hardest test, and the one most often skipped.
+
+**Example.** "In irreversible situations, the burden of proof falls on the proposer" is grade III
+by construction, because it refers to no measurable quantity. Its test is not empirical in the
+usual sense: it is tested by whether the decision procedures that embody it produce outcomes people
+are willing to defend across cases.
+
+**The awkwardness of grade III.** Claims at this grade are the most useful and the least
+empirically disciplined, because they do not refer to quantities that can be measured. That
+combination is dangerous, and it is why the next section exists.
+
+## The error this vocabulary is designed to catch
+
+The characteristic error of applied work is not making a false claim. It is **quoting a claim at a
+higher grade than the one established.**
+
+Five instances from the material of this book, all of them documented in the chapters that introduced them, and in each case the inflated version is the one that circulated while the qualified version stayed in the paper.
+
+**One.** "Returns have thicker tails than the Gaussian allows" (grade II) is quoted as "returns
+follow a stable Paretian distribution with exponent 1.7" (grade I, and a specific family). The
+second claim is the first one plus two assumptions that the evidence never supported.
+
+**Two.** "The dimension of this coastline is 1.25" (grade I within a window, and a re-reading of
+someone else's data) is quoted as "coastlines have dimension 1.25" (grade III, across objects and
+regimes).
+
+**Three.** "Long memory is present in volatility" (grade II at best, and contested) is quoted as
+"markets have long memory" (grade III), and then used to justify a pricing model that the
+mathematics forbids.
+
+**Four.** "The fourth quadrant of a two-axis classification is where statistics fails" (a
+construction, grade not applicable) is quoted as "in finance you cannot use statistical methods"
+(grade III, over-general).
+
+**Five.** "The median result of this study is x" (grade I for that study) becomes "the effect is x"
+(grade III across studies), which is the replication failure mode in a sentence.
+
+The pattern is uniform. **Grade inflation happens when the qualifier is dropped, and the qualifier
+is always a scope.** The scale-span rule, the shape sheet, and the grade vocabulary are three
+different instruments aimed at the same failure.
+
+## Using the vocabulary
+
+Three steps, and they take a few minutes per claim.
+
+**Step one: name the transformation.** For any claim you intend to rely on, write down the
+transformation it needs to survive. If you cannot name one, the claim has no grade and cannot be
+used as a precondition.
+
+**Step two: run the sweep.** For scale, a resolution sweep. For distribution, a family sweep. For
+regime, an out-of-sample or cross-population check. For instrument, two measurement procedures.
+
+**Step three: state the grade with the claim.** The grade travels with the claim, in the sentence
+where the claim appears, not in a methods appendix.
+
+I have applied this to every claim in this book, and the results are humbling in a specific way.
+Most of what is known about the material in Part I is grade II. Most of the practical prescriptions
+in Parts II and III are grade III claims with grade II evidence attached, which is the weakest
+combination in the scheme.
+
+## Refutation conditions
+
+A device that cannot be refuted is not a device. Three ways this one could fail.
+
+**Failure one: the grades do not nest, and the ordering is meaningless.** If transformations of
+different classes interact — if a claim survives regime change only in certain windows, say — then
+the three-grade ladder imposes an order that the mathematics does not support, and users would be
+better served by listing the transformations survived rather than by ranking them.
+
+I think this objection is partly correct, and the correct response is to keep the list of
+transformations as the primary object and the grade as a summary. Where the two conflict, the list
+wins.
+
+**Failure two: most claims are unclassifiable.** If in practice the transformation cannot be named
+for most claims worth relying on, the device is unusable and its elegance is a liability.
+
+This objection is empirical, and I cannot answer it with evidence. My experience is that
+classification is possible for perhaps three claims in four, and that the fourth case is usually
+informative: a claim you cannot classify is usually a claim that has never been stated precisely
+enough to be tested.
+
+**Failure three: the device encourages grade inflation rather than preventing it.** If grade III
+acquires prestige, people will claim it. A book that ranks robustness creates an incentive to
+claim the top rank.
+
+This is the most serious objection, and it has no clean answer. The mitigation is that grade III
+claims cannot be supported by evidence in the way the lower grades can, so a reader who audits the
+support finds it missing. **The device is safer in the hands of an auditor than in the hands of a
+claimant**, which is a limitation worth stating plainly rather than hiding.
+
+## The device applied to itself
+
+The book's own instrument should be run through itself.
+
+**What transformation must "the Constant" survive?** Changes of domain: the claim is that the
+vocabulary works for claims in finance, in the physical sciences, and in decision theory.
+
+**Does it?** The vocabulary applies wherever claims have scopes, which is everywhere. The grades'
+calibration does not travel cleanly: what counts as a regime change is domain-specific, and in some
+fields the notion is contested.
+
+**Verdict.** The Constant is a grade II construction. Its qualitative content — claims should be
+indexed to transformations — survives changes of domain, and its specific machinery does not.
+
+That is a lower grade than I would like for the organising device of a book. Stating it is the
+point of the exercise.
+
+## Claim and tool
+
+**The claim**, such as it is: robustness claims lack a vocabulary for what they survive, and that
+lack causes a specific, common, expensive error.
+
+**The tool**: the index, the four transformation classes, the three grades, the tests, and the
+procedural steps.
+
+Both are the book's. Neither is validated. The tool is registered as B-001 and B-002 with its
+preconditions and the refutation conditions above, and it is offered in the expectation that
+failure two or failure three will eventually be the one that kills it.
+
+## Boundary conditions
+
+The device presumes that a transformation can be named and, usually, performed. For claims whose
+conditions cannot be varied — a unique historical event, a one-time decision — the vocabulary
+degenerates into a list of caveats and adds little.
+
+It presumes that the qualitative conclusion can be separated from the quantitative content, which
+is what makes grade II the workhorse. Where a claim's content is inherently numerical, grade II is
+unavailable and the choice is between grade I and nothing.
+
+And it says nothing about truth. A robust claim can be false, and a fragile one can be true. The
+grades discipline transfer, not belief.
+
+## Using the grades in a meeting
+
+The grade vocabulary is designed for a specific moment: when someone presents a claim and the room
+must decide how much weight to give it. This section states the exchange.
+
+**The question to ask. Short.** Which grade is this?
+
+**Grade I. No dissent expected.** A mathematical result or a definition. The disagreement, if any, is
+about relevance rather than truth.
+
+**Grade II. Empirical, with a stated boundary.** The claim holds over a range. Ask what the range is
+and how the range was established. A grade II claim without a boundary is a grade III claim in
+disguise.
+
+**Grade III. Procedural.** A prescription that refers to no measurable quantity. This is where most
+practical advice lives, and the useful question is not whether it is true but what would make it
+misleading.
+
+**Two follow-ups that do the work.**
+
+**What would move this claim to a lower grade?** A grade II claim is one whose boundary is
+contested. Naming what would resolve the contest identifies the evidence worth collecting.
+
+**Who bears the cost if this is wrong?** The book's closing rule, applied to the claim rather than to
+its author.
+
+**What the vocabulary is not.** It is not a ranking of importance, and it is not a scoring system to be
+averaged. **A grade III claim from a practitioner who bears the consequences is worth more than a grade
+I claim from someone who does not.**
+
+**Why the meeting needs it.** Because the alternative is that the most confidently stated claim carries
+the day, and confidence correlates with grade III rather than with grade I.
+
+## What a grade does not tell you
+
+The device has limits, and stating them is part of the device.
+
+**It does not measure size. At all.** A grade II claim can be enormously consequential and a grade I
+result can be irrelevant to the decision at hand.
+
+**It does not resolve disputes between values.** Two people can agree on every grade and disagree about
+what to do, because the disagreement is about what they are willing to trade.
+
+**It does not tell you when the boundary moves.** A grade II claim whose range was established over one
+period can lose its range as conditions change. Re-grading is part of maintenance, and it is rarely
+done.
+
+**It does not prevent the misuse it was designed for.** A practitioner who wants to present a
+prescription as a finding will classify it as grade II and supply a boundary of convenience. **The
+vocabulary makes the forgery visible to a reader who asks how the boundary was established, which is
+the most it can do.**
+
+**It is not a substitute for reading the paper.** The grade is a summary of a claim's status, and the
+status is best judged by someone who has read the source rather than the summary. **The device is for
+a meeting, not for a literature review.**
+
+**One more limit, which the book has tried to respect.** The grades are a construction. They have not
+been tested, they may be redundant with ordinary distinctions between mathematics, evidence and advice,
+and a reader who finds them unhelpful should use their own vocabulary. What matters is that the
+distinction be made explicitly, not that it be made with these words.
+
+## Re-grading a claim after the fact
+
+Every grade is provisional, and the maintenance procedure is worth stating because it is the part of the
+device most likely to be skipped.
+
+**When to re-grade. Four triggers.**
+
+**A boundary claim is published.** The claim was grade II over a measured range; a new study extends or
+narrows the range. **The grade may stand while the boundary moves, which is why the boundary is recorded
+separately.**
+
+**The regime changes.** A rule is altered, a market structure changes, a population shifts. Grade III
+claims are the ones most affected, because they are the ones whose validity is conditional on the regime.
+
+**A replication fails.** For grade II claims this is decisive over the measured range and uninformative
+outside it. **A failed replication outside the range is not a refutation, and the distinction is
+frequently missed.**
+
+**The claim's user changes.** The same claim used for a different decision has a different status, because
+grade II claims are validated for a range and a purpose.
+
+**How to re-grade. Two steps.**
+
+**Restate the claim with its range and its purpose.** If either has changed, the grade is being reassessed
+for a new object.
+
+**Ask which transformation it has survived since.** Not which it survived originally.
+
+**What to record.** The new grade, the date, and the evidence that moved it. **A register of grade changes
+is more informative than a register of grades, because the changes are where the substance of a field
+becomes visible.**
+
+**Why the discipline is worth having.** A claim that was grade II a decade ago and has not been reassessed
+is quoted at a grade nobody has tested. **The failure is not dishonesty; it is the absence of a
+maintenance interval.**
+
+## The grades and the shelf life of a claim
+
+Grades are assigned at a moment and quoted for years. The relation between a grade and time is worth stating,
+because it is the mechanism by which a field's knowledge quietly expires.
+
+**Three lifespans. Different.**
+
+**Grade I claims barely age.** A mathematical result does not expire; what changes is its relevance and the
+assumptions it requires.
+
+**Grade II claims age with their range.** The claim holds over a measured range, and the range can be
+invalidated by a regime change, a new estimator, or a longer sample. **The claim is not refuted; its boundary
+moves, and a claim quoted without its boundary is quoted at a grade nobody has tested.**
+
+**Grade III claims age fastest.** Their validity is conditional on institutions, practices and populations,
+all of which change. **A procedural prescription from a decade ago is a prescription for a setting that may no
+longer exist.**
+
+**The maintenance implication. One line per claim.** A register of claims with the grade, the range, the date,
+and the trigger that would require re-grading. **The trigger is the part that makes the register useful, because
+it converts re-grading from an aspiration into a scheduled event.**
+
+**Three triggers that cover most cases.**
+
+**A replication attempt, successful or not.**
+
+**A regime change in the domain the claim concerns.**
+
+**A change in the decision the claim supports.**
+
+**Why this belongs in the chapter on grades.** Because a grade is a statement about robustness, and robustness
+is relative to a set of conditions. **The conditions change on their own schedule, and a grade quoted without a
+date conceals the passage of time rather than surviving it.**
+
+## The grades and the four-column protocol
+
+The two devices were introduced in different parts of the book and they operate on the same object, so their
+relation is worth one section.
+
+**What each does. One question apiece.**
+
+**The grades ask what transformations a claim has survived.** The output is a level, from I to III, and it is a
+statement about robustness.
+
+**The columns ask which part of a result is being used.** The output is a row, and it is a statement about
+application.
+
+**Where they meet. The claim column.** A claim that survives a scale change is grade I with respect to scale and
+unchanged with respect to everything else. **The grade is indexed to a transformation class; the column says
+whether the claim is what you are relying on.**
+
+**Three combinations worth naming.**
+
+**A grade I claim in the claim column.** Mathematics. **The reliance is safe and the question is relevance.**
+
+**A grade II claim in the tool column.** The usual case: the tool travels and the boundary does not. **The
+reliance is on the technique and the claim's boundary is irrelevant to it.**
+
+**A grade III claim in the claim column.** The dangerous combination. **A procedural prescription treated as a
+finding, which is where most grade inflation occurs.**
+
+**What the combination tells a reader. One instruction.** Locate the reliance first, then ask about the grade.
+**A reader who grades first will waste effort on claims whose fate does not affect them, and will miss the
+claims whose fate does.**
+
+**Why the two devices are kept separate.** Because one is about time and the other about use. **A claim can be
+robust and irrelevant, or fragile and load-bearing, and only the pair of questions distinguishes the four
+cases.**
+
+**What the section adds to the chapter.** The grades are presented as a vocabulary for robustness. **Paired with
+the columns they become a filter for reliance, which is what a reader needs in order to know which sentences in
+a paper require attention.**
+
+## The grades and three kinds of test
+
+Each grade corresponds to a test, and the tests differ in what they require. Stating them together is what makes
+the grading operational.
+
+**Grade I. A transformation of the mathematics.** Substitute the transformation and check whether the result
+holds. **Which requires no data and is often readable from the form of the result.**
+
+**Grade II. A boundary test.** Apply the claim over a range and check where it fails. **Which requires data over
+a range and produces the boundary, and the boundary is what a grade II claim carries.**
+
+**Grade III. A case test.** Apply the prescription to a case and ask what would make it misleading. **Which
+requires no data and cannot be settled by any, and which is why grade III is the weakest.**
+
+**What the three tests share. One property.** Each is a transformation applied to the claim. **A change of
+mathematics, a change of range, a change of case, and the grade names which one the claim has survived.**
+
+**What follows for a claim's use. One rule.** Use the claim at the grade it has been tested to. **A grade II
+claim quoted without its range is being used at a grade nobody has tested, and the downgrade is invisible.**
+
+**How to run the tests in practice. One pass each.** The mathematics can be done on paper; the boundary requires
+data over a range; the case test requires a written case. **Which is why grade II claims are the expensive ones to
+maintain and grade III claims are the cheapest to assert.**
+
+**Why the tests are worth stating as tests rather than as categories.** Because a category invites assignment and
+a test invites execution. **Three tests, three requirements, and the middle one is where the work is.**
+
+**What the grades cannot supply. The range.** Which is the grade II claim's content and which must be measured
+rather than assigned. **The vocabulary names the level; the measurement supplies the boundary.**
+
+## The grades and three ways a claim can be used
+
+A claim's grade constrains how it may be used, and three uses appear in the material with different
+requirements.
+
+**As a modelling assumption. The most demanding.** A grade I claim, or a grade II claim with its range stated.
+**Which commits the model to the claim's transformation class, and errors here propagate through everything
+downstream.**
+
+**As an input to a decision. Moderate.** A grade II claim with its boundary, or a grade III prescription applied
+to a case. **Which requires the boundary to travel with the claim and the case to be stated.**
+
+**As background. The least demanding.** Any grade, provided the claim carries its conditions. **Which is how most
+claims are used and where the conditions are most often dropped, because the claim is supporting an argument
+rather than carrying one.**
+
+**What the three require. Increasingly specific.**
+
+**A modelling assumption requires the transformation class.**
+
+**A decision input requires the boundary and the decision.**
+
+**Background requires the conditions, and nothing more.**
+
+**Why the third is the most common and the most dangerous.** Because a claim used as background acquires the
+authority of the argument it supports, and its conditions are the first thing lost. **Which is the mechanism
+behind grade inflation: a claim quoted in support of a conclusion is quoted at the conclusion's grade.**
+
+**How to use the grades. One question per claim.** Which of the three uses is this. **Which determines what must
+travel with the claim and what may be omitted.**
+
+**What the grades cannot do. Prevent the third use.** Background uses are legitimate and unavoidable. **What the
+vocabulary can do is make the loss of conditions visible: a grade II claim in a discussion with no boundary
+attached has been promoted, and a reader who knows the grades will notice.**
+
+## A note on what this chapter could not check
+
+The three-grade scheme is proposed here. I know of no literature that uses this particular
+vocabulary, and I have not searched for one systematically, so the claim that the distinction is
+absent from common use is based on the material I have read rather than on a survey.
+
+The five instances of grade inflation in the middle of the chapter are documented in the earlier
+chapters of this book, where each is treated at length. Readers who wish to audit them should treat
+the earlier chapters, not this one, as the evidence.

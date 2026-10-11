@@ -1,0 +1,482 @@
+# Interlude: The Two Kinds of Uncertainty {#sec-two-kinds}
+
+The phrase "we don't know" is doing at least three jobs in ordinary speech, and the jobs have
+nothing in common.
+
+We do not know the number of fish in the lake, but a good survey would tell us. We do not know how
+much a house will sell for next year, and no amount of surveying settles it in advance. We do not
+know the expected value of a series whose mean does not exist, because there is nothing there to
+know.
+
+The second case is the one this interlude is about, because it is the one that is systematically
+misread — usually as the first case, which is why people keep hiring surveyors.
+
+## The distinction in one paragraph
+
+Uncertainty that can be reduced by more information is **estimable**. Uncertainty that cannot is
+**non-estimable**, and the reasons vary: the quantity may be well defined but unidentified from the
+data you can obtain, or the quantity may not exist at all.
+
+The practical difference is not about confidence levels. It is about the correct response. For
+estimable uncertainty, the response is to estimate, with intervals. For non-estimable uncertainty,
+the response is to bound, or to change the question.
+
+**A decision procedure that treats the second as the first will spend resources buying information
+that does not exist.** That is not a small error; it is the characteristic error of applied
+forecasting.
+
+## Three cases, not two
+
+The previous interlude separated three ways a number fails. Here is the same material organised by
+what an analyst should do, which is a different cut and produces three cases.
+
+**Case one: exists, estimable.** The standard case. Estimate, report an interval, act
+proportionally. Almost all of applied statistics lives here and it works.
+
+**Case two: exists, not reliably estimable.** The quantity is well defined; the data cannot
+identify it. Tail exponents and long-memory parameters are the standing examples from Part I, and
+the reason is structural: the information about the far tail lives in the far tail, and there are
+few observations there.
+
+**Case three: does not exist.** The defining expression diverges. The variance of a stable
+distribution with a tail index below two. The mean of a series with an index below one.
+
+The three cases share a symptom — a number that will not settle — and require three different
+responses. Case one wants more data. Case two wants a grid and a bound. Case three wants a
+different question.
+
+## Non-estimable is not the same as unimportant
+
+There is a reflex that treats case two and case three as academic: if you cannot measure it, it
+cannot matter much, and the practical thing is to proceed with the numbers you have.
+
+The reflex is backwards. **Non-estimability is correlated with consequence, and the correlation is
+not accidental.** The quantities that resist estimation are those whose tails matter, which is
+exactly the set of quantities whose misestimation is expensive.
+
+Part I supplied the mechanism. Tail behaviour is determined by rare observations. Rare observations
+are rare. Therefore the most consequential feature of a distribution is the least well estimated
+feature. The correlation is structural.
+
+## The "we will measure it later" fallacy
+
+A specific error deserves its own heading, because it is common in institutional settings and it is
+the reason this interlude sits in Part II rather than in the estimation chapter.
+
+The error is treating non-estimability as a temporary condition. The argument runs: the data are
+insufficient now; better data collection, longer samples, and improved methods are coming; the
+decision can be deferred until then, and in the meantime the best available estimate will serve.
+
+Three things are wrong with this.
+
+**Some quantities do not become estimable with more data.** The information about a tail index sits
+in a region of the sample that grows more slowly than the sample, and no collection programme fixes
+that.
+
+**Deferral is a decision.** When the decision has an irreversible component, waiting is itself a
+choice with consequences, and the consequences are not symmetric between the alternatives.
+
+**Better data may make things worse.** If the process is non-stationary, a longer sample estimates
+an average over regimes that no one will face.
+
+None of this licenses the opposite reflex, which is to abandon measurement. The claim is narrower:
+**some quantities are estimable and some are not, and knowing which is the whole of the practical
+skill.**
+
+## Where this sits in the book's framework
+
+The Constant device from Chapter 26 grades claims by what they survive. This interlude concerns the
+complementary question: for a claim you have accepted, can the specific quantity it refers to be
+recovered from the data you can get?
+
+The two questions are independent, and both must be answered before a number is used.
+
+| | Estimable | Not estimable |
+| --- | --- | --- |
+| **Grade I claim** | Estimate over the window; report the window | Bound; do not point-estimate |
+| **Grade II claim** | Estimate the shape-related statistic; report method disagreement | Use the qualitative claim only |
+| **Grade III claim** | No quantity involved; test by cases | No quantity involved; test by cases |
+
+The bottom row is worth noting because it is where the material of Part II mostly lives. Structural
+claims do not require estimation, which is why they survive in precisely the conditions where
+estimation fails. **That is not a coincidence; it is the reason they exist.**
+
+Chapter 14 formalises the left column's two-by-two as a decision grid. This interlude supplies the
+distinction the grid presupposes.
+
+## What would refute this
+
+The distinction is only useful if cases two and three are common enough to matter. Where nearly
+everything of practical interest is estimable, the interlude is a preface to a rare exception.
+
+The evidence against that objection is the material of Part I: tail and memory parameters, which
+appear in every serious treatment of risk, are case two. I take the objection seriously in a
+different form: **the boundary between case two and case three is fuzzy in practice.** Whether a
+quantity fails to be identified or fails to exist can be a question about the model, and models
+change. The house price example at the start of this interlude is case two under one model and case
+three under another.
+
+The response is procedural rather than philosophical: when the boundary is unclear, treat the
+quantity as case two, since bounding is safe under both readings.
+
+## Claim and tool
+
+The claim: the response to uncertainty depends on whether the uncertainty is reducible by
+information, and the distinction is not captured by confidence or by importance.
+
+The tool: the three cases, their three responses, and the reflex rule that non-estimability is
+correlated with consequence rather than with irrelevance.
+
+## Telling the two apart in practice
+
+The distinction between reducible and irreducible uncertainty is easy to state and often hard to
+apply, which is why the chapters that follow need an operational test rather than a definition.
+
+**Three diagnostic questions.** Each takes minutes and requires no data.
+
+**Can you write the defining expression?** If the quantity cannot be written as a limit, an integral,
+or a ratio of expectations, the question of reducibility does not arise yet. Stage one of the
+existence procedure applies.
+
+**Would more of the same kind of data change your answer?** Not "would more data help" in the
+abstract, but this specific comparison: if the sample were twice as long, would the two estimates
+move closer together? A yes puts the quantity in the reducible column.
+
+**Do two methods disagree in a way that more data cannot fix?** If the disagreement comes from the
+methods making different assumptions about the object, no sample length will reconcile them. That is
+the irreducible case, and the correct response is a bound.
+
+**What the test is not.** It is not a judgement about importance, and it is not a judgement about
+confidence. A quantity can be uncertain and reducible and completely unimportant; another can be
+almost certainly known and yet be the object on which everything depends.
+
+**Why the operational version matters.** Because the two errors are asymmetric. Treating a reducible
+quantity as irreducible gives up information that was available and substitutes structure for
+knowledge that could have been had. Treating an irreducible quantity as reducible produces a number
+with no referent and, worse, produces confidence in it. **The second error is the more expensive, and
+it is the one that the standard workflow commits by default.**
+
+
+## Uncertainty about the model
+
+The interlude's three cases concern quantities. There is a fourth situation the book keeps meeting,
+and it deserves a name because it behaves differently: uncertainty about which model applies.
+
+**The distinction. Sharp.** A quantity can be well defined under every candidate model and hard to
+estimate. A model choice is different: the quantity changes when the model changes, and no amount of
+data settles the choice.
+
+**Where it appears in this book.**
+
+**Tail index or lognormal.** The two families fit finite samples comparably and disagree about whether
+a moment exists. Chapter 12 uses this as the clean example.
+
+**Long memory or regime shifts.** The same autocorrelation pattern is produced by a slowly decaying
+dependence structure and by a few level shifts. Chapter 3 uses this.
+
+**Ruin probability or heavy loss.** Whether the absorbing state is reachable is a model property when
+the model is an approximation.
+
+**Three responses, in order of preference.**
+
+**Find a discriminating test.** Sometimes one exists: a jump in the data, a known institutional change,
+a regime whose parameters are measurable. Where a discriminator exists, use it and stop treating the
+choice as a matter of taste.
+
+**Report the range across models.** Where no discriminator exists, the honest output is what the
+decision looks like under each model. **This is a bound, not a design.**
+
+**Choose the model that makes the decision safer.** Where the two models differ and the choice cannot be
+resolved, use the one whose failure is bounded. This is a tie-breaking rule rather than an answer, and
+it should be stated as such.
+
+**Why it belongs in this interlude.** Because the epistemology chapter's test — more data or two
+estimators — will not resolve a model dispute, and a practitioner who expects it to will spend years
+collecting data that cannot decide the question. **The correct response is structural, and it is the
+argument for the final part of the book.**
+
+
+## The two kinds in a single decision
+
+Decisions rarely involve one kind of uncertainty, and the interlude's distinction becomes practical when the
+two appear together.
+
+**A drug approval.** The efficacy estimate is estimable, given a trial of adequate size. The long-run safety
+profile in a heterogeneous population is not, because the relevant exposure accumulates over decades and the
+sample cannot reach it. **Same decision, two kinds, and the second one is the one that determines the burden
+of proof.**
+
+**A capital allocation.** The volatility is estimable. The correlation in a crisis is not, because the
+sample contains no crisis of the relevant kind. **The first input can be computed and the second must be
+bounded, and the two are reported together as though they were equivalent.**
+
+**A technology deployment.** The performance differential is estimable from a pilot. The systemic
+consequences at scale are not, because the pilot by construction does not exhibit them. **This is the case
+where the distinction has the largest practical consequence, since scaling is precisely what removes the
+estimability.**
+
+**What to do when the two are mixed. Three steps.**
+
+**Separate them explicitly.** State for each input whether it is reducible by information. **The statement
+takes a sentence per input and prevents the whole analysis from inheriting the reliability of its strongest
+component.**
+
+**Report the mix.** A table with two columns, one for estimates and one for bounds. **A decision whose
+inputs are all in the second column is a structural decision, and saying so is more useful than producing a
+weighted average.**
+
+**Do not let the estimable inputs set the confidence.** The most common failure in mixed cases is that the
+well-estimated component determines the tone of the analysis while the un-estimable one determines the
+outcome.
+
+**Why the mixing is the normal case.** Because decisions that involve only estimable quantities are usually
+routine, and the decisions that receive careful analysis are the ones where something cannot be pinned
+down. **The interlude's distinction is therefore most useful precisely where analyses are hardest.**
+
+
+## The vocabulary for a mixed portfolio
+
+Practitioners need a way to talk about a set of decisions whose inputs differ in kind, and the interlude's
+distinction supplies it in three labels.
+
+**Estimable.** The quantity is reducible by information. **Report an estimate with an interval, and monitor by
+collecting more of the same data.**
+
+**Boundable.** The quantity exists and cannot be pinned down. **Report a range with a decision rule, and
+monitor by watching the conditions under which the bound could be breached.**
+
+**Not quantifiable.** The quantity does not exist, or no data of this kind would resolve it. **Report a
+structural decision and the reasons, and monitor by watching the structure rather than the number.**
+
+**How the three are used together. Two rules.**
+
+**Do not aggregate across labels.** A weighted average of an estimate and a bound is a number with no
+interpretation. **Where a summary is required, summarise within labels and present the labels separately.**
+
+**Let the strictest label set the tone.** A decision whose outcome depends on a not-quantifiable input is a
+structural decision regardless of how good its other inputs are. **This is the most commonly violated rule in
+practice, because the quantifiable inputs produce the report while the others produce the risk.**
+
+**What the labels do for a committee.** They give a member a way to object to a number without asserting that
+the analysis is wrong. **"That quantity belongs in the second column" is a procedural objection that can be
+settled by evidence, and it is far more effective than a general expression of doubt.**
+
+**Why the vocabulary matters more than the framework.** Because most organisations will adopt a shared set of
+labels long before they adopt a procedure, and the labels change which questions get asked.
+
+
+## The two kinds and the length of a commitment
+
+An exposure's kind of uncertainty interacts with the length of the commitment, and the interaction decides
+whether a decision should be staged.
+
+**The asymmetry.** Three regimes.
+
+**Short commitment, irreducible uncertainty.** Proceed. With a bound. The uncertainty is unresolved and the exposure ends before it
+matters. **Proceed, with a bound on the loss.**
+
+**Long commitment, reducible uncertainty.** Stage it. The uncertainty is reducible and the horizon is long enough for the
+reduction to arrive. **Stage the commitment, so that the information can be used.**
+
+**Long commitment, irreducible uncertainty.** The worst case. The worst case: the horizon is long and the uncertainty will not
+resolve. **This is where the structural screens matter most, because no amount of waiting improves the
+decision and the exposure persists.**
+
+**Why staging is the general instrument.** It bounds and it waits. It converts the second regime into the first and reduces the third
+to a series of bounded commitments. **A pilot is the canonical form, and its value is not that it produces
+information — it may produce none — but that it bounds the exposure while the decision is revisited.**
+
+**Three questions.** For a long commitment.
+
+**Would waiting resolve the uncertainty?** If not, the decision is structural and the screens apply.
+
+**Is the commitment divisible?** If so, staging is available and should be used by default.
+
+**What is the cost of staging?** Foregone benefit from the delayed portion, usually smaller than assumed.
+
+**Why this belongs here.** Time cuts both ways. Because the distinction between reducible and irreducible uncertainty
+determines whether time is an asset or merely an exposure, and the length of the commitment is what makes the
+difference. **The same uncertainty is cheap over a month and expensive over a decade.**
+
+
+## The two kinds and the cost of a mistake
+
+The distinction between reducible and irreducible uncertainty has a decision-theoretic content that the
+interlude states implicitly: the two kinds have different error costs.
+
+**Treating the reducible as irreducible. The cost.** Foregone information. **A pilot is not run, a sample is
+not collected, and structure is substituted for knowledge that was available at a price.** The error is
+expensive and it is invisible, because the decision still gets made.
+
+**Treating the irreducible as reducible. The cost.** A number with no referent and confidence in it. **The
+decision is made on an estimate that cannot converge, and the confidence is the expensive part, because it
+suppresses the structural work that would have been appropriate.**
+
+**Why the second error is worse. Three reasons.**
+
+**It is self-reinforcing.** The estimate is produced, reported, and used, and each use increases the
+appearance of knowledge.
+
+**It displaces the alternative.** A decision-maker who believes the quantity is estimable will not run the
+screens, because the screens are for decisions that cannot be computed.
+
+**It fails at the worst moment.** A quantity that does not converge fails when the sample's largest events
+accumulate, which is when the decision matters.
+
+**What to do about the asymmetry. One rule.** When the kind of uncertainty is unclear, treat it as
+irreducible and use structure. **The cost of being wrong in that direction is a missed estimate; the cost of
+being wrong in the other is a decision made on nothing.**
+
+**Why the asymmetry is worth stating as an error-cost comparison rather than as a principle.** Because a
+principle invites debate and an error-cost comparison invites arithmetic, and the arithmetic is available.
+**Two costs, one much larger than the other, and the rule follows.**
+
+**What the rule does not settle.** Which quantities are reducible. **That judgement is the substance of the
+epistemology layer, and the asymmetry tells you what to do while the judgement is uncertain.**
+
+
+## The two kinds and the design of an incentive
+
+The distinction between reducible and irreducible uncertainty determines what kind of evidence an incentive
+should reward, and the two cases call for opposite designs.
+
+**The reducible case. Reward the work.** Where better information is available at a price, the incentive should
+pay for collecting it and for reporting it accurately. **The failure to guard against is the reporting of a
+convenient estimate, which is why independent verification matters here.**
+
+**The irreducible case. Reward the structure.** Where no amount of information would settle the question, paying
+for research produces the appearance of knowledge. **The incentive should reward bounding, staging, and
+pre-commitment, none of which is a number.**
+
+**What a single incentive does. One thing.** An organisation that pays for numbers will get numbers in both
+cases. **In the reducible case the numbers are useful; in the irreducible case they are the evidence problem
+itself, produced at cost.**
+
+**Three signs an incentive is misaligned with the case.**
+
+**Confidence intervals reported for quantities that cannot be identified.** Which means the second case is being
+handled with the first case's instrument.
+
+**No bounding move anywhere in the documentation.** Which means structure is not being rewarded.
+
+**Research commissioned repeatedly for the same irreducible question.** Which is the deferral fallacy funded by
+the incentive.
+
+**How to separate the two cases organisationally. One question at the point of commission.** Would more data of
+the kind we can obtain change the answer. **If yes, fund it. If no, require a bound and a review date, and say
+so in the terms of reference.**
+
+**Why the separation is worth building into a process rather than leaving to judgement.** Because the judgement
+is made under pressure to act, and the pressure favours commissioning research, which looks responsive.
+**A question written into a commissioning template is answered before the pressure arrives.**
+
+
+## The two kinds and three ways to spend a research budget
+
+The distinction determines what kind of research is worth funding, and three spending patterns follow.
+
+**Spending on more of the same data. Appropriate in one case.** Where the quantity is estimable and the estimate
+is imprecise. **Which is the ordinary case and the one where a longer sample helps.**
+
+**Spending on variation. Appropriate in another.** Where the quantity exists and the identification is weak.
+**A sample containing a stress period, a different instrument, or a regulatory change is what helps, and more
+observations within the same conditions do not.**
+
+**Spending on structure. Appropriate in the third.** Where the quantity does not exist or cannot be identified.
+**Documents, network diagrams, exit costs. Which is not research in the usual sense and is the spending that
+organisations rarely authorise.**
+
+**What the three patterns cost. Increasingly awkward.**
+
+**More data. Easy to authorise.** It looks like diligence.
+
+**Variation. Harder.** It may require waiting for conditions, or accepting an instrument that behaves
+differently.
+
+**Structure. Hardest.** It produces documents rather than estimates, and a document produced by an analyst is
+not obviously a research output.
+
+**Which pattern is most often misapplied.** The first. **More of the same data is commissioned for quantities that
+are in the second or third case, and the commissioning looks responsive while the quantity remains
+unidentified.**
+
+**How to choose the pattern. One question at the point of commissioning.** Would more observations under the
+current conditions change the answer. **If yes, fund the sample. If no, ask whether variation would help. If
+neither, fund the structure and say so in the terms of reference.**
+
+**Why the question belongs in a template rather than in a conversation.** Because it is asked under pressure to
+act, and the pressure favours the easiest of the three. **A question in a form is answered before the pressure
+arrives, which is the only place it can be answered reliably.**
+
+
+## The two kinds and three questions for a proposal
+
+The distinction determines what a proposal's uncertainties require, and three questions do that work in a review.
+
+**Which quantities are reducible by information.** Which determines whether more data is worth commissioning.
+**Which is the first question and it usually separates a proposal's inputs into two groups.**
+
+**Which are not, and what is the bound instead.** Which determines whether the proposal can proceed without the
+estimates. **Which is the second question and the one that changes the proposal's structure.**
+
+**Which of the two groups the decision depends on.** Which determines whether the proposal is a calculation or a
+structural decision. **Which is the third question and the one that determines whether the proposal should
+proceed in its current form.**
+
+**What the three questions produce. A classification and a structure.** The classification is per quantity; the
+structure is the response to those that cannot be estimated. **Which together are what a reviewer needs in order
+to decide whether the proposal is well formed.**
+
+**What the questions do not ask. Whether the proposal is good.** They ask whether its uncertainties have been
+classified and its non-estimable inputs handled structurally. **Which is a review of form rather than of
+substance, and is the most a review of a proposal can reliably do.**
+
+**How to use the questions in a review. One line per quantity.** Reducible, reducible with more data, or not
+reducible — with the response for the third group. **Which is a table of a dozen rows and takes twenty minutes.**
+
+**Why the questions are worth standardising.** Because a proposal with unclassified uncertainties will be argued
+about rather than assessed. **Three questions, a table, and the argument moves to the structure, which is where
+it can be resolved.**
+
+
+## The two kinds and three kinds of bound
+
+The distinction determines what a bound can be. Three kinds appear, one per case.
+
+**A statistical bound for an estimable quantity.** An interval, or a range across methods. **Which shrinks with
+data and is the correct object where the quantity exists and the estimate is imprecise.**
+
+**A structural bound for an unidentified quantity.** A cap, a term, a physical limit. **Which does not shrink
+with data and is the response where the quantity exists and cannot be pinned down.**
+
+**A substitution for a quantity that does not exist.** A different quantity that serves the decision, justified
+by the decision rather than by the original. **Which is not a bound at all and is the response in the third case,
+and calling it a bound is what produces the confusion.**
+
+**What the three have in common. One property.** Each is an output where an estimate was unavailable. **Which is
+the sense in which the book uses the word bound, and the sense that the third case stretches.**
+
+**Why the third is not a bound.** Because a bound constrains an estimate of something and a substitution replaces
+the something. **A variance replaced by a tail quantile is not a wider estimate of the variance; it is a different
+quantity.**
+
+**How to state the three so a reader can tell them apart. One clause each.** "Between A and B at ninety percent
+confidence." "Capped by the contract term." "Expected loss replaced by a survivable-loss threshold." **Three
+clauses, three meanings, and only the first is an interval.**
+
+**Why the distinction matters in a report.** Because a reader who receives all three as "a bound" cannot tell
+whether the underlying quantity exists. **Which is the information the interlude's distinction was created to
+carry.**
+
+
+## Boundary conditions
+
+The distinction presumes that a defining expression can be written, which excludes quantities that
+are understood only operationally.
+
+It presumes that the relevant model is stable enough for "exists" to be a property rather than a
+choice, which is the fuzzy boundary above.
+
+And it does not tell you how to bound a case two quantity. That is an art with few general rules,
+and the next chapter's material — irreversibility and the burden of proof — supplies one specific
+and unusually useful bound: the survivable loss.

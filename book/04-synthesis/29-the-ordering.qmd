@@ -1,0 +1,475 @@
+# The Ordering: Ruin, Estimability, Size {#sec-the-ordering}
+
+Part IV has assembled three devices. This chapter puts them in a sequence and defends the claim that
+the sequence is forced.
+
+Three stages. This order. No other.
+
+**One. The ruin screen.** First, because it is the only stage that can be run without any estimate, which means that a decision-maker who has five minutes and no data can still use it, and a procedure whose first stage is available under those conditions will be run more often than one whose first stage requires a spreadsheet. Enumerate the irreversible exposures and either remove them or bound them.
+
+**Two. The estimability screen.** Second. For what survives, determine whether the relevant quantities exist
+and whether they can be estimated.
+
+**Three. Size.** Last. Only for decisions that reach this stage, and only in the appropriate cell, choose
+the fraction.
+
+**The claim is not that this order is convenient. It is that the stages remove options which later
+stages cannot recover, so that running them out of order produces output that looks complete and is
+not.**
+
+## Stage one: the ruin screen
+
+An absorbing state is a position from which there is no continuation: bankruptcy, disqualification,
+the loss of a licence, the destruction of a capability that cannot be rebuilt, a health outcome that
+ends the sequence.
+
+The screen has one rule, from the ledger of Chapter 16: **the irreversible side is closed to new
+entries until it is empty or bounded.**
+
+The stage takes structure as input rather than estimates. Two questions per exposure: what is the
+mechanism of irreversibility, using the four mechanisms of Chapter 16; and what would it cost to exit
+in the state of the world where exit is most needed.
+
+The output is a modified set of options. Some are removed. Others are reshaped — capped, shortened,
+duplicated, converted into options rather than obligations, or attached to a pre-committed exit.
+
+**Note what has already happened before any measurement.** The decision set has changed. A stage that
+requires no data has eliminated the alternatives that could terminate the sequence, which means that
+every later stage operates on a smaller and safer problem.
+
+## Stage two: the estimability screen
+
+The second stage asks the grid's two questions in the grid's order.
+
+**Does the quantity exist?** Check first. Write the defining expression and check convergence. This is mathematics
+and it costs minutes, and it is the stage that the standard workflow omits entirely.
+
+**Can it be estimated?** Then this. Run at least two estimators with different assumptions and compare them. A
+disagreement larger than the effect the decision depends on places the quantity in the
+non-estimable column.
+
+| | Estimable | Not estimable |
+| --- | --- | --- |
+| **Exists** | Compute | Bound |
+| **Does not exist** | Replace | Avoid |
+
+The output is a cell, and the cell determines the method. This is the stage's function: not to
+produce a number, but to determine what kind of output is available.
+
+**The stage's most important output is the transition to Avoid**, which is the cell where the
+decision proceeds on structural grounds alone. Because stage one has already run, the structural
+grounds exist: the bounded exposures and the pre-committed exits are the content of a decision that
+has no numbers in it.
+
+## Stage three: sizing
+
+Only now, and only in the Compute cell, does the fraction machinery apply, and then with a discount.
+
+[F] executed fraction = δ · f̂, δ = 1 / (1 + κ · CV²)
+
+The size of the discount reflects how well the edge is known. The κ convention reflects how unstable
+the estimation environment is. And in the Bound cell, the output is a range and a decision rule
+rather than a point, while in Replace and Avoid there is no sizing at all.
+
+The stage is the one practitioners spend most of their attention on and, by this chapter's argument,
+the least consequential of the three. **A 30 percent error in the fraction is a performance
+question. A mistake in stage one is an existence question.**
+
+## Why the order cannot change
+
+Each stage removes options that the next cannot restore, and the three removals are different in
+kind.
+
+**Sizing before the ruin screen** computes a fraction for a decision that may not have a tomorrow.
+The computation is well defined and the answer is meaningless, because the growth rate it maximises
+is a long-run quantity and the decision may remove the long run.
+
+**Sizing before the estimability screen** computes a fraction from a quantity whose defining integral
+may not converge. The output is not an imprecise estimate; it is a report on the sample, as Chapter 4
+established.
+
+**Estimability before the ruin screen** asks careful questions about quantities belonging to
+decisions that should have been reshaped first. The work is wasted, and worse, it produces confidence
+in a decision that has not been screened.
+
+| Stage | Input | Output | What it prevents |
+| --- | --- | --- | --- |
+| Ruin | Structure of exposures | A bounded or reduced option set | Optimising a decision that can end the sequence |
+| Estimability | Defining expressions; two estimators | A cell, hence a method | Computing from a non-existent or unidentified quantity |
+| Size | Estimates with standard errors | A fraction, a bound, or a refusal | Over-betting on an unreliable edge |
+
+## What the procedure does not do
+
+It does not find edges. Not one. Nothing in this book does; finding them is research, and the procedure only
+tells you what to do once one is claimed.
+
+It does not resolve conflicts between values. Two decision-makers who agree on all three stages can
+still disagree about how much protection to buy, because that disagreement is about preferences
+rather than about method. **The procedure narrows the space in which the disagreement occurs, which
+is all a method can do.**
+
+It does not guarantee a good outcome. Never. It guarantees that the outcome was not produced by a class of
+avoidable mistakes, which is a different and defensible claim.
+
+## Refutation conditions
+
+The procedure's central claim is about the relative importance of the stages, and it makes a
+testable prediction: **decision quality should be more sensitive to errors in stage one and stage two
+than to errors in stage three.**
+
+The prediction could fail in three ways.
+
+**If stage-three errors dominate in practice.** Anecdotal evidence runs the other way — practitioners
+discuss sizing constantly — but attention is not evidence about consequences. A study of decision
+outcomes against errors by stage would settle it, and I have not run one.
+
+**If the stages are not separable.** Where a ruin exposure and an estimation problem are entangled —
+the edge exists only at a size that creates an irreversible exposure — the sequence cannot be applied
+as written, and the entanglement is the finding rather than a nuisance.
+
+**If running stage one first systematically forecloses good decisions.** Screening for
+irreversibility is conservative in the direction of inaction, and a procedure that always reduces the
+option set may produce decisions that are safe and poor. The defence is that bounding is not
+prohibiting, but the objection is real.
+
+## Grading it
+
+**That the stages remove non-recoverable options is grade I.** Pure logic. It is a logical property of the
+structure of the decisions, not an empirical claim.
+
+**That the three constructed devices implement the stages usefully is grade II**, since it depends on
+judgements about what counts as irreversible and what counts as estimable.
+
+**The prediction about relative error sensitivity is grade III** and untested. Untested indeed.
+
+## Claim and tool
+
+The claim: the three questions must be asked in order, because each removes options the later ones
+cannot recover.
+
+The tool: the sequence itself, its three outputs including the refusal, and the prediction that makes
+it falsifiable.
+
+Registered as B-004, with the refutation conditions above attached.
+
+## Boundary conditions
+
+The procedure applies to decisions that are repeated or that carry an absorbing state. For a single
+reversible decision, the screening costs more than it saves and the ordinary framework is correct.
+
+It presumes that the exposures can be enumerated, which is a judgement and is often contested.
+
+And it presumes that a decision-maker can act on structure — that a cap, a pilot, or a pre-committed
+exit is available. Where the choices are binary, stage one has nothing to work with and the procedure
+reduces to a vote with better vocabulary.
+
+## What the ordering costs
+
+Every procedure has a price, and this one's price is paid in the currency that organisations value
+most, which is decisions made on time.
+
+**It slows stage three. Deliberately.** A practitioner who has an estimate and wants to size a
+position is being told to answer two structural questions first. The questions are cheap and the
+interruption is not.
+
+**It produces refusals.** A procedure that can return "this decision cannot be made by this method" will
+return it, and each refusal is a conversation with someone who wanted a number.
+
+**It is hard to benchmark.** The benefit of the ordering appears in decisions that were not made, or
+were made smaller, or were reshaped. Those are invisible in any comparison of outcomes, which means the
+procedure's value cannot be demonstrated by the method that most organisations use to evaluate
+processes.
+
+**Three contexts where the cost is worth paying.**
+
+**Where the exposure is genuinely irreversible. Worth it.** The asymmetry between a slow decision and an
+absorbing state is large enough to dominate the friction.
+
+**Where the quantity's existence is in doubt. Worth it.** The cost of writing a defining expression is
+minutes, and the cost of computing a mean that does not exist is an entire analysis.
+
+**Where the decision is recurring and rules can be pre-committed. Worth it.** The ninety-minute version
+runs once; afterwards the rules run.
+
+**One context where it is not worth paying.** Low-stakes reversible decisions, where the ordering is
+ceremony and the ordinary approach is correct. **The discipline is to notice which context you are in,
+and the failure mode is to apply the procedure everywhere because it feels rigorous.**
+
+## The ordering under disagreement
+
+The procedure assumes a single decision-maker or a group that can agree on the facts. Real decisions
+involve parties who disagree, and the ordering behaves differently under that condition.
+
+**Where the disagreement is about values.** The procedure helps. Once the exposures are enumerated and
+the quantities classified, the remaining disagreement is about how much protection to buy, which is a
+question the parties can see clearly and negotiate over. **The ordering narrows a values dispute to the
+part of it that is genuinely about values.**
+
+**Where the disagreement is about mechanism.** The procedure stalls at stage one. Whether an exposure is
+systemic is a mechanism claim, and two parties who disagree about the mechanism will not agree on the
+cell. The useful move is to record both assignments and continue, which converts an argument into a
+stated difference.
+
+**Where the disagreement is about optimism.** The most common configuration. One party believes the
+estimates are good and the other does not, and the second is right more often than the first thinks.
+**The ordering helps here in a specific way: the discount of Chapter 21 requires both parties to write
+down a coefficient of variation, and the act of writing it exposes a disagreement that a general
+dispute about optimism would leave vague.**
+
+**What to do when the procedure cannot proceed.** Record the stage at which it stopped and the reason.
+A decision recorded as "stopped at stage one, disputed mechanism" is more useful than a decision
+recorded as an estimate, because the difference can be revisited when the mechanism evidence arrives.
+
+**The general principle.** The ordering is a device for making disagreements explicit rather than for
+resolving them, and its value in a divided room is that it localises the division.
+
+## The ordering against three objections from practice
+
+The sequence has been defended on logical grounds. Three practical objections deserve answers, because
+each identifies a real cost.
+
+**Objection one. Stage one requires enumeration, and enumeration is the hard part.** This is correct and
+it is the most serious of the three. A project's exposures are partly unknown at the point of decision,
+and a procedure that requires a complete list will either be abandoned or completed with an incomplete
+one.
+
+**The answer. Two lists, not one.** The finite list of exposures that are known and the residual category
+of exposures that are not. The residual category cannot be bounded by enumeration, which means it must be
+bounded by structure: a cap on total commitment, a pilot that limits exposure, a review date that forces
+the question again. **The residual category is the reason the bounding moves matter more than the
+listing.**
+
+**Objection two. Stage two assumes that defining expressions can be written, and in practice decisions
+depend on quantities nobody has formalised.** Also correct. Many practical quantities — institutional
+capacity, execution quality, reputational standing — are understood operationally and cannot be written as
+limits or integrals.
+
+**The answer. The stage then returns a classification without a convergence check.** A quantity that
+cannot be formalised is either estimable from history, in which case treat it as Bound and require two
+estimators, or it is not, in which case avoid numerical reasoning about it and use the structural criteria.
+**The absence of a defining expression is itself a finding about the quantity, and it belongs in the
+output rather than in a footnote.**
+
+**Objection three. Stage three is where the practitioner lives, and telling them the other stages matter is
+not actionable.** The objection is about incentives rather than logic: a sizing decision is frequent and
+visible, while a screening decision is rare and invisible.
+
+**The answer. Make stage one visible.** Record the exposures named, the bounding moves adopted, and the
+review dates set, and report them alongside the position. **An organisation that reports screening activity
+the way it reports positions creates the incentive the procedure lacks.** This is an organisational
+recommendation rather than an analytical one, and the ordering will not work without it in a setting where
+only numbers are counted.
+
+**What the three answers share.** Each replaces a demand for completeness with a demand for statement. The
+procedure requires that the exposures be named, the quantities classified, and the bounding moves recorded.
+**It does not require that the enumeration be exhaustive, and a procedure demanding exhaustiveness would
+never be used.**
+
+## The ordering as a filter on research
+
+The ordering is presented for decisions. It also functions as a filter on research priorities, and the filter
+is worth stating because research capacity is the scarcest resource in this material.
+
+**The filter.** A research question that cannot influence a decision at any of the three stages is not worth
+the time. **The test is which stage the answer would change.**
+
+**Three questions that survive the filter.**
+
+**Which quantities does the decision depend on?** Research aimed at those quantities is valuable in proportion
+to their sensitivity. **The grid's second question then says which kind of research helps: more data, more
+variation, a substitute, or documents.**
+
+**Which exposures are irreversible?** Research on mechanisms of irreversibility — how networks propagate, how
+institutions exit — has no numerical output and changes what is permitted. **This is the least-funded category
+in the material and the one the ordering puts first.**
+
+**What would move the cell?** A quantity in Bound needs a wider range of conditions rather than more
+observations. **Research that produces conditions rather than observations is cheaper and rarer.**
+
+**What the filter excludes.** Research that improves the precision of a quantity in a cell where precision does
+not decide the outcome. **Most incremental estimation work falls here, and saying so is uncomfortable because
+the work is competent.**
+
+**Why the filter belongs in this chapter.** Because Part IV's argument is an argument about ordering, and
+ordering applies to what gets studied as much as to what gets done. **A research programme organised by the
+three stages would look different from most: more structural questions, fewer estimates, and a stated reason
+for each estimate that survives.**
+
+## The ordering in one page for a practitioner
+
+The chapter argues for the sequence at length. This section is the sequence as a practitioner would use it,
+with the evidence stripped out.
+
+**Stage one. The ruin screen. No data.**
+
+List the exposures. Name the mechanism for each: physical, contractual, informational, social.
+Write the stress-case exit cost, or write "unknown".
+Apply the rule: no new entries on this side until it is empty or bounded.
+
+**Stage two. The estimability screen. No data.**
+
+For the quantities the decision depends on, at most two or three:
+Write the defining expression.
+Check convergence.
+Run two estimators with different assumptions.
+Assign the cell.
+
+**Stage three. Sizing. Estimates required.**
+
+Only for quantities in the Compute cell.
+Compute the undiscounted fraction.
+Write the coefficient of variation.
+Apply the discount.
+
+**Output.**
+
+One of four: a fraction with its discount, a bound with a decision rule, a named substitute, or a refusal
+with its reason.
+
+**Record.**
+
+The exposures, the quantities with their cells, the output, and a review date with its trigger.
+
+**What the page omits and why.**
+
+The arguments, the evidence, and the conditions. **Which is the point of a one-page version: a practitioner
+who needs the reasoning will read the chapter, and one who needs the sequence will use the page. The two
+audiences need different documents and merging them produces one that serves neither.**
+
+**What to do when a step cannot be completed.**
+
+Write the step as incomplete and continue to the next. **The record of where the sequence stopped is a
+finding, and it is more useful than a decision made by skipping the step silently.**
+
+## The ordering and the three failures it prevents
+
+The chapter argues the sequence on grounds of logic. Its practical justification is the three specific
+failures the sequence prevents, and the failures are worth stating together.
+
+**Failure one. A fraction computed for a decision that can end the sequence.** Which is what happens when
+sizing runs before the ruin screen. **The arithmetic is correct and the quantity it optimises — a long-run
+growth rate — does not exist for a decision that may remove the long run.**
+
+**Failure two. A number computed from a quantity that does not exist.** Which is what happens when sizing runs
+before the estimability screen. **The output is a report on the sample, its apparent precision coming from the
+sample's length rather than from the quantity's stability.**
+
+**Failure three. Careful work on a decision that has not been screened.** Which is what happens when the
+estimability screen runs before the ruin screen. **The work is wasted and, worse, it produces confidence in a
+decision whose exposures have not been examined.**
+
+**What the three have in common. One property.** Each is invisible in the output. **A fraction, a number and
+an analysis all look the same whether or not the earlier stages were run, which is why the ordering cannot be
+verified from the result and has to be verified from the record.**
+
+**What follows for practice. One requirement.** The stages must leave traces. **The chapter's record — the
+exposures, the cells, the output and the review date — is what makes the ordering auditable rather than
+merely recommended.**
+
+**How to test whether the ordering is being followed. One question.** Ask which stages were run and what they
+produced. **A decision with a fraction and no exposure list has skipped stage one, and the trace's absence is
+the finding.**
+
+**Why this section belongs in the chapter.** Because the ordering's defence has been logical, and its
+practical value is the three failures. **Naming them makes the sequence checkable against a decision's
+records rather than against its reasoning.**
+
+## The ordering and three kinds of unfinished decision
+
+The sequence produces decisions, bounds and refusals. It also produces a fourth output that the chapter does
+not name: an unfinished decision, where the sequence stopped.
+
+**Three ways a decision remains unfinished.**
+
+**Stage one stalls.** The exposures cannot be enumerated. **The response is a structural bound on the residual
+category, which converts the stall into a bounded decision rather than an open one.**
+
+**Stage two stalls.** The quantity cannot be defined or two estimators cannot be constructed. **The response
+is the Avoid cell and a structural decision, which is an output rather than a failure.**
+
+**Stage three stalls.** The cell is Compute and the coefficient of variation cannot be obtained. **The
+response is to treat the standard error as no smaller than the dispersion of rolling estimates, which is
+computable from the data at hand.**
+
+**What the three have in common. One property.** Each has a procedure for producing an output anyway. **Which
+means the sequence has no dead ends, and a decision that appears unfinished is usually a decision whose third
+stage was reached before its second.**
+
+**What to record when a stage stalls. Two items.** The stage, and what would unblock it. **Which converts an
+unfinished decision into a monitorable one and prevents it from being decided silently by default.**
+
+**Why the fourth output deserves a name.** Because "unfinished" is not among the three outputs the chapter
+lists, and a decision that is genuinely unfinished will be recorded as one of the three by a practitioner who
+wants to close the file. **Naming it makes the honest record available: stage two, not estimable, revisit when
+the second dataset arrives.**
+
+**Which of the three stalls is most common. Stage one.** Because enumeration is the hardest step and the one
+that requires the most institutional access. **Which is the practical argument for the residual category and
+for making the first stage's output a required field rather than an optional one.**
+
+## The ordering and three ways to run it in part
+
+The sequence is described as a whole. In practice parts of it are run, and three partial uses are legitimate.
+
+**Stage one alone. Screening.** The ledger's questions applied without the grid or the sizing. **Which is the most
+transferable partial use, requires no estimates, and is the one the adoption section recommends.**
+
+**Stages one and two. Screening and classification.** The exposure list plus the cells for the quantities the
+decision depends on. **Which produces the form of the output without the sizing, and is appropriate where the
+decision is not a position.**
+
+**Stages two and three. Classification and sizing.** The grid and the fraction, without the ruin screen. **Which
+is the ordinary analytical workflow and is legitimate only where the exposures are already bounded.**
+
+**Which partial uses are safe. The first two.** Because the ruin screen comes first in the sequence and its
+omission is what the ordering exists to prevent. **A decision that begins at stage two has computed for a
+position that may not have a tomorrow.**
+
+**Where the third partial use is defensible. One condition.** Where the exposures are bounded by construction: a
+portfolio of small positions with a hard cap. **Which makes the screen unnecessary rather than skipped, and the
+distinction is worth recording.**
+
+**What to record for a partial use. Two items.** Which stages ran, and why the others did not. **Which is a
+sentence and which converts a partial use into a stated scope rather than an omission.**
+
+**Why partial uses are worth naming.** Because the sequence is presented as indivisible and practitioners will
+run parts of it. **Three partial uses, two of them safe, and the record of which was run is what makes the scope
+visible.**
+
+## The ordering and three costs of skipping a stage
+
+Each stage of the sequence removes options. The cost of skipping one is specific, and the three costs are worth
+stating separately because they are incurred at different moments.
+
+**Skipping the ruin screen. An existence cost.** A fraction computed for a decision that may end the sequence.
+**The cost is realised only if the sequence ends, which is why it is invisible until it is not.**
+
+**Skipping the estimability screen. A reference cost.** A number computed from a quantity that may not exist or
+may be unidentified. **The cost is realised immediately, as confidence in the number, and it is the cost most
+often incurred because the machinery produces a figure regardless.**
+
+**Skipping the sizing stage. An over-commitment cost.** No discount, and therefore a stake nearer the
+undiscounted optimum. **The cost is gradual and appears as a performance gap against a peer who discounted, which
+is why the stage is the one most often skipped in a different sense: it is done, but without the discount.**
+
+**What the three costs share. One property.** Each is realised at a different time, which is why the sequence
+cannot be validated by outcomes in the short run. **One cost is immediate, one is gradual, and one appears only
+when the sequence ends.**
+
+**Which cost is worst. The first.** Because it is the only one that removes the future. **The second and third
+reduce the growth rate; the first ends it.**
+
+**How to decide whether a stage can be skipped. One condition.** Whether the condition the stage checks is already
+established by construction. **A capped portfolio establishes boundedness; nothing establishes realizability
+except a check.**
+
+**Why the costs are worth separating.** Because the sequence's justification is usually presented as logical, and
+the costs are what a practitioner weighs when deciding how much of it to run. **Three costs at three moments, and
+the first is the only one that is not a rate.**
+
+## A note on what this chapter could not check
+
+The ordering is proposed by this book. The prediction about error sensitivity has not been tested,
+and the chapter says so in the refutation section rather than leaving it implicit. The illustrative
+claim that a sizing error is mostly a performance question and a ruin error mostly an existence
+question is an argument, not a finding.

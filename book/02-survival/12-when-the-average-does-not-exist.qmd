@@ -1,0 +1,474 @@
+# When the Average Does Not Exist {#sec-no-average}
+
+In June 2020, *Nature Physics* published a paper by Pasquale Cirillo and Nassim Nicholas Taleb
+under the title "Tail Risk of Contagious Diseases" [@cirillotalleb2020]. It appeared in volume 16,
+issue 6, pages 606 to 613, and OpenAlex records 186 citations for it.
+
+The paper's conclusion can be stated in one sentence, and the sentence is strange enough that it is
+usually softened in retellings. **For some classes of epidemic, the expected number of deaths does
+not exist.**
+
+Not "is hard to estimate". Not "has wide error bars". Does not exist, in the sense that the integral
+that defines it fails to converge. If that is right, then every policy discussion phrased in terms
+of expected deaths is discussing a quantity with no referent, which is the situation Chapter 2
+found for the length of a coastline. Same structure. New domain.
+
+## What a tail index does to a moment
+
+The mechanism is short and worth stating in full, because the paper's argument is entirely carried
+by it.
+
+Let α be the tail index of the distribution of death tolls. Three regimes matter.
+
+| α | Mean | Variance | Consequence for policy |
+| --- | --- | --- | --- |
+| Above 2 | Converges | Converges | Ordinary risk analysis applies: means and dispersion are both meaningful |
+| Between 1 and 2 | Converges | Diverges | The average is meaningful; volatility and variance-based measures are not |
+| Below 1 | **Diverges** | Diverges | **"Average deaths" is not a usable concept; preparation must be framed around the worst case** |
+
+The third row is the paper's position. Contested, and load-bearing. For α below one, the sample mean does not settle: each new
+extreme observation raises it by a visible step, and there is no value it converges to. None at all.
+
+This is the second time the book has met a divergence argument. Chapter 1 met it in the variance,
+where Mandelbrot's finding was that dispersion measures lose their object. Here the loss is one
+level lower: the mean itself goes. **The progression across Parts I and II is a sequence of
+summary statistics losing their referents, from the second moment to the first.**
+
+## Why the standard practice produced comfort
+
+Classical epidemic models — the compartmental kind that sorts a population into susceptible,
+infected and recovered groups — produce a central estimate with an interval. Deaths per capita,
+expected hospitalisations, and the resources implied by them come out as numbers with a spread.
+
+The paper's objection is not that these models are badly built. It is that **an interval is the
+wrong object for a fat-tailed total.** An interval communicates that plausible outcomes lie inside
+it. In a fat-tailed setting, the outcome that dominates the total is the one outside the interval,
+and the interval's width shrinks the analyst's sense of how much is unknown rather than
+communicating it.
+
+This is the fourth quadrant argument from Chapter 9, in a specific and consequential application:
+the cell is fat-tailed and payoff-dependent, the tools are interval-producing, and the interval is
+not the object the decision needs.
+
+## The objection that matters
+
+The paper's conclusion rests on the claim that the tail index for epidemic death tolls is below
+one. That claim is an estimate, and estimates of tail indices inherit everything Part I
+established about their fragility.
+
+The sharpest published objection is **distributional**, and it is worth stating carefully because it
+barely needs any data.
+
+In finite samples, a lognormal distribution and a power law are often difficult to distinguish.
+Both produce roughly straight lines on a log-log tail plot over the ranges available. The critical
+difference is at the level of moments: **a lognormal has a finite mean and a power law with index
+below one does not.** Where the two hypotheses imply different objects, the fitted index — however
+cleanly estimated — cannot settle which object you have.
+
+This is Corral's argument in a 2020 preprint on the tail risk of contagious diseases
+[@corral2020]. I have not read it in full, and the description above follows its stated direction
+rather than its details.
+
+The consequence for the chapter is stated in the book's own terms. Two claims, separated. The paper's qualitative claim —
+**that the tail is thick enough that expectation-based reasoning about epidemic totals is unsafe** —
+is robust. The specific quantitative claim that the index lies below one is the kind of claim that
+the scale-span rule and the estimator chapter exist to discipline.
+
+## The debate around it
+
+The paper arrived in the middle of a public argument about forecasting during the pandemic, and two
+of the contributions to that argument were published side by side in the *International Journal of
+Forecasting* in 2022: a piece by Ioannidis, Cripps and Tanner at pages 423 to 438
+[@ioannidis2022], and a reply by Taleb, Bar-Yam and Cirillo at pages 413 to 422
+[@talebbaryam2022]. The page ranges are adjacent, which tells you most of what you need about the
+exchange.
+
+The book's interest is in the shape of the disagreement rather than in its resolution, because the
+shape is instructive.
+
+**Both sides accept that point forecasts during the early pandemic failed.** That is agreed. The records are
+public, the failures are documented, and neither paper argues otherwise.
+
+**The sides diverge on what follows.** Sharply. One reading is that unreliable forecasts undermine the case
+for policies justified by them, and that model-based restrictions should be reassessed. The other
+reading is that unreliable forecasting, combined with irreversible consequences, is precisely the
+argument for caution — because the decision cannot wait for the point forecast to improve.
+
+The book takes no position on the policy. None. It notes only that the disagreement is not about facts.
+It is about what a decision should do when the input is missing, which is the question Part II has
+been building towards and which Chapter 14 formalises. Next chapter.
+
+## Grading it
+
+In the vocabulary of Chapter 26.
+
+**The mechanism is not a claim at all.** It is arithmetic. That a tail index below one removes the mean is
+mathematics from Chapter 1, applied to a new integral. It is grade I in the sense that it survives
+every transformation relevant to it: it is a property of the family, not of the data.
+
+**The empirical claim is grade II and contested at its boundary.** "Epidemic death tolls are thick-
+tailed enough that expectation-based reasoning is unsafe" survives a change of distribution family,
+which is exactly what Corral's objection tests. "The index is below one" does not survive the same
+test.
+
+**The policy implication is grade III**, the same weak link as Chapter 11, and it is the weakest link, as in Chapter 11. It relies on
+a grade II empirical claim whose boundary is contested and on a grade III judgement about
+irreversibility.
+
+## Claim and tool
+
+The claim: for a class of epidemics, the expected toll may not exist, so decisions framed in terms
+of expected tolls are framed around a quantity without a referent.
+
+The tool: the application of the existence test to a new domain, and the demonstration that a
+central estimate with an interval is not the right object for a fat-tailed total. **The tool is
+portable; the exponent is not.**
+
+## Boundary conditions
+
+The result applies where the tail index is genuinely below one, which is contested for the domain
+in question.
+
+It does not say that the disease is more dangerous than other diseases; it says that expectation-
+based comparison across diseases is not well defined when the indices differ around the critical
+value.
+
+It does not licence a forecast of catastrophe. A divergent mean says the average has no limit; it
+does not say that any particular bad outcome is likely.
+
+And it does not tell you how to prepare. That answer comes from the fourth quadrant rules and from
+the irreversibility screen, not from the tail index.
+
+## What an undefined mean does to a policy argument
+
+The consequence of a divergent mean is easy to state mathematically and difficult to carry into a
+policy discussion, because the discussion's vocabulary assumes the quantity exists.
+
+**The standard policy sentence has the form "the expected cost is X".** Where the mean diverges, the
+sentence has no referent, and it is not repaired by replacing the estimate with a better one. **Every
+further refinement of the estimate is a refinement of a report on the sample**, as Chapter 4 sets
+out: it converges on the largest observed event, and its apparent precision comes from the size of
+the sample rather than from the stability of the quantity.
+
+**Three forms the argument can take instead.**
+
+**A bound.** "The cost exceeds X with probability at least p" is a well-defined statement whenever the
+tail can be bounded, and it carries decision content without requiring a mean.
+
+**A worst-case framing.** Where the alternatives differ in whether an absorbing state is reachable,
+the comparison can be made on that basis alone, which is the second quadrant reasoning of Chapter 9.
+
+**A distributional comparison.** Two policies can be compared on the shape of their outcome
+distributions — how much mass sits beyond a survivable threshold — without either having a finite
+mean.
+
+**Why the substitution is resisted.** Because the quantity that replaces the mean is a bound rather
+than a number, and a bound carries less rhetorical force in a debate where the other side is quoting
+a figure. **This is an institutional fact rather than a mathematical one, and it is the reason the
+argument has to be made twice: once in the paper and once in the room where the decision happens.**
+
+## How to say it in a briefing
+
+The mathematical statement is clean and the briefing version is not, so a translation is worth
+supplying.
+
+**What not to say.** "The expected number of deaths is infinite." True under the model and useless in a
+room: it reads as rhetoric and invites the response that nothing can be done.
+
+**What to say instead. Four sentences.**
+
+**The average is not a stable number here.** Each additional observation of a large event moves it, and
+it has not settled.
+
+**What is stable is the tail's shape.** The frequency with which outcomes exceed any given level
+declines in a regular way, and that regularity is what the evidence supports.
+
+**Preparation should therefore be sized against the level, not against the average.** Pick a level the
+system must withstand and report how much protection buys that level.
+
+**And the estimate of the shape is itself uncertain.** Two methods disagree by more than the decision's
+tolerance, so the level should be set with a margin rather than at the estimate.
+
+**Why the four sentences work.** They omit the word that triggers the argument, they state what is
+known, they convert the question from expected cost to required capacity, and they disclose the
+estimate's weakness. **Nothing in them is a concession, and nothing in them can be refuted by pointing
+out that the mean is unstable — which is the point of saying it first.**
+
+**What remains difficult.** The residual. The level the system must withstand is a values judgement rather than a
+statistical one, and the briefing cannot supply it. **That is the question the room is actually there
+to answer, and it is better asked explicitly than smuggled in as a parameter.**
+
+## What the divergence means for insurance
+
+The consequence of a missing mean is clearest in a domain organised around expected values, and insurance is
+that domain.
+
+**The insurance problem.** No mean, no premium. An insurer sets a premium based on the expected loss and the cost of capital, and
+both presuppose that the expected loss exists. **Where the loss distribution's tail index is below one, the
+expected loss is not a number, and the premium has no actuarial basis.**
+
+**Three practical responses, all of which exist in the market.**
+
+**A cap on the liability.** The market's own answer. The policy limit makes the expectation finite by construction. **This is the
+market's own solution to the divergence problem, and it is worth noticing that the solution is a change in the
+contract rather than a better estimate.**
+
+**Reinsurance.** Truncation, again. The primary insurer truncates its exposure and the reinsurer faces a bounded portfolio with
+a large but finite expectation.
+
+**Refusal.** Correct, and criticised. Some risks are not written, and the refusal is the correct response to a quantity that does not
+exist. **It is also the response that generates the most public criticism, which is why it is worth
+documenting when the reason is mathematical rather than commercial.**
+
+**What the three share.** A change in the contract. Each restores a finite expected loss by changing the contract rather than the
+estimate. **This is the general form of the Replace cell: where the quantity does not exist, substitute one
+that does.**
+
+**What remains difficult.** Where no cap is administratively or politically available — a state's liability
+for a systemic risk, a public health exposure — the insurance structure cannot be assembled, and the residual
+is borne by whoever is standing there. **Naming that residual is more useful than producing a premium for
+it.**
+
+## What a bounded problem looks like
+
+The chapter's argument ends in a substitution. This section states what the substitute looks like when it is
+done well, because the substitute is where the work is.
+
+**The three components. All needed.**
+
+**A level.** The magnitude the system must withstand, chosen rather than estimated. **A reservoir sized for a
+hundred-year event, a hospital's surge capacity, a portfolio's drawn-down limit. The choice is a value
+judgement and should be labelled as one.**
+
+**A probability of exceeding it.** Derived from the tail's shape over the measured range. **Not a precise
+number; an order of magnitude is enough to decide whether the level is the right one.**
+
+**A consequence statement.** What happens if the level is exceeded. **Bounded loss, degraded service, or an
+absent state. This is the component that determines whether the level is adequate, and it is usually missing.**
+
+**Why the three belong together.** A level without a probability is a wish. A probability without a
+consequence statement is a curiosity. **A level with both is a decision rule, and it can be monitored: the
+level is a number in a document, and the exceedance probability is a quantity that can be re-estimated.**
+
+**What the substitution gives up. One thing.** The ability to compare this risk against a risk whose mean
+exists, on a single scale. **That comparison is what the missing mean was wanted for, and it is genuinely
+unavailable. The honest response is to say so rather than to produce a number that pretends the comparison
+was made.**
+
+**How the components are recorded.** In the same document, with the level dated and the consequence statement
+reviewed on a schedule. **The level will be re-chosen as circumstances change; the record of why it was chosen
+is what makes the re-choice a decision rather than a drift.**
+
+## The same problem in a corporate setting
+
+The divergence argument is stated for epidemics and for insurance. The corporate case is where most readers
+will meet it, and it is less exotic than it sounds.
+
+**The case.** A single-site dependency. A firm's operations depend on one facility whose failure would end the
+business. The exposure is systemic for the firm and the distribution of outage durations is heavy-tailed,
+because outages are caused by cascading failures whose lengths are not bounded by any physical repair time.
+
+**What the standard analysis does.** It estimates an expected downtime, multiplies by a daily cost, and reports
+an expected annual loss. **The estimate of average downtime comes from the site's own history, which contains no
+long outages, because a long outage would have ended the firm.**
+
+**The circularity.** Structural, not statistical. The sample of outage durations is truncated by the firm's survival. **An
+estimate of the mean computed from it is a statement about the outages that did not kill the firm, and it is
+being used to size protection against the ones that would.**
+
+**Three responses.** All of them work.
+
+**A level, not a mean.** Chosen, not estimated. Pick the outage duration the firm must survive and design for it. **The choice
+is a risk appetite, and stating it as a duration makes it concrete.**
+
+**A structural measure.** No distribution needed. Redundancy, a second site, contractual recovery time. **These bound the loss without
+requiring the distribution to be estimated.**
+
+**A tail-aware sample.** Industry data, properly read. Industry-wide outage data, where the long events are present because some firms did
+not survive them. **The data exist and the sample selection has to be understood before they are used.**
+
+**Why this belongs in the chapter.** Because the divergence argument is usually read as a technicality about
+epidemics, and it is more often an argument about a company's own truncated history. **The truncation is the
+mechanism, and it is invisible in any single firm's data.**
+
+## The chapter's argument in four sentences
+
+The chapter is long and its argument is short, and the short version is what a reader will carry.
+
+**One. Some quantities a decision depends on do not exist.** The defining expression diverges, so there is no
+value to estimate. **The condition is a tail index below a threshold, and it can be checked from the form of
+the expression.**
+
+**Two.** No amount of data repairs it. Each additional large observation moves
+it, and the estimate becomes a report on the sample's largest event. **Its apparent precision comes from the
+sample's length rather than from the quantity's stability.**
+
+**Three. Whether the mean exists is itself contested, because the distribution family is not identifiable from
+finite samples.** A power law and a lognormal fit comparably and disagree about the mean's existence. **The
+qualitative conclusion survives; the specific index does not.**
+
+**Four.** A substitute, not an estimate. A level the system must withstand, a probability
+of exceeding it, and a consequence statement. **A bound with a decision rule, in place of a number.**
+
+**What they leave out.** The evidence. The historical record, the distributional objection, the
+adjacent-pages exchange. **Those are the chapter's substance and the four sentences are its conclusion, which is
+the right order for a summary to be read in.**
+
+**What to do with them.** One test. Take a reported expected value and ask whether the tail index
+is above or below the threshold where the moment exists. **Where it is below, the number is a sample statistic
+and the label matters.**
+
+**Why compress.** The length looks technical. Because the argument's length is what makes it seem technical, and
+the technicality is concentrated in one step: the convergence check. **Four sentences and one check, and the
+check takes minutes.**
+
+A closing summary. One. Check convergence first. Two. A missing mean is not repairable. Three. Ask which family. Four. Substitute a level. Five. State the consequence. Six. Date the level. Seven. Monitor it. Eight. Say when you do not know.
+
+## The divergence argument and three objections
+
+The chapter's argument attracts three objections, and each has a specific answer that does not require
+conceding the claim.
+
+**Objection one. Divergence is a property of a model, not of the world.** True, and it does not help. **Every
+estimate is computed under a model, and the model in which the mean does not exist is fitted to the same data
+as the one in which it does. The objection establishes that the conclusion is model-conditional, which the
+chapter says.**
+
+**Objection two. With a cap on the outcome, the mean exists.** Also true, and it is the chapter's own
+recommendation. **The cap is the substitution, and an objector who supplies one has accepted the argument
+rather than refuted it.**
+
+**Objection three. Practitioners need a number, and a bound is not usable.** Which is a statement about
+practice rather than about the quantity. **The bound with a decision rule is usable, and the objection is
+evidence for the chapter's claim about institutional pressure rather than against its mathematics.**
+
+**What the three objections have in common. One property.** None denies the mathematics. **Each is about the
+conditions of application, which is where the chapter locates its own boundary.**
+
+**How to answer them in a meeting. Three sentences.**
+
+**"It is model-conditional, and so is the estimate you are comparing it with."**
+
+**"A cap restores the mean, and that is what I am recommending."**
+
+**"The bound has a threshold in it, which makes it a rule rather than a range."**
+
+**Why the objections are worth rehearsing.** Because the chapter's conclusion is counterintuitive and the
+objections are the ones a competent reader will raise. **Three answers, none of which requires abandoning the
+claim, and each of which concedes what is true in the objection.**
+
+**What an objection would have to establish to succeed. One thing.** That the quantity is estimable in the
+setting at hand, with two estimators agreeing within the decision's tolerance. **Which is the grid's second
+question and the only route to a genuine refutation.**
+
+## The chapter and the three ways to state a risk
+
+The chapter's substitution produces a level, a probability and a consequence statement. The three are also the
+three ways a risk can be stated in any document, and stating all three is a habit worth forming.
+
+**Way one. A level.** The magnitude the system must withstand. **Which is a choice and should be labelled as one.**
+
+**Way two. A frequency.** How often the level is exceeded, from the tail's measured shape. **Which is estimated
+and carries a range.**
+
+**Way three. A consequence.** What happens if it is exceeded. **Which is a structural statement and is the
+component most often missing.**
+
+**What each way is good for. One thing apiece.**
+
+**The level is good for designing.** A reservoir, a capital buffer, a hospital's surge capacity.
+
+**The frequency is good for prioritising.** Two risks with the same level and different frequencies are ranked.
+
+**The consequence is good for deciding.** A bounded loss and an absorbing state at the same level and frequency
+are different decisions.
+
+**What the three ways replace. One thing.** An expected value, where the underlying mean exists and is
+uninformative, or does not exist at all. **The three ways are always available and the expected value sometimes
+is not.**
+
+**How to use them in a document. Three sentences.** Which is one paragraph and reads as a complete risk
+statement. **"The system is designed for a level of X. The frequency of exceeding it is estimated in the range
+Y to Z. If it is exceeded, the consequence is W."**
+
+**Why the habit is worth forming.** Because a risk statement missing any of the three is not actionable: a
+level without a frequency is a wish, a frequency without a consequence is a curiosity, and a consequence
+without a level is a worry. **Three sentences, each cheap, and the third is the one most often omitted.**
+
+## The chapter and three audiences
+
+The divergence argument lands differently on three audiences, and the difference explains why the argument has to
+be made more than once.
+
+**A statistician. Accepts the mathematics and asks about the family.** Whose question is whether the tail index is
+below the threshold, and whose objection is that the family is not identifiable. **Which is the chapter's own
+boundary and is addressed by the distributional objection.**
+
+**A practitioner. Asks what to do instead.** Whose question is whether a bound with a threshold is usable and
+whose objection is that the institution wants a number. **Which the chapter's substitution answers and the
+institutional pressure resists.**
+
+**A policymaker. Asks what it implies for a decision.** Whose question is whether the analysis changes a decision
+that must be made, and whose objection is that unbounded problems still require action. **Which the three
+responses — level, probability, consequence — are designed for.**
+
+**What the three audiences share. One requirement.** Each needs the same four sentences: the average is not
+stable, the shape is, the level is what to prepare against, and the shape's estimate is uncertain. **Which is the
+briefing version in one paragraph.**
+
+**What differs across the three. The next question.** The statistician asks about the family; the practitioner
+asks about the institution; the policymaker asks about the decision. **Which is why the same argument is made
+three times and why the chapter contains all three.**
+
+**Why the argument has to be made more than once.** Because the objections are not about the mathematics. **Each
+audience accepts the arithmetic and objects to the application, and the applications differ.**
+
+**What to do when one audience is absent.** Expect the argument to be repeated. **The chapter's four sentences are
+the reusable part, and they are the same for all three audiences.**
+
+## The chapter and three kinds of substitute
+
+The divergence argument's response is a substitute. Three kinds appear, and they differ in what they preserve.
+
+**A level with a probability and a consequence. The book's recommendation.** Which preserves the decision's
+content: what to prepare against, how often, and what happens if exceeded. **Which loses only the ability to
+compare against a risk whose mean exists.**
+
+**A capped version of the original quantity. The insurance solution.** Which restores the mean by truncating the
+distribution. **Which preserves comparability at the cost of a contractual change, and the change is the price of
+the comparison.**
+
+**A different risk measure entirely. Occasionally used.** A quantile, a shortfall measure, a tail conditional
+expectation. **Which preserves tail-sensitivity and loses the additivity that expected values provide, so
+portfolio aggregation becomes harder.**
+
+**What the three have in common. One property.** Each replaces a quantity that may not exist with one that does.
+**Which is the Replace cell's general form and the reason the substitution is a decision rather than a
+correction.**
+
+**Which is easiest to adopt. The second.** Because it requires no new reporting convention and appears as a
+contract term. **Which is why the market produced it before the literature described it.**
+
+**Which is most informative. The first.** Because it carries the consequence statement. **A capped mean answers
+"what is the expected loss" and the first answers "what do we do", which is the question the decision has.**
+
+**How to choose among the three. One question.** Whether the decision needs comparability with other risks. **Where
+it does, cap the quantity; where it does not, use the level, probability and consequence.**
+
+**Why the three are worth separating.** Because the chapter's argument is counterintuitive and its recommendation
+is concrete, and a reader who takes only the diagnosis will produce no substitute at all. **Three substitutes,
+three properties preserved, and the choice is the decision's.**
+
+## A note on what this chapter could not check
+
+The paper's body was not available to me, so no numerical estimates from it appear in this chapter,
+and the three-regime table is the book's presentation of standard results about heavy-tailed
+families rather than a reproduction of the paper's tables.
+
+The Corral objection is described at the level of its stated direction. The two
+*International Journal of Forecasting* contributions are described at the level of their accepted
+common ground and their divergent conclusions; no sentence from either is quoted.
+
+The policy debate around these papers includes a great deal of material this chapter does not
+touch, including contested claims about which interventions worked. None of that is assessed here,
+and the chapter's claims should not be read as extending to it.

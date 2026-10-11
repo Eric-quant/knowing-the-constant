@@ -1,0 +1,486 @@
+# The Existence–Estimability Grid {#sec-existence-grid}
+
+Part II has accumulated two questions. This chapter crosses them and reads off the consequences.
+
+**Does the quantity exist?** That is, does its defining expression converge under the conditions
+that hold?
+
+**Can it be estimated?** That is, do independent estimation procedures agree closely enough that
+the number carries decision content?
+
+The first question is mathematics and costs minutes. The second is empirical and costs a grid. Most
+disagreements about risk that present as disagreements about numbers are, on inspection,
+disagreements about which of the four cells the problem occupies.
+
+## The two questions, and why they are ordered
+
+Existence comes first and the ordering is not a stylistic preference. An estimate of a quantity
+that does not exist is not a bad estimate; it is a report on the sample, and specifically on its
+largest element, as Chapter 4 established. **The machinery will produce it either way.**
+
+Estimability is the weaker question and the easier one to answer badly. The template used in this
+book is deliberately blunt: run at least two estimators with different assumptions, and treat their
+disagreement as data. If the disagreement is larger than the effect the decision depends on, the
+quantity is not estimable for that decision — which is a statement about the pair of quantity and
+decision, not about the quantity alone.
+
+## The grid
+
+| | **Estimable** | **Not estimable** |
+| --- | --- | --- |
+| **Exists** | **Compute.** Estimate, report an interval, act proportionally | **Bound.** Do not point-estimate; report bounds and worst cases |
+| **Does not exist** | **Replace.** The formula has no object; change the question | **Avoid.** No quantity, no estimate: use structural criteria only |
+
+Four cells, four actions, and one of them contains no numbers at all.
+
+**Compute** is ordinary practice and needs no elaboration. It is what the machinery was built for.
+
+**Bound** is the cell that most practitioners skip. The quantity is real, the estimate is weak, and
+the correct output is a range or a threshold rather than a point. "The tail index is above 1.5" is a
+bound and carries decision content. "The tail index is 1.63" is a point estimate on a quantity whose
+estimators disagree by more than that, and it carries less content while looking like more.
+
+**Replace** is the cell that feels like failure and is not. Where the quantity does not exist, the
+action is to substitute one that does: variance for a second-moment problem becomes a tail
+quantile; expected loss for a divergent mean becomes a survivable-loss threshold. The substitution
+loses information. It also removes an object that was never there.
+
+**Avoid** is the cell nobody wants to be in, and the one that most requires naming. Where a
+quantity neither exists nor can be estimated, the decision has to proceed on structural grounds:
+reversibility, bounded loss, redundancy. Chapter 16 builds the instrument for it.
+
+## What the grid is not
+
+**It is not a risk ranking.** The cells are not ordered from safe to dangerous. A quantity in
+Bound can be more consequential than one in Compute, and a decision in Avoid is not necessarily
+more dangerous — it is one where numerical reasoning is unavailable.
+
+**It is not a statement about importance.** Existence and estimability say nothing about whether the
+question matters. The grid classifies the epistemic situation, not the stakes.
+
+**It is not a licence to abandon the number.** Every cell except Avoid ends in a usable output. The
+grid's purpose is to make the output the right kind of thing, which is the failure the previous
+chapters documented at length: point estimates of weakly identified quantities, reported with
+nominal precision, acting as though they were computed values.
+
+## Five quantities placed
+
+| Quantity | Existence | Estimability | Cell |
+| --- | --- | --- | --- |
+| Mean daily return of a liquid index over a fixed period | Exists | Good | Compute |
+| Variance of a series with contested tail index around two | Depends on the index | Weak | Bound (and the boundary matters) |
+| Tail index from a short, calm sample | Exists | Poor | Bound |
+| Length of a coastline as ruler shrinks | Does not exist | Not applicable | Replace |
+| Ruin probability from historical analogue data | Exists for a model | Very poor, and model-dependent | Bound, with structural screening first |
+
+The second row is the most instructive, because its cell assignment depends on a parameter that is
+itself estimated. That is not an anomaly of the grid; it is the grid correctly reporting that the
+epistemic situation is conditional. The honest output is not "Bound" but "Compute if the index is
+above two, Bound below it, and here is what the plausible range of indices implies for each case."
+
+## Refutation conditions
+
+A device that cannot fail is decoration. Three ways this one could.
+
+**The Replace cell may be empty in practice.** If quantities that fail to exist are vanishingly rare
+outside textbook examples, then the grid's four cells collapse to two and the device is a
+two-by-two table with an unused quadrant.
+
+I do not think the cell is empty, and the examples this book uses — coastline length, divergent
+variance, divergent mean — are three instances. But all three come from a literature selected for
+heavy tails, and a critic could fairly say that the selection is the reason they appear. **The test
+would be a corpus study: take a sample of applied risk analyses and code which cell each quantity
+occupies. That study has not been run.**
+
+**The Bound and Avoid cells are not clearly separated.** The boundary between "cannot be estimated
+well enough" and "cannot be estimated at all" is a threshold on a continuous quantity, and any
+threshold is conventional. This is the same objection the scale-span rule faced, and it has the same
+answer: the content is the requirement to say which cell you are in, not the location of the line.
+
+**The grid may encourage premature abandonment.** An analyst who finds a quantity in Replace or
+Avoid may stop, when the correct action is to substitute a usable quantity and continue. Naming the
+cells badly could convert "change the question" into "give up on the question".
+
+I take this as the most serious of the three, and the design response is that the Replace cell has
+a stated action rather than a verdict. **A cell that tells you to stop is a trap; a cell that tells
+you what to do instead is a tool.**
+
+## The grid applied to itself
+
+**What transformation must it survive?** Changes of domain: it should work for quantities in
+finance, medicine, engineering and policy.
+
+**Does it?** The two questions are domain-general, and their order is forced by logic rather than by
+convention. The cell definitions travel. What does not travel cleanly is the practical standard for
+"estimable", which depends on decision stakes and on what independent estimators exist in the field.
+
+**Verdict.** A grade II construction. The structure survives; the calibration does not.
+
+## Claim and tool
+
+The claim: that the applicability of numerical reasoning to a decision depends on two separable
+conditions, existence and estimability, and that crossing them yields four distinct actions.
+
+The tool: the grid, its four actions, and the requirement that the cell be named in the output.
+
+Registered as B-003 in the constructed register, with the refutation conditions above attached.
+
+## Boundary conditions
+
+The grid presumes that the defining expression can be written, which excludes quantities understood
+only operationally.
+
+It presumes that "estimable" can be assessed for the decision at hand, which requires knowing what
+the decision is sensitive to — often a harder question than the estimation itself.
+
+And it presumes that the decision has not already been made. An analyst who needs a number to
+justify a decision will find a cell that produces one, which is a failure of the user rather than of
+the device, and it is the reason the cells are named in public rather than inferred privately.
+
+## The grid and the reporting convention
+
+Standard reporting practice asks for a point estimate and an interval. The grid says that the interval
+is the right output in one cell and the wrong output in two others, and that this is a structural fact
+rather than a matter of presentation.
+
+**Compute.** Point estimate with interval. The convention is correct here.
+
+**Bound.** The interval understates the problem. An interval communicates that the true value lies
+inside it with some probability, which presupposes that a true value exists and that the estimator is
+centred on it. Where the estimators disagree with no prospect of convergence, the interval is an
+artefact of choosing one of them. The correct output is a range with a stated decision rule.
+
+**Replace.** The point estimate has no referent, so the interval around it is an interval around
+nothing. The correct output is a different quantity, named as a substitute and justified by the
+decision it serves.
+
+**Avoid.** No numerical output. The correct output is a structural decision with its reasons stated.
+
+**Why the convention persists.** Because it is a convention: review processes ask for estimates and
+intervals, and an output that does not have that form is harder to file. **This is an institutional
+constraint rather than an epistemic one, and the grid's practical contribution is to give an analyst
+the vocabulary to explain why the form is wrong in a specific case.**
+
+## Two objections from practice
+
+**The grid as bureaucracy.** Filling in a cell for every quantity is overhead, and an organisation that
+requires it will produce forms. The objection is correct and the answer is scope: the grid is applied
+to quantities the decision depends on, which is usually one or two per decision rather than all of
+them. **A decision that depends on more than a handful of estimated quantities is usually a decision
+that has not been specified.**
+
+**The grid as an excuse.** An analyst who wishes to avoid a numerical commitment can place a quantity
+in Avoid and stop. This is the failure mode of any framework that licences a refusal, and the defence
+is procedural: the cell must be entered with its reason, and the reason must name what would move the
+quantity to a different cell. **"Not estimable" is a finding; "not estimable, and here is what would
+change it" is a finding and a plan.**
+
+**Why both objections are worth stating.** Because they describe what happens when a diagnostic device
+is embedded in an organisation, and the prospects for the device depend on whether its output is
+reviewed by someone who knows what a stress-case exit cost or a pair of disagreeing estimators looks
+like. **Where nobody does, the grid will be filled in the Compute column and the ledger will be marked
+bounded, and no amount of explanation in the device will prevent it.**
+
+## Using the grid on a portfolio
+
+The grid's most common application in this material is to the quantities in a portfolio construction,
+where almost every input sits in a different cell and the practice usually treats them all alike.
+
+**Expected returns. Compute, badly.** The quantity exists. The estimator's reliability is weak, and the
+second question in the grid — do two estimators agree — is answered no in most cases. **The correct cell
+is Bound, and the practice of feeding point estimates into an optimiser is the error Chapter 22
+documents.**
+
+**Volatilities. Compute.** Estimated from every observation rather than the tail, and the estimators
+agree. This is the one input the ordinary machinery handles well.
+
+**Correlations. Bound.** Estimated reliably in calm periods, and the object of the exercise is the
+behaviour in a crisis, where the estimate has no support. **The quantity exists and the estimate is
+specific to a state that will not be the state that matters.**
+
+**Tail risk measures. Replace or Avoid.** Where the measure is variance-based and the index is near the
+boundary, the quantity may not exist. Where it is a quantile, it exists and is barely estimable.
+**Neither is a number to be optimised.**
+
+**Liquidity. Bound.** The quantity exists and the relevant value is the stress-case value, which is not
+observed in the sample.
+
+**What the grid produces for a portfolio.** One input in Compute, three in Bound, one in Replace. **A
+construction procedure that treats them uniformly is not using the grid, and the grid's contribution is
+the permission to construct the portfolio from one reliable input plus bounds rather than from five
+point estimates.**
+
+## The grid as a specification for a data request
+
+The grid is usually presented as an analytical device. Its most under-used application is as a
+specification for what data to collect, because the cell determines which data would help.
+
+**Compute.** More observations narrow the interval. **Collect more of the same.**
+
+**Bound.** More observations help slowly, and what helps faster is a wider range of conditions: a longer
+sample containing a stress period, an instrument that behaves differently, a regulatory change. **Collect
+variation, not volume.**
+
+**Replace.** No additional data improves the original quantity. What helps is data about the substitute: if
+the variance is replaced by a tail quantile, the collection effort should target the tail. **Collect the
+right variable.**
+
+**Avoid.** No data of this kind resolves the question. What helps is structural information: who else is
+exposed, what the exit costs are, how the network is connected. **Collect documents rather than series.**
+
+**What the specification prevents.** The common pattern in which a quantity lands in Bound and the response
+is to commission more observations of the same kind. **The response is appropriate to Compute and almost
+useless in the other three cells, and the misallocation is invisible because the work looks responsive.**
+
+**How to use it in a briefing.** State the cell, then state the collection plan that follows from it, then
+state the cost. **A committee asked to fund another decade of the same data will usually decline; a
+committee asked to fund a stress-period sample will often agree, and the request is more likely to change
+the answer.**
+
+## The grid and the standard error of a bound
+
+Bounds are usually reported as ranges, and ranges invite a false precision that the grid is designed to
+prevent.
+
+**The problem.** "The tail index is between 1.5 and 2.5" looks like a bound and is often a point estimate
+with an interval attached. **The distinction is whether the range was derived from the uncertainty of an
+estimator or from the range over which conclusions hold.**
+
+**Three kinds of range.**
+
+**A confidence range.** The estimator's uncertainty. **It shrinks with more data, which makes it the wrong
+object for a quantity that exists but is not estimable.**
+
+**A decision range.** The values over which the decision does not change. **This is the useful one, and it
+is computed from the decision rather than from the data.**
+
+**A model range.** The answers under different model assumptions. **It does not shrink with data, and its
+width is the finding.**
+
+**What to report in the Bound cell.** The decision range, plus the model range where models differ. **The
+confidence range belongs there only if it is narrower than both, which is rarely the case.**
+
+**Why the distinction is worth a section.** Because a reported interval is read as a statement about accuracy,
+and in the Bound cell the relevant statement is about robustness. **Two ranges with the same numbers can mean
+opposite things depending on which they are, and the reader cannot tell without a label.**
+
+**How to label it. One word.** "Between 1.5 and 2.5 at a ninety percent confidence level" and "between 1.5
+and 2.5 across the model families considered" are different claims. **The one-word difference is the whole of
+the distinction, and it is omitted in most reporting.**
+
+## The grid and the choice of a threshold
+
+Several cells are separated by thresholds, and the thresholds are conventions. The chapter's refutation section
+concedes this; this section states how to choose one without pretending it is derived.
+
+**The thresholds in use. Three.**
+
+**The estimability standard.** How much disagreement between two estimators counts as failure.
+
+**The span threshold.** How many orders of magnitude a scaling claim requires.
+
+**The tail threshold.** How heavy a tail must be before the standard machinery is unreliable.
+
+**How each should be chosen. By the decision.**
+
+**Estimability.** The threshold should be the disagreement the decision can tolerate. **A decision insensitive to
+the quantity's value has a loose threshold; a decision that hinges on the sign has a tight one.**
+
+**Span.** The threshold should be the range the decision's horizon requires. **A decision operating within a
+narrow range does not need a spanning claim, and one extrapolating beyond the data needs a wider one than any
+convention supplies.**
+
+**Tail.** The threshold should be the level of heaviness at which the standard machinery's conclusions change
+sign. **That is a computable question, and it is more defensible than a conventional cutoff.**
+
+**Why decision-indexed thresholds are preferable.** Because a convention applies uniformly and the decisions do
+not. **A uniform threshold produces the wrong answer at both extremes: it is too strict where the decision is
+insensitive and too loose where it is sensitive.**
+
+**What to record.** The threshold, the decision it was indexed to, and the date. **A threshold without a stated
+decision is a convention, and conventions drift. An indexed threshold is auditable, and the audit question is
+whether the decision has changed.**
+
+**Why this section belongs in a chapter that concedes its thresholds are arbitrary.** Because conceding a
+weakness is not the same as addressing it, and indexing a threshold to a decision is the only response to
+arbitrariness that is available.
+
+## The grid in a written report
+
+The grid's output is a cell, and a cell belongs in a document. This section states where each cell's output
+goes, because a report that mixes them loses the information the grid produced.
+
+**Compute. The main body.** An estimate, its interval, and the method. **This is what a report is organised
+around, and in this cell the organisation is correct.**
+
+**Bound. A separate section, labelled.** The range, the decision rule, and the model dependence. **Not an
+appendix: a reader who reads only the body must not be left believing the quantity was computed.**
+
+**Replace. A named substitution.** The quantity used instead, and the reason. **The original quantity should
+appear once, with its fate recorded, so that a reader who expected it finds the substitution rather than an
+absence.**
+
+**Avoid. The decision, with its reasons.** No number, and a statement of what would change the classification.
+**A report that produces a number for an Avoid quantity has failed at the last step, and the failure is
+invisible in the output.**
+
+**What the layout accomplishes. One thing.** A reader can see, from the structure of the document, which
+quantities were computed and which were not. **In a report where everything appears in the same form, the reader
+must reconstruct that from the prose, and few readers do.**
+
+**Three signs the layout is being ignored.**
+
+**Intervals around every number.** Which suggests the Bound cell is being treated as Compute.
+
+**A quantity that appears in the summary with no cell attached.**
+
+**An Avoid conclusion stated in numerical terms.**
+
+**Why the layout matters more than the labels.** Because labels are read by the writer and the layout is read by
+everyone. **A report whose structure discloses the cells has communicated the grid's output to a reader who has
+never heard of the grid.**
+
+## The grid and the difference between a projection and a promise
+
+The cells determine what may be said about the future, and the distinction between a projection and a promise is
+the grid's most consequential application outside analysis.
+
+**Compute. A projection with an interval.** The claim is a distributional statement, and its uncertainty travels
+with it. **A reader may rely on it as a distribution, not as a value.**
+
+**Bound. A range with a rule.** The claim is that the outcome lies in a range and that the decision will change
+at a threshold. **No central value is asserted, and a reader who extracts one has gone beyond the output.**
+
+**Replace. A named substitute.** The original quantity has been abandoned, and the substitute is justified by
+the decision it serves. **A reader who later compares the substitute to the original quantity is comparing two
+different objects.**
+
+**Avoid. A structural decision.** No numerical claim at all. **A report that converts this into a projection has
+invented a claim rather than estimated one.**
+
+**Why the distinction is worth stating in this language.** Because the failure it prevents is not analytical but
+institutional: a decision is made, a number is attached to it for communication, and the number outlives its
+cell. **The projection becomes a promise in the retelling, and the retelling is where most of the damage
+happens.**
+
+**Three practices that preserve the distinction.**
+
+**State the cell in the sentence that carries the number.** Not in a section heading.
+
+**Where the cell is Bound, state the rule rather than the midpoint.** A range with a threshold cannot be
+summarised without the threshold.
+
+**Where the cell is Avoid, state what would change it.** Which converts a refusal into a monitorable condition
+and prevents the number from being invented later by someone else.
+
+**What the grid cannot do.** Prevent a reader from extracting a value from a range. **It can make the extraction
+visible as an error, which is the most a document can achieve.**
+
+## The grid and four kinds of bound
+
+The Bound cell is described as a range with a rule. Four kinds of bound appear in the book's material, and they
+are not interchangeable.
+
+**A statistical bound. From the estimates.** The range across methods, or the interval under the widest
+assumption. **Which shrinks with data and is the wrong object where the identification is the problem.**
+
+**A structural bound. From the exposure.** A cap, a contract term, a physical limit. **Which does not shrink
+with data at all and is the response in the Avoid cell.**
+
+**A historical bound. From the record.** The worst outcome observed. **Which is a lower bound on the exposure
+where the record is truncated, and is often mistaken for an upper bound.**
+
+**A contractual bound. From an agreement.** A break clause, a liability cap, a settlement term. **Which is chosen
+rather than estimated and is the most reliable of the four because it does not depend on any inference.**
+
+**What the four imply for the Bound cell's output. One requirement.** Label the kind. **"Between 1.5 and 2.5
+across methods" and "capped at the contract term" are both bounds and mean entirely different things.**
+
+**Which kind belongs in which cell.**
+
+**Statistical. Compute and Bound.** Where the quantity exists and the estimates are imprecise.
+
+**Structural and contractual. Avoid and Replace.** Where no estimate is available.
+
+**Historical. Bound, with the truncation disclosed.** Where the record is the only evidence.
+
+**Why the historical bound is the most misused.** Because it looks like an estimate and is used as one. **A
+historical worst case is the worst case that did not end the enterprise, and using it as an upper bound is the
+truncation error the book's fourth chapter names.**
+
+**What to record. Two items per bound.** The kind and its source. **Which is a phrase and which makes the
+bound's meaning available to a reader who has not performed the analysis.**
+
+## The grid and three ways a quantity can be unavailable
+
+The grid's four cells include three in which a number is not the output. The three are different, and the
+distinction determines the response.
+
+**Not yet defined.** The quantity exists conceptually and the analyst has not written its expression. **Which is
+a task rather than a finding, and the response is to write the expression.**
+
+**Defined but not identifiable.** The quantity exists and the data cannot pin it down. **Which is a property of
+the data and the response is a bound, or a wider range of conditions.**
+
+**Defined and not existing.** The expression diverges. **Which is a property of the family and the response is a
+substitute.**
+
+**What the three require. Increasingly structural responses.**
+
+**Not defined. An hour of writing.** Which is the cheapest and the most often skipped.
+
+**Not identifiable. A bound and a decision rule.** Which requires the decision to be specified.
+
+**Not existing. A substitute quantity.** Which requires an argument that the substitute serves the decision.
+
+**Why the three are confused. One mechanism.** All three produce the same symptom, which is the absence of a
+trustworthy number. **Which is why the diagnosis has to be made rather than inferred from the outcome.**
+
+**How to tell them apart. One question each.** Can the expression be written. Is the disagreement between two
+estimators shrinking with the sample. Is the expression convergent. **Three questions, minutes each, and the
+three cells follow.**
+
+**Why the distinction matters for a report.** Because the three produce different outputs and a reader needs to
+know which one they are looking at. **A bound is not a substitute and a task is not a finding, and a report that
+presents all three as "no estimate available" has lost the information the grid produced.**
+
+## The grid and three ways a review can check it
+
+A reviewer receiving a grid can check it three ways, and each detects a different failure.
+
+**Recompute one second estimator. The direct check.** Take a quantity in Compute and reproduce the comparison.
+**Which verifies the cell and takes an hour, and which is the only check that bears on the classification
+itself.**
+
+**Look for a quantity in every cell. The structural check.** A decision whose quantities all land in Compute has
+either an unusual problem or an incomplete analysis. **A decision whose quantities all land in Avoid has either an
+unusual problem or an author who prefers structure.**
+
+**Ask what the decision does with each cell. The purpose check.** A quantity in Bound should be accompanied by a
+decision rule, not only a range. **Which is the check that detects the most common reporting failure: a bound
+presented as an estimate.**
+
+**What the three have in common. One property.** Each is answerable from the record rather than from the
+analysis. **Which is the same property the ordering's record has, and it is what makes both auditable.**
+
+**Which check is cheapest. The third.** Because it requires no recomputation and detects the commonest failure.
+**Which makes it the right first question in a review.**
+
+**Which check is most informative. The first.** Because it tests the classification rather than its
+presentation. **And it is the one a reviewer skips when time is short, which is when it is most needed.**
+
+**What the three cannot check. Whether the enumeration is complete.** Because the omissions are invisible by
+construction. **Which is the grid's structural weakness and the reason the ledger's residual category exists.**
+
+**Why the three checks are worth stating.** Because a diagnostic device is only as good as the checks it invites.
+**Three checks, three failures detected, and the third is the one to run first.**
+
+## A note on what this chapter could not check
+
+The grid is proposed by this book. I know of no literature that uses this particular crossing, and
+the corpus study that would test the Replace cell's frequency has not been run; the chapter says so
+in the refutation section rather than burying it.
+
+The five placements in the middle of the chapter are judgements using the material of Parts I and
+II. Readers who would place the second row differently are disagreeing about the plausible range of
+tail indices, which is the right thing to disagree about.

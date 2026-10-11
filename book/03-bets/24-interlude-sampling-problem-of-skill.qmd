@@ -1,0 +1,505 @@
+# Interlude: The Sampling Problem of Skill {#sec-sampling-skill}
+
+Chapter 18 left a question open. In a casino, a player with an edge can be distinguished from a
+player who has been lucky, because the deck is computable and the expectation is known. In markets,
+the edge must be estimated, and the previous chapters have shown what happens when estimates meet
+optimisers.
+
+This interlude asks how long it takes to tell the two apart. The answer is uncomfortable and it
+follows from arithmetic that has nothing to do with markets.
+
+## The arithmetic of detecting an edge
+
+Suppose a strategy has a true edge of a given size per period, and the volatility of its returns is
+also known. The standard test compares the average excess return to its standard error:
+
+[F] t ≈ (mean return / standard deviation) × √n
+
+where n is the number of periods. The statement "these are typical numbers for a real strategy" is
+weaker than it sounds, and the formula makes the reason plain.
+
+**The edge enters the numerator, so small edges are hard to detect. The sample size enters as a
+square root, so gaining confidence costs time squared.** To double the confidence in a given effect,
+you need four times the data.
+
+Take an illustrative case, with the numbers chosen to be plausible rather than documented: an annual
+excess return of three percent, an annual volatility of ten percent, so a ratio of three tenths.
+Detecting that at conventional significance requires roughly forty years of data. At a ratio of one,
+which most professional strategies would be pleased to claim, the requirement falls to a few years,
+and the fall is steep because the statistic is linear in the ratio and only square-root in time.
+
+The arithmetic is not controversial. Not at all. **It is the reason track records shorter than a decade carry
+very little information about skill**, and the reason the industry's reliance on three-year records
+is closer to marketing than to measurement.
+
+## Three problems that make it worse
+
+The formula above is the optimistic version. Three features of real data degrade it further. Three.
+
+**Fat tails.** Of course. The standard error in the denominator is estimated from the same data, and Part I
+established that the estimates are unreliable in the tail. A t-statistic computed from a sample whose
+tails are thick is not a t-statistic in the classical sense, and the nominal thresholds do not hold.
+
+**Selection.** Worse. The population of observed track records is filtered. Strategies that failed are
+absent from the database, often because the fund closed, which is the ruin problem of Chapter 11
+appearing in the data rather than in the analysis. A set of survivors' returns tells you about the
+survivors.
+
+**Non-stationarity.** Worse still. The edge in the numerator is not constant. If it decays, as Chapter 23 argued
+is normal, then the sample average is an average over a period during which the true edge was
+falling. **Estimating a moving parameter with increasing precision is a way of estimating its
+historical average accurately and its current value poorly.**
+
+## What follows for practice
+
+Three consequences. Ordered by cost.
+
+**Small stakes while learning.** Learn first. If the estimate requires a decade, the rational response is to
+commit little capital during the decade. This is the bounded pilot from Chapter 16 applied to a
+strategy: the exposure is capped by a number, not by a probability.
+
+**Structural evidence as a substitute.** Substitute it. Where the edge has an explainable mechanism — a structural
+friction, a rule, a capacity limit that keeps others out — the mechanism carries information that the
+return history does not. **A story is weak evidence, and a mechanism is a different kind of thing**:
+it can be checked against how the market is organised, which is data the time series does not
+contain.
+
+**Accept the asymmetry.** Then size for it. It takes years to conclude that a strategy works and much less time to
+conclude that it is dangerous. Position sizing should reflect that asymmetry, which is exactly what
+the discount function does. **The apparent conservatism of the sizing rules is a response to the
+sampling problem, not to a general preference for caution.**
+
+## Refutation conditions
+
+The interlude would be too pessimistic if any of the following held.
+
+**If real edges are large relative to volatility.** Where the ratio in the formula is above one,
+detection is quick, and the forty-year calculation is irrelevant. Some strategies in some periods
+have looked like this; the question is how many, and the answer is contaminated by selection.
+
+**If cross-sectional evidence substitutes for time-series evidence.** A strategy applied to a
+thousand independent instruments generates a thousand observations per period rather than one, and
+the effective sample grows accordingly. This is a real escape from the arithmetic and it is why
+statistical arbitrage is not subject to the same constraint as a single-market trend strategy.
+
+**If the decision does not require certainty.** It does not. The interlude's conclusion assumes the decision is
+binary — trade or do not trade. Under a sizing rule, the response to uncertainty is a smaller
+position, and a smaller position needs less evidence to be worthwhile. **That is the practically
+important loophole, and it is why Part III did not stop at this interlude.**
+
+## Claim and tool
+
+The claim: detecting a plausible edge from a return history requires more data than most decisions
+are based on, and the requirement is imposed by arithmetic rather than by scepticism.
+
+The tool: the linear-in-edge, square-root-in-time structure of the detection problem, and the three
+consequences that follow for capital commitment, evidence, and the asymmetry of conclusions.
+
+## Boundary conditions
+
+The arithmetic assumes returns are stationary within the sample and that the standard error is
+estimable, both of which are the assumptions the previous chapters undermined.
+
+Detecting is not using. Different questions. A practitioner who has a mechanism, a bounded
+position, and a discount does not need to resolve the detection question before acting.
+
+And it says nothing about how much evidence is enough for a given decision. That depends on the
+cost of being wrong, which is Chapter 16's territory rather than this chapter's.
+
+## What a track record can show
+
+The sampling arithmetic says a record is weak evidence about skill. It says nothing about what a
+record is good evidence for, and the distinction is practically useful.
+
+**What a long record does establish.**
+
+**That the strategy did not destroy itself.** A track record of ten years is evidence that whatever the
+strategy does, it survived its own worst episodes, which is not nothing. This is a statement about
+robustness rather than about edge.
+
+**That the operational machinery works.** Execution, settlement, risk limits and reporting all
+functioned. In practice this is where most strategies fail, and a record is direct evidence that they
+did not.
+
+**That the estimated volatility is roughly right.** Dispersion is easier to estimate than the mean,
+because it is estimated from every observation rather than from the tail of the distribution of
+outcomes. A record gives a usable volatility estimate long before it gives a usable edge estimate.
+
+**What a record cannot establish.**
+
+**That the edge will persist.** Nothing in a history speaks to the mechanisms of Chapter 25.
+
+**That the edge was there to begin with.** Selection plus noise can produce a decade of positive
+returns.
+
+**The practical use of the distinction.** Interview questions and due-diligence checklists are usually
+aimed at the second list. **The first list is where a record carries information, and it is
+systematically under-used.**
+
+## Raising the information content of a sample
+
+If time is the scarce input for detecting an edge, the useful question is how to get more information
+per unit of time. Four routes, in increasing order of difficulty.
+
+**Breadth.** Apply the same rule across many independent instruments. The effective sample grows with
+the cross-section, and this is why statistical arbitrage escapes the constraint that dominates
+single-market strategies. The requirement is genuine independence, which correlations undermine.
+
+**Conditioning.** Restrict the sample to the states where the edge should be present. This raises the
+signal-to-noise ratio per observation, at the cost of a smaller sample and a risk of selecting states
+after seeing the outcomes.
+
+**Pre-committed rules.** Specify the strategy before observing the data it will be tested on. This
+does not add information, but it prevents the information from being consumed by the search. **Most
+apparent edges from a long search are the search rather than the edge.**
+
+**Structural evidence.** Where a mechanism implies the edge, the mechanism is evidence that does not
+depend on the sample at all. It is weaker than data and it is available immediately, which makes it the
+right input for a decision that cannot wait for a decade.
+
+**What the four share.** Each trades a different resource for statistical power — instruments,
+selectivity, discipline, or theory. **A practitioner who uses none of them is relying on time alone,
+which is the most expensive of the four.**
+
+## What to ask a manager whose record is short
+
+The sampling arithmetic implies questions for anyone evaluating a track record, and the questions are
+different from the ones usually asked.
+
+**Not: what is your Sharpe ratio.** A short record's Sharpe ratio has a standard error wide enough to
+contain zero and twice the estimate.
+
+**Ask: what is the mechanism, and when was it identified.** A mechanism claim is checkable against the
+structure of the market, and the date of identification bounds how much of the record is out-of-sample.
+
+**Ask: how many candidate strategies produced this one.** A single strategy selected from two hundred
+tested ones has a very different evidential status from the same record presented alone. **The relevant
+number is not the length of the record; it is the length of the search that preceded it.**
+
+**Ask: what would have to happen for the mechanism to stop working.** The answer is the decay indicator,
+and a manager who cannot name one has not thought about the edge's source.
+
+**Ask: what did you do in the worst period, and what would you do at twice the size.** The first question
+tests the operational record, which a short sample can establish. The second tests whether capacity has
+been considered.
+
+**Ask: which of your returns came from the mechanism and which from a favourable regime.** The answer
+requires an attribution the manager may not have performed, and the attempt is informative either way.
+
+**What the questions produce.** An assessment that is mostly structural rather than statistical, which is
+the correct shape given the arithmetic. **A short record can establish that the machinery works; only the
+mechanism can carry the argument that the edge exists.**
+
+## What the arithmetic implies for how research is funded
+
+The sampling result is usually read as a caution about track records. Its larger implication is about how
+research into edges should be organised, because the arithmetic applies to the research process itself.
+
+**The problem.** If detecting a plausible edge requires a decade of data, then a research programme that
+evaluates candidates one at a time will process very few of them, and its throughput is limited by time
+rather than by effort.
+
+**Four ways to raise throughput. All cost something.**
+
+**Breadth.** Test the same hypothesis across many independent instruments, which multiplies observations per
+period. **Cost: the hypotheses must be more general than instrument-specific, which excludes most
+discretionary ideas.**
+
+**Cross-sectional conditioning.** Compare contemporaneous states rather than a single series over time. **Cost:
+the analysis becomes a panel problem, and the identification assumptions are harder.**
+
+**Structural prediction.** Where a mechanism implies the effect, test the mechanism's implications rather than
+the return history. **Cost: mechanism claims are themselves hard to falsify, which is why they are graded II
+or lower in this book.**
+
+**Pre-commitment.** Specify the test before seeing the data, so that the same sample can be used once rather
+than consumed by search. **Cost: it forbids iteration, which is how most research actually works.**
+
+**What the four imply organisationally.** A programme that uses none of them is a programme whose output is
+bounded by the calendar. **A firm that hires analysts without changing any of the four is buying effort, and
+effort is not the binding constraint.**
+
+**The uncomfortable implication for individual practice.** A single practitioner with one data source and one
+idea is limited to the time-series route, which is the slowest of the four. **The other three require either
+breadth of data, a structural theory, or the discipline to stop looking — and the third is the cheapest and
+the one most often skipped.**
+
+## The record of a process rather than a person
+
+The sampling problem is stated for a track record. A different kind of evidence exists and is usually
+neglected: the record of the process.
+
+**What a process record contains. Four items.**
+
+**Decisions and their reasons, recorded before the outcome.** A log of entries with the state observed, the
+action taken, and the justification.
+
+**Deviations from the rules and their causes.** Where the strategy's rules were overridden, and why.
+
+**Execution outcomes against expectations.** Slippage, fills, capacity, measured continuously.
+
+**Edges retired, with their lifetimes and mechanisms of death.** The decay register of Chapter 25.
+
+**What the four establish that returns cannot.**
+
+**That the process was followed.** A return history cannot distinguish a disciplined strategy from a
+fortunate series of improvisations.
+
+**That the machinery works.** Execution, monitoring and reporting functioned.
+
+**That the strategy has a life cycle.** Retired edges with dates make the decay rate estimable, which no return
+history provides.
+
+**Why the record is not kept.** Because it is administrative work whose benefit appears only when a decision
+must be justified or a strategy replaced. **Its cost is small and its value is concentrated in rare moments,
+which is the profile of everything that gets skipped.**
+
+**What to do with it.** Keep it, and use it in place of return statistics wherever the question is about the
+process rather than the edge. **A reviewer asking about a manager's discipline should be asking for the
+decision log, not the Sharpe ratio, and the two answers are rarely the same.**
+
+## What the arithmetic does to a familiar comparison
+
+The sampling result is abstract until it is applied to a comparison that practitioners make constantly: two
+strategies with different track records.
+
+**The comparison.** Strategy A has five years of returns at a two percent annual edge; strategy B has two years
+at a five percent edge. Which is better evidence of skill.
+
+**What the arithmetic says. The second is worse.** The five-percent edge requires a shorter record to detect,
+but two years is too short even for that; the two-percent edge over five years is also below the detection
+threshold. **Neither record is informative about skill, and the ranking between them is a ranking of two
+uninformative quantities.**
+
+**What the records do establish.** That both strategies survived their periods without an absorbing event, and
+that their operational machinery functioned. **Those are real findings and they are not about skill.**
+
+**What a decision on this evidence should rely on. Three items.**
+
+**The mechanism of each edge, and whether it is documented.**
+
+**The search that produced each strategy.** A record selected from two hundred candidates is weaker evidence
+than one from two.
+
+**The capacity and cost structure**, which the records bear on directly.
+
+**Why the arithmetic is worth running on familiar comparisons.** Because the intuition that a longer record is
+better evidence is correct, and the intuition that a higher edge is better evidence is also correct, and **the
+two intuitions together produce rankings among records that are all below the detection threshold.** The
+arithmetic's contribution is to place the whole comparison in the uninformative region rather than to
+re-rank within it.
+
+**What to do instead.** Rank on the mechanism, the search, and the structure. **Those are the axes on which the
+evidence differs, and they are the axes the arithmetic leaves standing.**
+
+## A number that answers the practical question
+
+The interlude's arithmetic is stated as a requirement for confidence. The number a practitioner actually needs
+is different: how long until a decision can be made at all.
+
+**The question. Reframed.** Not how long to establish skill with confidence, but how long until the evidence
+is good enough to justify a bounded commitment. **The second question has an answer that is short, and the
+shortness is the chapter's practical contribution.**
+
+**The reframing. Three steps.**
+
+**State the decision as a size rather than a yes or no.** A committed amount, a position limit, a pilot.
+
+**State what the decision requires.** Not proof of skill, but enough evidence that the expected loss from being
+wrong is acceptable at that size.
+
+**Compute the time to reach that evidence.** For a bounded commitment the requirement is far weaker than for a
+conclusion, and the time is correspondingly shorter.
+
+**What the reframing buys. Three things.**
+
+**It produces an answer in months rather than years.** Which is what makes the arithmetic usable in a decision
+rather than only in a critique.
+
+**It makes the size the variable rather than the conclusion.** A commitment small enough requires little
+evidence, and the framework's advice is to start there.
+
+**It preserves the caution.** The commitment is bounded by construction, so being wrong is affordable. **The
+arithmetic has not been argued away; it has been converted into a constraint on size.**
+
+**What it does not buy.** Certainty, ever. **A bounded commitment made on weak evidence can still be wrong, and
+the bound is what makes that acceptable rather than the evidence.**
+
+**Why the reframing is worth stating explicitly.** Because the interlude's headline result is discouraging, and a
+discouraging result that has no practical form gets ignored. **The practical form is a size, the size is
+bounded, and the boundedness is what the rest of the book supplies.**
+
+## What to do with a record you cannot evaluate
+
+The arithmetic makes most records uninformative. The practical question is what a decision-maker should do with
+one, and the answer is a procedure rather than a refusal.
+
+**Step one. Set the evidence aside as evidence about skill.** Not discarding it; setting it aside. **The record
+remains relevant to survival, operations and volatility, which are the three things it can establish.**
+
+**Step two. Ask about the search.** How many candidates produced this one. **A single strategy from a wide
+search has an evidential status that no return statistic can repair, and the number is askable.**
+
+**Step three. Ask about the mechanism.** Whether the edge has an explanation that is checkable against the
+structure of the market. **A mechanism carries evidence that is not in the record, and the third interlude's
+distinction between estimable and non-estimable applies to it directly.**
+
+**Step four. Size the commitment by what remains.** If the mechanism is documented and the search was narrow,
+commit more. **If neither holds, commit an amount whose loss is affordable, and treat the position as a
+learning cost rather than an investment.**
+
+**Step five. Fix a review that the record can actually inform.** The review's scope should be the three things
+the record establishes: did the machinery function, did the strategy survive, was the volatility estimate
+right. **A review that asks the record about skill is a review that will be inconclusive by construction.**
+
+**What the procedure produces. A decision, not a verdict.** The five steps do not answer whether the manager has
+skill. **They produce a size and a review scope, which is what the arithmetic leaves available.**
+
+**Why the procedure is worth writing down.** Because the alternative in practice is to use the record as though
+it were informative, and the arithmetic says the resulting decisions are driven by the noise. **Five steps, and
+the last one is the one that closes the loop.**
+
+## The arithmetic and the decision to stop
+
+The interlude's material is about detecting skill. Its most valuable application is deciding when to stop
+looking, which is a decision nobody makes explicitly.
+
+**The situation. Common.** A strategy has been running with a positive record and no conclusive evidence. **The
+question is not whether it works but how long to continue, and the arithmetic bears on it directly.**
+
+**What the arithmetic supplies. One threshold.** The record length at which the evidence could in principle
+become conclusive, given the estimated edge and volatility. **Short of it, the record cannot be decisive; past
+it, the question is whether the edge has survived the intervening period.**
+
+**Three decisions the threshold informs.**
+
+**How long to hold the position before requiring a decision.** Which sets the review cadence rather than the
+position size. **A review scheduled before the threshold is a review that will be inconclusive by construction.**
+
+**How much to commit while below the threshold.** Which is the sizing question, and the answer is the bounded
+commitment of the practical reframing.
+
+**What would justify stopping earlier.** A decay indicator from Chapter 25, a mechanism change, or an
+operational deterioration. **Which are the three channels that carry information faster than the record.**
+
+**What the arithmetic does not supply. A stopping rule.** Which is why the ledger's pre-committed exit applies
+here as it does everywhere else in Part III. **The threshold sets the timeline; the exit condition sets the
+trigger.**
+
+**Why the combination is worth stating.** Because the two instruments address different failures. **The
+arithmetic prevents abandoning a strategy for lack of evidence; the pre-committed exit prevents running one past
+the point where its justification expired. Applied together, they bound both errors.**
+
+**What remains difficult. The discipline.** Which is not supplied by either instrument, and which is why both
+are written down in advance rather than invoked when the question arises.
+
+## The arithmetic and three kinds of evidence
+
+The interlude establishes that track records are weak evidence. Three kinds of evidence are available instead,
+and they differ in cost and in what they establish.
+
+**Structural evidence. Cheapest.** A mechanism that explains why the edge exists and is checkable against the
+structure of the market. **Which is available immediately and is weaker than data, and which is why it is the
+right input for a decision that cannot wait.**
+
+**Cross-sectional evidence. Moderate.** The same rule applied across many instruments, which multiplies the
+observations per period. **Which requires breadth of data and genuine independence, and which is why statistical
+arbitrage escapes the time-series constraint.**
+
+**Process evidence. Accumulating.** A record of decisions, deviations, execution outcomes and retired edges.
+**Which establishes that the machinery works and that the strategy has a life cycle, and which no return
+statistic provides.**
+
+**What the three establish together. One thing.** An assessment of a strategy that is mostly structural rather
+than statistical. **Which is the correct shape given the arithmetic, and which is what a due-diligence process
+should be producing.**
+
+**What none of the three establishes. That the edge will persist.** Which is the decay question, and it requires a
+register of retired edges rather than any of the above.
+
+**How to use the three in a review. One question each.**
+
+**What is the mechanism, and when was it identified.**
+
+**How many candidates produced this one.**
+
+**What does the process record show.**
+
+**Why the three are listed together.** Because the arithmetic's conclusion is discouraging and a reader who has
+only that conclusion will either ignore it or refuse to act. **Three kinds of evidence, each available at a
+different cost, and together they support a decision the return statistics cannot.**
+
+Three kinds of evidence. Structure. Breadth. Process. Costs differ. Structure is cheapest. Use it first.
+
+## The arithmetic and three decisions it should inform
+
+The sampling result bears on three decisions, and it is usually invoked only for the first.
+
+**Whether to fund a manager. The usual use.** Which the arithmetic makes harder, since most records are
+uninformative. **And which the process and structural evidence are what make possible.**
+
+**How large a review cycle to set. The under-used use.** A review scheduled before the detection threshold will
+be inconclusive by construction. **Which means the arithmetic sets a minimum rather than a maximum for the review
+period, and the minimum is usually longer than the cycle an institution uses.**
+
+**What evidence to collect in the meantime. The most useful use.** If the record cannot settle the question, the
+evidence that can is structural and process-based: mechanisms, search breadth, decision logs, execution
+quality. **Which is a specification for a data collection programme rather than a caution.**
+
+**What the three have in common. One property.** Each converts the arithmetic from a pessimistic observation into
+a design constraint. **Which is what makes it usable, since an observation without a design implication gets
+ignored.**
+
+**How to use the third. One list.** The four kinds of process evidence of the earlier section, recorded from the
+start rather than reconstructed. **Which is a change to what a firm collects rather than to what it
+concludes.**
+
+**Why the first use dominates.** Because it is the decision that presents itself. **The other two are available
+and rarely taken, and the second is the cheapest.**
+
+**What the arithmetic cannot supply. A threshold for funding.** Which depends on the cost of being wrong and on
+the size of the commitment. **The arithmetic supplies the time required for confidence, and the bounded
+commitment of the practical reframing supplies the rest.**
+
+## The arithmetic and three kinds of false confidence
+
+The sampling result names a reason records mislead. Three kinds of false confidence follow from it, and they
+appear in different settings.
+
+**Confidence from a long record of a weak edge.** Which is a record long enough to look impressive and short
+enough to be uninformative about the edge. **The tell is a track record described by its length rather than by
+its mechanism.**
+
+**Confidence from a short record of a strong edge.** Which is a record whose effect is large and whose sample
+cannot support it. **The tell is a strategy whose claimed edge implies an implausible return.**
+
+**Confidence from a selected record.** Which is a record drawn from many candidates, so its statistics describe
+the selection as much as the strategy. **The tell is a strategy presented without a search described.**
+
+**What the three have in common. One property.** Each is a correct set of statistics and an incorrect inference
+about skill. **Which is why the arithmetic matters: it identifies which inferences the statistics cannot
+support.**
+
+**How to detect each. One question apiece.**
+
+**Length: what is the mechanism, and when was it identified.**
+
+**Short record: what would the edge imply about the returns.**
+
+**Selection: how many candidates produced this one.**
+
+**Which is hardest to detect. The third.** Because the search is invisible in the record and the question has to
+be asked. **Which is why it is worth asking as a matter of course rather than when suspicion arises.**
+
+**What the three imply for a review. One format.** Three questions, asked of every record, and their answers
+recorded. **Which converts the arithmetic from a caution into a checklist, and the second question is the one that
+usually produces the most information.**
+
+## A note on what this chapter could not check
+
+The illustrative numbers in the detection calculation are chosen to be plausible and are labelled as
+illustrative; no empirical study of track-record lengths is cited, although the general point is
+standard in the performance-evaluation literature.
+
+The claim that three-year records are closer to marketing than measurement is the author's
+characterisation of industry practice, not a finding.

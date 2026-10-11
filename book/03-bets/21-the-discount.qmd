@@ -1,0 +1,495 @@
+# The Discount {#sec-the-discount}
+
+Chapter 20 ended with a rule that every practitioner in this area knows and almost nobody justifies:
+**compute the optimal fraction, then stake less.** The convention is to halve it, and the convention
+has no argument behind it. Half of what, and why half?
+
+This chapter proposes a discount that depends on how well the parameters are known. It is the book's
+own construction, registered as D1, and it is the one proposal in the book that produces a number
+for immediate use — which is also why it needs the most careful statement of its assumptions.
+
+## The asymmetry that motivates it
+
+Everything rests on a fact established in the previous chapter, and it is worth restating because
+the construction is unintelligible without it.
+
+The optimal fraction depends on the expected edge and on the variance. Both are estimated. If the
+edge is overestimated by a factor, the fraction is too large by that factor, and the growth penalty
+is quadratic: **an overestimate by a factor of two puts the strategy at a growth rate of zero.**
+Underestimating the edge by the same factor halves the stake and gives up a modest amount of growth.
+
+So the error landscape is asymmetric, and the steep side is the side people fall down. Any
+correction should therefore be a discount rather than a mark-up, and its size should depend on how
+much uncertainty surrounds the estimate.
+
+## The proposal
+
+Let the estimated optimal fraction be f̂, computed from an estimated edge μ̂ and an estimated
+variance σ̂². Write the coefficient of variation of the edge estimate as
+
+[F] CV(μ̂) = SE(μ̂) / μ̂
+
+that is, the standard error of the edge estimate divided by the estimate itself. Then the executed
+fraction is
+
+[F] f = δ · f̂, with δ = 1 / (1 + κ · CV(μ̂)²)
+
+and κ a constant chosen by the practitioner to reflect how unreliable the estimation environment is.
+
+The form is chosen for three properties, all of which are checkable by inspection.
+
+**It tends to one as the uncertainty vanishes.** Good. As intended. With a precisely known edge, the discount
+disappears and the optimal fraction is used unmodified.
+
+**It falls with the square of relative uncertainty.** This mirrors the quadratic penalty on the
+error side: the correction grows at the same rate as the harm it is protecting against.
+
+**It never goes negative and never exceeds one.** Deliberately. Not an accident. The output is always a fraction, which matters
+because a discount rule is applied by people who will not audit it every time.
+
+## What the constant does
+
+κ sets how aggressively uncertainty is penalised. Three values illustrate the range.
+
+| CV(μ̂) | κ = 1 | κ = 2 | κ = 4 |
+| --- | --- | --- | --- |
+| 0.25 | 0.94 | 0.89 | 0.80 |
+| 0.50 | 0.80 | 0.67 | 0.50 |
+| 1.00 | 0.50 | 0.33 | 0.20 |
+| 1.50 | 0.31 | 0.18 | 0.10 |
+| 2.00 | 0.20 | 0.11 | 0.06 |
+
+Read the middle row carefully, because it contains the interesting result. **At κ = 1, a coefficient
+of variation of one — a standard error as large as the estimate — gives a discount of one half.**
+That is where the folk convention lives. Half Kelly is not arbitrary; it is the right answer for one
+particular and rather poor level of knowledge, and the folk convention has been applied to
+situations where the uncertainty was either much smaller or much larger.
+
+The choice of κ is a judgement, not a fit. κ = 1 treats the problem as one of ordinary sampling noise. Larger values are appropriate
+where the estimator itself is unstable — the fat-tailed, short-sample, regime-shifting conditions
+that Parts I and II described — because in those settings the standard error understates the true
+dispersion of the estimate.
+
+A practical default: **κ = 1 where the edge is estimated from a controlled sample with a known
+generating process; κ = 2 to 4 where the edge is estimated from market data over a period whose
+stability is assumed rather than demonstrated.**
+
+## Where the derivation is loose
+
+The formula above looks precise. It is not. Four places where the reasoning is
+approximate, and a reader who intends to use the device should know them.
+
+**The shrinkage analogy is informal.** Motivation only. Not provenance. The form of δ resembles a Bayesian shrinkage factor, and that
+resemblance is the motivation rather than a derivation. A proper derivation would need a prior over
+edges and a loss function, and both would be choices.
+
+**The standard error is itself estimated, and usually badly.** Often very badly. Sometimes hopelessly. Every problem Chapter 5 assembled
+about estimating tail quantities applies to SE(μ̂). Where the standard error is unreliable, the
+discount inherits the unreliability, and a discount computed from a noisy CV is noisy.
+
+**The formula ignores the correlation between the edge and the variance estimate.** In many
+applications these are estimated from the same data and their errors are correlated, which
+distorts the optimal fraction in a way no discount on the numerator alone can fix.
+
+**It says nothing about non-stationarity.** Nothing at all. Silence. The discount addresses estimation error within a stable
+process. If the edge is decaying — as Chapter 25 argues is normal — then a larger discount is
+warranted for a reason this formula does not capture.
+
+## Refutation conditions
+
+Three ways the proposal could be wrong.
+
+**Empirically, if a constant half-Kelly dominates the computed discount out of sample.** This is a
+real possibility and it should be tested. The discount adds a stage of estimation, and each stage
+brings its own error; a rule that is theoretically better can lose to a rule that is simpler and
+evaluated on the same noisy inputs.
+
+**Structurally, if CV(μ̂) is unmeasurable in the settings where the discount matters most.** The
+conditions that make estimation unreliable are the same conditions that make the standard error
+unreliable, so the discount may be least computable exactly where it is most needed.
+
+**Practically, if the device is used to avoid a judgement rather than to inform one.** A formula
+that returns a number invites being applied without thought, and the κ choice is precisely the part
+that requires thought.
+
+## Where it may be used
+
+The discount belongs to the Compute cell of Chapter 14's grid, and this is a hard restriction rather
+than a stylistic one.
+
+Where the quantity does not exist, no discount applies because there is no fraction to discount.
+Where the quantity exists but cannot be estimated, the discount's input — a standard error — is
+unavailable, and the correct action is a bound rather than a scaled point estimate.
+
+**So the device is not a universal sizing rule. It is the third-stage instrument of one cell**, and
+its most useful role may be as a prevention: writing down CV(μ̂) forces the practitioner to notice
+when it is enormous, which is a signal to move to a different cell rather than to discount harder.
+
+## Claim and tool
+
+The claim: the standard half-Kelly convention corresponds to one specific level of estimation
+uncertainty, and a discount that depends on the actual uncertainty is preferable to a convention.
+
+The tool: the discount function, its constant, and the table relating them.
+
+## Boundary conditions
+
+The device requires a usable standard error for the edge estimate, and it requires that the estimate
+be of a stable parameter.
+
+It is not a substitute for the estimation work of Part I. It is a way of propagating the results of
+that work into position size, and where that work has not been done, there is nothing to propagate.
+
+And it does not resolve the drawdown-tolerance question, which is a separate constraint that binds
+in the opposite direction: a practitioner who cannot tolerate the drawdowns of a discounted Kelly
+strategy needs a smaller fraction still, for reasons this formula does not model.
+
+## Choosing the constant in practice
+
+The discount function has one free constant and the chapter above gave a range. This section states a
+procedure for fixing it that does not require a derivation.
+
+**Three regimes.** Chosen by what the standard error means.
+
+**Regime one: sampling noise only.** kappa = 1. The edge is estimated from a controlled experiment, a randomised
+trial, or a game whose rules define the outcomes. The standard error measures how precisely the
+quantity has been pinned down, and the discount corrects only for that. κ = 1.
+
+**Regime two: assumed stability.** kappa = 2 to 4. The edge is estimated from a return history, and
+the estimate assumes that the relationship persisted through the sample. This is the normal case in
+finance, and it is where the standard error understates the uncertainty, because it does not include
+the possibility that the parameter moved. κ = 2 to 4.
+
+**Regime three: mechanism contested.** Not a discount case. The estimate comes from data whose generating
+process is disputed, and no two observers agree on the model. Here the uncertainty is not a number and
+the discount is not the right instrument. **The quantity belongs in a different cell.**
+
+**How to choose within a regime.** Take the midpoint of the range and check whether the resulting
+fraction differs materially from the neighbours. Where it does not, the choice does not matter and the
+practitioner should use the simpler convention. Where it does, the estimate is close enough to a
+boundary that the decision needs the wider framing.
+
+**What the procedure is really doing.** It forces the practitioner to write down which regime the
+estimate belongs to. **That judgement is the substance, and the constant is its expression.**
+
+## What the discount costs a track record
+
+The discount is not free, and its cost is visible in exactly the place that makes it difficult to
+sustain.
+
+**A discounted strategy underperforms in good periods.** It does. Staking half the
+optimum gives up growth when the edge is realised as estimated, which is most of the time. The
+practitioner sees a performance gap against a peer who did not discount, and the gap is real.
+
+**The benefit materialises only in the states the discount is protecting against.** If the estimate
+was too optimistic, the discounted strategy keeps growing where the undiscounted one stalls or
+declines. That state is uncommon by construction, which means the discount is judged on a sample that
+mostly does not contain its justification.
+
+**This is the same asymmetry that the discount exists to correct, appearing in the evaluation of the
+discount itself.** The correction is asymmetric because the errors are asymmetric, and that makes it
+look like underperformance to anyone measuring over a short horizon.
+
+**What follows for how the rule should be stated.** A discount presented as a sizing rule will be
+abandoned in good times, which is when it costs the most and when its rationale is least visible.
+**A discount presented as a policy — a standing rule applied to every position, reviewed annually —
+survives the periods in which it appears to be a mistake.**
+
+**The implication for governance.** Any organisation adopting the rule should decide in advance what
+evidence would justify changing it, because the period in which the rule looks wrong is guaranteed to
+occur.
+
+## Applying the discount to a real estimate
+
+The formula is easy to write and the practical difficulty is obtaining the coefficient of variation, so
+a worked application is worth more than another statement of the algebra.
+
+**The input.** An estimated annual edge of four percent for a strategy, with a sample of six years and an
+annual standard error of three percent. The estimate comes from a return history whose stability is
+assumed.
+
+**Step one. Compute the coefficient of variation.** Standard error over the estimate, which is three over
+four, or 0.75.
+
+**Step two. Choose the regime.** The estimate comes from market data with assumed stability, so kappa
+falls in the second regime, between two and four. Take three.
+
+**Step three. Compute the discount.** One over one plus three times 0.75 squared, which is one over
+2.6875, or about 0.37.
+
+**Step four. Apply it.** A Kelly fraction computed from the estimate is multiplied by 0.37. **Where the
+undiscounted fraction would be one fifth of capital, the executed fraction is about seven and a half
+percent.**
+
+**What the calculation exposes.** The standard error is doing almost all the work. A standard error of
+1.5 percent instead of 3 would give a discount of about 0.64; a standard error of 6 percent would give
+about 0.12. **The practitioner's real task is estimating the standard error honestly, and the formula
+only converts it into a stake size.**
+
+**What to do when the standard error is unknown.** Treat it as no smaller than the dispersion of rolling
+estimates of the edge across subperiods, which can be computed from the data at hand. **That number is
+usually much larger than the sampling standard error, for the reason the third chapter gives: the
+parameter may have moved within the sample.**
+
+**The check that matters.** Compare the discounted fraction with the fraction the practitioner intended to
+use before running the calculation. **Where the difference is a factor of two or more, the calculation
+has done its job, which is to make a disagreement between intention and evidence visible.**
+
+## The discount when the estimate comes from a model
+
+The discount is derived for an edge estimated from data. A large share of practical estimates come from
+models instead, and the treatment differs.
+
+**The case. A model-implied edge.** A pricing relationship, a structural forecast, a factor decomposition. The
+edge is not estimated from a return history but computed from the model's inputs.
+
+**What the standard error means here.** It is the propagation of input uncertainty through the model. **This
+is usually computed and usually understated, because it excludes specification error — the possibility that
+the model's functional form is wrong.**
+
+**Three specific exclusions to check.**
+
+**Parameter uncertainty within the model.** Frequently computed and reported.
+
+**Specification uncertainty.** Rarely computed. **Where a model has alternatives that fit comparably, the
+spread across those alternatives is a lower bound on specification error, and it is usually much larger than
+the parameter uncertainty.**
+
+**Calibration uncertainty.** Where the model's inputs are themselves estimated from other models, the errors
+compound and are rarely propagated.
+
+**What the discount becomes.** The coefficient of variation should include the specification spread, which
+means the discount is usually larger for model-implied edges than for data-estimated ones. **This is the
+opposite of the common practice, which treats a model result as more precise than a measured one because it
+contains no noise term.**
+
+**How to compute the specification spread. Two specifications, one sentence.** Estimate the edge under the
+model and under its nearest competitor, and report the two. **The exercise takes an afternoon and is the
+single most informative sensitivity analysis for a model-implied edge, and it is almost never done.**
+
+## The discount when two people disagree
+
+The formula takes an estimate and an uncertainty. In a committee the two are supplied by different people, and
+the disagreement between them is the interesting quantity.
+
+**The configuration. Common.** One party has an edge estimate and no uncertainty estimate. A second party
+believes the first is overconfident. **The discount's input is the disputed quantity.**
+
+**What the disagreement is usually about. Two things.**
+
+**The standard error.** Which is an estimation question and can sometimes be resolved from the data.
+
+**The regime.** Which is a judgement about whether the environment is stable, and cannot be resolved from the
+data at all. **The second disagreement is the one that changes the discount by a factor of three.**
+
+**How to use the formula in a divided room. Three steps.**
+
+**Have each party write a coefficient of variation.** Not argue about one: write separate numbers. **The act of
+writing converts a general dispute about optimism into two specific inputs.**
+
+**Compute both discounts and report both.** A pair of numbers, one per party, with the consequences stated.
+**The decision then has to be made from a range, which is the honest form of the disagreement.**
+
+**Where the two differ by more than a factor of two, adopt the lower.** This is a tie-breaking rule rather than
+a derivation, and it follows the asymmetry of the chapter: overbetting costs more than underbetting. **Stating
+it as a convention avoids the argument about whose estimate is right.**
+
+**What the procedure achieves. One thing.** It converts an unproductive disagreement into a range and a rule.
+**The range is the disagreement's true content, and the rule is what makes a decision possible without
+settling it.**
+
+**Why the formula is useful in a committee even when nobody believes it.** Because it gives the disagreement a
+form that can be computed. **Two coefficients of variation and one convention, and the argument stops being
+about optimism.**
+
+## The discount and the record it should leave
+
+A discount computed and not recorded is a number that will be replaced by a convention the next time the
+question arises. This section states what the record contains.
+
+**Four items per position.**
+
+**One. The estimated edge, with its method.** Point estimate and how it was obtained.
+
+**Two. The coefficient of variation, with its basis.** The standard error's source: sampling, subperiod
+dispersion, or a model's specification spread. **The basis matters because the three produce very different
+numbers for the same edge.**
+
+**Three. The regime and the constant.** Which of the three regimes the estimate belongs to, and the kappa
+chosen.
+
+**Four. The executed fraction and the undiscounted one.** Both numbers, so that the discount's size is
+visible without recomputation.
+
+**What the record accomplishes. Two things.**
+
+**The discount becomes reviewable.** A reader can disagree with the coefficient of variation rather than with
+the position size.
+
+**The convention's drift becomes visible.** Where the same kappa is used across positions whose estimates
+have very different bases, the record shows it.
+
+**What the record prevents. One failure.** The silent substitution of a convention for a calculation. **A
+practitioner who has written a coefficient of variation once will notice when a colleague proposes halving
+the position "as usual".**
+
+**How long the record should be. Four lines.** One per item, alongside the position rather than in a separate
+document. **Which makes it part of the ordinary paperwork rather than an additional exercise.**
+
+**Why this is the chapter's last section.** Because the formula's value depends on its inputs being written
+down, and the writing is the part that is skipped. **A discount without a record is a smaller position for
+unstated reasons, which is indistinguishable from caution.**
+
+## The discount and the shape of the estimate's error
+
+The discount depends on the coefficient of variation, which treats the error as symmetric. The error is often
+not, and the asymmetry changes the correction.
+
+**Three shapes of error.**
+
+**Symmetric. The standard case.** An unbiased estimate with a standard error. **The coefficient of variation
+describes it and the discount is as derived.**
+
+**Bounded above. Common for edges.** The edge cannot exceed some physical or structural limit, and estimates
+near the limit are certain to be overestimates. **The coefficient of variation understates the overestimation
+risk, and the discount should be larger than the formula gives.**
+
+**Fat tailed. Possible for any estimated edge.** Where the estimate's distribution is heavy tailed, the
+standard error may not be a useful summary. **Which is the estimation problem of Part I arriving in the
+discount's input.**
+
+**How to detect the shape. Two cheap checks.**
+
+**Is the estimate near a structural bound.** A spread cannot exceed the spread, an edge cannot exceed the
+market's friction. **Which puts the estimate in the bounded-above case.**
+
+**Does the estimate's distribution across subperiods have outliers.** Which indicates the fat-tailed case.
+
+**What to do in the two non-symmetric cases.**
+
+**Bounded above. Increase the discount.** By a factor the practitioner chooses, disclosed in the record.
+
+**Fat tailed. Do not use the formula.** The quantity is in a different cell, and the response is a bound
+rather than a scaled fraction.
+
+**Why the section matters.** Because the formula's symmetry is an assumption rather than a property, and the
+most common violation is the bounded-above case, which affects precisely the estimates that look most
+attractive. **A coefficient of variation computed for an edge near its structural limit will understate the
+overestimation risk, and the discount will be too small in the cases where it matters.**
+
+## The discount and the practice of comparing positions
+
+A discount applied to each position separately produces a portfolio whose total exposure has not been
+discounted as a whole, and the difference matters.
+
+**What the per-position discount does. One thing.** It scales each stake by its own uncertainty. **Two
+positions each with a large coefficient of variation are each discounted, and the portfolio's total is the sum
+of two discounted positions.**
+
+**What it does not do. Two things.**
+
+**Account for correlation among the estimates.** Where the edges are estimated from overlapping data, their
+errors are correlated, and the portfolio's uncertainty is not the sum of the individual ones. **Two positions
+whose estimates share a common error are effectively one discounted position rather than two.**
+
+**Account for the portfolio's shape.** The discount is about estimation; the drawdown is about the sum. **A
+portfolio of individually discounted positions can still have a drawdown larger than the holder's tolerance.**
+
+**What to do about the two gaps. Two procedures.**
+
+**Group positions whose estimates share a source.** Apply the discount to the group's estimate once, then
+allocate within the group. **Which is more conservative than per-position discounting and correct when the
+errors are common.**
+
+**Compute the portfolio's expected drawdown after the discounts.** From the aggregate edge, the aggregate
+variance and the correlation structure. **Which is the check that the per-position procedure cannot supply.**
+
+**Why the procedure matters for a portfolio built from many small positions.** Because the many-position
+structure reduces the importance of any single estimate, and the correlation among estimates is what remains.
+**A portfolio of fifty positions whose edges are all estimated from the same three years of data has one
+estimate's worth of uncertainty rather than fifty.**
+
+**What to record. Two items per group.** The group's members and its common estimation source. **Which is what
+makes the grouping auditable and what turns the discount from a per-position formality into a portfolio
+calculation.**
+
+## The discount and the record of its changes
+
+The discount's inputs change as an estimate ages, and the changes are worth recording because they show whether
+the position is being maintained or merely held.
+
+**What changes over time. Three things.**
+
+**The estimate.** New data revise it. **Which changes the undiscounted fraction directly.**
+
+**The standard error.** More data narrows it; a regime change widens it. **Which changes the discount's input
+and can move it in either direction.**
+
+**The regime.** An environment assumed stable can become contested or vice versa. **Which changes kappa and is
+the largest of the three effects when it occurs.**
+
+**What the record shows when it is kept. Two patterns.**
+
+**A discount that moves gradually and in one direction.** Which is a position being maintained with its inputs
+tracked.
+
+**A discount that changes only at review dates.** Which is a position being held, with the discount recomputed
+because a form requires it.
+
+**What the second pattern indicates. One thing.** That the discount has become an administrative step rather
+than an input to the decision. **Which is the condition under which a formula stops doing work.**
+
+**How to keep the record. One line per revision.** Date, estimate, standard error, kappa, executed fraction.
+**Which is one row per revision and takes a minute when the recomputation is done.**
+
+**What the record is for. Two purposes.**
+
+**To show the position's history to a reviewer.** Which makes the discount's trajectory legible.
+
+**To detect staleness.** A discount unchanged for a year while the estimate moved is a discount that has not
+been recomputed.
+
+**Why this is worth a section.** Because a formula applied once and then repeated is indistinguishable from a
+convention, and the difference is visible only in the record. **One line per revision, and the formula's
+continued use becomes a fact rather than an assumption.**
+
+## The discount and three ways to obtain the coefficient of variation
+
+The discount's input is the coefficient of variation, and the book names three sources for it. They give very
+different numbers for the same edge.
+
+**From the sampling standard error. The smallest.** The dispersion of the estimate across hypothetical
+resamples. **Which is what a statistical software package reports and the source that understates the
+uncertainty.**
+
+**From subperiod dispersion. Larger.** The spread of rolling estimates computed over the sample. **Which includes
+parameter movement and is computable from the data at hand, which makes it the book's recommended fallback.**
+
+**From the specification spread. Usually the largest.** The difference between the estimate under one model and
+under its nearest competitor. **Which includes uncertainty that no amount of data reduces.**
+
+**What the three imply. One rule.** Report which source was used. **"A coefficient of variation of 0.4" without a
+source is a number whose magnitude is uninterpretable, since the three sources can differ by a factor of
+three.**
+
+**Which source is appropriate when. One condition each.** Sampling for a controlled experiment or a game with
+defined rules; subperiod dispersion for a market estimate with an assumed stability; specification spread for a
+model-implied edge.
+
+**Why the ordering is a bound rather than a preference.** The three are nested in the sense that each includes
+the uncertainty of the previous one. **Which means the smaller number is always available and the honest choice is
+the largest of the three that applies.**
+
+**What to do when the practitioner uses the smallest.** Expect the discount to be too small. **Which is the
+condition under which the formula produces a fraction nearer the undiscounted optimum, and the failure appears as
+a performance gap or as a drawdown rather than as a warning.**
+
+## A note on what this chapter could not check
+
+The discount function is proposed by this book. I know of no literature that specifies this form,
+and the resemblance to shrinkage estimators is motivation rather than provenance; a reader who
+wishes to derive it properly would need to assume a prior and a loss function.
+
+The claim that half-Kelly corresponds to a coefficient of variation near one is an observation about
+the formula above, not a finding about practitioners. No survey of actual sizing practice is cited,
+because I did not find one.

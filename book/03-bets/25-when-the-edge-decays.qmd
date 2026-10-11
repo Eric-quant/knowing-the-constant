@@ -1,0 +1,497 @@
+# When the Edge Decays {#sec-edge-decay}
+
+Part III began with a paper that found an edge in a casino and ended with the casinos changing the
+rules. That sequence is the subject of this chapter, generalised: **an edge is not a property you
+acquire. It is a state of the world that a finite number of other participants have not yet noticed,
+and it is subject to erosion from the moment it exists.**
+
+The practical consequence is that the useful question is not "do I have an edge" but "how fast is
+this edge decaying, and what will replace it". This chapter treats the answers as an ongoing
+obligation rather than a one-time discovery.
+
+## Four mechanisms of erosion
+
+They operate on different timescales. Separating them clarifies what can be managed. Four mechanisms.
+
+**Imitation.** Fastest. The edge becomes visible, someone copies it, and the copies compete away the
+advantage. This is the fastest mechanism and the one most under the discoverer's influence.
+
+**Capacity.** Slower. The edge itself shrinks as capital is applied, because the trading moves the prices
+that created the opportunity. This is the mechanism of Chapter 23, and it operates even if nobody
+copies anything.
+
+**Rule change.** Outside control. The institution that made the edge possible alters its behaviour: exchanges change
+fee structures, regulators change rules, counterparties change terms. This is the casino mechanism,
+and it is outside the practitioner's control.
+
+**Discovery of the underlying regularity.** Slowest. A statistical relationship that was genuinely unknown
+becomes known, and the knowing removes it. This is the slowest mechanism and the most fundamental,
+because it applies to any edge whose existence depends on others being unaware.
+
+| Mechanism | Timescale | Under your control? |
+| --- | --- | --- |
+| Imitation | Quarters | Partly: by staying small |
+| Capacity | Quarters to years | Partly: by capping size |
+| Rule change | Years, and abruptly | No |
+| Discovery of the regularity | Years to decades | No |
+
+**The table's second column is the reason a decay-aware sizing rule beats a decay-aware forecast.**
+Two of the four mechanisms cannot be influenced at all, and the other two can only be slowed. What
+can be done is to size for the possibility rather than to predict the timing.
+
+## What makes an edge durable
+
+The erosion rate depends on what the edge is made of, and three sources behave differently.
+
+**Structural frictions persist longest.** Longest of all. A fee schedule, a regulatory constraint, a settlement
+process, a tax treatment: these are created by institutions and persist until the institutions
+change. An edge that exists because of a rule lasts about as long as the rule.
+
+**Capacity limits protect their own beneficiaries.** Partly shielded. An edge whose exploitation is limited by market
+depth is partly shielded, because the limit that constrains you also constrains imitators. This is
+why small-capacity strategies survive longer than large-capacity ones, and why the most durable edges
+are usually the least scalable.
+
+**Behavioural regularities decay with awareness.** Shortest life. An edge that exists because participants
+systematically misprice a risk disappears as the mispricing becomes known. This class has the
+shortest life, and it is the class that most quantitative work is aimed at.
+
+**The practical implication is a preference ordering for new work: an edge with a documented
+structural source is worth more than an edge with a good statistical record**, because the first
+carries information about its own persistence and the second does not.
+
+## The maintenance obligation
+
+If an edge decays, then finding one is not a project with an end date. Three obligations follow.
+
+**Re-estimation on a schedule.** Not continuously, because continuous re-estimation is noisy, but at
+intervals fixed in advance. The interval should be shorter than the expected decay time and longer
+than the noise in the estimate, which is a narrow window in practice.
+
+**Monitoring for the mechanisms rather than the returns.** Watching returns is the slowest possible
+way to detect decay, because a shrinking edge is hidden inside the noise for years. Watching the
+mechanisms is faster: is the trade getting more crowded, are fills getting worse, is the spread
+narrowing, is a rule under discussion.
+
+**Planning the exit before it is needed.** Chapter 16's pre-committed exit applies with particular
+force here, because the alternative is to keep running a decaying strategy while deciding, month
+after month, that the evidence is not yet conclusive. **That is exactly the position the sampling
+arithmetic of Chapter 24 predicts, and it is where most decayed edges continue to be traded.**
+
+## The paradox of a successful edge
+
+There is a structural feature here worth stating plainly. It follows. because it
+explains a pattern in the industry that otherwise looks like foolishness.
+
+**Success brings capital. Capital accelerates decay. Therefore the more successful an edge is, the
+faster it destroys itself.**
+
+The practitioner who scales a working strategy is behaving rationally in the short run and
+self-destructively in the long run, and the two horizons are the same horizon — which means the
+decision cannot be resolved by better analysis. It is a genuine trade-off between present return and
+the survival of the thing generating it.
+
+Chapter 23 supplied the resolution, such as it is: **prefer the smaller size that persists to the
+larger size that removes its own premise.** The preference is not modesty and not risk aversion. It
+is the arithmetic of an asset whose expected life shortens when you use it.
+
+## Three practical responses
+
+**Prefer edges whose protection is structural.** Structural first. The preference ordering above, applied when choosing
+what to work on rather than when deciding how much to stake.
+
+**Size for the current edge, not the historical one.** Current, not historical. A shrinking edge means the historical average
+overstates what is available now, and a sizing rule based on the historical estimate overbets in
+exactly the way Chapter 21 described.
+
+**Treat the exit as part of the strategy.** Write it down. A strategy without a stated stopping condition is a
+strategy that will be run past its useful life, because the decision to stop is made by the same
+person with the same incentives at the moment of maximum ambiguity. **Writing the stopping condition
+in advance converts a monthly judgement into a rule.**
+
+## Grading it
+
+**That edges decay is grade II.** It survives changes of market, era, and strategy type, and the
+mechanisms are documented sufficiently that the burden of proof sits with anyone claiming permanent
+advantage.
+
+**The relative durability of the four sources is grade II as well**, and weaker: the ordering is
+argued from the mechanisms rather than measured, and a systematic study of edge lifetimes across
+sources would be the appropriate test.
+
+**The prescriptions are grade III**, as with every practical rule in this part.
+
+## Claim and tool
+
+The claim: an edge is a decaying asset, and the decay is partly caused by the use of the asset.
+
+The tool: the four mechanisms and their timescales, the durability ordering by source, and the three
+obligations — re-estimate on a schedule, monitor the mechanism rather than the returns, and write the
+exit before it is needed.
+
+## Boundary conditions
+
+The chapter assumes that the edge's sources can be identified, which is the same requirement Chapter
+18 imposed and which many claimed edges fail.
+
+It assumes that the decay is gradual rather than abrupt. Where rule changes are the dominant
+mechanism, decay can be instantaneous, and no monitoring interval is short enough.
+
+And it says nothing about how to find the replacement edge, which is a research problem rather than a
+sizing problem.
+
+## Monitoring decay without watching returns
+
+Watching returns is the slowest way to detect decay. This section lists faster indicators, each tied to
+one of the four mechanisms.
+
+**Crowding. Fast.** Count the participants who appear to be doing the same thing. New entrants, new
+fund launches in the same niche, and increased public discussion are all observable without any
+estimate.
+
+**Fill quality. Faster still.** Compare realised slippage against the model used to justify the
+strategy. A deterioration in fills is the earliest sign that the trade is being competed for, and it
+appears in the data before returns move.
+
+**Spread compression. Direct.** Where the edge consists of capturing a spread, the spread's narrowing
+is the edge's disappearance, measured directly rather than inferred.
+
+**Rule discussion. Institutional.** Where the edge depends on a fee schedule, a settlement rule or a
+regulatory constraint, the relevant indicator is the state of the discussion about it. Ignoring that
+is the most common way to be surprised by an abrupt decay.
+
+**Cost drift. Slow but reliable.** Compare the all-in cost per unit of position now against the cost
+when the strategy was designed. Costs drift upward as capacity is consumed.
+
+**Why these are better.** Each is a leading indicator of the mechanism rather than a lagging
+consequence of the outcome. Each requires no forecast. And each can be observed by someone who is not
+running the strategy.
+
+**How to use them.** Fix a monitoring interval in advance, record the indicators alongside the returns,
+and treat a deterioration in two or more as a trigger for re-estimation. Do not wait for the returns
+to confirm it.
+
+## Replacing a decayed edge
+
+The chapter has argued that an edge is a decaying asset. The obvious question is what to do when one
+decays, and the honest answer is that the capability to answer it has to be built before it is needed.
+
+**Three preparations, all of which cost something now.**
+
+**Keep a pipeline.** A research process that produces candidate edges continuously, at a rate above
+the observed decay rate. The requirement is arithmetic: if edges last three years on average, a
+pipeline that produces one per year will eventually run dry.
+
+**Keep the machinery.** Execution, risk, and settlement infrastructure outlives any particular edge. A
+firm that can deploy capital cheaply can move between edges; one that cannot is committed to whichever
+edge it happens to hold.
+
+**Keep the record.** Documented mechanisms and measured decay rates for past edges make the next
+capacity judgement better. This is the only part of the chapter that compounds.
+
+**What cannot be prepared.**
+
+**The replacement itself.** No process guarantees finding a new edge, and treating research as a
+production line with a known yield is a category error.
+
+**The timing.** Decay arrives when it arrives. The pre-committed exit from the ledger is what converts
+an unplanned event into a scheduled review.
+
+**A judgement about the capability.** Some practitioners are better at finding edges and others at
+running them at scale. A firm that concentrates the second capability and neglects the first will have
+excellent execution and nothing to execute.
+
+**The uncomfortable arithmetic.** A pipeline that produces edges at the historical rate, run through a
+process with the historical decay, is a business with a known half-life. **Planning for that half-life
+is more useful than assuming the last edge will persist.**
+
+## The decay rate as a planning parameter
+
+If edges decay, the decay rate enters every decision about how much to invest in finding them, and it is
+usually left implicit. Making it explicit changes the arithmetic.
+
+**The quantity.** The expected time from deployment of an edge to the point where its return falls below
+the cost of running it.
+
+**Three typical values, by source, from the durability ordering.** A behavioural regularity exploited by
+many participants: months to a few years. A structural friction tied to an institutional rule: the life
+of the rule. A capacity-limited edge in a small market: as long as the market's structure persists, which
+can be decades.
+
+**What the rate determines.**
+
+**The research budget.** A firm with edges lasting three years needs a pipeline producing at least one
+edge every three years, and realistically more, since not every candidate works.
+
+**The sizing decision.** A shorter-lived edge justifies a larger stake and an earlier exit, because the
+cost of being early is smaller than the cost of being late. **This cuts against the sizing rules, and the
+resolution is that both effects are real: the discount is about estimation error and the decay rate is
+about the horizon.**
+
+**The organisational structure.** A firm whose edges last three years cannot amortise fixed costs over a
+decade, which puts a floor on scale that a firm with a structural edge does not face.
+
+**Why the rate is rarely stated.** Because estimating it requires observing edges die, and the
+survivors' histories are what get recorded. **An organisation that keeps a register of retired edges,
+with their lifetimes and the mechanism of their death, is in a position to make this estimate and almost
+no organisation does.**
+
+## The end of an edge, described
+
+Decay is usually discussed as a trend. Its ending is usually abrupt, and the two phases require different
+responses.
+
+**The gradual phase.** The edge's return falls, gradually at first and then visibly. **The leading indicators
+of the previous section move before the returns do, which is the reason to monitor them.**
+
+**The abrupt phase.** A rule change, a competitor's entry at scale, a structural shift in the market. **The
+edge's return does not decline; it disappears within days or weeks.**
+
+**The distinction matters because the two phases have different tell-tale signals.** The gradual phase is
+detectable from fills, spreads and crowding. The abrupt phase is detectable from **the discussion about the
+rule**, which is why that indicator is on the list and why it is the one most often dismissed as noise.
+
+**Three preparations for the abrupt phase.**
+
+**A drawn-down plan.** What happens to the capital, the team and the infrastructure when a strategy stops.
+**A plan written while the edge works is a document; one written during the ending is a crisis.**
+
+**Revenue concentration limits.** A firm whose income depends on one edge has an abrupt ending risk that is a
+governance issue rather than a research issue.
+
+**A register of retired edges.** Their lifetimes, their mechanisms of death, and the indicators that preceded
+the end. **This is the only source of evidence about the abrupt phase, and almost no organisation keeps it.**
+
+**What cannot be prepared.** The timing. **An edge ends when its conditions change, not when its participants
+are ready, and the pre-committed exit is what converts the event into a scheduled response rather than a
+surprise.**
+
+**Why the ending deserves its own section.** Because the gradual phase is what practitioners plan for and the
+abrupt phase is what happens, and the difference between a managed ending and an unmanaged one is entirely a
+matter of what was written down beforehand.
+
+## The decay estimate as a research output
+
+The decay rate is described as a planning parameter. It is also a research result, and treating it as one
+changes how a research programme is organised.
+
+**What a decay estimate consists of. Three items.**
+
+**The edge's source.** Structural friction, behavioural regularity, or capacity limit. **Which determines the
+expected lifetime more than any measurement.**
+
+**The observed lifetime of comparable edges.** From a register of retired strategies, where one exists.
+
+**The mechanism of death, where known.** Imitation, capacity, rule change, or discovery.
+
+**Why the estimate belongs in the research output. Two reasons.**
+
+**It determines the research budget.** A programme producing edges that last three years needs a pipeline
+producing at least one every three years, and realistically more. **The arithmetic is simple and it is rarely
+performed.**
+
+**It determines the sizing.** A shorter-lived edge justifies a larger stake and an earlier exit, because being
+early is cheaper than being late.
+
+**What the estimate cannot be. Precise.** A lifetime estimate from a small register of retired edges carries
+wide uncertainty, and reporting it with a decimal place would misrepresent it. **An order of magnitude is the
+honest form.**
+
+**Three ways to improve it cheaply.**
+
+**Record every retired edge with its dates and mechanism.** Which is administrative work with a long payoff.
+
+**Classify by source rather than by strategy.** Which aggregates across strategies and yields more observations
+per category.
+
+**Review the register annually.** Which is when the aggregate becomes visible.
+
+**Why the output is worth requiring.** Because an edge without a lifetime estimate is a position without a
+horizon, and the horizon determines both the stake and the exit. **Two questions at the point of discovery, and
+the answers are the research output.**
+
+## The decay register
+
+The chapter argues that a register of retired edges is the only source of decay estimates. This section
+describes the register, because an instrument described only in principle is one that nobody keeps.
+
+**Four fields per retired edge.**
+
+**One. The dates of deployment and retirement.** Which give the lifetime, the register's primary output.
+
+**Two. The mechanism of death.** Imitation, capacity, rule change, or discovery. **Which is the field that
+makes the register more than a list of lifetimes.**
+
+**Three. The indicators observed before the end.** Which of the four leading indicators moved, and when
+relative to the retirement decision.
+
+**Four. What was done about it.** Whether the exit was pre-committed, forced, or late. **The most informative
+field and the one that is hardest to record honestly.**
+
+**What the register produces. Two outputs.**
+
+**A decay rate by mechanism.** Which is more useful than an average rate, because the mechanisms have
+different lifetimes.
+
+**A calibration of the leading indicators.** Whether the indicators moved before the returns, and by how much
+lead time.
+
+**What keeping it costs. Ten minutes per retirement.** Which is the reason it is rarely kept and the reason
+its information is unavailable.
+
+**How to start with no history. Two moves.**
+
+**Record the current edges at deployment, with their sources and dates.** Which begins the register with live
+entries rather than none.
+
+**Reconstruct the last few retirements from documents.** Which is imperfect and provides the order of
+magnitude the estimates require.
+
+**Why the register is worth the ten minutes.** Because the decay rate determines the research budget, the
+stake size and the exit timing, and it is otherwise unobtainable. **Four fields, ten minutes, and it is the
+only instrument in the book whose value grows with the number of entries.**
+
+## The decay argument in four claims
+
+The chapter is long and its argument has four steps, each of which can be checked separately.
+
+**Claim one. Edges decay.** The mechanism is competition for a favourable state, and the mechanisms are
+imitation, capacity, rule change, and discovery. **Grade II: robust across markets and periods.**
+
+**Claim two. The decay rate depends on the edge's source.** Structural frictions tied to rules last as long as
+the rules; behavioural regularities last until they are noticed; capacity-limited edges last as long as the
+market's structure. **Grade II and weaker, because the ordering is argued from mechanisms rather than
+measured.**
+
+**Claim three. The decay is partly caused by using the edge.** Success attracts capital, capital consumes
+capacity, and the consuming is what ends the edge. **Which is the chapter's most consequential claim and the
+one that makes the sizing decision a trade rather than an optimisation.**
+
+**Claim four. Decay can be monitored through mechanisms rather than returns.** Four leading indicators:
+crowding, fill quality, spread compression, and rule discussion. **Which is the practical claim, and it is
+checkable against a register of retired edges.**
+
+**What each claim's grade implies. One instruction.** Rely on claim one, treat claim two as an expectation, act
+on claim three by sizing smaller than the optimum, and use claim four as a monitoring specification with the
+expectation that it is roughly right. **Four claims, four dispositions, which is what the book's grade
+vocabulary is for.**
+
+**What would falsify the set. One observation.** A structural edge with a documented mechanism whose return
+did not decline as capital was applied over a long period. **Such cases exist in the material and the chapter
+notes that the most durable edges are the least scalable, which is a partial accommodation rather than a
+refutation.**
+
+**Why the four claims are worth separating.** Because the chapter's practical recommendations depend on claims
+three and four, and claims one and two are what make them plausible. **A reader who accepts the first two and
+doubts the last two has a coherent position, and stating the claims separately makes it available.**
+
+## The decay argument and the research programme
+
+The chapter's four claims imply an organisational design, and the design is worth stating because it differs
+from the one most firms have.
+
+**What the claims require. Three things.**
+
+**A pipeline whose output rate exceeds the decay rate.** Which follows from claim one and claim two: if edges
+last a certain time, the programme must produce replacements at least as fast.
+
+**Sizing below the optimum.** Which follows from claim three: using the edge consumes it, so the growth-optimal
+stake is not the longevity-optimal one.
+
+**A decay register.** Which follows from claim four: the leading indicators need calibration, and calibration
+needs retired edges.
+
+**What the design looks like. Three features.**
+
+**Research capacity sized to the decay rate rather than to the current book of edges.** Which is a smaller
+number for the short-lived sources and a larger one for the long-lived.
+
+**A stated standing rule about capacity.** Which is the pre-commitment that prevents the successful edge from
+being scaled until it dies.
+
+**An annual review of the register.** Which is when the aggregate becomes visible and when the durability
+ordering can be tested against the firm's own record.
+
+**What the design costs. One thing.** Foregone return in the periods when a large stake would have worked.
+**Which is the same cost the discount imposes and is borne in the same way: visibly, in comparison with a peer
+who did not.**
+
+**What the design cannot supply. The replacement edges.** Which is a research problem and not a structural one.
+**The design keeps the firm in a position to use replacements; it does not produce them.**
+
+**Why the organisational implication belongs with the decay claims.** Because the claims make a specific demand
+— a pipeline rate, a sizing rule and a register — and a chapter about decay that stopped at the description
+would leave the demand implicit. **Three features, each following from one of the claims, and the register is
+the one that makes the others measurable.**
+
+## The decay rate and three planning decisions
+
+The decay rate is a planning parameter. Three decisions depend on it, and each uses it differently.
+
+**The research budget. Directly.** A programme producing edges that last three years needs at least one per
+three years, and realistically more. **Which is a rate calculation and the one decision where the estimate is
+used as an input rather than a caution.**
+
+**The stake. Inversely.** A shorter-lived edge justifies a larger stake and an earlier exit, because being early
+is cheaper than being late. **Which cuts against the estimation discount, and the resolution is that the two
+effects are about different things: the discount concerns how well the edge is known, the decay rate concerns how
+long it will be there.**
+
+**The exit. As a date.** A pre-committed exit for a strategy with an estimated three-year life is a review at
+eighteen months, not a rule triggered by returns. **Which is the operational form of the decay estimate.**
+
+**What the three share. One property.** Each uses an order of magnitude rather than a precise number. **Which is
+fortunate, because the estimate cannot be precise: it comes from a small register of retired edges.**
+
+**What the three do not include. The replacement.** Which is a research problem rather than a planning one. **The
+three decisions keep the firm in a position to use replacements; none produces them.**
+
+**How to use a decay estimate honestly. One statement.** "Edges from this source have lasted between two and five
+years in our record, so the review is set at eighteen months and the research pipeline is sized for one
+deployment every two years." **Which is a sentence a manager can act on and which contains its own uncertainty.**
+
+**Why the three decisions are worth stating together.** Because the decay rate is usually invoked as a general
+caution and the three above are where it enters arithmetic. **A rate used as an input, an inverse relation to
+size, and a date — three uses, one estimate.**
+
+## The decay claims and three kinds of counterexample
+
+The chapter's claims are stated with their refutation conditions. Three kinds of counterexample would be
+informative, and each tests a different claim.
+
+**A structural edge whose return did not decline under large scale.** Which would test the durability ordering
+and, and above all, the claim that use causes decay. **Such cases exist and the chapter notes that the most
+durable edges are the least scalable, which is a partial accommodation rather than a refutation.**
+
+**An edge that decayed without any of the four mechanisms operating.** Which would test the mechanisms'
+completeness. **Finding one would mean a fifth mechanism, and the first place to look is a change in the
+population of participants rather than in any of the four.**
+
+**A leading indicator that moved without subsequent decay.** Which would test the monitoring specification. **The
+indicator list is argued from mechanism rather than calibrated, so a false positive is as informative as a false
+negative.**
+
+**What the three have in common. One property.** Each is a claim whose test requires a register rather than an
+experiment. **Which is why the register is the chapter's practical recommendation and why the absence of such
+registers is the reason none of the three has been tested.**
+
+**Which counterexample would be most damaging. The first.** Because claim three — that use causes decay — is the
+one that makes the sizing decision a trade rather than an optimisation. **A durable, scalable structural edge
+would reduce the claim to a description of most edges rather than a property of all.**
+
+**How a firm could test the three. One register.** Lifetimes, mechanisms of death, indicators observed before the
+end, and what was done. **Four fields per retired edge, ten minutes, and the aggregate answers the three
+questions after a few years.**
+
+**Why the refutation conditions are worth listing again here.** Because the chapter's claims are the ones the
+book's sizing advice rests on, and a reader who accepts them without knowing their tests has accepted them on
+authority. **Three counterexamples, one register, and the tests are within a firm's reach.**
+
+## A note on what this chapter could not check
+
+The chapter is an argument from mechanism, not from measurement. I located no systematic study of
+edge lifetimes by source type, and the durability ordering is therefore a reasoned expectation rather
+than a finding.
+
+The claim that the most durable edges are the least scalable is drawn from the capacity mechanism
+rather than from data, and a reader who knows a counterexample should treat it as one.

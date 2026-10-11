@@ -1,0 +1,488 @@
+# Estimation Risk as a First-Class Input {#sec-estimation-risk}
+
+Every chapter of Part III has assumed something that Part I spent six chapters undermining: that the
+parameters going into the sizing decision are known.
+
+They are not. The edge is estimated, the variance is estimated, and in the settings this book cares
+about both are estimated badly. The question this chapter asks is what should be done about that,
+and the answer is not the one standard practice implies.
+
+Standard practice has a fixed order. Estimate the parameters, then optimise the decision using those
+estimates. **The chapter's claim is that this order is wrong**, and the reason is not philosophical.
+It is that optimisation is an amplifier of estimation error.
+
+## The amplifier
+
+Consider what an optimiser does. Given a set of estimated inputs, it finds the allocation that would
+be best if those inputs were exactly right.
+
+Now suppose the inputs are noisy. The optimiser does not know this, and it has no mechanism for
+treating the noise as noise, because a noise-free input and a noisy input look identical to it. So it
+places the largest allocations where the estimated edge is highest — and **the estimates that are
+highest are disproportionately those that are most overestimated.** The allocation concentrates on
+the errors.
+
+The effect is not subtle. In portfolio construction it has been known for decades that
+mean-variance optimisation on estimated inputs produces allocations that are extreme, unstable, and
+worse out of sample than simple equal weighting. The optimiser is doing exactly what it was asked to
+do. It was asked to trust the inputs.
+
+**An optimiser is an error amplifier whenever its inputs are noisy and its objective is unbounded.**
+Both conditions hold in every application in this part. Every one.
+
+## Three responses, with different costs
+
+There are three standard responses, and they are not equivalent.
+
+**Shrink the estimates.** Pull them in. Pull each estimate toward a central value — the average, or a prior, or
+zero for an effect whose existence is uncertain. This directly attacks the amplification, because
+the largest estimates are pulled in most. It introduces bias deliberately in exchange for reduced
+variance, and the trade is worth making when the estimates are noisy, which is exactly when the
+amplification is worst.
+
+**Constrain the solution space.** Cruder, easier. Bound the allocation, cap the number of positions, require
+minimum sizes. This is cruder than shrinkage and it is much easier to implement and to audit.
+**Constraints are a substitute for information**, and a practitioner who cannot estimate reliably
+should prefer them.
+
+**Integrate the uncertainty.** Hardest of the three. Rather than optimising on point estimates,
+optimise on the distribution of outcomes implied by the parameter uncertainty. This is the most
+principled response and the most demanding, because it requires a joint distribution over parameters
+that is rarely available.
+
+The three are complements, and the practical combination in most settings is a little of each.
+
+## What integration produces
+
+The third response deserves a moment, because its qualitative result is the one that matters and it
+is robust to the details.
+
+When parameter uncertainty is integrated rather than ignored, the optimal allocation shrinks. Not
+because the decision-maker has become more risk-averse — the risk preference is unchanged — but
+because the opportunity is genuinely less attractive than the point estimate suggested. An edge that
+might be twice as large or half as large as estimated is worth less than an edge that is known.
+
+**This is the same conclusion as the previous chapter's discount, reached from a different
+direction.** There, the discount was a correction applied after the fact. Here, the reduction falls
+out of the optimisation itself. That the two agree is a reason for confidence in both, though not a
+proof of either.
+
+The magnitude of the reduction depends on precision in a specific way: it scales with the variance
+of the parameter estimate relative to its mean, which is the coefficient of variation that the
+discount function used. Two roads, one quantity. Same answer.
+
+## Why this belongs in Part III
+
+A reader might reasonably object that this is Part I material wearing a new hat. Estimation was
+established as the central problem there, and the argument above is that its consequence is a
+smaller position.
+
+The reason for the placement is that Part I's conclusion was about what can be known, and this
+chapter's conclusion is about what should be done — and the second does not follow from the first
+without an extra step. **Knowledge that an estimate is unreliable does not by itself tell you to
+shrink; that follows from the loss function, which is a decision-theoretic object rather than an
+epistemic one.**
+
+The distinction matters because it explains a common failure in practice. Analysts who are fully
+aware that their estimates are unreliable will still feed point estimates into an optimiser, because
+awareness of unreliability does not automatically translate into a modification of the objective.
+The modification has to be built in, and building it in is the work this chapter describes.
+
+## Practical rules
+
+Four, in order of increasing sophistication, with the recommendation to use the earliest one that
+works.
+
+**One. Bound the allocation.** Cheapest. A cap costs nothing to implement and limits the damage from the worst
+estimates. Where nothing else is available, this is the whole response.
+
+**Two. Prefer estimate-free rules.** Free of assumptions. Equal weighting requires no parameters. The
+irreversibility screen of Chapter 16 requires none. Where a decision can be made structurally, doing
+so removes the estimation problem rather than mitigating it.
+
+**Three. Apply a discount whose size reflects the precision.** That is Chapter 21's device, and its
+most useful feature is that computing the input forces an honest assessment of how reliable the
+estimate is.
+
+**Four. Report the sensitivity.** For each decision, state how much the answer changes when the
+inputs move within their uncertainty. Where the answer is insensitive, the estimation problem is
+immaterial and the extra machinery is unnecessary. Where it is sensitive, the sensitivity is the
+finding.
+
+## Refutation conditions
+
+Three ways the argument could be wrong.
+
+**Constraints and shrinkage may cost more than they save.** A cap that is set too low forecloses
+genuinely good opportunities, and the cost is invisible because it appears as performance not
+achieved. The argument for bounding rests on the asymmetry of estimation error, and where estimates
+are reliable the asymmetry is small and the constraint is a pure cost.
+
+**The amplifier claim may be smaller in practice than in theory.** The evidence that unconstrained
+optimisation underperforms simple alternatives is strong in portfolio construction and weaker
+elsewhere. The chapter generalises from one well-studied case, which is a real limitation.
+
+**The integrated solution requires a joint distribution over parameters that is usually
+unavailable.** Where it is unavailable, responses one and two are the only options, and the
+chapter's most principled recommendation is also its least applicable.
+
+## Claim and tool
+
+The claim: estimation error enters the decision through the optimiser and is amplified there, so the
+order "estimate then optimise" produces allocations concentrated on the largest errors.
+
+The tool: the amplifier argument, and the four responses, ordered by how much information they
+require.
+
+## Boundary conditions
+
+The argument assumes that the decision has a free parameter to optimise and that its objective is
+sensitive to the estimated inputs. Where the objective is robust — where any reasonable allocation
+performs similarly — the whole problem is immaterial.
+
+It assumes that parameter uncertainty can be characterised at all, which is the Compute cell of the
+grid and not the Bound or Avoid cells.
+
+And it says nothing about the size of the effect in a specific application. The direction is general;
+the magnitude has to be measured.
+
+## Shrinkage, worked
+
+The argument that adjustment should be built into the objective is abstract until it is computed, so
+here is the smallest useful version.
+
+Suppose ten candidate strategies have estimated annual edges ranging from three to nine percent, each
+estimated from five years of data with an annual standard error of four percent. The estimates differ
+from one another by less than their individual uncertainty. **That single comparison is the finding:
+the spread of the estimates is inside the noise.**
+
+**What plug-in optimisation does.** Concentrates on errors. It ranks the strategies by the ten estimates and allocates
+capital in proportion, concentrating on the largest. The largest estimate is the one most likely to be
+an overestimate, for the reason Chapter 22 gives: an extreme value drawn from a noisy distribution is
+extreme partly because of the noise.
+
+**What shrinkage does.** Pulls toward the mean. Pull each estimate toward the cross-sectional mean in proportion to its
+imprecision. With a standard error of four percent and a genuine spread of about two percent, the
+shrinkage factor is large — around 0.2 — and the allocations become nearly equal.
+
+**What integration does.** Shrinks further. Treat each edge as a distribution rather than a number, and maximise the
+expected utility of the resulting portfolio. The allocation shrinks further than shrinkage alone,
+because the objective now penalises the variance of the estimate as well as its level.
+
+**What the three have in common.** All of them reduce the concentration on the largest estimate, and
+the amount of the reduction is governed by the ratio of estimation error to genuine dispersion. **The
+ratio is the quantity to compute first, because it determines whether any of this matters.**
+
+## Why the failure is invisible from the inside
+
+An optimiser fed noisy inputs produces output that looks professional, and the reasons are worth
+stating because they explain the persistence of the practice.
+
+**The output has the right form.** Nothing looks wrong. Weights that sum to one, positions within limits, a reported
+expected return and volatility. Nothing in the formatting signals that the inputs were unreliable.
+
+**The failure metric is invisible.** In real time, always. The excess return earned by the
+error-concentrated allocation is visible; the excess return that equal weighting would have earned is
+not. The counterfactual is unavailable, so the cost of the amplification never appears in a report.
+
+**Attribution blames the market.** When the concentrated position underperforms, the natural
+explanation is that the estimate was wrong, which is true and which locates the failure in the data
+rather than in the procedure that acted on it.
+
+**The fix is procedural.** Not analytical. Since the failure is invisible in the output, the
+correction has to be imposed before the estimate is used: a cap, a shrinkage rule, or a requirement
+that the ratio of estimation error to dispersion be reported alongside the allocation. **A practitioner
+who has to write that ratio down will notice when it is larger than one, and the notice is the entire
+benefit.**
+
+## The number of positions as a free parameter
+
+One response to estimation risk is not usually described as a response: changing how many positions the
+portfolio holds.
+
+**The mechanism. Simple arithmetic.** Where the edge is estimated with error, the realised return of an
+equal-weighted portfolio of n positions converges to the average of the estimates multiplied by the
+average reliability, and the reliability of the average is higher than that of any single estimate. **More
+positions do not improve the average edge; they reduce the variance of the realised outcome around it,
+which is the same as reducing the influence of the largest error.**
+
+**The trade-off.** Each additional position adds diversification and consumes attention, and at a
+sufficient number the marginal position adds more cost than diversification, because the edges are not
+independent and because tracking deteriorates.
+
+**The interaction with the discount.** A practitioner with a large number of positions can afford a
+smaller discount, because the error-concentration problem is smaller. **The two corrections are
+substitutes, and the practical question is which is cheaper to implement.**
+
+**Why it is often the cheaper one.** Adding positions requires no additional estimation, no prior, and no
+formula. It requires an operational capability, which many organisations already have.
+
+**Where it fails.** Where the positions are highly correlated, so the effective number is much smaller
+than the count. Where the strategy's edge exists only in a narrow set of instruments. And where the
+operational load of monitoring many positions exceeds the analytical benefit.
+
+**What to record.** The number of positions, the correlation structure, and the resulting effective
+number. **A portfolio described as holding fifty positions while its effective number is five is a
+concentrated portfolio with a diversified appearance, and the appearance is the risk.**
+
+## The estimation problem in a small portfolio
+
+The shrinkage argument is usually stated for a large cross-section. Its smallest version is where most
+readers will meet it, and it is instructive.
+
+**The case.** Five candidate positions, each with an estimated edge and a standard error, and a decision about
+how to allocate. **The cross-sectional mean is computed from five numbers whose individual uncertainty exceeds
+their spread.**
+
+**What plug-in allocation does.** Concentrates on the largest estimate. **With five candidates and noisy
+estimates, the largest is likely to be the most overestimated, and the concentration is on the error.**
+
+**What shrinkage does.** Pulls each estimate toward the mean of the five. **The required shrinkage factor is
+large, and the resulting allocation is close to equal weighting.**
+
+**What to notice.** Equal weighting requires no estimates at all. **The analytical apparatus has produced, from
+five noisy estimates, a recommendation that a reader could have made without any of them.** That outcome is
+not a failure; it is the most common correct answer in the small-portfolio case, and recognizing it saves the
+estimation work.
+
+**When the refinement is worth it. Two conditions.**
+
+**The spread of the estimates exceeds the estimation error.** Not by a little.
+
+**The edge estimates are supported by mechanisms rather than by history.** A mechanism narrows the uncertainty
+about the estimate in a way that a longer sample does not.
+
+**What to do in the other cases.** Equal weight, or weight on the most reliable input, and spend the analytical
+effort on the quantities that decide the outcome — the exposures and their bounds. **The most common error in
+small-portfolio work is spending the estimation budget on inputs whose refinement cannot change the
+allocation.**
+
+## The smallest version of the amplifier
+
+The amplifier argument is stated for a cross-section of estimates. Its smallest form is two candidates, and the
+two-candidate case is worth working through because it is where a reader can feel the mechanism.
+
+**The case.** Two strategies, estimated edges of six and four percent, each with a standard error of three
+percent. The difference between the estimates is two percent and the uncertainty on each is three.
+
+**What a comparison of the estimates does.** Ranks them and allocates in proportion, which puts sixty percent
+of the capital on the first. **The estimate that is largest is also the one most likely to be an overestimate,
+for the mechanical reason that an extreme value drawn from a noisy distribution is extreme partly because of
+the noise.**
+
+**What the arithmetic says about the ranking.** The two estimates are within one standard error of each other.
+**Treating the ranking as information is treating noise as information, and the allocation converts that
+mistake into a position.**
+
+**What to do with two candidates. Three options.**
+
+**Equal weight.** Requires no estimates and gives up little when the estimates are this close.
+
+**Weight by reliability rather than by level.** Where one strategy has a mechanism and the other a history,
+weight on the mechanism. **This uses information that the levels do not contain.**
+
+**Compute the probability that the ranking is correct.** With two estimates and their errors this is
+straightforward, and it is usually close to a half. **The number is the argument, and it is more persuasive in
+a committee than the phrase "within the noise".**
+
+**Why this belongs in the chapter.** Because the amplifier argument is usually presented as a property of
+optimisation over many inputs. **The two-candidate case shows that the mechanism operates with no optimiser at
+all, which is why the chapter's claim is about concentrating on errors rather than about a particular
+procedure.**
+
+## The estimator's budget
+
+Estimation consumes resources, and the amounts are worth stating because the allocation is usually wrong in a
+predictable direction.
+
+**Where the effort goes in practice. Three items.**
+
+**Refining the parameters.** More data, better methods, longer samples. **This is where most of the effort
+goes, and it is the least valuable in the small-portfolio case.**
+
+**Assessing the uncertainty of the parameters.** The standard error, the specification spread, the stability
+across subperiods. **This is cheap and it determines whether the parameters matter at all.**
+
+**Structuring the decision so that precision is not required.** Caps, staged commitments, portfolios of small
+positions. **This is often the cheapest of the three and the least used, because it is not an analytical
+activity.**
+
+**How to allocate the budget. One rule.** Spend on the uncertainty assessment first, because it tells you
+whether the parameter refinement is worth anything. **A parameter whose estimate can move by fifty percent
+without changing the decision does not need refining, and the only way to know is to have measured the
+uncertainty.**
+
+**Three signs the allocation is wrong.**
+
+**No standard error is reported anywhere.** Which means the first item consumed the whole budget.
+
+**The decision is sensitive to the parameters and the portfolio is concentrated.** Which means the third item
+was not considered.
+
+**The analysis is more detailed than the decision requires.** Which means the budget was spent on precision
+rather than on structure.
+
+**Why this framing is useful.** Because estimation effort is usually justified by the importance of the
+decision, and the importance of the decision does not determine whether estimation is the binding constraint.
+**The rule substitutes a question about sensitivity for a question about importance, and the two have
+different answers in most cases.**
+
+## The optimiser's output as a diagnostic
+
+The optimiser is described as an amplifier of estimation error. Its output is also a diagnostic, and the
+diagnostic is available before any out-of-sample evidence exists.
+
+**What the output reveals. Three things.**
+
+**The concentration.** Where the optimiser allocates most of the capital to a few positions, it is reporting that
+the estimates differ. **Whether they differ because the opportunities differ or because the noise does is the
+question the diagnostic raises.**
+
+**The stability under resampling.** Re-estimate the inputs on a bootstrap and re-optimise. **An allocation that
+moves substantially is one whose inputs are within noise of each other.**
+
+**The sensitivity to the specification.** Re-optimise under a second model of the inputs. **A large change
+indicates specification error rather than estimation error, and the two require different responses.**
+
+**How to run the three checks. Cheaply.**
+
+**Concentration is visible in the output.** No additional computation.
+
+**Resampling costs an afternoon.** It requires the estimation procedure to be re-runnable, which is a
+prerequisite worth having anyway.
+
+**Specification sensitivity costs another afternoon.** Two input models, two allocations, one comparison.
+
+**What a stable, unconcentrated allocation means. Two possibilities.**
+
+**The estimates are reliable and the opportunities differ.** The case the optimiser was designed for.
+
+**The estimates are all near zero.** In which case the allocation is close to equal weighting and the optimiser
+has produced the answer that required no inputs.
+
+**What to do with the diagnostic. One rule.** Treat an unstable or concentrated allocation as a finding about
+the inputs, not as a recommendation. **The output was computed from the estimates; when it says the estimates are
+uncertain, the appropriate response is to change the inputs or the objective rather than to execute the
+allocation.**
+
+**Why the diagnostic matters.** Because the amplifier argument is usually presented as a reason to distrust
+optimisers, and a diagnostic converts the distrust into a rule that can be applied to a particular output.
+**Three checks, all of them before any out-of-sample evidence exists.**
+
+## The smallest useful constraint
+
+The chapter lists responses to estimation risk. The simplest of them is a cap, and its economics are worth
+working through because a cap is not free.
+
+**What a cap does. Two things.**
+
+**It bounds the loss from the worst estimate.** Which is the response to the amplifier.
+
+**It forgoes the return from the best estimate.** Which is the cost, and it is invisible in the same way the
+amplifier's cost is invisible.
+
+**When the cap pays. One condition.** When the estimates' dispersion is small relative to their errors. **Then
+the cap is binding mostly on overestimates, and the foregone return is small because the true edges are
+similar.**
+
+**When the cap costs. The complement.** When the estimates' dispersion is large relative to their errors, the
+cap forgoes genuine opportunity. **The condition is the same ratio that governs shrinkage, and it is
+computable before the cap is set.**
+
+**Three practical forms of the cap.**
+
+**A maximum position size.** The bluntest form and the easiest to audit.
+
+**A maximum share of the portfolio in one position.** Which is scale-free and comparable across portfolios.
+
+**A maximum contribution to portfolio variance.** Which is the most principled and requires a covariance
+estimate, and the covariance is itself an estimated quantity.
+
+**What to do when the ratio cannot be computed.** Use the blunt form. **A maximum position size requires no
+estimates and its cost is knowable in advance, which makes it the right instrument when the estimation
+environment is unclear.**
+
+**Why the section exists.** Because the cap is usually presented as prudence rather than as a trade, and a
+constraint whose cost is unstated will be removed at the first pressure. **A cap with a stated cost and a
+stated condition is a decision; a cap without them is a habit, and habits are the first thing abandoned when
+a position is working.**
+
+## The three responses and their costs
+
+The chapter lists three responses to estimation risk. Each has a cost, and the costs are what make the choice
+between them a decision.
+
+**Shrinkage. Cost: deliberate bias.** Pulling estimates toward a central value gives up the information in the
+differences between them. **Which is worth paying when the differences are mostly noise and costly when they are
+mostly signal.**
+
+**Constraints. Cost: foregone opportunity.** A cap binds precisely when an estimate is high, and some high
+estimates are correct. **Which is the cost that appears as performance not achieved, and it is invisible.**
+
+**Integration. Cost: a joint distribution.** Optimising on the parameter uncertainty requires a distribution
+over parameters that is usually unavailable and always a modelling choice. **Which is the most principled
+response and the one whose inputs are least defensible.**
+
+**What the three costs have in common. One property.** Each is paid in a currency that does not appear in the
+analysis. **Bias in the estimate, opportunity in the allocation, and assumptions in the distribution.**
+
+**How to choose. One question.** Where is the estimation error largest relative to the decision's sensitivity.
+**Which determines whether the response needs to be precise, and it is the same ratio that governs the discount.**
+
+**Which of the three is cheapest. Constraints.** Because they require no estimates and their cost is knowable in
+advance. **Which makes them the right instrument when the estimation environment is unclear, and the reason the
+book's smallest portfolio advice is equal weighting or a cap.**
+
+**What to do when all three are unavailable.** Run the analysis and report the sensitivity. **Which is not a
+response to estimation risk but is the honest output: an allocation with a statement of what would change it.**
+
+**Why the costs deserve a section.** Because the three responses are usually presented as remedies, and a remedy
+whose cost is unstated will be abandoned when the cost appears. **Three costs, one question, and the cheapest
+response is the one that needs no estimates.**
+
+Three responses. Shrink. Constrain. Integrate. Costs differ. Constrain is cheapest. No estimates needed.
+
+## The optimiser and three ways to constrain it
+
+The amplifier argument leads to constraints, and three kinds appear in the material with different granularities.
+
+**A cap on a single position. The coarsest.** Which limits the damage from the worst estimate and requires no
+estimates. **Which is the right instrument when the estimation environment is unclear, and its cost is the
+opportunity foregone.**
+
+**A shrinkage of every estimate. Intermediate.** Which pulls each estimate toward the cross-sectional mean in
+proportion to its imprecision. **Which requires a view about the ratio of estimation error to genuine dispersion,
+and which preserves the ranking among the estimates while compressing it.**
+
+**An integration of the uncertainty into the objective. The finest.** Which optimises on the distribution implied
+by the parameter uncertainty. **Which is the most principled and requires a joint distribution that is usually
+unavailable.**
+
+**What the three have in common. One property.** Each reduces concentration on the largest estimates. **Which is
+the mechanism the amplifier argument identifies, and the three differ in the precision with which they target
+it.**
+
+**How to choose among them. One ratio.** Estimation error to genuine dispersion. **A high ratio favours the cap,
+a moderate ratio the shrinkage, and a low ratio makes any of the three unnecessary.**
+
+**Why the coarsest is often the best.** Because it requires no inputs and its cost is knowable in advance. **Which
+is the property the other two lack, since both require estimates of the uncertainty they are meant to
+control.**
+
+**What to record. Two items.** The constraint used and the ratio that justified it. **Which is a line and which
+makes the constraint reviewable when the ratio changes.**
+
+**What the three cannot do. Improve the estimates.** Which is a research question. **The constraints manage the
+consequences of poor estimates rather than repairing them, and the distinction is what the chapter's ordering of
+responses is for.**
+
+## A note on what this chapter could not check
+
+The claim that mean-variance optimisation on estimated inputs underperforms simple alternatives is
+attributed here to a body of work I did not read for this chapter, and no specific study is cited
+because I could not verify the reference I had in mind. Readers should treat the empirical claim as
+one to check rather than one to accept.
+
+The agreement between the integrated solution and the discount function is noted as a consistency
+observation. It is not a derivation, and the two would diverge if the parameter uncertainty were
+correlated with the variance estimate in a way the discount ignores.

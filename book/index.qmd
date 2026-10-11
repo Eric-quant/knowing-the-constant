@@ -1,0 +1,137 @@
+---
+title: "Knowing the Constant"
+subtitle: "Mandelbrot, Taleb, and Thorp on Shape, Survival, and Bet Sizing in a Fat-Tailed World"
+---
+
+# Preface {.unnumbered}
+
+Seventeen years before this book's first chapter opens, an American psychologist and an Israeli
+mathematician began a collaboration that would end with a Nobel Prize and a corpse. The corpse
+belongs to a theory of decision-making that had been considered settled since the Enlightenment,
+and the two men did not kill it deliberately. They simply ran experiments and reported what they
+saw.
+
+I mention him to describe a method, not to introduce a subject. The most readable book in
+that field is readable for a reason that has nothing to do with its subject. Its author argues
+in front of you. He does it on every page. He tells you what he expected, what happened
+instead, and when he changed his mind. He admits that the effects he spent a career documenting
+applied to him, and he reports the moment he realised it.
+
+This book concerns three people who never met, never collaborated, and rarely cited each other.
+A mathematician who measured roughness, a trader who wrote about opacity, and a professor who beat
+blackjack. Their work has almost nothing in common at the level of technique.
+
+What they share is a conclusion, reached independently and from three directions: **the world
+does not average out.** The quantities that everyone uses to summarise risk — means, variances,
+expected losses, optimal fractions — are less robust than they look, and in some situations they
+are not only badly estimated but undefined.
+
+That conclusion has consequences, and the consequences are the book, which is why the argument in Part IV is built rather than reported.
+
+## What kind of book this is
+
+It is a constructive book, and the construction comes second: nine papers are read closely first, and what gets built out of them is  a decision architecture with its own definitions, its own ordering, and its own failure
+conditions. Six devices in this book are proposed here for the first time. They are marked
+wherever they appear, they are collected in a register, and each of them comes with a stated
+condition under which it should be abandoned.
+
+I have tried to write the book I wanted when I started this material. It tells you what a paper
+establishes. It tells you what later work did to it. And it tells you where the difference between
+the two matters.
+
+## What this book does not do
+
+It gives no investment advice. It recommends no security. It promises no outcome. Every method
+described here has preconditions, and outside those preconditions every one of them fails. The
+appendices state where.
+
+It does not pretend to have read everything. Some papers are treated here without their full text
+having been available; when that is the case, the chapter says so in the sentence where the claim
+appears, and the claims register records it.
+
+And it does not resolve the tension at its centre. Two of the three men would tell you not to
+optimise anything, and the third spent his career computing optimal fractions. Both are right,
+under different conditions, and identifying those conditions is the work of Part IV.
+
+## How to read it
+
+Four parts, thirty-two chapters, and six short interludes that carry the mathematics and give the
+reader something to compute.
+
+**Part I (Chapters 1–8) — Shape.** What the world is made of, and what cannot be summarised.
+
+**Part II (Chapters 9–17) — Survival.** What counts as a reason to act when the world cannot be
+averaged.
+
+**Part III (Chapters 18–25) — Bets.** What to do when an edge is real: find it, size it, survive
+the execution.
+
+**Part IV (Chapters 26–32) — Construction.** The book's own proposal, and an adversarial chapter
+written against it.
+
+Chapters can be read out of order. Parts cannot. Parts cannot: each part uses a distinction established by the
+one before it.
+
+## On sources and verification
+
+Two registers accompany this book and are published alongside it.
+
+`verify/claims.csv` records every quantitative claim about published work, with a source and a
+status. The status vocabulary is small and deliberately unflattering: *verified metadata* means
+the citation exists and says what the book says it says; *verified metric* means a number was read
+from a named database on a named date; *verified absence* means the book checked for something and
+it was not there; *unverified full text* means the record was available and the contents were
+not.
+
+`verify/constructed.csv` records the six devices proposed by this book, each with its definition,
+its motivation, the test that could refute it, and its precondition.
+
+The two registers are never mixed. A statement about the world that would be false if attributed
+to a source is marked as mine in the sentence where it appears. This is more bookkeeping than most books carry, and it is also the argument of the book, applied to the book itself, which is the only way I could think of to keep the two registers from quietly merging.
+
+## What kind of book this is not
+
+A preface that states its method should also state its exclusions, because a reader's expectations are set
+in the first pages and mis-set expectations are the commonest reason a book disappoints.
+
+**It is not a survey.** Nine results are treated in detail and others appear only where they bear on those
+nine. **A reader looking for the literature on fat tails will not find it here; a reader looking for what
+happened to nine specific claims will.**
+
+**It is not a biography.** The three authors appear through their papers rather than through their lives, and
+the book takes no position on anything outside the work it cites. **Where a paper's reception is described,
+it is described from the citation record rather than from interviews or memoirs.**
+
+**It is not an argument for a trading method.** The sizing rules are derived because the material requires
+them, and they are presented with their conditions. **A reader who wants an allocation framework will find
+one and will also find the reasons it fails outside its cell.**
+
+**It is not neutral.** The book argues that a specific pattern recurs across the nine papers and that
+structural screening changes decisions. **Both claims are stated with their evidence and their refutation
+conditions, which is the most a book with an argument can offer.**
+
+**What the book asks of a reader. Three things.**
+
+**Patience with the registers.** The apparatus is unusual and it is the book's claim to being checkable.
+
+**Tolerance for qualifications.** Almost every claim arrives with its range. **The qualifications are the
+argument rather than a hedge.**
+
+**A willingness to attack the constructed devices.** They are proposals, they are untested, and each carries
+a refutation condition.
+
+**Why this section is in the preface.** Because the book's method is the first thing a reader meets and the
+last thing they are likely to question. **Stating what the book is not makes it easier to notice when it
+stops being what it claims to be.**
+
+
+## On the title
+
+The title comes from chapter 16 of the *Tao Te Ching*. The line that supplies the word is
+知常曰明 — to know the constant is called clarity. The line that supplies the argument is the
+next one: 不知常，妄作凶. Acting without knowing the constant ends badly.
+
+The three authors in this book spent their working lives trying to find out which properties of a
+random world stay fixed when the conditions change, and which are artefacts of the conditions.
+That is the question this book is about, and the answer it develops is narrower than any of them
+would have liked.

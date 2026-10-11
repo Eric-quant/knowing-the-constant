@@ -1,0 +1,449 @@
+# Interlude: Expected Value Is Not Growth {#sec-ev-not-growth}
+
+One arithmetic fact separates Part III from everything before it, and it can be stated in a line.
+
+**The average of a set of returns is not the return you earn by experiencing them in sequence.**
+
+Here is the smallest version of the demonstration. An investment gains fifty percent, then loses
+fifty percent. The arithmetic average of the two returns is zero. The money you actually have is
+seventy-five percent of what you started with, because one point five times zero point five is
+three quarters.
+
+Nothing went wrong. Nothing at all. The rule of multiplication did its work, and the rule of multiplication is the
+rule that governs compounding. **Averages add. Portfolios multiply. Two rules. One wins. The arithmetic of addition governs how we describe a track record, and the arithmetic of multiplication governs what the record actually produced, which is why a strategy can be described accurately and still be misunderstood.**
+
+## The gap has a name
+
+The arithmetic mean of a series of returns and the geometric mean — the constant rate that would
+produce the same compounded outcome — are not the same number, and the gap is not a technicality.
+
+For returns of moderate size, the difference is approximately half the variance. That approximation
+is worth holding in the head, because it says something blunt: **volatility costs growth, and it
+costs it at a rate proportional to the square of the volatility.** A strategy with the same average
+return and twice the volatility grows at a noticeably slower rate, and the difference compounds.
+
+| Strategy | Average return | Volatility | Growth rate (approximate) |
+| --- | --- | --- | --- |
+| Steady | 6% | 8% | 5.7% |
+| Choppy, same average | 6% | 20% | 4.0% |
+| Wild, same average | 6% | 40% | −2.0% |
+
+The third row surprises people. It always does. A strategy whose average return is positive and whose volatility is large enough will lose money over a long sequence of periods, not because any period went badly but because the compounding of large moves consumes the arithmetic advantage. A strategy with a positive average return and a
+large enough volatility **loses money over time**, not occasionally but systematically. **The
+average is positive and the outcome is negative, and both statements are true.**
+
+## Why this decides the sizing question
+
+The fact above is the reason Chapter 20's answer looks strange to anyone thinking in expected
+value.
+
+If the objective is to maximise the expected value of your wealth after one period, and the bet has
+a positive expectation, the answer is to stake everything. Every additional unit staked adds to the
+expectation in proportion. The arithmetic is unambiguous. And fatal.
+
+But staking everything on a sequence of favourable bets produces ruin with probability one. The
+expected value of the terminal wealth is enormous — the arithmetic says so, correctly — and the
+probability that you hold any of it after enough repetitions is zero.
+
+**Those two statements are not in conflict. Both are true. Expected value is a sum over outcomes; growth is a
+product over time. When the product contains a zero, the sum is irrelevant.**
+
+So the objective function for a repeated bettor cannot be expected value. It has to be the growth
+rate, which is the geometric mean, which is the thing the variance reduces. That is the content of
+the Kelly criterion, and the reason it looks conservative to people expecting an expected-value
+answer.
+
+## What the approximation does not do
+
+The half-variance rule is a second-order approximation and it fails in exactly the environment this
+book has been describing.
+
+**It assumes returns are mild.** Often they are not. For large moves the expansion breaks down, and with fat tails the
+variance may not exist, in which case the correction term does not exist either. The rule of thumb
+survives in the middle of the distribution and is silent in the tail.
+
+**It assumes the series is stationary.** Often it is not, and where the volatility itself moves between regimes the correction term is an average of corrections that apply to different worlds, none of which is the world the practitioner is currently in. A strategy whose volatility changes regime has a growth
+rate that changes with it, and averaging across regimes describes neither.
+
+**It says nothing about the order of returns.** Nothing useful. Two sequences with the same set of returns compound
+to the same result regardless of order, which is a genuine feature of multiplication. What order
+changes is the drawdown path, and the path determines whether an investor stays invested.
+
+## Claim and tool
+
+The claim: growth is a multiplicative quantity, and the average of returns is not it.
+
+The tool: the distinction itself, which converts "this bet has positive expected value" from a
+recommendation into an observation.
+
+## Why the gap widens with time
+
+The arithmetic mean and the geometric mean differ by roughly half the variance over one period. Over
+many periods, the difference compounds, and this is the part that surprises people who understand the
+one-period version.
+
+**The mechanism.** Each period multiplies wealth by a factor whose logarithm has a mean that is
+reduced by the variance. The reduction is per period, so it accumulates linearly in the exponent while
+the advantage from the mean accumulates at the same rate.
+
+**What that means in practice.** A strategy with a positive arithmetic mean and a large variance has a
+geometric mean that declines with the length of the holding period, until it goes negative. The
+reversal point is the horizon at which the two effects balance, and it depends on the variance rather
+than on the edge.
+
+**A worked shape.** With a two percent annual arithmetic advantage and forty percent annual volatility,
+the variance correction is roughly eight percent, so the growth rate is negative. The strategy wins on
+average and loses in sequence. This is not a paradox; it is the arithmetic of Chapter 19's first
+section applied to a realistic pair of numbers.
+
+**Why the horizon matters for a decision.** A strategy that is unattractive over ten years can be
+attractive over one, which is the formal reason why leverage and volatility are dangerous for a
+long-horizon investor and tolerable for a short one. **The quantity that decides the sign is the
+variance times the horizon, and the quantity that decides the size is the edge.**
+
+
+## The geometric mean when the variance does not exist
+
+The half-variance rule is a second-order approximation, and Part I established that in this book's
+material the second moment may not exist. What happens to the argument then?
+
+**The criterion survives; the approximation does not.** Maximising expected log wealth is well defined
+whenever the log is integrable, and it does not require the variance to exist. The rule of thumb — that
+the growth rate falls by half the variance — is what fails, because it names a quantity that may be
+infinite.
+
+**What replaces it in practice.** Two things. First, an explicit bound: the strategy's growth rate can
+be assessed from the distribution of log outcomes directly, without going through the moments. Second,
+a constraint on the worst case, because when the second moment diverges the variance-based penalty
+understates the drag from extreme outcomes.
+
+**Why this matters for the sizing chapter.** The optimal fraction in the continuous case was written
+as the expected excess return over the variance. Where the variance does not exist, that formula has no
+referent, and the correct response is the grid of Chapter 14: the quantity is in the Replace cell, and
+the substitute is a fraction derived from a bounded loss rather than from a second moment.
+
+**The pattern, once more.** Every quantity in this book that depends on a moment eventually meets the
+question of whether the moment exists. **The growth criterion is more robust than its approximation,
+and the difference is worth holding onto when a practitioner quotes a formula that assumes the
+variance.**
+
+
+## Two numbers before any sizing
+
+The interlude's arithmetic implies an order of operations for anyone about to stake capital, and it
+takes two numbers rather than one.
+
+**Number one. The arithmetic mean of the returns.** The figure in the marketing material and the one
+everyone reports.
+
+**Number two. The growth rate, which is the arithmetic mean minus roughly half the variance.** The
+figure that determines what happens to the capital.
+
+**Why both.** Because the size of the gap determines whether the difference between them matters for the
+decision at hand. Where the variance is small, the two numbers are close and the distinction is
+academic. Where the variance is large, the gap can exceed the mean and the sign of the growth rate can
+differ from the sign of the average return.
+
+**The comparison to make, in one line.** Divide the half-variance by the arithmetic mean. **A ratio below
+about a tenth means the standard framework's conclusions carry over. A ratio above about a half means the
+strategy's viability depends on a quantity that most reporting does not mention.**
+
+**What to do with the answer.**
+
+**Low ratio.** Proceed with the ordinary machinery, discounting for estimation error.
+
+**Middle ratio.** Two numbers, not one, in every report. **The second number changes allocation decisions
+even when the first does not.**
+
+**High ratio.** The position is not a return stream; it is a lottery with a positive mean. **Size it as
+such, or do not hold it.**
+
+**Why this is worth a page.** Because the arithmetic mean is the number everyone computes, the growth
+rate is the number that matters, and the interval between them is where most of the surprises in this
+material live.
+
+
+## Choosing between the two objectives
+
+The interlude has argued that growth is the right objective for repeated bets. Two cases complicate that
+conclusion, and both are practically important.
+
+**Case one. The bet is taken once.** A single decision with no repetition has no growth rate, and the
+expected value is the correct criterion. **Where the outcome is large relative to the decision-maker's
+wealth, the appropriate criterion is expected utility rather than expected value, and the utility function
+encodes the same aversion to the absorbing state that the growth criterion encodes for repeated bets.**
+
+**Case two. The bets are not independent.** Where outcomes are correlated, maximising each bet's growth rate
+separately is not optimal for the portfolio, because the joint distribution's variance is not the sum of the
+individual variances. **The correction is a portfolio-level growth criterion, which is computable but which
+requires the correlation structure — the quantity Chapter 14 places in the Bound cell.**
+
+**Three practical rules that follow.**
+
+**Use the growth criterion where the sequence is long and the positions are independent.** This is the case
+the Kelly literature treats and the case where the arithmetic is clean.
+
+**Reduce toward the growth criterion as correlation rises.** The expected-value criterion overstates the
+appropriate size when outcomes are dependent, and the correction grows with the dependence.
+
+**Where the decision is genuinely single, use expected utility and state the utility function.** The
+function is a choice, and making it explicit is better than importing the growth criterion into a setting
+where it does not apply.
+
+**Why this matters for the book's argument.** Because the sizing rules in Part III are derived for repeated,
+independent bets, and most real applications violate one or both conditions. **The discount of Chapter 21
+absorbs some of the violation by reducing the fraction; it does not repair the objective function, and a
+reader applying Kelly fractions to a single correlated decision has imported the arithmetic into a setting
+it was not designed for.**
+
+
+## Reporting both numbers
+
+The interlude argues that the growth rate and the arithmetic mean differ. Its practical form is a reporting
+convention, and the convention is small enough to adopt without any other change.
+
+**The convention. Two numbers and one ratio.**
+
+**The arithmetic mean of the returns.** The reported figure.
+
+**The growth rate.** Computed as the mean minus roughly half the variance, or directly from the geometric
+mean of the wealth series.
+
+**The ratio of the half-variance to the mean.** A single number that says how much the distinction matters.
+
+**What each number answers.**
+
+The mean answers the question "how did the strategy do on average". The growth rate answers "what happened to
+the capital". **The ratio answers "how much does the difference matter for this decision".**
+
+**Three cases and what to do.**
+
+**Ratio below one tenth.** Report the mean and proceed. **The distinction is academic.**
+
+**Ratio between one tenth and one half.** Report both. **Allocation decisions change when the second number is
+present, even when the first is unchanged.**
+
+**Ratio above one half.** The strategy's viability depends on a quantity that most reporting omits. **Report
+both, and state the sign of the growth rate explicitly, because the two numbers can have different signs.**
+
+**Why the convention is worth adopting without the rest.** Because it requires no new estimates, no model, and
+no agreement about anything else in this book. **It requires one additional calculation and one additional line
+in a report, and it converts a favourable-looking average into a statement about capital.**
+
+
+## The arithmetic the interlude asks you to remember
+
+The interlude contains one calculation and several consequences. This section states the calculation and the
+three things that follow from it, so that a reader who remembers nothing else has the operative part.
+
+**The calculation.** One line. Only one. Growth rate equals the arithmetic mean minus roughly half the variance. **The
+approximation holds for moderate returns and fails for large ones, which is the chapter's own boundary
+condition.**
+
+**Consequence one.** Volatility costs growth. Compounding does the rest. At a rate proportional to the square of the volatility. **A
+strategy with twice the volatility of another, at the same average return, grows at a materially slower rate
+and the difference compounds.**
+
+**Consequence two.** Positive means can compound downward. Signs differ. Where half the variance exceeds the mean. **The
+arithmetic average and the experienced return then have different signs, and the second one governs the
+capital.**
+
+**Consequence three.** The objective is growth. Not expected value. Not expected value, which is a sum over
+outcomes while growth is a product over time. **When the product contains a zero, the sum is irrelevant, and
+that single sentence is the reason the sizing chapter looks conservative to anyone expecting an expected-value
+answer.**
+
+**What the three consequences do not include.** A stake size. **The interlude establishes the objective and
+nothing more; the fraction that maximises it belongs to the next chapter.**
+
+**What to do with it.** One line in a report. Every time. State the growth rate alongside the
+average return and the ratio of the half-variance to the mean. **The line costs one calculation and converts a
+favourable-looking average into a statement about what happened to the capital.**
+
+**Why it is placed here.** Because of the next chapter. Because the sizing rule is unintelligible without it, and because
+the calculation is the point at which a reader who has followed the book so far stops expecting the standard
+machinery to apply.
+
+
+## The two uses of an average in one decision
+
+The interlude separates the arithmetic mean from the growth rate. A decision often needs both, and the way they
+are used together is worth one section.
+
+**The first use.** Comparing opportunities. The arithmetic mean, or a risk-adjusted version, is the right
+instrument for ranking candidates before anything is committed. **It answers the question "which of these looks
+more promising", and it answers it without committing capital.**
+
+**The second use.** Sizing the chosen one. The growth rate is the right instrument once a candidate is selected.
+**It answers the question "how much can be staked before the compounding works against me".**
+
+**Why the two are easily confused.** Because both are computed from the same return series and both are
+expressed as a rate. **The confusion produces the characteristic error: a strong ranking on the first number
+used as a justification for a large stake, when the second number may be negative.**
+
+**Three consequences for a decision process.**
+
+**Rank first, size second.** Different numbers. A process that uses one figure for both purposes will
+mis-rank or over-size, and the direction of the error depends on which figure it chose.
+
+**State the growth rate for the chosen candidate explicitly.** Not for the ranking, for the sizing. **This is
+where the interlude's calculation belongs in a document.**
+
+**Negative growth settles it.** The ranking does not matter. A candidate with the best average and a
+negative growth rate is not the best candidate. **It is a candidate that should be staked at zero, which is a
+decision the first number cannot express.**
+
+**Why it survives in practice.** Reports and decisions differ. Because reports are organised around the first number and
+decisions are made on the second. **The interlude's contribution is to name the gap between the two, and a
+report that prints both numbers closes it.**
+
+
+## The gap in a single number
+
+The interlude's material reduces to a ratio, and a reader who wants one number from it should have this one.
+
+**The ratio.** Half the variance divided by the arithmetic mean. **Above one, the strategy's growth rate is
+negative; below a tenth, the distinction is academic; between the two, both numbers belong in every report.**
+
+**Why this ratio rather than the growth rate itself. Two reasons.**
+
+**It requires no distributional assumptions beyond a variance.** The growth rate's approximation assumes
+moderate returns; the ratio needs only the mean and the variance, both of which are reported anyway.
+
+**It is dimensionless and comparable across strategies.** A ratio can be compared between a strategy with a two
+percent mean and one with twenty, which a growth rate cannot without additional context.
+
+**What the ratio does not capture. Three things.**
+
+**Fat tails.** Where the variance does not exist, the ratio is undefined and the strategy belongs in a different
+cell. **The ratio is for the case where both moments exist.**
+
+**Correlation across positions.** The variance of a portfolio is not the sum of its positions' variances, so the
+ratio applies position by position rather than to the whole.
+
+**The holding period.** The approximation is per period, and a strategy's growth rate over a horizon accumulates
+the correction. **The ratio is a rate, and the total effect scales with time.**
+
+**How to use it in a report. One line.** State the mean, the variance, and the ratio. **Three numbers, computable
+from what is already reported, and the third one decides whether the first two describe the capital or only the
+distribution.**
+
+**Why a single number is worth extracting.** Because the interlude's argument is easy to accept and hard to
+remember, and a ratio is easier to carry into a meeting than a derivation. **The derivation is in the chapter;
+the ratio is what a reader takes out of it.**
+
+
+## The interlude and the drawdown it implies
+
+The gap between the mean and the growth rate has a second consequence the interlude states only in passing: the
+path.
+
+**The relation. Approximate.** A strategy with a positive mean and a variance large enough to reduce growth
+substantially will also produce large drawdowns, because the same dispersion that subtracts from the logarithm
+produces excursions in the level.
+
+**Why the path matters more than the rate for most holders.** Because the rate determines the outcome and the
+path determines whether the holder is still there. **A strategy with the right rate and an unbearable path
+produces the wrong outcome, and the mechanism is behavioural rather than mathematical.**
+
+**Three implications for how the interlude's material is used.**
+
+**The two numbers should be reported together with a drawdown estimate.** Mean, growth rate, expected maximum
+drawdown. **The third is computable from the first two and a horizon, and it is the one that decides whether a
+holder can stay.**
+
+**A negative-growth strategy has no tolerable drawdown.** The path question is moot, because the destination is
+known.
+
+**A positive-growth strategy with a large expected drawdown needs a funding structure.** The drawdown must be
+survivable from a source that does not depend on the strategy, which is the same requirement the convexity
+chapter imposes on a tail hedge.
+
+**What the interlude's arithmetic does not include.** Any account of the holder. **The growth rate is a property
+of the strategy; the drawdown is a property of the strategy and the funding. The chapter supplies the first and
+the practical literature supplies the second, and a reader who has only the first will over-size.**
+
+**Why the point belongs at the end of the interlude.** Because the interlude's objective is growth, and a reader
+who takes the objective without the path will apply it to a holder who cannot stay the course. **The arithmetic
+is right and the application requires one more number.**
+
+
+## The ratio in three decisions
+
+The ratio of half the variance to the mean is the interlude's practical output. Three decisions use it, and each
+uses it differently.
+
+**A sizing decision. Directly.** A high ratio means the growth rate is low or negative, and the stake should be
+smaller than the mean suggests. **Which is the ratio's primary use.**
+
+**A comparison between strategies. As a quality adjustment.** Two strategies with the same mean and different
+variances are ranked differently by the ratio. **Which is the same comparison risk-adjusted performance measures
+make, arrived at from the growth objective.**
+
+**A reporting decision. As a disclosure.** Where the ratio exceeds some threshold, both numbers belong in the
+report. **Which is a rule rather than a calculation and is the cheapest of the three to adopt.**
+
+**What the three uses share. One input.** The mean and the variance, both already reported. **Which is why the
+ratio is worth extracting: it requires no new estimation.**
+
+**Where the ratio does not apply. Three cases.**
+
+**Where the variance does not exist.** The ratio is undefined and the quantity belongs in a different cell.
+
+**Where the returns are not additive across periods.** The approximation assumes compounding of a single series.
+**A portfolio's ratio is not the average of its positions' ratios, because the variance of the sum is not the sum
+of the variances.**
+
+**Where the horizon is short.** The ratio is a per-period quantity, and over one period it describes a
+distribution rather than a growth outcome.
+
+**Why the three decisions are worth separating.** Because the ratio is one number used in three ways, and a reader
+who has only the sizing use will not think to put both numbers in a report. **Three uses, one calculation, and the
+reporting use is the one that changes what other people see.**
+
+
+## The interlude and three ways a strategy can look good
+
+The gap between the mean and the growth rate explains three ways a strategy can appear attractive and be
+otherwise.
+
+**A high average return with a high variance.** Which looks excellent in a report and compounds slowly or
+downward. **The gap is the variance term, and it is largest precisely where the average is most impressive.**
+
+**A winning record with a large drawdown.** Which looks excellent in a track record and is abandoned by most
+holders. **The path is the drawdown, and it is a property of the dispersion rather than of the mean.**
+
+**A positive expectation with a size that destroys it.** Which looks excellent in the analysis and produces ruin
+in the sequence. **The mechanism is overbetting, and it is the subject of the next chapter.**
+
+**What the three have in common. One property.** Each is a correct statement about a distribution and an
+incorrect implication about an outcome. **Which is the interlude's whole content, applied to three surfaces.**
+
+**What a reader should do about the three. One line each.**
+
+**Report the growth rate beside the mean.**
+
+**Report the drawdown estimate beside the growth rate.**
+
+**Report the fraction and its discount beside the stake.**
+
+**Why the three are worth naming together.** Because they are the three places where a favourable statistic
+turns into an unfavourable outcome, and each is addressed by one of the book's devices. **Three surfaces, three
+lines in a report, and the interlude is what makes them necessary.**
+
+**What the interlude does not supply. The numbers.** Which come from the sizing chapter and the drawdown
+relation. **The interlude establishes that the second number is needed; the later chapters compute it.**
+
+
+## Boundary conditions
+
+The distinction applies to any sequence of decisions that compounds — capital, reputation, health,
+or any other quantity whose future depends on its present level.
+
+It is irrelevant for a single, non-repeated decision, where there is no product and the expected
+value is the correct criterion.
+
+And it does not tell you how much to stake. It tells you that the answer is not "as much as
+possible", and the next chapter supplies the number.
+
+Two numbers. The mean and the growth rate. Report both. Every time. No exceptions. One line each.

@@ -1,0 +1,404 @@
+# Appendix C: The Registers {#app-registers}
+
+This book makes claims of two kinds. They live in two files. Not one bibliography.
+
+**`verify/claims.csv`** records claims about the world: what a paper says, what its bibliographic
+details are, what later work did to it. Every entry carries an identifier, the chapter where it is
+used, the claim text, a status, and a note on how it was checked.
+
+**`verify/constructed.csv`** records devices this book proposes: their definitions, their claimed
+value, their preconditions, and their refutation conditions.
+
+**The separation is the point.** It is auditable. A reader who wants to know whether something in this book is
+reported or invented should be able to answer by looking at which file contains it.
+
+## The five verification classes
+
+Every entry in the claims register carries one of these labels.
+
+**Verified metadata.** Bibliographic facts. Bibliographic facts — journal, volume, issue, pages, year, DOI — checked
+against citation databases. Where a DOI could not be confirmed, the entry says so and records the
+fields that were matched instead.
+
+**Verified via text.** Read at source. The claim was read in the source, or in an accessible version of it. The note
+records what was read and what was not.
+
+**Verified via secondary source.** One remove, named. The claim is described at one remove, and the note names the
+remove. Two cases appear in this book: the content of published responses to the 2014 precautionary
+principle preprint, and the argument of the 2020 preprint on tail risk.
+
+**Verified absence.** A finding too. A claim that something is *not* present in a source — for example, that no
+commentary is attached to the 2009 fourth quadrant article in the journal's issue records, or that
+a formula attributed to a paper does not appear in it. These entries look like negative findings and
+are as important as the positive ones.
+
+**Unverified, and deliberately not cited in the text.** Items that would have strengthened the
+argument, could not be checked, and are therefore named in the relevant chapter as *not* being
+quoted. Several appear in the book this way.
+
+## The status vocabulary in full
+
+The register uses a slightly larger vocabulary than the five classes above, because real entries turned
+out to need distinctions the classes did not cover. The complete list, as the validator enforces it:
+
+**Verified** — `verified_metadata`, `verified_via_text`, `verified_via_secondary`,
+`verified_via_preprint`, `verified_quotation`, `verified_metric`, `verified_absence`,
+`verified_arithmetic`.
+
+**Not verified** — `unverified`, `unverified_fulltext` (the source exists but could not be read in
+full), `not_cited` (deliberately not used in the text), `interpretation` (the book's reading rather
+than a report), and `statistical_result` (a figure reproduced from a named record).
+
+**The book's own constructions are recorded as `interpretation` in the claims register**, with their
+definitions, preconditions and refutation tests in the constructed register. An earlier draft marked
+them `constructed` inside the claims file, which conflated the two registers; the validator now rejects
+that label in that file, and the entries were changed. **The book's claim that the registers are kept
+separate is therefore enforced by a script rather than asserted in prose.**
+
+## What the verified register contains
+
+At the time of writing it holds entries for all nine papers and for the principal later literature
+used to assess them. Four features are worth pointing out.
+
+**Bibliographic detail is given even where the argument does not need it.** Independently checkable. Volume, issue and page
+numbers appear for every cited paper, which makes each entry independently checkable.
+
+**Citation counts are paired with the database and a snapshot date.** A citation count without those
+two facts is not a fact about the literature.
+
+**Disputed attributions are recorded as disputed.** Where a claim is commonly attached to a paper and
+the attachment could not be confirmed — the most-quoted sentence from the 2009 article is the leading
+example — the register records the failure rather than repeating the claim.
+
+**Criticisms are attributed only where the critic addressed the specific work.** The general
+literature attacking precaution as a policy principle is not counted as criticism of the 2014
+preprint, because I found no evidence that it was aimed at that paper.
+
+## What the constructed register contains
+
+Every device in Part IV, plus the smaller constructions used throughout: the grade vocabulary, the
+distinction between M0 and M1+ exposures, the failure taxonomy of Chapter 4, the scale-span rule, the
+four irreversibility mechanisms, the five bounding moves, and the four-column protocol.
+
+Each entry has four fields beyond its definition, and the fourth is the one that keeps the register
+honest.
+
+**Its claimed value** — what problem it is supposed to solve.
+
+**Its test** — how one would know whether it works.
+
+**Its preconditions** — what must be true for it to apply at all.
+
+**Its refutation condition** — what would show it to be wrong or useless.
+
+**A reader who disagrees with a device can attack it at the fourth field**, which is the only field
+that makes the proposal falsifiable rather than merely stated.
+
+## What is deliberately not cited
+
+The book names several items it would have used and does not, and the reasons fall into three
+classes.
+
+**Items that could not be verified.** The most-quoted sentence attributed to the 2009 article; the
+specific exponent attributed to Hurst's Nile analysis; the claim that a particular formulation of
+model error dominates estimation error appears in the 2009 text. Each is either quoted without a
+citation elsewhere in the literature or absent from the accessible version, and the book says so
+where it would otherwise have been used.
+
+**Items whose attribution is doubtful.** A 2018 paper on the precautionary principle, cited in some
+later work, appears on the evidence available to be a secondary citation of the 2014 preprint rather
+than a separate publication. The book cites the preprint and does not treat a 2018 text as existing.
+
+**Items whose scope differs from the book's.** General critiques of precaution, and general studies
+of forecasting failure, are relevant to the material but are not about the papers under discussion,
+and counting them as criticisms of those papers would misrepresent the record.
+
+## How to check this book
+
+Three procedures. Increasing effort.
+
+**Look up an entry.** The registers are comma-separated files; a claim can be traced from the text
+via its chapter number.
+
+**Recompute a figure.** Each figure in the repository is generated by a script, and the scripts are
+in the same directory as their outputs, so a reader can inspect the construction rather than accept
+the image.
+
+**Attack a device at its fourth field.** The refutation conditions are stated in the register and in
+the chapters; the most useful response to this book would be an attempt to meet one.
+
+## How the registers were built, and where they are weak
+
+The registers are the book's claim to being checkable. What follows is an account of how they were assembled
+and where that process is weak, because a register whose provenance is undocumented is a list.
+
+**The procedure.** Four steps.
+
+**Bibliographic fields came from citation databases** and, where available, cross-checked against a
+second database. Where the two disagreed, the entry records the disagreement and the fields that were
+matched.
+
+**Claims were marked by what was read.** Nothing else. An entry marked `verified_via_text` means the accessible
+version of the source was read and the claim is in it. An entry marked `verified_via_secondary` means the
+claim is described at one remove, and the note names the remove. **The distinction is the register's most
+useful feature and the one most easily fudged, which is why the labels are specific rather than graded.**
+
+**Absences were recorded as findings.** Four of them. Where a claim often attributed to a source could not be found in it,
+the entry says so. **Four such entries exist, and they are the entries most likely to be challenged, which
+is their purpose.**
+
+**Constructions were separated.** Two files. Every device proposed by the book is in the second register with its
+definition, its motivation, its refutation test and its precondition. **Nothing in that file has been
+tested, and the status field says so on every row.**
+
+**Where it is weak.** Three admissions.
+
+**Coverage is uneven.** By chapter. Chapters drawing on well-indexed anglophone literature have fuller
+registers than those drawing on conference proceedings and preprints. **The asymmetry reflects the database
+rather than the material, and a reader should not read an empty cell as a finding of absence.**
+
+**Reading depth varies.** It does. Several sources were available only as abstracts, preprints, or summaries, and
+the notes say which. **A claim resting on an abstract is weaker than one resting on a full text, and the
+register can show the difference without resolving it.**
+
+**Readings are not registered.** Not at all. Where a chapter reads a paper as arguing something the
+paper does not state, the reading is labelled in the chapter rather than recorded as an entry. **The registers
+cover claims about sources and the book's own devices, not the book's readings, and a reader who disagrees
+with a reading will find no entry to challenge.**
+
+**What a reader should do with the account.** Check one entry by the strongest method available, and prefer
+the entries where the book records an absence. **A register is worth exactly as much as the honesty of its
+weakest row, and the rows above are the ones where its honesty is being tested.**
+
+
+## What the registers are for, three months later
+
+The registers are presented as the book's claim to being checkable. Their working value in the repository is
+different: they are what makes revision possible.
+
+**Three uses in maintenance.**
+
+**A revision can be checked against the register.** If a claim is corrected, the register records the status it
+held and the evidence on which the earlier status rested. **Without that record, a correction rewrites history and
+the pattern of how the book was wrong becomes unrecoverable.**
+
+**A new source updates a bounded number of entries.** Statuses are specific — read, described at one remove,
+absent, not cited — so a source that becomes available moves entries between named categories. **A vague
+bibliography supports no such operation.**
+
+**The constructed register is reusable.** Devices defined with preconditions and refutation tests can be applied
+by someone else. **A device described in prose only is not portable in the same way.**
+
+**What the registers cannot support. Three things.**
+
+**Reading a book's argument from its registers.** They record claims and devices, not the reasoning that connects
+them.
+
+**Automated checking of the prose.** The registers do not contain the sentences that use the claims.
+
+**Verification of the book's readings.** Where a chapter reads a source as arguing something, the reading is not
+an entry. **This is the largest gap, and it is disclosed in the chapter that describes the register's
+weaknesses.**
+
+**What a reader should take from this.** The registers are infrastructure for the author and evidence for the
+reader. **They were built for the first purpose and they serve the second, which is the usual order and the
+honest description.**
+
+
+## The entry that would be hardest to defend
+
+A register is only as strong as its weakest row, and a reader can find that row faster by knowing which kind of
+entry is hardest to maintain.
+
+**Three candidates.** Ordered by difficulty.
+
+**The verified absence.** Hardest to defend. An entry asserting that a claim attributed to a source is not in it. **This requires
+the strongest evidence of any entry — a full reading and a search — and it is the entry most likely to be
+overturned by a reader with better access.**
+
+**The secondary verification.** A chain, not a source. An entry recording that a claim is described in a response or a review, at one
+remove. **Its weakness is not the source but the chain: a summary's summary is a different object from the
+original, and the register's note has to carry the distinction.**
+
+**The arithmetic verification.** A derivation, not a fact. An entry resting on a computation rather than a source. **Its weakness is that
+it verifies a derivation, not a fact about the world, and the two are easy to confuse in a register where both
+appear.**
+
+**What to do about the hardest entries. Three things.**
+
+**Mark them.** The markers are the mitigation. The status vocabulary already distinguishes `verified_absence`, `verified_via_secondary` and
+`verified_arithmetic`. **The marker is the mitigation, and it works only if a reader reads the status rather
+than the claim.**
+
+**Name what would overturn them.** Each entry should. A copy of the source, a stronger index, a check of the arithmetic. **An entry
+that names its own refutation is more useful than one that merely asserts its status.**
+
+**Prefer visible error.** Deliberately. An entry marked `verified_absence` that turns out to be mistaken is a
+public error; an unmarked assertion is a quiet one. **The register is arranged so that its failures are
+visible, which is the reason to keep it.**
+
+**Why this section is worth a reader's attention.** Because the four categories a reader is most likely to
+challenge are the ones listed above, and knowing which they are turns a general scepticism into a specific
+test. **Check one of those three entries and the register's honesty is established or its weakness is found.**
+
+
+## What a second reader should check first
+
+The registers are designed for an external check, and the order in which a checker should proceed is worth
+stating so that the effort lands where it is informative.
+
+**First. Pick a `verified_metadata` entry and reproduce the bibliographic fields.** Volume, issue, pages,
+year. **This is mechanical, it takes minutes, and it establishes whether the register's basic layer is sound.**
+
+**Second. Pick a `verified_absence` entry and look for the claim in the source.** These are the entries most
+likely to be wrong and the ones the book most wants challenged. **A checker who overturns one has improved the
+book more than a checker who confirms a dozen citations.**
+
+**Third. Attack a device.** At its fourth field. The refutation test, the precondition, or
+both. **This is the only check that bears on the book's proposals rather than on its reports, and the entries
+were written to make it possible.**
+
+**Fourth. Recompute one number.** Cheapest to verify. The discount function, the detection arithmetic, the
+two-times result. **A derivation is checkable in a way that a reading is not, which makes these entries the
+cheapest to verify and the easiest to get wrong.**
+
+**What the order assumes.** That the checker has limited time and wants the highest-information check first.
+**The sequence runs from the most mechanical to the most consequential, so a checker who stops after the first
+step has still established something and knows what remains unverified.**
+
+**What is not there.** No sentence-level entries. An entry for every sentence in the book. **The registers cover claims about
+sources and the book's own devices; the interpretations are labelled in the chapters, and a checker looking
+for an interpretation to challenge will not find one in the files.**
+
+**Why publish an order.** Guidance beats impressions. Because an unguided check produces an impression and a guided one produces a
+finding. **The four steps are the shortest path from a reader's scepticism to a specific result, which is what
+a register is for.**
+
+
+## A worked check, end to end
+
+The registers invite checking and give no example of the operation. This section performs one, on an entry
+chosen because it is short and because it is the kind the book most wants tested.
+
+**The entry.** A `verified_absence` claim: that the most-quoted sentence attributed to the 2009 fourth-quadrant
+article does not appear in the article.
+
+**Step one. Read the entry and its note.** The status is `verified_absence`; the note records that the
+accessible text was read and the sentence was not found. **The entry states its own weakness, which is that a
+search can fail where the sentence is paraphrased rather than absent.**
+
+**Step two. Determine what the entry claims.** Not that the idea is absent. **That the specific phrasing is
+absent, which is a narrower claim and the one the status supports.**
+
+**Step three. Attempt to overturn it.** Obtain the article, search for the phrasing and for close variants,
+and check the paragraphs where the idea is discussed. **A checker who finds the sentence has overturned the
+entry; one who finds the idea but not the phrasing has confirmed its narrowness.**
+
+**Step four. Record the outcome.** Either the entry stands, or it is corrected with the location of the
+sentence. **The register's purpose is to make the second outcome possible, and an entry that cannot be
+overturned is not a check but an assertion.**
+
+**What the example demonstrates. Three things.**
+
+**The statuses do work.** `verified_absence` is a different claim from `verified_via_text`, and the difference
+is exactly what the check turns on.
+
+**The narrowness is deliberate.** The entry is written so that its failure mode is visible. **A broader entry
+— "the paper does not say this" — would be harder to defend and easier to misread.**
+
+**Overturning an entry is a contribution.** The registers are built so that a reader who refutes one has
+improved the book, and the entries most likely to be refuted are the ones the book most wants challenged.
+
+**What the example does not establish.** That the entry is correct. **It establishes that the entry is
+checkable, which is the property the register claims for it and the only one it can support.**
+
+
+## The registers as a model for other work
+
+The registers are this book's apparatus. They are also a transferable form, and the form is worth describing for a
+reader who writes anything quantitative.
+
+**The form. Two files and a convention.**
+
+**One file for claims about the world.** Each entry with an identifier, the chapter, the claim, the source, a
+status, and a note on how it was checked.
+
+**One file for one's own constructions.** Each entry with a definition, a motivation, a test, and a precondition.
+
+**One convention: nothing about the world goes in the second file, and no construction goes in the first.**
+**The convention is what makes both files readable, and it is enforced by a script in this repository.**
+
+**Why the form is worth adopting. Three reasons.**
+
+**It separates what was found from what was invented.** Which is the distinction most likely to be lost in
+writing that ranges across sources and proposals.
+
+**It states the verification status of every claim.** Which converts a reader's general scepticism into a
+specific test.
+
+**It records refutation conditions for one's own proposals.** Which is unusual, and which is the reason a reader
+can attack the book's devices rather than merely disagree with them.
+
+**What the form costs. Two things.**
+
+**Maintenance.** Every claim needs an entry, and the entries need updating when sources become available.
+
+**A willingness to record absences.** The most useful entries in this repository assert that something is
+missing from a source. **Those are the entries most likely to be wrong, and recording them is the honest choice
+rather than the safe one.**
+
+**Where the form is least applicable.** Work whose claims are not traceable to sources. **A register of one's
+own reasoning is a different object, and the two should not be merged.**
+
+**Why this section is in the appendix rather than in the book's argument.** Because the registers are the book's
+apparatus rather than its subject, and a reader who adopts the form has taken something the book's own
+constructions cannot supply.
+
+
+## Three entries a reader should check first
+
+The registers hold eighty claims and thirteen constructions. Three of the entries are worth a reader's first
+attention, and each tests a different part of the apparatus.
+
+**The absence entries. Four of them.** Where the register asserts that something attributed to a source is not in
+it. **These are the entries most likely to be wrong and the ones the book most wants challenged, since a reader
+who overturns one has improved the register rather than embarrassed it.**
+
+**The construction entries. Thirteen of them.** Each with a definition, a motivation, a refutation test and a
+precondition. **These are the only part of the book that can be attacked directly rather than argued with, and the
+fourth field is where an attack lands.**
+
+**The secondary-verification entries. Seven of them.** Where a claim is described at one remove and the note names
+the remove. **These test the register's honesty about its own reading depth, which is the property that
+distinguishes a register from a bibliography.**
+
+**What the three have in common. One property.** Each is an entry whose value depends on being checkable rather
+than on being right. **Which is the register's claim about itself, and the three kinds are where the claim is
+tested.**
+
+**Which to check if only one. The absence entries.** Because they are the most falsifiable and the most
+informative. **A single check either confirms the register's most delicate claim or produces a correction, and
+both outcomes are useful.**
+
+**What the three do not cover. The book's readings.** Which are labelled in the chapters rather than registered,
+because a reading is an interpretation rather than a claim about a source. **Which is the largest gap, and it is
+disclosed in the section on the register's weaknesses rather than left for a reader to notice.**
+
+**Why this section closes the appendix.** Because the register's value depends on a reader using it, and the three
+kinds above are the uses. **Three entries, three checks, and the appendix ends where the book's claims become
+auditable.**
+
+
+## What the registers cannot do
+
+They cannot make an unverified claim true, and they do not indicate that verified entries are correct
+— only that they were checked against the source named.
+
+They do not cover the book's interpretations. Where this book reads a paper as arguing something the
+paper does not state, the reading is the book's and is labelled as such in the chapter rather than in
+the register.
+
+And they are incomplete by construction. **A register that contained every claim would be the book.**
+The entries cover the claims on which the argument depends and the devices the book proposes, and a
+reader who finds an unregistered claim should treat it as unverified until the register says
+otherwise.

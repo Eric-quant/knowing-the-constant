@@ -1,0 +1,438 @@
+# Interlude: Three Ways for a Number to Fail {#sec-failure-taxonomy}
+
+A colleague once spent four months trying to estimate a quantity that did not exist. The number he
+was after was well defined on paper. He had a formula. He had twenty years of data. Each time he
+added observations the estimate moved, and each move looked like the kind of adjustment you expect
+from noisy data, so he kept going.
+
+The quantity was the long-run average of a series whose distribution had a tail index below one.
+The sample mean of such a series does not converge. It is not noisy. It is unbounded, and each new
+maximum drags the average up by a visible step. Four months of additional data could not have
+fixed it, because there was nothing there to fix.
+
+I remember this case because the diagnosis took me two minutes once I looked at the tail, and the
+four months had already been spent. **The mistake was not statistical. It was a failure to ask
+which kind of problem it was.**
+
+This interlude is the first of six short chapters in which the book builds rather than reports.
+What follows is a taxonomy with three entries, a procedure for using it, and its own conditions of
+application. It is proposed by this book, registered as entry B-009, and offered in the expectation
+that it will be attacked.
+
+## The three failures
+
+**Failure by noise.** The quantity exists, is well defined, and your estimate of it is imprecise, which is to say that the object of your study is a fixed if unknown number and the obstacle is entirely one of information rather than of definition.
+Most of applied statistics lives here. The remedy is familiar: more data, better estimators,
+honest intervals, and the recognition that a point estimate is a sample from a distribution.
+
+**Failure by undefinedness.** The quantity does not exist because the question is malformed. The
+definitions refer to something that has no referent. Chapter 2's coastline length is the canonical
+example: not hard to measure, but the thing being measured is not a property of the object.
+
+**Failure by non-existence.** The quantity is well defined, and its defining expression diverges.
+Chapter 1's variance for a stable distribution is the canonical example, and the interlude's
+opening anecdote is a second one.
+
+The three present identically in practice. In practice. Same symptom. Different disease. All three look the same. Somebody computes a number. The number will not settle.
+The temptation is to conclude that the data are noisy, which is the correct conclusion exactly one
+third of the time.
+
+## Why the distinction changes what you should do
+
+The remedy is determined by the diagnosis, and the three diagnoses point in opposite directions to the point where applying the wrong one makes the situation worse rather than merely unhelpful, since a divergence treated as noise invites more data collection. A noise problem treated as divergence invites abandoning a quantity that was perfectly well defined, which is the practical content of the whole device: a person who misclassifies the problem does not merely choose a worse method, they choose a method addressed to a different problem, which is why the diagnosis and not the arithmetic is the part of this interlude that repays the most attention, since the arithmetic in each of the three cases is standard and it is only the choice among them that is not.
+
+| Failure | Diagnosis | Remedy | Cost of misdiagnosis |
+| --- | --- | --- | --- |
+| Noise | The estimator converges too slowly | More data; better estimator; report intervals | You spend money on data that will not help |
+| Undefinedness | The question has no referent | Change the question | You spend a career measuring nothing |
+| Non-existence | The defining integral diverges | Change the statistic, or change the question | You report a number that is an artefact of your largest observation |
+
+Read the third row's last column slowly. When the quantity does not exist, the number you compute
+is not an approximation to anything. It is a report on your sample, and specifically on its largest
+element.
+
+## The procedure
+
+The taxonomy is only useful if it can be applied in a few minutes without theory. Four questions. Nothing else. Four questions,
+in this order.
+
+Start here. **Question one: can you write the defining expression?** If the quantity cannot be expressed as a
+limit or an integral, the problem is probably undefinedness. A coastline's length fails this test
+because any expression for it must specify a ruler, and the expression then depends on the ruler
+without converging as the ruler shrinks.
+
+**Question two: does the defining expression converge?** Evaluate the integral, or the limit.
+For the variance of a stable distribution with tail index below two, it does not. This step is
+sometimes easy and sometimes needs care, but it does not require data.
+
+Not noise. Not undefined. Nothing to estimate.
+
+**Question three: does the estimate settle as the sample grows?** If the first two questions pass
+and the estimate still drifts, look at the drift. Noise produces drift that shrinks, in the sense
+that the variance of the estimate falls with the sample size. Non-existence produces drift that
+does not shrink, and that jumps at new extremes.
+
+**Question four: does the estimate move when the method changes?** Fit two estimators that make
+different assumptions. If the change in method moves the estimate by more than the estimated
+uncertainty, the quantity is at best weakly identified from available data — which is a fourth
+condition the taxonomy handles in Part II.
+
+## Applying it to four candidates
+
+| Candidate | Classification | Why |
+| --- | --- | --- |
+| The mean daily return of a liquid index | Noise | Exists, converges, estimated imprecisely |
+| The length of a coastline | Undefined | No expression that converges as the ruler shrinks |
+| The variance of a series with tail index below two | Non-existence | Defining integral diverges |
+| The tail index of a short sample | Noise, and badly so | Exists for the model; not well identified from the data |
+
+The fourth row is the interesting one, and it is why the next section of the book exists. The tail
+index of a given series is a meaningful parameter, so the quantity is not undefined, and its
+defining expression converges, so it is not non-existent. But the estimator available for it has
+enough bias and enough sensitivity to the fitting window that two competent analysts disagreeing
+is the normal case rather than the exception.
+
+## Where the taxonomy does not apply
+
+The device has three preconditions, and I would rather state them than have a reader discover them
+the hard way.
+
+**It requires the defining expression.** Quantities that are understood operationally but never
+written down — most of what people mean by "reputation" or "quality" — cannot be classified this
+way, and forcing them into the taxonomy produces false precision.
+
+**It requires a notion of convergence appropriate to the quantity.** For random objects, that means
+the right mode of convergence, which differs between settings.
+
+**It does not tell you what to do after the third diagnosis.** Changing the question is a
+prescription, not a procedure. Part IV supplies a procedure, and it is built on this taxonomy.
+
+## What would refute it
+
+The device's claim is that the three diagnoses are distinct in a way that matters for practice. It
+would be weakened by a demonstration that problems fitting one category are routinely solved by
+remedies from another — for example, a body of cases in which more data rescued a quantity whose
+defining integral diverges, or in which changing the question improved an estimate that was merely
+noisy.
+
+I have not seen such a demonstration, and I have looked in the places where it would be reported.
+A more serious objection is that the third category is empty in most practical work: quantities
+that fail to exist are rare, and the taxonomy's most useful content may be the separation of the
+first two. I take that objection seriously. The case at the start of this interlude is one where
+the third category was the whole problem.
+
+## Diagnosis before arithmetic
+
+The three failure modes share a symptom and require opposite responses, which makes the order of the
+diagnosis and the computation the first decision.
+
+**What the standard workflow does.** It computes. A mean, a standard error, a confidence interval. The
+machinery does not ask whether its object exists, and it produces output that is identical in form in
+all three cases. **The failure is therefore invisible in the result and visible only in the
+diagnosis.**
+
+**What the diagnosis costs. Minutes.** Two questions: can the defining expression be written, and does
+it converge. Both are answered from the form of the expression for the cases in this book, without any
+data.
+
+**Three diagnoses, three procedures.**
+
+**Failure by divergence.** The expression is well defined and does not converge. **The arithmetic is
+not conservative or aggressive. It is undefined.** The procedure is to change the quantity, not to
+collect more data.
+
+**Failure by identification.** The quantity exists and cannot be pinned down from the available data.
+**More data helps slowly and may not help enough.** The procedure is to report a bound.
+
+**Failure by non-existence of the sample.** The quantity is fine and the sample does not contain the
+information, because the relevant events are rare by construction. **The procedure is a structural
+decision rule, not an estimate.**
+
+**Why the order matters more than the arithmetic.** Because the arithmetic is standard in each of the
+three branches and it is only the branch choice that is difficult. **An analyst who computes first will
+not revisit the diagnosis, and the output will carry no trace of the question that was skipped.**
+
+
+## The same three failures in a return series
+
+The taxonomy is abstract until it is applied to the quantity everyone computes, so the application is
+worth setting out.
+
+**A sample mean of returns.**
+
+**Existence.** The mean exists whenever the tail index exceeds one. Where the index is below one, the
+sample mean does not converge and every additional large observation moves it upward. **The estimate is a
+report on the largest event observed, and its apparent precision comes from the length of the record.**
+
+**Identification.** Where the index is between one and two, the mean exists and is estimated poorly,
+because the information about the far tail is thin. **Two estimators disagree by an amount that grows with
+the index's proximity to one.**
+
+**Estimation from the sample.** Where the process is stationary and the index is comfortably above two, the
+sample mean is a well-behaved estimate and the ordinary machinery applies. **This is the case most analyses
+assume, and the assumption is what the first two rows put at risk.**
+
+**A standard deviation of returns.**
+
+**Worse on every count.** The second moment requires the index to exceed two, so it fails in a wider range
+than the mean. It is estimated from the tail rather than from the centre. And its standard error is itself
+estimated, which means the uncertainty about the uncertainty is unquantified in most reporting.
+
+**What follows for practice.** A reported mean is usually safe and a reported standard deviation is usually
+not, which is the opposite of the intuition that dispersion is easier to estimate than location. **The
+intuition is correct for thin-tailed data and exactly wrong for the data this book examines.**
+
+**How to check which case applies, in one step.** Estimate the index with two methods. If the estimates
+straddle two, treat the variance as replaceable and the mean as boundable. **One half-hour calculation
+determines which of the three failure modes the rest of the analysis will meet.**
+
+
+## A worked diagnosis in four minutes
+
+The taxonomy is applied here as a routine, on a quantity that appears in most analyses and that no one
+diagnoses before computing.
+
+**The quantity. An average return over a sample.**
+
+**Minute one. Write the expression.** The sample mean, presented as an estimate of the population mean.
+**Two assumptions are visible immediately: that a population mean exists, and that the sample is drawn from the
+process being described.**
+
+**Minute two. Check existence.** The mean exists if the tail index exceeds one. **Where the estimate of the
+index straddles one, the answer is conditional and the condition belongs in the output.**
+
+**Minute three. Check estimation.** With the index between one and two, the mean exists and converges slowly,
+because the information sits in the tail. **Two estimators — a sample mean and a robust location estimate —
+will disagree by an amount that grows as the index approaches one.**
+
+**Minute four. State the branch.** One of three sentences. **"The mean is well estimated and can be used."**
+**"The mean exists and is estimated weakly; here is the bound."** **"The mean does not exist; this quantity
+should be replaced."**
+
+**What the four minutes prevent.** The default sentence, which is the first of the three, produced without
+checking. **The default is correct most of the time and catastrophically wrong occasionally, and the diagnosis
+is what distinguishes the cases.**
+
+**Why the routine is worth internalising.** Because the quantity is ubiquitous. **An analyst who runs the four
+minutes on every reported average will produce one fewer confident number per project and one fewer
+catastrophe per career, and the trade is favourable.**
+
+
+## Three sentences that should be in a report
+
+The three failure modes are diagnoses. Each has a sentence that carries it into a document, and the sentences
+are worth having to hand because the diagnosis is otherwise lost between the analysis and the reader.
+
+**Divergence. One sentence.** "The variance is reported under an assumed tail index above two; the index is
+estimated at 2.1 with a standard error of 0.3, and the quantity does not exist below two." **Two numbers and a
+condition, which is the minimum a reader needs in order to know what the reported figure depends on.**
+
+**Identification. One sentence.** "The tail index is estimated between 1.4 and 2.6 across methods, so the
+reported value should be read as a bound rather than an estimate." **The range and the reason, without which a
+reader will treat the point estimate as the finding.**
+
+**The sample. One sentence.** "The expected loss is estimated from a history containing no event of the
+relevant size, so the figure is an extrapolation from smaller events." **Which is the sentence that most often
+goes unwritten, because the sample's inadequacy is obvious to the analyst and invisible to the reader.**
+
+**What the three sentences have in common. One property.** Each states what the number depends on. **Not a
+caveat, not a confidence level: a condition.**
+
+**Why they belong in the body rather than in a note.** Because a reader who has the sentence can decide how
+much weight to give the number, and a reader who does not will give it the weight the formatting implies.
+**Three sentences, one per failure mode, and the analysis becomes checkable by someone who did not perform
+it.**
+
+**What to do when the sentence is resisted.** Which happens when the number is serving a decision that wants
+it unqualified. **Write the sentence anyway and place it beside the number. The alternative is a document whose
+reader cannot tell which of the three failure modes it is exposed to, and that reader is usually the one making
+the decision.**
+
+
+## Why the three are confused with one another
+
+The three failure modes have different causes and produce the same symptom, and the confusion between them is
+worth explaining because it is not carelessness.
+
+**The symptom. One thing.** A number that does not settle when more data arrives.
+
+**Three causes, one symptom.**
+
+**Divergence.** The integral does not converge, so the estimate grows with the sample's largest events.
+
+**Identification.** The quantity exists and the data cannot pin it down, so the estimate wanders.
+
+**The sample.** The quantity is well defined and the estimator is sound, and the relevant events are absent, so
+the estimate is stable and wrong.
+
+**Why the symptom is the same.** In all three cases the estimate moves when a large observation arrives. **In
+the first case it moves because it must; in the second because the information is thin; in the third because
+the new observation is the first of its kind.**
+
+**How to distinguish them. One test each.**
+
+**Divergence.** Does the estimate move monotonically with the largest observations, without settling.
+
+**Identification.** Do two estimators disagree by an amount that does not shrink with the sample.
+
+**Sample.** Is the estimator stable within the observed range and the range itself too narrow for the decision.
+
+**What the confusion costs. One thing.** The wrong remedy. **More data helps in the third case, helps slowly
+in the second, and cannot help in the first, and prescribing it for a divergence problem spends the analysis
+budget on the wrong quantity.**
+
+**Why the third case is the most common and the least noticed.** Because its estimate looks stable. **A figure
+computed from a sample containing no relevant events is well behaved, and well-behaved figures are not
+re-examined.** The failure appears at the moment the first relevant event arrives, which is the moment the
+estimate was supposed to cover.
+
+**What to carry away. One habit.** When an estimate moves, ask which of the three causes is operating before
+prescribing a response. **The question takes a minute and it determines whether the response is more data, a
+bound, or a different quantity.**
+
+
+## What the interlude's third case is really about
+
+The three cases are presented as a taxonomy. The third one — the sample's inadequacy — is doing different work
+from the other two, and the difference is worth stating.
+
+**Case one is about the quantity.** The integral does not converge. **Nothing about the sample can change it.**
+
+**Case two is about the data.** The quantity exists and the information is thin. **More data helps slowly, and
+the limit is the information in the tail.**
+
+**Case three is about neither. It is about the record.** The quantity exists, the estimator is sound, and the
+sample contains none of the events the estimate is meant to cover. **Which makes it a statement about what the
+decision-maker has observed rather than about what the world contains.**
+
+**Why the third case behaves differently. Two reasons.**
+
+**It looks well behaved.** A figure computed from a sample with no extreme events is stable, and stable figures
+are not re-examined. **The failure appears when the first relevant event arrives.**
+
+**It is the case that institutions generate.** A firm's own history contains no events that would have ended the
+firm, because the firm is still there. **Which is the truncation the book's chronological material shows in
+several places.**
+
+**What follows for practice. One rule.** Where an estimate comes from a record whose worst outcomes are absent
+by construction, treat the estimate as a lower bound on the exposure rather than as an estimate of it. **Which
+is the conservative reading and the correct one, because the record cannot contain the events it excludes.**
+
+**How to detect the case. One question.** What is the worst outcome in this record, and what would have happened
+to the record if it had occurred. **Where the answer is that the record would not exist, the sample is
+truncated and the estimate is a bound.**
+
+**Why the third case deserves its own treatment.** Because the first two are properties of quantities and the
+third is a property of evidence, and the remedies differ accordingly. **Replace for the first, bound for the
+second, and widen the record for the third — which is the only one where a different dataset helps.**
+
+
+## The three cases and the cost of a wrong diagnosis
+
+The taxonomy is diagnostic. The cost of a wrong diagnosis is worth stating, because the three errors are not
+equally expensive and the asymmetry tells a practitioner which way to err.
+
+**Mistaking divergence for noise. The most expensive.** The response is more data, which cannot help, and the
+analysis budget is spent while the quantity remains undefined. **Worse: the accumulating observations appear to
+be producing a better estimate, because the estimate grows steadily and steadily is read as convergence.**
+
+**Mistaking identification failure for divergence. Moderate.** The response is to abandon a quantity that
+exists, which substitutes a structural decision for an estimate that was available at a wide bound. **The loss
+is real information and the decision is worse for it.**
+
+**Mistaking a truncated sample for identification failure. Moderate.** The response is a bound where a wider
+record would have supplied an estimate. **Cheaper than the first error and more expensive than the third.**
+
+**What the asymmetry implies. One rule.** Where the diagnosis is unclear, err toward the earlier case. **That
+is, treat a moving estimate as a divergence candidate first, because the cost of the first error is the largest
+and the test is the cheapest: a convergence check takes minutes.**
+
+**Why the ordering is not obvious from the taxonomy alone.** The three cases are presented as a list, and the
+list gives no guidance on how to proceed when the evidence is ambiguous. **The error costs supply the guidance,
+and they are what a practitioner needs when a quantity will not settle.**
+
+**How to run the test that resolves the ambiguity. One sequence.**
+
+**Write the defining expression and check convergence.** Which distinguishes the first case from the rest.
+
+**Run two estimators.** Which distinguishes the second from the third.
+
+**Ask what the record contains.** Which identifies the third, and the question is about the record rather than
+the data.
+
+**What the sequence costs. An hour.** Which is the price of avoiding the most expensive of the three errors,
+and the first step alone resolves most cases.
+
+
+## The three failures and three tests that separate them
+
+The taxonomy is only useful if the members can be told apart. Three tests do that, and each takes minutes.
+
+**Test one. The convergence check. Separates divergence from the other two.** Write the defining expression and
+ask whether it converges under the stated conditions. **For a power-law tail, the answer is a comparison of the
+index with a threshold, and it is readable from the form of the expression.**
+
+**Test two. The two-estimator comparison. Separates identification from the truncated sample.** Run two methods
+with different assumptions. **A disagreement that does not shrink with the sample indicates identification; a
+small disagreement over a narrow range indicates the third case.**
+
+**Test three. The record question. Identifies the truncated sample.** Ask what the worst outcome in the record
+is, and what would have happened to the record if it had occurred. **Where the answer is that the record would
+not exist, the sample is truncated.**
+
+**What the three tests cost. An hour in total.** The first is minutes; the second requires a second estimation;
+the third is a question. **Which is the argument for running all three rather than guessing from the symptom.**
+
+**What the tests do not establish. The magnitude of the problem.** They separate the cases, not the severity.
+**Which is a separate question and belongs to the decision rather than to the diagnosis.**
+
+**How to sequence them. In the order above.** Because the first test resolves most cases and the third requires
+the second to have been run. **Three tests, one order, and the order is by cost.**
+
+**Why the tests deserve their own section.** Because the interlude's three cases are presented as a taxonomy and a
+taxonomy without tests is a vocabulary. **Three tests, an hour, and the three cases become distinguishable
+rather than recognisable.**
+
+
+## The three failures and three questions for a report
+
+The taxonomy is a diagnostic. For a reader of someone else's report, three questions detect which failure the
+number is exposed to.
+
+**Is the defining expression stated anywhere. One question.** Where it is absent, the quantity's existence has
+not been established. **Which is the most common finding and the easiest to act on, since the expression can be
+requested.**
+
+**Are two estimators reported. One question.** Where they are not, the estimate's identification is unknown.
+**Which is the second most common finding and the one that a reviewer can test by requesting the second
+estimate.**
+
+**What is the worst event in the sample. One question.** Where the answer is that no relevant event is present,
+the sample is truncated. **Which is the question that reveals the third failure, and it is asked of the record
+rather than of the analysis.**
+
+**What the three questions cost. Nothing.** They are asked in a meeting and answered by whoever produced the
+analysis. **Which is what makes them usable, in contrast to a test that requires recomputation.**
+
+**How to sequence them in a review. By likelihood.** The first question fails most often, the second next, and the
+third least. **Which means a reviewer can stop at the first question in most cases and has a diagnosis.**
+
+**What the questions cannot establish. Whether the number is right.** They establish which failure mode the
+number is exposed to. **Which is a review of form, and it is the part of a review that can be standardised.**
+
+**Why the questions belong with the taxonomy.** Because a taxonomy without detection questions is a vocabulary
+for the person who produced the analysis. **Three questions, asked of a report, and the taxonomy becomes usable by
+a reader.**
+
+
+## Claim and tool
+
+There is no claim here about the world. The taxonomy is a bookkeeping device, and the only claim it
+makes is that bookkeeping of this kind prevents a specific and common error.
+
+Modest is fine. That is a modest thing to end a chapter with, and I want to be explicit that it is deliberate, because the alternative is worse: a book that presents its scaffolding as though it were load-bearing teaches readers to trust constructions they have no way to check. Not
+every part of an argument is a finding. Some of it is scaffolding, and scaffolding should be
+labelled as scaffolding so that readers know what they are allowed to knock down.
+
+Four minutes, four questions. The next chapter applies the taxonomy to a problem that has been misdiagnosed in print many times over: whether an object is self-similar, and whether that question can be answered from the data
+available.

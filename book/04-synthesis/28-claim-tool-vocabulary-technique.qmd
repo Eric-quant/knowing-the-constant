@@ -1,0 +1,428 @@
+# Claim, Tool, Vocabulary, Technique {#sec-four-columns}
+
+Nine papers appear in this book, and the same pattern appears in all nine. **The specific claim is
+weakened by later work, and something else in the paper survives and gets reused.**
+
+Chapter 1's stable Paretian proposal was abandoned; the practice of looking at the tail survived.
+Chapter 2's dimension values were shown to be method-dependent; the move from a quantity to its
+scale behaviour survived. Chapter 20's optimal fraction is unusable without a discount; the interior
+optimum survived.
+
+A pattern that repeats nine times is worth a device. This chapter supplies one: a reading protocol
+with four columns, and a rule about where to put your trust.
+
+## The four columns
+
+For any research result, fill four columns.
+
+| Column | The question | How it ages |
+| --- | --- | --- |
+| **Claim** | What does this assert about the world? | Decays as evidence accumulates |
+| **Tool** | What does it make possible to ask or compute? | Usually outlives the claim |
+| **Vocabulary** | What does it name that was unnamed? | Durable, but can be emptied by overuse |
+| **Technique** | What procedure does it specify? | Durable until superseded |
+
+The four behave differently. That is why four, not two.
+
+**Claim and tool** are the pair that matters most. Two of four. A claim is a bet on how the world is arranged and
+it can lose. A tool is equipment, and equipment gets reused by people who have no interest in the
+original bet.
+
+**Vocabulary is separate** for a reason. because naming does something that neither claims nor tools do: it
+creates a category that others can use. "Fat tail", "black swan", "fourth quadrant" and "Kelly
+fraction" are all instances. Their fate is different from a tool's, because a word can be used
+correctly while the concept behind it is diluted. **A term that has been emptied of content still
+appears in print**, which is why the vocabulary column needs its own line.
+
+**Technique is separate** too. because it is the most concrete and the least durable in its details. A
+specific estimation procedure is superseded by a better one, usually quietly.
+
+## The test
+
+The protocol is not a table to be admired. It has a test, and the test is what separates a real tool
+column from a flattering one.
+
+**Find a later paper that uses the tool while rejecting the claim.** If such a paper exists, the tool
+column is real. If no such paper can be found, the tool column is probably imaginary — a
+re-description of the claim in instrumental language.
+
+Applying the test to the nine papers:
+
+| Paper | Claim | Tool | A later user of the tool who rejected the claim |
+| --- | --- | --- | --- |
+| Mandelbrot 1963 | Prices are stable Paretian | Look at the tail directly | The entire conditional-variance literature |
+| Mandelbrot 1967 | Coastlines have dimension 1.25 | Measure a quantity's scale behaviour | Soil, image and network researchers |
+| Mandelbrot and Van Ness 1968 | Series have long memory | Construct a process from desired properties | The rough-volatility literature, with the opposite sign |
+| Taleb 2009 | Statistics fails in the fourth quadrant | Classify before choosing a method | Risk practitioners who ignore the quadrants |
+| Taleb et al. 2014 | Precaution applies to GMOs and large nuclear | Screen on irreversibility | Vaccine and small-nuclear analysts who accept the screen |
+| Cirillo and Taleb 2020 | The death-toll mean diverges | Ask about existence before precision | Any analyst reporting bounds |
+| Thorp 1961 | Blackjack has favourable states | Look for state dependence | Option and market-microstructure work |
+| Thorp 1969 | The optimal fraction is interior | Maximise growth rather than expected value | Institutional allocators who would reject the criterion |
+| Thorp 1997 | Seven practical rules | Discount the theoretical fraction | Everyone who uses half-Kelly |
+
+**The fourth column makes the protocol useful. Remember that.** A reader who fills only the first three
+columns is doing literary analysis. A reader who has to name a later user of the tool while rejecting
+the claim is checking whether the tool exists.
+
+## The transfer rule
+
+The protocol comes with a rule about trust.
+
+**Trust transfers from the claim column to the tool column over time, and the transfer should be
+deliberate rather than automatic.** Specifically:
+
+**Immediately after publication**, the claim is the most informative part, because it is the author's
+assertion about the world and the author knows more about it than the reader does.
+
+**After a decade**, the tool is usually the more informative part, because the claim has been tested
+and the tests are public, while the tool has been used and its uses are visible.
+
+**The transfer should be gradual, and it should be slowed by evidence about the claim.** A claim that
+has survived replication keeps its claim-column value longer. **The failure mode is transferring
+early — abandoning a claim because it is unfashionable, or keeping it because the tool is useful.**
+
+## Failure modes
+
+Three, and the third is the one I have committed.
+
+**Imaginary tool columns.** Catch them. Describing a claim in instrumental language and calling it a tool. The
+test above catches this if it is applied honestly, which is why the test requires a named later
+paper rather than a plausible category of user.
+
+**Retrospective tool attribution.** Common in books like this one. Reading a tool into a paper that did not actually contain it,
+because the tool seems to follow from the paper's conclusions. This is a specific hazard for books
+about ideas rather than about methods, and it is why the tool columns above name techniques that
+appear in the papers rather than implications a reader might draw.
+
+**Using the protocol to excuse failed claims.** The trap. A reader who has learned the protocol can say "the
+claim failed but the tool survived" about almost anything, and the sentence has the form of an
+insight while being a refusal to update. **The discipline that prevents this is writing down what the
+tool could not do** — a column I have not included, and on reflection should have.
+
+## The protocol applied to itself
+
+**What transformation should it survive?** Changes of domain: it should apply to papers in medicine,
+engineering, and the social sciences.
+
+**Does it?** The four columns are general. The trust-transfer rule is general. What does not travel
+is the ease of the test: in fields where subsequent work is not indexed, or where methods are not
+cited explicitly, naming a later user of the tool while rejecting the claim may be impossible.
+
+**Verdict.** A grade II construction.
+
+## Claim and tool
+
+The claim: research results decompose into four components with different lifespans, and confusion
+between them explains both the persistence of failed claims and the discarding of useful tools.
+
+The tool: the four columns, the naming test, and the gradual transfer rule.
+
+Registered as B-006, with the failure modes above attached.
+
+## Boundary conditions
+
+The protocol applies to research results that make claims about the world. Purely methodological
+papers — a new estimator, a new algorithm — have an empty claim column, and forcing them into the
+protocol produces an artificial entry.
+
+It presumes that subsequent literature can be searched, which excludes very recent work and work in
+fields with thin citation records.
+
+And it does not evaluate. The protocol tells you what is likely to survive, not what is true.
+
+## Filling the columns on a paper from this book
+
+The protocol is best learned by applying it to something whose status is already documented, and the
+book supplies nine candidates. Take the fourth-quadrant paper.
+
+**The claim. Contested at its boundary.** That standard statistical methods fail in the fourth
+quadrant. The book's own reading is that the paper's two-axis structure is precise and its most-quoted
+formulation is not verifiable, which is why the grade is II with a contested boundary rather than I.
+
+**The tool. Widely used.** The two-by-two classification, applied before a method is chosen. Its users
+include practitioners who have never read the paper and who would reject parts of its argument.
+
+**The vocabulary. Diluted.** "Fourth quadrant" and "black swan" name something that was previously
+unnamed, and both are now used in ways the paper does not license. **The words survived while the
+constraints on their use did not.**
+
+**The technique. Thin.** The paper does not specify an estimation procedure, which is why the tool
+column is a classification rather than a method. This is worth noticing: **not every paper has all four
+columns populated, and an empty technique column is a finding about the paper rather than a gap in the
+analysis.**
+
+**What the exercise shows.** The four columns separate cleanly on a paper the book has already
+analysed, which is the weakest possible test. **The test that matters is applying it to a paper whose
+status is unknown, and the protocol's value there is that it forces the fourth column — the naming of a
+later user — to be attempted rather than assumed.**
+
+## Where the protocol fails as a research tool
+
+The protocol is a reading device. Used as a research instrument it has three failure modes, and the
+book has committed the first two.
+
+**It rewards the searchable.** The fourth column requires naming a later user of the tool while
+rejecting the claim. Where the literature is well indexed, this is easy; where it is not, the column
+stays empty and the tool appears imaginary. **The protocol therefore systematically underrates results
+in fields with poor citation records.**
+
+**It confuses absence with failure.** A tool that has not yet been reused may be new rather than
+imaginary. The protocol cannot distinguish the two without waiting, and waiting is not available when
+the reading is being done now.
+
+**It invites retrospective attribution.** This is the failure named in the chapter and it is the easiest
+to commit: reading a tool into a paper because the tool seems to follow from the paper's conclusions.
+The defence is to require a technique that appears in the paper's own text, which is a much stricter
+test than a plausible implication.
+
+**What the protocol is good for.** Deciding how much weight to give a result in a literature review,
+and noticing when a claim is doing work that its evidence cannot support. **It is a reading discipline,
+not a discovery method, and the distinction should be stated by anyone who adopts it.**
+
+**One gap, restated.** The chapter noted the absence of a column for what a tool cannot do, and the
+case above shows why it matters. A tool's limits are what determine whether it can be carried into a
+new domain, and the four columns as drawn provide no place to record them.
+
+## The columns for a paper you are about to use
+
+The protocol is presented as a reading device for finished literature. Its most practical application is
+to a paper whose result you intend to rely on.
+
+**Four questions, in order.**
+
+**One. What exactly would I be relying on?** Not what the paper claims, but which sentence or result your
+decision would use. **Most of the time it is narrower than the paper's title suggests.**
+
+**Two. Which column does my reliance sit in?** If you are relying on the claim, you are betting on the
+boundary holding. If on the tool, the claim's fate is less important. **Naming the column tells you what
+to monitor.**
+
+**Three. Who else has used this, and for what?** A tool with many users has been stress-tested by use. A
+claim with many citers may have been quoted without being tested, and the distinction is invisible in a
+citation count.
+
+**Four. What would have to happen for my reliance to be misplaced?** A test of the boundary, a mechanism
+change, a better estimator. **This is the monitoring specification, and writing it takes a paragraph.**
+
+**What the four questions prevent.** The most common error in applied work, which is relying on a result
+without knowing which part of it is doing the work. **A practitioner who has answered question two knows
+whether they need the boundary to hold or only the technique to exist, and those require different
+responses to the same new evidence.**
+
+**Where the protocol is least useful.** On papers whose result you will not rely on. **The columns are
+for the small number of results that enter a decision, and applying them to everything read is the
+failure mode the chapter's second section describes.**
+
+## The four columns for a method rather than a result
+
+The protocol is presented for results. Methodological work has a different profile, and the difference is worth
+one section because methods are what most practitioners actually adopt.
+
+**The columns for a method.**
+
+**Claim. Often absent.** A new estimator may carry no claim about the world. **An empty claim column is normal
+here, unlike in substantive work.**
+
+**Tool. Central.** The estimator or procedure itself. **A method's tool column is its content.**
+
+**Vocabulary. Rare.** Methods rarely name anything.
+
+**Technique. Detailed.** The implementation, the parameters, the failure modes.
+
+**What the asymmetry implies for reading.**
+
+**A method is judged on its technique column.** Whether it works under this data, at this sample size, with
+these assumptions. **The question is not whether it is elegant but whether the practitioner's data resemble
+the conditions under which it was validated.**
+
+**A method's claim column, where present, deserves scrutiny.** A method paper that claims domain-general
+validity has made an empirical claim alongside a procedure, and the claim is usually weaker than the
+procedure.
+
+**A method that survives its claim is the normal case.** Methods outlive the problems they were designed for,
+which is the same pattern as tools outliving claims in the substantive literature.
+
+**One practical test. Two datasets.** Apply the method to the researcher's data and to a synthetic dataset with
+known properties. **Where it fails on the synthetic one, the failure mode is visible; where it succeeds on
+both, the confidence is warranted. The exercise takes an afternoon and is the equivalent of the fourth column
+for a method.**
+
+## Two rows filled for the book itself
+
+The protocol applies to other people's work. Applying it to this book is the shortest demonstration that it is
+a discipline rather than a rhetorical device.
+
+**The book's claim column. Contested.** That nine results were weakened in their claims while their tools
+survived. **The register is the evidence and the reading is the author's; a reader who checks the entries and
+finds the claims standing is entitled to dismiss the framing.**
+
+**The book's tool column. Four constructions and one protocol.** The Constant's grades, the grid, the discount,
+the ledger, the ordering, and the four-column protocol itself. **All are untested, and the constructed register
+says so on every row.**
+
+**The book's vocabulary column. Borrowed and redefined.** Several terms are used in narrower senses than
+ordinary usage, and the glossary fixes them. **A reader who substitutes the ordinary sense will misread several
+chapters, which is the cost of the book's terminology and is disclosed rather than avoided.**
+
+**The book's technique column. Scripts and registers.** Figure generation, the prose gate, the register
+validator, the build-input check. **These are the parts of the book that a reader can execute, and they are
+the only parts whose claims are mechanically verifiable.**
+
+**What the four rows show. One asymmetry.** The book's verified material is in its claims column, and its
+novelty is in its tools and vocabulary. **A reader who wants to accept the reading and reject the
+constructions can do so cleanly, because the two are kept apart in the files.**
+
+**Why the exercise is worth running on one's own work.** Because the pattern is easier to see from outside.
+**An author who has filled the four columns for nine other people's results and then for the book itself will
+notice which column carries the weight, and it is usually not the one they were most proud of.**
+
+## The protocol and the three layers
+
+The protocol has been applied to nine papers and to this book. Its relation to the book's three-layer structure
+is worth one section, because the two devices describe the same material from different directions.
+
+**The layers. Worldview, knowledge, action.** The constraint runs downward: the world constrains models,
+models constrain stakes, stakes constrain opportunities.
+
+**The columns. Claim, tool, vocabulary, technique.** The ageing runs sideways: claims decay, tools are reused,
+vocabulary dilutes, technique is superseded.
+
+**What each device is for. Different questions.**
+
+The layers answer "may I use this method for this decision". **They are a filter on application.**
+
+The columns answer "what part of this result should I keep". **They are a filter on reading.**
+
+**Where they meet. One place.** A tool that survives a claim is a tool that has been carried across a layer
+boundary. **The tail argument from the worldview layer survives into the action layer as the screening rule,
+and the columns register that survival as the tool column being populated while the claim column empties.**
+
+**What the meeting implies for a reader. One practice.** After applying the columns, ask which layer the
+surviving tool belongs to. **A tool that survives at the worldview layer licenses a model; one that survives at
+the action layer licenses a decision; the difference determines what the reader may do with it.**
+
+**Why both devices are needed.** The layers have no temporal dimension and the columns have no application
+dimension. **A reader with only the layers cannot tell which parts of an abandoned paper to keep; a reader with
+only the columns cannot tell which surviving tool applies to the decision in front of them.**
+
+**What neither device supplies.** The mechanism. **Both are filters, and a filter tells you what passes rather
+than why it does, which is why the chapters that use them are organised around mechanisms rather than around
+the two tables.**
+
+## The protocol as a defence against the confident summary
+
+The four columns have a use that is not about research at all: they are a defence against the confident summary
+in a meeting.
+
+**The situation. Common.** A colleague states a result with assurance, and it is the assurance rather than the
+result that carries the room.
+
+**What the protocol supplies. Three questions.**
+
+**Which column is that from?** If the claim is the source of the confidence, the boundary matters. If it is a
+technique, the boundary may be irrelevant. **The question separates two things that sound identical.**
+
+**Who else has used it?** A tool with many users has been tested by use. **A claim with many citers may merely
+have been quoted, and the distinction is invisible in the assurance.**
+
+**What would make it wrong?** The fourth column's question. **A speaker who can answer it has understood the
+result; one who cannot has memorised it.**
+
+**Why the questions work in a meeting. Two reasons.**
+
+**They are procedural rather than adversarial.** Asking which column is like asking which section of a document,
+and the answer is informative rather than a challenge.
+
+**They take ten seconds each.** Which matters more than depth, because the moment for the question is the moment
+of the claim.
+
+**What they do not do.** Resolve the dispute. **A confident speaker with a well-understood grade II claim is
+usually right, and the questions establish that rather than undermining it.**
+
+**Where the protocol fails in this role.** When the room has no patience for procedure. **In that setting the
+questions read as obstruction, and there is no version of this material that works without a listener willing to
+ask one of them.**
+
+**Why the framing is worth stating.** Because the book's apparatus is usually described as an analytical method,
+and its most frequent use in practice is social: it changes what can be said with assurance in a room where
+decisions are made.
+
+## The columns for a claim you intend to repeat
+
+The protocol is described for reading. Its most consequential use is before repeating a claim, which is what
+most writing and speaking consists of.
+
+**The situation. Common.** A claim is about to be repeated in a document, a talk or a decision memo. **The
+repetition is where most claims travel, and it is where their conditions are dropped.**
+
+**Three checks before repeating.**
+
+**Which column is being repeated?** A claim or a tool. **A tool can be repeated without its originating claim;
+a claim cannot be repeated without its boundary, because the boundary is part of the claim.**
+
+**What is the boundary, in one clause?** The range, the population, the method. **If no clause comes to mind,
+the claim has been memorised rather than understood.**
+
+**Who else repeats it, and how?** Which tells you whether the repetition is customary in the field or an
+innovation of yours. **Customary repetitions have usually shed their conditions already, which is why the
+literature's most quoted sentences are its least qualified.**
+
+**What the checks change about the output. One thing.** The repeated sentence gets a clause. **"Tail risk
+matters" becomes "over the ranges measured, extremes are more frequent than a normal implies". The second
+sentence is longer and it can be checked.**
+
+**What repetition does to a claim over time. Two effects.**
+
+**Conditions erode.** Each repetition is shorter than the last, and the boundary is the first thing to go.
+
+**Authority accumulates.** A claim repeated by many acquires weight without acquiring evidence. **The process is
+the mechanism behind grade inflation, and it operates on writers who mean to be careful.**
+
+**What a writer can do about it. One habit.** Attach the boundary to the claim at the moment of first use in a
+document, and then use the short form. **The reader who has seen the boundary once can carry it; the reader who
+has never seen it will supply their own, usually a stronger one.**
+
+**Why the protocol belongs at the point of writing rather than at the point of reading.** Because the erosion
+happens on the way out. **A reader's discipline can recover a boundary from a source; a writer's omission
+cannot be recovered by anyone downstream.**
+
+## The four columns and three kinds of doubt
+
+A reader who doubts a result can doubt the claim, the tool, or the reading. The columns localise the doubt, and
+the localisation determines what would resolve it.
+
+**Doubt about the claim. The common case.** The result is contested or its boundary is narrow. **Which the columns
+handle by placing the doubt in a column and asking what else in the row depends on it: a tool with many users can
+survive a claim's failure, and the reader's reliance may be on the tool.**
+
+**Doubt about the tool. Rarer and more serious.** The method does not do what it claims. **Which is a question
+about the method's validation and is answered by the technique column, not by the claim's record.**
+
+**Doubt about the reading. The reader's own.** The paper may not say what the reader took it to say. **Which the
+columns handle by requiring the claim to be stated in the reader's words before the other three columns are
+filled.**
+
+**What the three have in common. One property.** Each is resolved by a different body of evidence: the literature
+for the claim, the method's validation for the tool, and the paper's text for the reading. **Which is why
+localising the doubt is the first step rather than a formality.**
+
+**Which doubt is most often misattributed. The third.** Because a reader's misreading presents as a doubt about
+the claim, and the correction is a re-reading rather than more evidence. **Which is the cheapest resolution
+available and the one least often attempted.**
+
+**How to use the columns against doubt. One order.** State the reliance, then the column, then the evidence that
+would resolve it. **Three sentences, and the doubt becomes a question with an answer rather than a
+disposition.**
+
+**Why the columns are worth this treatment.** Because their value is not classification but the localisation of
+disagreement. **Three kinds of doubt, three bodies of evidence, and the columns are what assign them.**
+
+## A note on what this chapter could not check
+
+The protocol is proposed by this book. The nine worked rows use material documented in Parts I to
+III, and the fourth column in each row is my judgement about which later literature used the tool. I
+have not verified that any specific paper in that column uses the earlier tool while rejecting the
+earlier claim; the column is a research instruction rather than a citation.
+
+The observation that I should have added a column for what the tool cannot do is left in the text
+rather than corrected, because the omission and its recognition are both part of the argument.

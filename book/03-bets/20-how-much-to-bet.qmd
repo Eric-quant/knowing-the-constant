@@ -1,0 +1,464 @@
+# How Much to Bet {#sec-how-much-to-bet}
+
+The previous chapter established that growth is multiplicative and that the average return is not the
+growth rate. This chapter supplies the number that follows.
+
+It comes from a paper Edward Thorp published in 1969, "Optimal Gambling Systems for Favorable
+Games," in the *Review of the International Statistical Institute*, volume 37, issue 3, pages 273 to
+293 [@thorp1969]. OpenAlex records 124 citations for it.
+
+The question is narrow and practical. Given an edge, how much do you stake? The answer has a
+property that makes it worth a chapter of its own: **it is an interior maximum.** The best fraction
+is neither zero nor one, and beyond a calculable point, staking more makes the long-run outcome
+worse rather than better.
+
+## Choosing the objective function
+
+The first move is not mathematical. It is a decision about what to maximise, and the previous
+interlude showed why the obvious choice is wrong.
+
+Maximising expected terminal wealth in a repeated favourable bet produces a recommendation to stake
+everything, and staking everything produces ruin with probability one. The recommendation is
+arithmetically correct and practically absurd.
+
+So the objective is the growth rate. Taking logs of the multiplicative process turns the product over
+time into a sum over time, and the quantity to maximise becomes the expected log of wealth.
+
+[F] maximise E[ log(1 + f · X) ] over f
+
+with f the fraction staked and X the outcome. That is all of it. Nothing more. Every bit. That is the whole framework. Everything below is
+consequence.
+
+**The switch in objective functions is the chapter's real content. Remember that.** Remember that. The formula is standard, and the algebra is unremarkable, and the thinking happened at the choice of what to maximise. The formula that follows is
+standard, the algebra is unremarkable, and the choice of what to maximise is where the thinking
+happened.
+
+## The optimum, in two forms
+
+Two versions cover most applications, and they are worth stating because their shapes differ.
+
+**The binary bet: win a fixed multiple or lose the stake.** Here the optimal fraction is
+approximately the edge divided by the odds. The edge is the expected gain per unit staked, and the
+odds are the payoff multiple. The intuitive content is direct: a larger edge justifies a larger
+stake, and a larger payoff multiple justifies a smaller one, since each unit staked risks more in
+relative terms.
+
+**The continuous case: the outcome is a return with a distribution.** Here the optimal fraction is
+approximately the expected excess return divided by the variance.
+
+[F] f* ≈ μ / σ²
+
+This form appears in the finance literature under its own names and is worth reading slowly. **The
+numerator is what you expect to earn. The denominator is how violently it moves.** A high expected
+return with high variance produces a modest stake; a moderate return with low variance produces a
+larger one.
+
+Note what this means for how edges are compared. Not all of them survive the comparison. The formula ranks opportunities by expected return per unit of variance, and an opportunity whose expected return is large but whose dispersion is larger still will be assigned a fraction close to zero, however attractive its arithmetic average appears in a summary table. The formula does not rank opportunities by expected
+return. It ranks them by expected return per unit of variance, which is the same comparison that
+risk-adjusted performance measures make, arrived at from a completely different direction.
+
+## The two-times rule
+
+Here is the result that gives the chapter its practical edge.
+
+**At twice the optimal fraction, the growth rate is zero.** Not reduced, not slightly negative —
+zero. You are staking twice what the optimum calls for, and the compounded result is exactly no
+progress.
+
+**Beyond twice the optimum, the growth rate is negative.** You are compounding downwards while
+every individual bet has a positive expectation.
+
+| Fraction staked | Growth rate | What it feels like |
+| --- | --- | --- |
+| Half the optimum | Slightly below maximum | Underperforming a colleague who bets more |
+| The optimum | Maximum | Volatile, with deep drawdowns |
+| One and a half times the optimum | Clearly lower | Reasoning that more edge deserves more size |
+| Twice the optimum | Zero | Winning most bets, going nowhere |
+| Beyond twice the optimum | Negative | Winning most bets, losing ground |
+
+The last two rows matter most, and they are the ones a successful bettor lives through without understanding, because the feedback that would reveal the problem arrives too slowly to be attributed to sizing rather than to luck. The last two rows are the ones to remember, because the psychological experience they describe is
+that of a successful bettor. Bets are won more often than lost — the edge is real — and the account
+declines anyway.
+
+**The mechanism is the previous chapter's arithmetic. Overbetting raises the variance, and variance
+subtracts from growth in proportion to its square.** At the optimum, the marginal gain from a larger
+stake is exactly offset by the marginal variance cost. Past that point, the cost dominates, and it
+dominates quadratically.
+
+## Why the optimum never risks everything
+
+The optimal fraction is interior, and this is not a result about risk aversion. It follows from the
+objective function.
+
+Because the fraction is less than one, the wealth process has zero as an unattainable state: each
+outcome leaves a positive residual, however small. **An absorbing state is excluded by construction
+rather than by discipline.**
+
+That is a strong property. Worth stating precisely. Exactly. The Kelly criterion is not a
+risk-management overlay applied to a sizing rule. **The exclusion of ruin is a consequence of the
+rule**, which is why the rule recommends a smaller stake than an expected-value calculation would.
+
+This is also the point where Part III connects to Part II, and the connection is worth making explicit rather than leaving as an observation, because the ledger's rule about irreversible exposure and the criterion's exclusion of ruin are two statements of one constraint. Chapter 16's ledger says that irreversible
+exposures must be bounded before anything else is considered. The Kelly fraction bounds them
+automatically — for a single repeated bet whose parameters are known. The next chapter shows what
+happens when the parameters are not known, which is the normal case.
+
+## The parameters are estimates
+
+Everything above assumed the edge and the variance are known. In the original setting they were: card
+counts are computed, payoffs are fixed by rule, and the arithmetic is exact.
+
+In the applications that followed, they are estimates, and the estimates have all the properties Part
+I described. This matters more here than in most places, because of an asymmetry that the two-times
+rule makes visible.
+
+**If the edge is overestimated, the stake is too large, and the penalty is quadratic.** Overestimating
+by a factor of two puts you at the growth rate of zero. Underestimating by the same factor halves the
+stake and costs a modest amount of growth. **The loss function is asymmetric, and it is asymmetric in
+the direction of the error that people make.**
+
+So the practical rule that emerged from this literature is a discount: compute the optimal fraction,
+then stake less. Chapter 21 supplies a way of choosing how much less, and the reason it is needed is
+this asymmetry rather than any general preference for caution.
+
+## Grading it
+
+**That an interior optimum exists is grade I.** It is a property of the objective function and does
+not depend on any estimate.
+
+**That a particular fraction is optimal for a particular opportunity is grade II.** It depends on the
+edge and the variance, both estimated, and on the assumption that they are stable.
+
+**Any prescription that takes a computed fraction and applies it without adjustment is grade III at
+best**, because it treats an estimate as a measurement and a modelled process as the world.
+
+## Claim and tool
+
+The claim: for a favourable repeated bet, the growth-maximising stake is an interior fraction, and
+exceeding twice that fraction produces zero or negative growth.
+
+The tool: the interior-optimum argument, which converts "how much" from a matter of conviction into a
+quantity that has a maximum, and the objective-function switch that makes the maximum finite.
+
+## Boundary conditions
+
+The result assumes the edge and the variance are known and stable, which is the assumption the next
+two chapters undermine.
+
+It assumes the bet is repeated, since a single bet has no growth rate to maximise.
+
+It assumes the fraction can be chosen freely, which fails where minimum trade sizes, position limits,
+or liquidity bind. Where they bind, the optimal fraction is unavailable and the analysis reduces to
+the best available approximation.
+
+And it says nothing about the drawdowns a practitioner can tolerate. The growth-optimal path includes
+losses that many investors would not survive psychologically, which is a constraint on execution
+rather than on the mathematics.
+
+## Sizing when the edge is known only approximately
+
+The chapter's optimum assumes the parameters are given. This section states what changes when they are
+estimated, in the form of a decision rule rather than a formula.
+
+**The asymmetry.** Overestimating the edge by a factor of two places the strategy at zero growth.
+Underestimating it by the same factor halves the stake and costs a modest amount of growth. The loss
+function is therefore steep on one side, and the steep side is the side that optimism produces.
+
+**The rule that follows.** Compute the optimum, then stake less, with the reduction tied to how well
+the edge is known. Chapter 21 supplies a functional form; the qualitative content is what matters
+here, and it is that **the correction should scale with the uncertainty rather than being a fixed
+fraction.**
+
+**The three inputs a practitioner needs.** An estimate of the edge, an estimate of its standard error,
+and a view about how stable the estimation environment is. The third is the one that is usually
+missing, and it is the one that determines whether the discount is twenty percent or eighty.
+
+**What to do when the standard error is unknown.** Treat it as large. This is not conservatism for its
+own sake; it is the recognition that an unmeasured uncertainty cannot be smaller than the measurement
+error of the process that would have measured it.
+
+**A cross-check worth running.** Compare the fraction produced by the formula with the fraction that
+would leave the strategy solvent after the worst drawdown observed in the sample, doubled. **Where the
+two disagree by more than a factor of two, the parameters are not known well enough for the formula to
+be doing the work.**
+
+## Why practitioners overbet
+
+The two-times rule is not obscure, and it is violated routinely. The reasons are worth setting out
+because they are structural rather than a matter of ignorance.
+
+**The feedback arrives too slowly.** Overbetting produces a lower growth rate, which looks like
+unlucky variance for years. The feedback that would identify the error is a century long. This is the
+sampling arithmetic of Chapter 24 arriving in the sizing problem.
+
+**The comparison group is selected.** A manager who bets half the optimum underperforms a colleague
+who bets more, during the period when the colleague is winning. Nobody is compared against the
+counterfactual of a colleague who bet twice the optimum through a bad stretch.
+
+**The reward is asymmetric in the short run.** Overbetting increases the upper tail of the outcome
+distribution in any single period. The distribution of outcomes across managers after one year is
+dominated by the high-variance strategies, which is what the allocation decisions observe.
+
+**Career risk and ruin are different constraints.** A manager who risks the client's capital and the
+manager who risks the franchise face different loss functions, and the second is often the binding
+one. **A sizing rule that ignores which constraint binds will be violated by anyone whose binding
+constraint is the other one.**
+
+**What this implies for a practical standard.** A rule that is defensible across the range of
+institutional incentives has to be conservative relative to the individual optimum, which is an
+argument for the discount of the next chapter that has nothing to do with estimation error and points
+in the same direction.
+
+## Leverage as a multiplier on the fraction
+
+The sizing rule gives a fraction of capital. Leverage gives a multiple of it. The interaction is where
+the arithmetic becomes unforgiving.
+
+**The rule, stated. Fast.** Effective exposure equals the fraction times the leverage. A fraction of one
+fifth with leverage of five is full exposure.
+
+**What that means for the two-times rule.** The rule's boundary applies to the product, not to the
+fraction. **A strategy that appears to stake a fifth of capital with five times leverage is at the point
+of zero growth, and its participants usually describe it as conservative.**
+
+**Three consequences.**
+
+**The boundary is invisible in the reporting convention.** Leverage is reported separately from stake
+size, and the product is what determines the growth rate. **Two numbers that must be multiplied are
+reported in different sections of a document.**
+
+**Margin calls act on the product.** A drawdown of a given size triggers liquidation sooner at higher
+leverage, which converts a temporary loss into a permanent one. **The mechanism is the same as the
+discount's, arriving through the broker rather than through the estimate.**
+
+**Volatility targeting hides the product.** A rule that scales exposure to hold volatility constant
+adjusts the product continuously, which means the effective fraction is largest exactly when volatility
+is lowest. **That is the wrong direction of adjustment for a growth criterion, and the error is
+invisible because the targeting rule looks disciplined.**
+
+**What to report instead.** One number: the effective exposure as a fraction of capital, computed as
+stake times leverage, with the discount applied. **Reporting that single number would prevent more losses
+in this material than any additional analysis of the edge.**
+
+## Sizing when the bet is not repeatable
+
+The criterion assumes a repeated bet. Many important decisions are single, and the sizing arithmetic has to
+be adapted rather than applied.
+
+**What survives.** The interior optimum. A single bet with a positive expected value still has a stake that
+maximises expected utility or growth, and the optimum is still finite, still interior and still falls as the
+estimate's uncertainty rises.
+
+**What changes. Three things.**
+
+**The objective is expected utility, not growth.** Without repetition there is no growth rate, and the utility
+function must be stated. **A concave function encodes aversion to the absorbing state, and its curvature is a
+choice the decision-maker must make explicitly.**
+
+**The two-times rule does not apply.** It is a property of the logarithmic objective over a sequence. **A
+single decision at twice the optimum is not a growth rate of zero; it is a decision with a different
+expected utility.**
+
+**The estimation discount still applies, and more strongly.** With one draw, the law of large numbers does not
+rescue an overestimated edge, and the asymmetry of estimation error is unmitigated by time.
+
+**Three practical rules for single decisions.**
+
+**State the utility function or the maximum acceptable loss.** Either form makes the criterion operational.
+
+**Size to the survivable loss, not to the optimum.** The optimum is defined relative to a function; the
+survivable loss is defined relative to the decision-maker's circumstances and is easier to defend.
+
+**Discount for uncertainty with a larger factor than a repeated bet would need.** The absence of averaging is
+the reason.
+
+**Why the distinction matters for the book's claims.** Because Part III's rules are derived for sequences, and
+applying them to a single irreversible decision imports an arithmetic that assumes a future the decision may
+foreclose. **The ordering of Chapter 29 exists precisely to prevent that transport, and this section is its
+sizing footnote.**
+
+## The sizing rule and the drawdown it implies
+
+The optimum is a growth-maximising fraction, and the path it produces is the part practitioners abandon. This
+section states the relation between the fraction and the drawdown, because the relation is the practical
+constraint.
+
+**The relation. Approximate and useful.** At the growth-optimal fraction, the expected maximum drawdown over a
+long horizon is large: a commonly cited order of magnitude is a halving, and the figure rises as the edge's
+uncertainty rises. **The precise number depends on the process; the qualitative result does not.**
+
+**What that implies. Three things.**
+
+**The optimal fraction is not tolerable for most investors.** A strategy that halves capital has an abandonment
+probability that no growth calculation contains.
+
+**The discount serves two purposes.** Reducing the stake for estimation error also reduces the drawdown. **The
+two motives point the same way, which is why the discount is defensible without a derivation.**
+
+**The drawdown expectation should be computed before the position.** From the fraction, the volatility and the
+horizon. **A manager who cannot state the expected maximum drawdown has not specified the strategy's
+experience, only its return.**
+
+**Three practical consequences.**
+
+**State the drawdown and check tolerance explicitly.** Not as a risk disclosure but as a constraint on the
+fraction. **Where the tolerance is lower than the optimum implies, the fraction should be lower, for a reason
+that has nothing to do with estimation.**
+
+**Prefer rules that bound the drawdown structurally.** A portfolio of many small positions has a lower
+expected drawdown than one large position with the same edge.
+
+**Recognise that the tolerance is revealed under stress.** Stated tolerance and revealed tolerance differ, and
+the difference is discovered at the worst moment. **A fraction that requires more tolerance than the
+practitioner has demonstrated is a fraction that will be abandoned.**
+
+**What the section adds to the chapter.** The optimum is internal and mathematically defined; **the drawdown
+is the reason the optimum is rarely used, and the reason is legitimate rather than a failure of nerve.**
+
+## The sizing rule and the order of operations
+
+The chapter derives a fraction from an edge and a variance. In practice the inputs arrive in a different
+order from the derivation, and the order matters for which errors are caught.
+
+**The derivation's order. Estimate, then size.** Which is the natural presentation and the wrong sequence for
+a practitioner.
+
+**The practical order. Four steps.**
+
+**One. Bound the exposure first.** The ledger's question, before any estimate exists. **A fraction computed
+for a position that could end the sequence is a fraction for the wrong problem.**
+
+**Two. Establish that the quantities exist.** The convergence check, minutes, no data. **Where the variance
+does not exist, the fraction's denominator has no referent.**
+
+**Three. Compute the undiscounted fraction.** From the estimate and the variance, with the estimator
+comparison attached.
+
+**Four. Discount, then check the drawdown.** The discount for estimation error, and the drawdown estimate
+against the holder's tolerance. **The second check sometimes reduces the stake further, for a reason that has
+nothing to do with estimation.**
+
+**What the practical order catches that the derivation's does not.**
+
+**A position that should not exist at any size.** Caught at step one.
+
+**A quantity that cannot be estimated.** Caught at step two, where the response is a bound rather than a
+fraction.
+
+**A stake larger than the holder can carry.** Caught at step four, where the derivation ends.
+
+**Why the order is worth stating explicitly.** Because the derivation is what a reader learns and the order is
+what a practitioner needs, and the difference between them is three checks that the derivation has no reason
+to include. **A reader who applies the derivation in its own order will produce a correct fraction for a
+position that should have been reshaped first.**
+
+**What the four steps cost.** An hour. **Which is the price of the three checks, and the checks are what
+distinguish a sizing rule from an arithmetic exercise.**
+
+## The sizing rule and three ways to be wrong
+
+The optimal fraction has three characteristic errors, and they differ in cost and in detectability.
+
+**Overbetting. The expensive one.** A fraction above the optimum reduces growth, and above twice the optimum it
+makes growth negative. **Which is undetectable for years, because the strategy keeps winning and the feedback is
+a slower accumulation.**
+
+**Underbetting. The cheap one.** A fraction below the optimum reduces growth modestly. **Which is visible
+immediately as a performance gap against a peer, and is the error the folk convention commits.**
+
+**Betting a quantity that does not exist. The category error.** A fraction computed from an undefined variance or
+an estimated mean that diverges. **Which is invisible because a number is produced, and it is the error the
+existence check prevents.**
+
+**What the three imply for practice. One asymmetry.** Overbetting is expensive and undetectable; underbetting is
+cheap and visible. **Which is why the discount is a correction rather than a refinement, and why a practitioner
+who cannot estimate the standard error should use a convention.**
+
+**What detectability adds. One requirement.** A record. **An overbetting error leaves no trace in the returns for
+years, so the only place it can be detected is in the sizing decision itself.**
+
+**How to distinguish the three in a review. Two questions.**
+
+**Does the variance exist.** Which rules out the third error.
+
+**What is the coefficient of variation, and how was it obtained.** Which detects the first, since an unstated or
+minimal value indicates a fraction near the undiscounted optimum.
+
+**Why the third error is worth separating.** Because the first two are about magnitude and the third is about
+reference. **A fraction computed from a quantity that does not exist is not too large or too small; it is a
+report on the sample, and the two questions above are what separate it from an ordinary sizing mistake.**
+
+## The sizing rule and three ways to state the stake
+
+The optimal fraction produces a stake. Three ways of stating it appear in practice, and they are used at
+different points in a decision.
+
+**As a fraction of capital. For the decision.** Which is the rule's output and the form in which it is
+computed. **"Five and a half percent of the fund."**
+
+**As an absolute amount. For execution.** Which requires the current capital and changes as it moves. **"Eight
+hundred thousand."**
+
+**As a multiple of the loss at the stop. For the risk review.** Which is the form that connects the stake to the
+exit condition. **"If the stop is hit, we lose one point two percent of capital."**
+
+**What the three forms share. One input.** The fraction. **Which is why the fraction is computed first and
+translated afterwards.**
+
+**Which form catches which error.**
+
+**The fraction catches overbetting.** Relative to capital, so a growing book does not grow the stake
+mechanically.
+
+**The amount catches execution mistakes.** Because an order is placed in units.
+
+**The multiple catches an inconsistency between the stake and the stop.** Which is how a position sized to a
+fraction can still be mis-sized relative to its exit.
+
+**Why the third form is worth requiring.** Because it is the one that reveals a stake larger than the exit
+condition implies. **A stop eight percent away with a five percent stake is a forty basis point loss; the same
+stake with a stop at twenty percent is four times larger, and the fraction is unchanged.**
+
+**What to record. All three.** Which is one line in the position's record and makes the stake reviewable from
+any of the three perspectives. **Three statements, one fraction, and the third is the one that ties the size to
+the exit.**
+
+## The sizing rule and three kinds of constraint
+
+The fraction is limited by three kinds of constraint, and each binds in a different regime.
+
+**The growth constraint. From the objective.** Above twice the optimum the growth rate is negative, and the
+constraint is quadratic. **Which binds for a strategy whose inputs are known and whose stake is chosen freely.**
+
+**The capacity constraint. From the market.** The stake changes the market and reduces the edge. **Which binds
+for a strategy large relative to its opportunity, and it is a threshold rather than a slope.**
+
+**The holder's constraint. From the funding.** The drawdown must be survivable from a source that does not depend
+on the strategy. **Which binds for most practitioners and is the one the optimum is silent about.**
+
+**What the three imply for practice. One sequence.** Compute the growth-optimal fraction, then apply the capacity
+ceiling, then check the drawdown against tolerance, and use the smallest. **Which is the practical order and
+produces a stake smaller than the optimum in most cases.**
+
+**Why the order matters. One reason.** The growth optimum is the only one of the three that is computed from the
+edge alone. **The other two come from the market and the balance sheet, and a practitioner who stops at the first
+will over-size in exactly the cases where the other two bind.**
+
+**What the three have in common. One property.** Each is a reason to stake less than the edge alone implies, and
+none is about estimation. **Which is why the estimation discount is a fourth reduction rather than a substitute
+for the three.**
+
+**Why the holder's constraint is worth stating last and emphasising most.** Because it is the one the sizing
+literature omits and the one that determines whether the position survives its own path. **Three constraints, one
+sequence, and the smallest is the stake.**
+
+## A note on what this chapter could not check
+
+The 1969 paper's text was unavailable, so the formula presented here is the standard form of the
+criterion rather than a transcription of the paper. The originality of the 1969 contribution is in
+the application to favourable games and in the practical exposition, not in the criterion itself,
+which comes from Kelly's 1956 paper on information rate [@kelly1956].
+
+The two-times result is standard and is presented without a source, since I could not verify the
+place where it first appears. The half-variance approximation in the previous chapter and the
+quadratic penalty here are related, and both are approximations.

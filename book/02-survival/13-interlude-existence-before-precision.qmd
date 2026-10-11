@@ -1,0 +1,495 @@
+# Interlude: Existence Before Precision {#sec-existence-before-precision}
+
+The three interludes of Part II have been building one habit, and this is where it becomes a
+procedure.
+
+The habit is to ask whether a quantity exists before asking how well it can be measured. That is the whole habit. The reason
+is not philosophical tidiness. It is that precision is a property of an estimate, and an estimate
+presupposes an object. **Asking how precise an estimate is when the thing being estimated does not
+exist is not an error of degree. It is a category error, and it is invisible in the output, because
+a number still comes out.**
+
+## Why the ordering is the whole content
+
+Consider what happens when the ordering is reversed.
+
+An analyst who asks about precision first receives a standard error, a confidence interval, and a
+sample size. All three are computed by machinery that assumes the object exists. The machinery does
+not check; it is not built to check. It returns numbers. Always.
+
+The analyst then does what the numbers invite: compares them, reports them, and acts on them. The
+error enters at the first step and is never revisited, because nothing downstream raises a question
+about it.
+
+Reverse the ordering and the first step is a question the machinery cannot answer. That is why a person asks it. which is exactly
+why it has to be asked by a person: **does the defining expression converge?**
+
+For the variance of a stable distribution with index below two, it does not. For the mean with
+index below one, it does not. For a coastline's length as the ruler shrinks, it does not. Three
+cases from this book, and in each the standard error would have been computed without complaint.
+
+## The procedure
+
+Four steps. One of them empirical. **One. Write the defining expression.**
+
+**One. Write the defining expression.** A limit, an integral, a ratio of expectations. If it cannot
+be written, the quantity is not yet well defined and the procedure stops. This step costs a few
+minutes and is where most of the value is.
+
+**Two. Check convergence.** Still not statistics. Does the expression converge under the stated conditions? This is
+mathematics, not statistics, and it can often be done from the form of the expression alone — a
+tail index below a threshold, a denominator that vanishes, a sum over an infinite set.
+
+**Three. Check what the convergence depends on.** Here estimation returns. Divergence is not usually unconditional. The
+variance diverges for the stable family below index two and converges above it, so the answer
+depends on a parameter that is itself estimated. **The existence question becomes a question about
+the range of parameters consistent with the data, which is a weaker requirement than knowing the
+parameter.**
+
+**Four. Only now estimate.** Last, not first, and the reason the order matters is that the estimate carries no marker of the questions that were skipped, so an analyst who begins at step four will produce output identical in form to an analyst who began at step one. And report the estimate together with the step-three dependence, which
+is the practical form of the scale-span rule from Chapter 6.
+
+## Two things this procedure gets wrong
+
+A procedure that cannot be misapplied is a procedure nobody has implemented. Two failure modes are
+worth stating, because I have committed both.
+
+**Failure one: over-checking.** For most quantities in ordinary use — an average over a fixed
+period, a count, a proportion — convergence is not in question, and running the procedure is
+ceremony. The cost of the ceremony is small, but the habit it builds is worse: an analyst who asks
+the existence question everywhere acquires a reputation for obscurity and then stops asking it
+where it matters.
+
+**Failure two: treating model-dependence as a technicality.** Where convergence depends on a
+parameter, step three can degenerate into asserting the answer. "The tail index is about 1.7, so the
+variance exists" quietly converts an estimate into a premise. The honest version states the
+threshold and the plausible range, and says what follows in each case.
+
+## From here to the grid
+
+The procedure above answers a yes-or-no question about existence. The next chapter adds the second
+question — can the quantity be estimated — and crosses the two.
+
+That crossing produces four cells and four different actions, one of which is to do nothing
+numerical at all. It is the book's central constructive device for decisions, and it is a
+straightforward consequence of the material in this part.
+
+**Everything in the intervening chapters is machinery for answering the two questions.** This
+interlude is the procedure; the next chapter is the table.
+
+## What would refute it
+
+The ordering's claim is that reversing it produces systematic error rather than occasional
+inconvenience. It would be weakened by evidence that existence failures are rare enough that the
+first step rarely changes an answer.
+
+The evidence available to me is the material in this book: four quantities across nine papers —
+variance, mean, length, and long-memory — where the first step changes what can be said. That is a
+small and selected sample, and it is selected by the book's topic. **I cannot rule out that the
+procedure is mainly useful for phenomena that were chosen for a book about heavy tails.**
+
+The honest formulation is that the procedure is cheap, that its first step is a few minutes of mathematics, and that its cost is low enough that the question of whether it is usually necessary does not have to be settled in advance. A procedure that costs minutes and occasionally prevents a category error is worth running even when it usually returns the answer one expected, which is the same argument that justifies looking both ways at a quiet street.
+
+## Claim and tool
+
+The claim: existence is a precondition for measurement, and the standard estimation machinery will
+compute through a non-existent object without signalling.
+
+The tool: the four-step procedure, with the third step doing the work of connecting an existence
+question to an estimate rather than to a premise.
+
+## The procedure applied to a familiar quantity
+
+The four steps are abstract until they are run on something a reader has used. Take the variance of a
+return series whose tail index is estimated at some value near two.
+
+**Step one, write the expression.** Minutes, at most. The variance is the expected value of the squared deviation from
+the mean, which requires both the mean and the second moment to converge.
+
+**Step two, check convergence.** Still not statistics. For a power-law tail, the second moment converges only if the tail
+index exceeds two. The estimated index sits near the boundary, which means the answer flips with the
+estimate. This is not an unusual situation; it is the ordinary condition of financial data.
+
+**Step three, check the dependence.** The existence verdict depends on a parameter that is itself
+estimated, and the estimate is one of the least reliable in this book's material. So the honest output
+is a conditional statement: if the index is above two, the variance exists and can be estimated; if it
+is below, the variance does not exist and any value computed for it is a report on the sample.
+
+**Step four, estimate conditionally.** Report the variance computed under the assumption of existence,
+together with the range of indices consistent with the data, and state what changes on the other side
+of the boundary.
+
+**What the procedure changed.** Everything quotable. It converted "the variance is 14.2 percent" into "the variance is
+14.2 percent if the index exceeds two, and the index is estimated at 2.1 with a standard error of
+0.3". The second sentence is longer, less quotable, and usable by a decision-maker; the first is a
+number whose meaning depends on an untested premise.
+
+**How long it took.** Minutes. Minutes, which is the argument for running it. The work that took longer was the
+index estimation, and that had to be done anyway.
+
+
+## Where the procedure is too slow
+
+A procedure that costs minutes is cheap in absolute terms and can still be unaffordable relative to
+the decision it is meant to inform.
+
+**Fast decisions.** No time at all. Where a position must be adjusted within seconds, there is no time for step one.
+The correct response is not to run the procedure faster but to prepare it in advance: the existence
+questions for the quantities that matter can be answered once, off-line, and the answers carried as
+rules.
+
+**Recurrent decisions.** Rules, not procedure. A trader who must decide twenty times a day does not run the procedure twenty
+times. The procedure's output is a pre-computed rule — never size on this quantity, always bound that
+one — and the rule is what runs in real time.
+
+**Decisions already made.** Where the commitment exists and the question is how to exit, the existence
+procedure is largely irrelevant: the quantity that matters is the exit cost, which is a structural
+question and belongs to the ledger.
+
+**What this says about the procedure's place.** It is a design-time instrument rather than a run-time
+one. Its natural use is before the position exists, when the defining expressions can be written
+carefully and the answers recorded. **A procedure used at run time under pressure will be skipped,
+and a procedure designed to be used at run time is a procedure designed to be skipped.**
+
+
+## The four steps as a checklist
+
+The procedure has been argued in this interlude. A checklist version, because that is the form in which
+it gets used.
+
+**Step one. Write the defining expression.**
+
+Can it be written as a limit, an integral, or a ratio of expectations?
+If not, stop and say the quantity is not yet defined.
+Minutes.
+
+**Step two. Check convergence.**
+
+Does the expression converge under the stated conditions?
+This is mathematics, not statistics, and it is often readable from the form.
+Minutes.
+
+**Step three. Identify what convergence depends on.**
+
+A parameter, a range, a stationarity assumption?
+State the threshold and the plausible range of the parameter.
+**The existence answer becomes conditional, and the condition belongs in the output.**
+
+**Step four. Estimate, with the condition attached.**
+
+Report the estimate, the assumption it requires, and what changes on the other side of the threshold.
+Report the range of parameters consistent with the data.
+
+**Two failure modes of the checklist.**
+
+**Over-use.** Running it on quantities whose existence is not in question. A count, a proportion, an
+average over a fixed window. **The cost is small and the habit is bad: an analyst who runs it everywhere
+stops being listened to where it matters.**
+
+**Under-use at the boundary.** Treating the conditional answer as a formality. "The index is about 1.7,
+so the variance exists" converts an estimate into a premise, which is the error the third step exists
+to prevent.
+
+**Where to keep the checklist.** In the decision record, not in a procedure manual. **The step that
+matters is one, and its output is one sentence.**
+
+
+## The procedure as a defence of the analyst
+
+The four steps are usually presented as a discipline on the analysis. They are also a protection for the
+person producing it, and that aspect explains why the procedure is adopted in some settings and not others.
+
+**The exposure of an analyst without the procedure.** Asked for a number, they produce the best available
+one. Where the quantity turns out to be undefined, the number is attributed to them rather than to the
+request, and the failure appears as an analytical error.
+
+**What the procedure changes. One sentence, on the record.** "The variance is reported under an assumed tail
+index above two; the index is estimated at 2.1 with a standard error of 0.3, and the quantity does not exist
+below two." **That sentence moves the question from the analyst's competence to the data's sufficiency, and
+the move is legitimate.**
+
+**Why organisations resist it.** Because a conditional estimate is harder to aggregate across a portfolio
+than a point estimate. **The resistance is a data-management preference rather than an epistemic position,
+and it is worth naming as such.**
+
+**Three settings where the procedure is adopted quickly.**
+
+**Where a regulator asks how assumptions were tested.** The question has an expected form and the four
+steps supply it.
+
+**Where an independent reviewer exists.** A reviewer who asks which expression was checked rewards the
+analyst who checked it.
+
+**Where the analysis affects a decision the analyst must live with.** Self-interest aligns with the
+procedure, which is the strongest of the three.
+
+**What to do in the other settings.** Write the conditional statement anyway, and put it in the first
+paragraph rather than an appendix. **The cost is a sentence that looks like a hedge; the benefit is that it
+is not one.**
+
+
+## The four steps for a quantity you cannot write down
+
+The procedure begins with a defining expression, which many practical quantities do not have. The case is
+common enough to deserve its own treatment.
+
+**What such a quantity looks like.** Institutional capacity, execution quality, reputational standing,
+organisational resilience. **Understood operationally, discussed confidently, and never written as a limit or
+an integral.**
+
+**What to do instead of writing an expression. Three moves.**
+
+**Ask what observable would change if the quantity doubled.** If the answer names something measurable, the
+quantity is a proxy for that observable and the observable is what should be estimated. **This is the most
+common resolution and it usually takes a minute.**
+
+**Ask whether the quantity is a ratio of expectations.** Many operational quantities are, once stated
+carefully: throughput per unit of cost, successful outcomes per attempt. **The ratio's existence is checkable
+even when its components are not.**
+
+**Ask whether the quantity is a decision in disguise.** Where two people disagree about "capacity", they
+usually disagree about a policy rather than about a fact. **The disagreement does not resolve with data, and
+naming it as a policy question is the useful contribution.**
+
+**What remains after the three moves.** A small set of quantities that are genuinely unformalised. **For these,
+the correct output is a structural criterion rather than a number, and the grid's Avoid cell is where they
+belong.**
+
+**Why the moves are worth listing.** Because the procedure's first step is otherwise an obstacle for exactly
+the quantities that matter least and most: the soft ones that nobody can define and the strategic ones that
+organisations are reluctant to formalise. **Two of the three moves turn the obstacle into a measurement
+question, and the third turns it into a governance question.**
+
+
+## The procedure and the value of a delay
+
+The four steps are a precondition for estimation. They have a second use: they justify a delay, and the
+justification is legitimate in a narrow range of cases.
+
+**The legitimate case. Narrow.** A decision that is irreversible, whose critical quantity's existence is
+genuinely in doubt, and where the check takes minutes. **Deferring the decision to run the check is obviously
+correct.**
+
+**The illegitimate case. Common.** A decision whose delay is justified by the need for more estimation. **The
+check is not the delay; the estimation is. And where the quantity is in the Bound cell, more of the same data
+is not what would help.**
+
+**How to tell the two apart. One question.** Would running the four steps change how the decision is framed.
+**If yes, run them and decide. If no, the delay is about the estimate, and the grid's second question
+determines whether more estimation is useful at all.**
+
+**The institutional version of the distinction.** A committee that defers a decision to "get better numbers"
+is usually deferring to a procedure that will not answer the question. **A committee that defers to run an
+existence check is deferring for minutes, and the check frequently converts the question into one the committee
+can answer.**
+
+**What the procedure cannot merelyify.** Waiting for a quantity to become estimable when nothing about the
+collection plan has changed. **That is the deferral fallacy the interlude names, and the four steps are its
+diagnostic rather than its licence.**
+
+**Why this section is worth having.** Because "we should check first" is a sentence that can be used for
+anything, and the procedure's value depends on the check being minutes long rather than a research programme.
+**The distinction between the two delays is the difference between a method and a way of postponing.**
+
+
+## A short list of quantities that fail
+
+The procedure is easier to run with examples at hand. This section lists the failures the book encounters, in
+one place, so that a reader has a reference rather than an argument.
+
+**Failures of existence.**
+
+**The variance of a stable distribution with index below two.**
+
+**The mean of a series with index below one.**
+
+**The length of a coastline as the ruler shrinks.**
+
+**The expected loss of a risk whose tail index is below one.**
+
+**Failures of identification.**
+
+**A tail index estimated from a short calm sample.**
+
+**A long-memory parameter estimated from data that also fits a regime-shift model.**
+
+**A correlation estimated in calm conditions and used for a crisis.**
+
+**A ruin probability estimated from a history that contains no ruin.**
+
+**Failures of the sample.**
+
+**The expected cost of a rare systemic event, where the sample contains no events of that size.**
+
+**A manager's skill, where the record is shorter than the detection requirement.**
+
+**What the list shows. Two patterns.**
+
+**The existence failures are mathematical and the others are not.** A missing mean is a fact about a family; a
+poorly identified index is a fact about the data. **The responses differ accordingly: replace for the first,
+bound for the second.**
+
+**The third category is the one that surprises readers.** Quantities whose problem is the sample rather than the
+quantity. **These are the cases where more of the same data appears to be the answer and is not.**
+
+**How to use the list. One pass before an analysis.** Read down it and mark the quantities the decision depends
+on. **Where one appears, the procedure of the interlude applies; where none does, the ordinary machinery is
+available and the check cost nothing.**
+
+**What the list is not. Exhaustive.** It contains the failures this book documents, and a reader's field will
+have others. **The categories are the transferable part; the entries are illustrations.**
+
+
+## The four steps and the cost of being early
+
+The procedure is presented as a precondition for estimation. It has a second and less obvious use: deciding
+when not to estimate at all, which is a decision with its own value.
+
+**The two errors. Symmetric in appearance.**
+
+**Estimating a quantity that does not exist.** The error the procedure detects. **It produces a number with
+no referent and confidence in it.**
+
+**Refusing to estimate a quantity that is merely difficult.** The error the procedure can cause. **It
+produces a structural decision where an estimate was available, and the decision is worse for it.**
+
+**Why the second is easy to commit with this procedure.** Because the check is a filter, and a filter applied
+to a quantity that exists and is badly estimated will sometimes return "not estimable" when the accurate
+statement is "estimable with a wide bound". **The distinction is between existence and precision, and the
+procedure is about existence.**
+
+**Three guards against over-refusal.**
+
+**The check is about convergence, not about comfort.** If the defining expression converges, the quantity
+exists, whatever the estimate's quality. **The response to poor quality is a bound, not a refusal.**
+
+**A quantity with two disagreeing estimators belongs in Bound.** Not in Avoid. The interlude's third case is
+non-existence, and its middle case is what most disagreements indicate.
+
+**Where the answer is unclear, estimate and label.** A reported estimate with the assumption stated is more
+useful than a refusal, as long as the assumption is on the page next to the number.
+
+**What the guards have in common. One principle.** The procedure's output should be the weakest true statement
+rather than the strongest false one, and "the quantity exists and is estimated poorly" is often the weakest
+true one. **A procedure that returns refusals where bounds were available has substituted its own caution for
+the decision-maker's judgement.**
+
+**Why this section belongs in the interlude.** Because the interlude supplies the test, and a test that is
+applied too enthusiastically removes the estimates the rest of the book depends on. **The step that matters is
+the convergence check, and its output is a conditional statement rather than a verdict.**
+
+
+## The procedure and three kinds of question it settles
+
+The four steps settle three kinds of question, and knowing which one is being asked determines how much work the
+procedure requires.
+
+**A question about a model's coherence. Settled by step one.** Whether a quantity the model invokes is defined.
+**Which is a mathematical question and often answerable by inspection.**
+
+**A question about a measure's meaning. Settled by steps one and two.** Whether a reported statistic refers to
+anything. **Which is the question the book's material most often raises, because the machinery computes through
+undefined objects without signalling.**
+
+**A question about a decision's method. Settled by steps three and four.** Whether the output should be a number,
+a bound, or a structural choice. **Which is the applied question and the one the grid formalises.**
+
+**What the three require. Increasingly more.**
+
+**Coherence. A definition and a look at the expression.**
+
+**Meaning. The definition and a convergence check, which is minutes.**
+
+**Method. The above plus two estimators and a sensitivity, which is an afternoon.**
+
+**What the procedure does not settle. Whether the answer is right.** It settles whether the question is
+answerable, which is a prior matter. **A quantity can exist, be estimable, and be estimated wrongly.**
+
+**How to tell which question is being asked. One observation.** Whether the analysis has already produced a
+number. **A number already computed suggests a question about method; a model being written suggests
+coherence.**
+
+**Why the distinction matters for effort.** Because the three kinds require an hour, an afternoon, and a
+decision respectively, and a practitioner who applies the heaviest version to a coherence question wastes a day.
+**Three kinds, three levels of effort, and the level is determined by what is being decided rather than by the
+quantity's importance.**
+
+
+## The procedure and three kinds of evidence it can refuse
+
+The procedure's output is a conditional statement or a substitution. Three kinds of evidence are refused by it,
+and the refusals are worth naming.
+
+**A fitted parameter with no convergence check.** Which the procedure refuses to treat as an estimate of
+anything. **The estimate is a report on the sample, and the procedure's first step is what establishes that.**
+
+**A confidence interval around a quantity that may not exist.** Which the procedure refuses to interpret. **An
+interval presupposes an object, and the procedure's second step is what tests the presupposition.**
+
+**A point estimate for a quantity the decision depends on and the data cannot identify.** Which the procedure
+refuses to supply. **The correct output is a bound, and the refusal is the finding.**
+
+**What the three refusals have in common. One property.** Each refuses something the standard machinery produces
+without complaint. **Which is why the procedure has to be run by a person: the machinery has no step at which
+the question arises.**
+
+**What the procedure does not refuse. Two things.**
+
+**An imprecise estimate of a quantity that exists.** Which is accepted with its interval and its method.
+
+**A bound, however wide.** Which is an output rather than a failure.
+
+**Why the refusals are worth listing.** Because a procedure that refuses things needs a statement of what it
+accepts, or it becomes an instrument for producing refusals. **Three refusals, two acceptances, and the
+acceptances are the procedure's ordinary output.**
+
+**How to state a refusal in a document. One sentence.** "The quantity is reported under an assumed index above
+two; below two it does not exist." **Which is a condition rather than a refusal, and which is the form the
+procedure's output takes.**
+
+
+## The procedure and three ways to be early
+
+The procedure tests existence before precision. Three ways of applying a test too early produce refusals where
+estimates were available.
+
+**Refusing a quantity that exists and is imprecise.** Which is the most common error, because the procedure's
+output is a verdict and the verdict is binary. **The correct output is a conditional estimate with its interval,
+not a refusal.**
+
+**Refusing a quantity whose expression is unwritten.** Which mistakes a task for a finding. **The correct output
+is the expression, written, and the refusal is premature by an hour of work.**
+
+**Refusing a quantity whose estimator disagreement has not been tested.** Which mistakes an untested comparison
+for a tested one. **The correct output is the second estimator, run, before any conclusion about
+estimability.**
+
+**What the three have in common. One property.** Each substitutes a refusal for a step that was available. **Which
+is the failure mode of a procedure that is cheap to apply and therefore applied at the first sign of
+difficulty.**
+
+**How to guard against them. One rule.** Apply the procedure's steps in order and require the output of each
+before proceeding. **Writing an expression before concluding that it cannot be written; running a second
+estimator before concluding that the quantity is unidentified.**
+
+**Why the third error is the most insidious.** Because the estimator comparison requires work and the conclusion
+does not. **A practitioner under time pressure will conclude rather than test, and the procedure's authority makes
+the conclusion sound considered.**
+
+**What the procedure is for. One thing.** Establishing whether an estimate is meaningful. **Which is a question
+about the quantity, and the three errors above are about the analyst's time rather than the quantity's
+properties.**
+
+
+## Boundary conditions
+
+The procedure presumes a defining expression. Quantities understood only
+operationally are excluded, and forcing them through the steps produces false precision.
+
+It presumes that the conditions — tail index, sample range, model — are stable enough for the
+existence answer to be meaningful. Where they are not, the answer can flip with the model, and the
+procedure's output is a conditional statement rather than a verdict.
+
+And it does not produce the estimate in step four. It tells you whether producing one is
+meaningful, which is a different and more useful service.
+One expression. One convergence check. One substitution. That is the whole procedure. Minutes, not days.

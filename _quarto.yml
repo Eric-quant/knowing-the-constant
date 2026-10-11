@@ -1,0 +1,85 @@
+project:
+  type: book
+  output-dir: _book
+
+book:
+  title: "Knowing the Constant"
+  subtitle: "Mandelbrot, Taleb, and Thorp on Shape, Survival, and Bet Sizing in a Fat-Tailed World"
+  author: "The authors of Knowing the Constant"
+  date: today
+  search: true
+  repo-url: https://github.com/Eric-quant/knowing-the-constant
+  repo-actions: [edit, issue]
+  chapters:
+    - index.qmd
+    - part: "I — Shape"
+      chapters:
+        - 01-shape/01-the-tail-that-would-not-go-away.qmd
+        - 01-shape/02-how-long-is-a-coastline.qmd
+        - 01-shape/03-memory-in-a-random-walk.qmd
+        - 01-shape/04-interlude-three-ways-for-a-number-to-fail.qmd
+        - 01-shape/05-the-estimator-problem.qmd
+        - 01-shape/06-the-scale-span-rule.qmd
+        - 01-shape/07-what-a-fractal-is-not.qmd
+        - 01-shape/08-shape-as-a-precondition.qmd
+    - part: "II — Survival"
+      chapters:
+        - 02-survival/09-four-quadrants.qmd
+        - 02-survival/10-interlude-two-kinds-of-uncertainty.qmd
+        - 02-survival/11-the-burden-of-proof.qmd
+        - 02-survival/12-when-the-average-does-not-exist.qmd
+        - 02-survival/13-interlude-existence-before-precision.qmd
+        - 02-survival/14-the-existence-estimability-grid.qmd
+        - 02-survival/15-what-convexity-is.qmd
+        - 02-survival/16-the-irreversibility-ledger.qmd
+        - 02-survival/17-precaution-without-paralysis.qmd
+    - part: "III — Bets"
+      chapters:
+        - 03-bets/18-finding-an-edge.qmd
+        - 03-bets/19-interlude-expected-value-is-not-growth.qmd
+        - 03-bets/20-how-much-to-bet.qmd
+        - 03-bets/21-the-discount.qmd
+        - 03-bets/22-estimation-risk.qmd
+        - 03-bets/23-execution.qmd
+        - 03-bets/24-interlude-sampling-problem-of-skill.qmd
+        - 03-bets/25-when-the-edge-decays.qmd
+    - part: "IV — Synthesis"
+      chapters:
+        - 04-synthesis/26-the-constant.qmd
+        - 04-synthesis/27-the-ledger-as-an-instrument.qmd
+        - 04-synthesis/28-claim-tool-vocabulary-technique.qmd
+        - 04-synthesis/29-the-ordering.qmd
+        - 04-synthesis/30-three-cases-worked.qmd
+        - 04-synthesis/31-where-it-fails.qmd
+        - 04-synthesis/32-closing-what-to-keep.qmd
+  appendices:
+    - appendix-a-timeline.qmd
+    - appendix-b-glossary.qmd
+    - appendix-c-registers.qmd
+    - appendix-d-further-reading.qmd
+
+bibliography: verify/refs.bib
+csl: https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl
+
+crossref:
+  fig-prefix: Figure
+  tbl-prefix: Table
+  sec-prefix: §
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 2
+    number-sections: true
+    fig-cap-location: bottom
+    link-external-newwindow: true
+    css: styles.css
+  pdf:
+    documentclass: scrreprt
+    number-sections: true
+    colorlinks: true
+    keep-tex: false
+  epub:
+    toc: true
+    number-sections: true

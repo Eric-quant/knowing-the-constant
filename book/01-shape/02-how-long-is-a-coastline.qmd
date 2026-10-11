@@ -1,0 +1,554 @@
+# How Long Is a Coastline? {#sec-coastline}
+
+Ask how long the British coastline is, and you will get an answer. The answer will be a number of
+kilometres. It will come from an atlas, or from a database maintained by a government agency, and
+it will carry three or four significant figures.
+
+The number is not wrong. It is worse than wrong. It measures nothing. It is a measurement of a quantity that does not
+exist, and the fact that the measurement can be performed, reported, and believed is the subject
+of this chapter.
+
+The paper that established this is three pages long. It appeared in *Science* on 5 May 1967, under
+the title "How Long Is the Coast of Britain? Statistical Self-Similarity and Fractional
+Dimension," and it has been cited 4,100 times according to OpenAlex [@mandelbrot1967].
+
+Three pages, one question, and an answer that changes what a length measurement means. What I want
+to do in this chapter is not summarise it — the summary is one sentence — but follow the
+machinery, because the machinery is the part that transferred to other subjects, and it is the
+part that is still misused fifty years later.
+
+## The experiment you can run in ten minutes
+
+Take a map. Take a pair of dividers, the kind used in navigation, set to a fixed opening. Walk
+them along the coastline, counting steps, all the way around. Multiply the number of steps by the
+opening. That is your measurement of the length.
+
+Now halve the opening and do it again.
+
+The measured length increases. It has to. It has to: with a smaller opening you can follow inlets and
+promontories that the larger opening cut across. Halve it again, and the length increases again.
+
+This is not an error. It does not converge. Every reduction in the ruler reveals a finer
+layer of structure that must be traversed. The coastline is rough at every scale you can look at,
+because the processes that made it — erosion, deposition, faulting — do not have a characteristic
+length scale. There is no "true" coastline underneath the approximations.
+
+So the question has no answer. Not because measurement is hard. The reason is that the quantity presupposes something false: that length is a property
+of the object rather than of the object and the instrument together.
+
+I ran this experiment once with a photocopied map and a pair of compasses, and what struck me was
+not the divergence but how quickly it appears. Two doublings of the ruler gave a difference of
+about a third. The claim that a coastline has a length is not approximately true and slowly
+degrading; it is false at the resolution of an ordinary atlas.
+
+## Why a coastline, and not a mountain range
+
+The choice of demonstration object is a rhetorical decision, and Mandelbrot's choice was better than
+it looks.
+
+A coastline has four properties that make it an unusually effective vehicle for a mathematical
+idea.
+
+**It is familiar.** Everyone has seen a coastline on a map. The puzzle does not require the reader
+to accept an exotic dataset.
+
+**It is measurable by a procedure anyone can reproduce.** Dividers and a map. No instruments, no
+statistical training, no access to a laboratory.
+
+**The measurement has a well-established official answer.** Atlases publish coastline lengths.
+That gives the argument a target: not an abstract claim about undefined quantities, but a specific
+number in a specific reference work that turns out to be an artefact of an unstated convention.
+
+**The alternative exists and is not exotic.** Richardson had already produced the power law. The
+piece is therefore a reinterpretation rather than a discovery, which lowers the burden of
+persuasion: the reader is asked to accept a new reading of an old table, not a new world.
+
+I have come to think that the third property does most of the work. **An argument is strongest when
+it takes a number that the reader already trusts and shows what the number depends on.** That is
+also the fastest way to make an enemy, which is why the rest of this book's material contains so
+many papers that were ignored for a decade.
+
+## Richardson, and the appendix nobody read
+
+The observation is older than the paper, and the story of how it was ignored is instructive far
+beyond geography.
+
+The person who noticed was Lewis Fry Richardson, a British physicist turned meteorologist, who
+spent the last part of his career applying mathematical methods to the study of war. The appendix
+to his book on deadly quarrels contains a table of border lengths measured at different scales,
+and a fitted relationship between measured length and ruler size. The appendix is titled "The
+Problem of Contiguity" and was published in the *General Systems Yearbook* in 1961
+[@richardson1961].
+
+Richardson had died in 1958. The paper appeared three years later. He never saw it in print.
+
+Mandelbrot cited it as reference number two, and added a remark that has become famous among
+people who like this story: the relationship was entirely empirical, proposed by Richardson, and
+unfortunately attracted no attention.
+
+Three reasons suggest themselves for the neglect, and all of them are structural rather than
+personal.
+
+**It appeared in the wrong place.** A multidisciplinary yearbook, read by systems theorists, is
+not where geographers or statisticians look.
+
+**It had no theory attached.** A power law fitted to border lengths does not obviously belong to
+any discipline's problem set. Geographers did not consider measurement error a geographic
+question. Statisticians saw no general significance in an exponent describing maps.
+
+**Its author was gone.** Nobody was left to promote it, respond to objections, or apply it
+elsewhere.
+
+I mention the reasons because they are not specific to 1961. A correct empirical regularity with
+no owner will sit unread for a decade, and what rescues it is usually not more data but an
+interpretation that makes it belong somewhere.
+
+## Three ways for a number to fail
+
+Before following Mandelbrot's solution, it is worth separating this problem from two others it is
+usually confused with. The distinction is the book's, and it does real work in later chapters.
+
+**Failure by noise.** The quantity exists, and your estimate of it is imprecise. Remedy: more data,
+better estimators, honest intervals.
+
+**Failure by undefinedness.** The quantity does not exist because the question is malformed.
+Coastline length is the example here, and so is the question "what is the average size of a number
+I am thinking of" — not because the answer is hard but because there is nothing to answer about.
+Remedy: change the question.
+
+**Failure by non-existence.** The quantity is well defined, and its defining expression diverges.
+The variance of a stable distribution with exponent below two is the example from Chapter 1.
+Remedy: change the question, or change the statistic.
+
+Three failures, three different remedies, and the diagnosis determines the remedy. The reason to
+insist on the distinction is that all three present identically in practice: somebody computes
+something, and the number will not settle down.
+
+When a number will not settle, the reflex is to look for more data. This is the correct response
+to the first failure and a waste of a career in the other two. **Before enlarging the sample, find
+out which failure you are facing.**
+
+## Richardson's other problem
+
+It is worth knowing what Richardson was actually doing, because it explains why a table of border
+lengths ended up in the appendix of a book about war.
+
+His subject was the mathematics of conflict. He wanted to know whether the frequency and severity
+of wars obeyed any regular pattern, and to answer that he needed to measure things that are
+notoriously hard to measure: how long borders are, how many pairs of countries are in contact,
+which countries count as neighbours. **The scale-dependence of a border measurement was, for him, a
+nuisance standing between him and a question about war.**
+
+That is the ordinary origin of most useful quantitative ideas. Someone is trying to answer
+something else, runs into a measurement that will not behave, records the anomaly, and moves on.
+
+Richardson also illustrates a second point that recurs in this book. He was working outside the
+discipline that owned his subject matter — a physicist and meteorologist writing about war — and
+the work was published after he died. **Anomalies recorded by outsiders, posthumously, in
+interdisciplinary venues, are the least likely kind of finding to be picked up.** The wonder is
+not that his observation sat for six years; it is that it was found at all.
+
+## The replacement: measure roughness instead
+
+Mandelbrot's move was to stop asking for a length and start asking how the measured length behaves
+as the ruler shrinks.
+
+Write the ruler opening as G and the measured length as L(G). The empirical regularity Richardson
+had found, and that Mandelbrot reinterpreted, is that L(G) falls as G rises, according to a power
+law:
+
+[F] L(G) ≈ M · G^(1−D)
+
+The exponent contains a new parameter, D, and the claim of the paper is that D is not a fitting
+constant but a geometric property of the curve: its dimension.
+
+The argument for that claim runs through a family of curves that can be counted exactly. The Koch
+curve is the standard example. Start with a line segment. Divide it into three equal parts,
+remove the middle one, and replace it with two sides of an equilateral triangle. Each segment
+becomes four segments, each one third as long. Repeat.
+
+Count the self-similar pieces. The whole curve is made of four copies of itself, each scaled by a
+factor of one third. Define
+
+[F] D = − log N / log r
+
+with N the number of copies and r the scale factor. For the Koch curve, N = 4, r = 1/3, so
+D = log 4 / log 3 ≈ 1.262.
+
+Nothing about that calculation involves estimation. N is an integer you can count and r is one
+third by construction. The dimension of the Koch curve is not measured; it is derived. The value
+of such curves, in this argument, is that they are **standard parts**: objects whose dimension is
+known exactly, against which any estimation procedure can be calibrated.
+
+That is why the next step works. The standard parts pay for themselves. Plot the measured lengths against the ruler openings on
+logarithmic axes. For a strictly self-similar curve the points fall on a line whose slope is
+1 − D. For a natural coastline, Mandelbrot argued, the points fall approximately on a line, and
+the same interpretation applies.
+
+Notice what has been gained and what has been given up. Given up: the length of the coastline,
+which never existed. Gained: a quantity that does exist, can be estimated, and — this is the
+substantive claim — describes something real about the object's geometry.
+
+![The same construction at three resolutions. Each refinement multiplies the number of segments by four and reduces their length by a third, so the measured length grows without bound while the curve stays inside a bounded region. Drawn for this book from the construction rule.](../../figures/fig02-koch-refinement.png){#fig-koch}
+
+## The six numbers, and how to read them
+
+The paper reports six dimensions, on page 637. I list them with the paper's own descriptions,
+because the descriptions matter as much as the numbers.
+
+| Object | D reported |
+| --- | --- |
+| A straight frontier (limiting case) | 1.00 |
+| The west coast of Britain | 1.25 |
+| The land frontier of Germany, about 1899 | 1.15 |
+| The land frontier between Spain and Portugal | 1.14 |
+| The coast of Australia | 1.13 |
+| The coast of South Africa | 1.02 |
+
+Two things about this table require comment, and both are about method rather than about
+geography.
+
+**First, these are Mandelbrot's reinterpretation of Richardson's data, not measurements made for
+the paper.** The text is explicit about this: he proposes to interpret the data as implying, for
+example, that the dimension of the west coast of Great Britain is 1.25.
+
+**Second, two of the cases were selected by eye.** The paper says that the west coast of Britain
+was chosen because it looks like one of the most irregular in the world, and that South Africa was
+chosen because it looks like one of the smoothest in the atlas. This is exploration, not sampling.
+It is fine for building an intuition — the ordering of the numbers does match the visual
+impression — and it cannot support a statistical inference.
+
+The range is what makes the quantity useful. Narrow it and the measure dies. If every coastline came out near
+1.2, the measure would carry no information. Because the extremes sit at 1.02 and 1.25, the
+measure discriminates, and the ordering matches the eye.
+
+A widely circulated seventh value does not appear in the paper. Several secondary sources — Chinese
+and English alike — give the dimension of a circle as 1.15. It does not appear in Mandelbrot
+(1967). The paper's Figure 1 caption states only that for a circle the measured length converges to
+a limit as the step size goes to zero, which is the thin-tailed case. The number appears in the
+secondary literature and not in the original, and this book records it as a verified absence
+rather than repeating it.
+
+## Three ways dimension gets used, and one of them is dangerous
+
+Dimension is a good example of a tool that was adopted faster than it was understood. Three
+usages are distinguishable, and it is worth separating them because they carry different risks.
+
+**As a descriptive index.** "This surface has a higher fractal dimension than that one." The claim
+is comparative and local, and it needs only that the measurement procedure be held fixed. This
+usage is safe, and it is the majority of the applied literature.
+
+**As a diagnostic.** A change in measured dimension signals a change in regime: a material
+fractures, a tissue becomes diseased, a market changes character. This usage requires the
+measurement to be stable enough that a change in the number reflects a change in the object,
+rather than a change in the analyst. Usually it is, if the procedure is fixed in advance.
+
+**As an input to a model.** The estimated dimension is fed into a formula that predicts something
+else. **This is the dangerous usage**, because it propagates the estimate's uncertainty into a
+quantity that may be far more sensitive to it — and the uncertainty of a dimension estimate is
+large enough, as the estimation literature shows, that the propagated error swamps most model
+predictions.
+
+The distinction is not aesthetic. It is the difference between using a ruler to compare two
+things and using it to calculate a load-bearing number.
+
+## How stable is a dimension?
+
+Here the story takes the shape it keeps for the rest of Part I. The tool works. The number moves.
+
+Estimating a dimension or an exponent from data is a problem with an unusually bad reputation, and
+the reputation is earned. Taqqu, Teverovsky and Willinger compared the standard estimators
+systematically in 1995 and found systematic biases and strong sensitivity to the estimation method
+and to the range of scales used in the fit [@taqqu1995]. Dimensions estimated by box-counting and
+by dividers on the same object do not agree in general, and both are sensitive to where the fit
+starts and stops.
+
+The practical consequence is easy to state. The claim "this object is rough in a scale-invariant
+way" is fairly robust. The claim "its dimension is 1.32" is not, and the second claim is the one
+that gets quoted.
+
+There is also a purely arithmetic requirement that is routinely ignored. A power law can only be
+observed over the range of scales the data covers, and over a short range almost any smooth curve
+is indistinguishable from a power law. If a series covers one order of magnitude, the fitted
+exponent is largely a description of the fitting window, not of the object.
+
+This is the point at which the book has to propose something rather than report something.
+
+## Proposed: the scale-span rule
+
+**The rule.** An exponent may be reported only together with the span of scales over which it was
+fitted. A span smaller than two orders of magnitude shall not be reported as a property of the
+object under study; it may be reported as a description of the data within that window.
+
+**Why two orders.** The threshold is a convention, and I want to be clear that it is a convention
+rather than a derived constant. It is chosen because a decade of scale is about the smallest range
+over which the curvature of a plausible alternative model becomes detectable in a log-log plot.
+Readers who prefer three decades have an argument; the rule's content is the reporting
+requirement, not the number.
+
+**How to test the rule.** Take a function that is known not to be scale-invariant — a parabola, a
+sum of two exponentials, a logistic curve — sample it over one order of magnitude, and fit a power
+law. If the fit is acceptable by the usual criteria, the span was too short to support an
+exponent, whatever the object's true structure.
+
+**Precondition.** The rule requires that the scale span be measurable, which excludes series whose
+sampling resolution changes over time, and series whose units are not comparable across the
+sample.
+
+[N] The scale-span rule is proposed by this book and registered as entry B-008 in
+`verify/constructed.csv`. The two-orders threshold is a convention chosen for reporting, not a
+result.
+
+## The scale-span rule applied to three studies
+
+The rule proposed in the previous section is easy to state and easy to forget. Here is what it does
+when applied to three pieces of published work cited in this chapter.
+
+**Taqqu, Teverovsky and Willinger (1995).** The purpose of the study was methodological, and its
+conclusion — that estimators disagree and are sensitive to the fitting range — is itself an
+argument for reporting the range. The paper's contribution survives the rule; indeed the rule is
+close to a normative restatement of its findings.
+
+**Box-counting studies in the biological literature.** These typically work with image resolutions
+spanning one to two orders of magnitude. Under the rule, their exponents are descriptions of the
+images at the available resolutions and should be reported as such, not as properties of the
+organisms. The substantive biological conclusions often survive this reframing; the numerical
+precision claims do not.
+
+**Coastline studies.** Modern re-measurements of specific coastlines work with map or satellite
+data covering two to three orders of magnitude, and they can clear the threshold. Their difficulty
+is a different one: the object itself is not scale-invariant over the whole range, because a
+continent's outline is influenced by tectonic structure at the largest scales.
+
+Notice the pattern. The rule does not tell you a study is wrong. It tells you which sentence in the
+study is licensed by the data and which is not, and the sentence that is not licensed is usually
+the one that appears in the abstract.
+
+## The scale-span rule as a checklist
+
+Because the rule is a convention rather than a theorem, its value is in being applied. Five steps,
+worth running on any exponent you meet, including the ones in this book.
+
+**One. Find the span.** What range of scales does the data cover? If the paper does not say, the
+paper has not reported the exponent, whatever else it reports.
+
+**Two. Convert the span into decades.** Ratios, not differences: a series running from one second to
+one hour spans about three and a half decades.
+
+**Three. Check the fit's shape.** On a log-log plot, is the relationship straight over the whole
+span, or straight over part of it? A break in the line means two regimes, and an exponent fitted
+across a break is a description of neither.
+
+**Four. Ask what else fits.** A power law and a stretched exponential look similar over two
+decades. If the conclusion depends on which one is true, the span is too short to carry the
+conclusion.
+
+**Five. Write the exponent with its window.** "The exponent is 1.6 over the range from one minute to
+one day" is a finding. "The exponent is 1.6" is a rumour.
+
+The checklist takes ten minutes and it has never failed to change my reading of a paper. Sometimes
+it changes the reading in the paper's favour, which is the outcome I did not expect the first few
+times it happened.
+
+## What the paper concedes
+
+The paper's limits are stated by its author, in the text, and they are more candid than most of its
+readers assume. Three passages are worth quoting, because they set the boundary of everything
+above.
+
+On the mathematics: the conditions under which a similarity dimension exists are, in the paper's
+words, not a fully solved problem. On the strength of the inference: the most that can be said
+with perfect safety is that the observed regularity is *compatible* with the idea that
+geographical curves are random self-similar figures of fractional dimension. And on the state of
+the field, in a footnote: the concept of dimension is elusive and very complex, and the field
+abounds in paradoxes.
+
+So the paper's own claim is a compatibility claim. That is, it argues that the data are consistent
+with a certain structure, and it does not claim to have proved that the structure holds.
+
+I take this as the model for how to write a paper that will survive. The author had an
+interpretation he believed, and he told the reader exactly how much of it the evidence supported.
+
+## Claim and tool
+
+**The claim** was that natural coastlines are statistically self-similar, with a fractional
+dimension that can be estimated from length measurements at different scales. The claim has held
+up better than the one in Chapter 1, and its quantitative content has not: dimension estimates
+from natural objects turn out to depend strongly on the estimation method and the fitting window.
+
+**The tool** is the move from a quantity to its behaviour under a change of scale. When a
+measurement depends on the instrument, stop treating the dependence as error and start treating
+it as the measurement. That move left geography within a few years and turned up in materials
+science, image analysis, physiology, and network traffic.
+
+The tool is also where the book's own device becomes useful. The dimension is a **scale constant**
+at best: it survives a change of resolution, within a stated span, and it does not survive a
+change in the estimating procedure. Treating it as a property of the object — a Grade I claim with
+no stated transformation — is the error the scale-span rule is meant to prevent.
+
+## Boundary conditions
+
+The result holds when the object is statistically self-similar over the span you measure, and when
+the span is wide enough for a power law to be distinguishable from the alternatives.
+
+It fails when the span is short, when the object has a characteristic scale — most engineered
+objects, most biological structures above the cellular level — and when the estimation method is
+chosen after looking at the answer.
+
+It says nothing about magnitude or consequence. A dimension is a description of geometry, and a
+coastline's dimension tells you nothing about whether the sea will rise.
+
+And it does not license the inference people most want to draw from it. Roughness is not the same
+as danger, and scale invariance is not the same as predictability.
+
+## Dimension as a description, not a property
+
+The coastline measurement is easy to read as a discovery about coastlines. It is more usefully read as
+a demonstration about measurement, and the difference decides how the result should be used.
+
+**What the measurement produces.** A number relating two quantities: the length obtained and the
+ruler used to obtain it. The slope of that relationship, on a log-log plot, is an estimate of a
+dimension, and it is a summary of the data-generating procedure as much as of the object.
+
+**What the measurement depends on.** Three things, all of which the practitioner controls.
+
+The **range of rulers**. A measurement spanning three orders of magnitude and one spanning one order
+will disagree, and the shorter span is not a smaller version of the longer one; it is a different
+estimate of a possibly different quantity.
+
+The **method of measurement**. Walking a pair of dividers along a map, counting boxes on a grid, and
+estimating a spectral slope are three procedures with three biases. Part I used them interchangeably
+and obtained three different answers, which is why the book's figure for this chapter was produced by
+a construction whose answer is known independently.
+
+The **definition of the object**. A coastline's length depends on where the land ends, which is itself
+a question about scale. At the scale of a molecule there is no coastline; at the scale of a continent
+there is a different one.
+
+**Why the number nevertheless travels.** Because comparisons between objects measured by the same
+procedure are meaningful. Two river networks measured identically can be compared; one measured by
+dividers and one by box-counting cannot. **The dimension is a relation, and the relation is only as
+reliable as the invariance of the procedure.**
+
+**The category error, stated plainly.** Saying that a coastline "has" a dimension of about one and a
+quarter is like saying that a road "has" a travel time of forty minutes. The number is real and the
+attribution is wrong: it belongs to the journey and the route, or in this case to the measurement and
+its range. The book's claim is about what can be measured and compared, not about what objects
+contain.
+
+**What follows for practice.** State the procedure. State the range. Report more than one method
+where the comparison matters. And treat a change in dimension across ranges as a finding rather than
+as an error, because a boundary between two scaling regimes is often the most informative thing in
+the data.
+
+## The ruler and the question
+
+The coastline problem is usually presented as a discovery about measurement error. It is better
+presented as a discovery about the interaction between an instrument and a question.
+
+**Three ways to measure a length.**
+
+**Stepping. Slow and observable.** Walk a pair of dividers of fixed length along the curve and count
+the steps. The count times the step length is the measurement. The procedure is transparent, and its
+answer depends on where the dividers are placed, which introduces a variance that the other methods do
+not have.
+
+**Covering. Fast and robust.** Cover the curve with squares of a fixed size on a grid, count the
+occupied squares, and multiply. No placement decisions are required, and the estimate is smoother. The
+grid's orientation, however, is a choice.
+
+**Spectral. Indirect.** Estimate how variance is distributed across frequencies and infer a scaling
+exponent. This requires no geometric measurement at all, which is a strength and a source of
+disagreement with the other two.
+
+**Why the three give different answers.** Not because any of them is wrong. Each measures a slightly
+different property of a curve that has finite thickness, and the descriptions coincide only in a limit
+that real objects do not reach.
+
+**What follows for practice.** Where a dimension is reported, the procedure belongs in the sentence. A
+comparison between two objects measured identically is meaningful; a comparison between a stepping
+estimate and a spectral estimate is a comparison between two questions.
+
+**Why the paper was still right.** Because the disagreement between procedures, and its systematic
+dependence on the ruler, is the finding. **A quantity whose value depends on the instrument is a
+different kind of quantity, and noticing that was the contribution.**
+
+## The measurement decision nobody records
+
+The coastline exercise requires four decisions before any number is produced, and the record of a published
+dimension rarely contains them.
+
+**Decision one. What counts as the boundary.** A coastline's edge is a transition zone of finite width.
+**Where the zone is drawn is a choice, and at the finest scales the choice determines the answer.**
+
+**Decision two. What resolution the source data have.** A map at a given scale has already smoothed the
+object. **Measuring below the map's resolution measures the cartography rather than the coast.**
+
+**Decision three. Which method.** Stepping, covering and spectral estimation answer different questions.
+
+**Decision four. What range to fit.** The boundary between the method's reliable range and its noise floor is
+itself a judgement.
+
+**What recording the four decisions costs.** Two sentences. **What omitting them costs: the dimension becomes
+a property of the object rather than a result of a procedure, which is the category error the chapter
+identifies.**
+
+**The test for a reader.** Take a published dimension and ask which of the four decisions it implies. **Where
+the paper does not say, the number cannot be reproduced even in principle, and irreproducibility is a
+different problem from wrongness — it is the absence of a claim that could be checked at all.**
+
+**Why this matters beyond geography.** Every scaling measurement in this book's material faces the same four
+decisions: a tail index requires a cut-off, a memory parameter requires a bandwidth, a dimension requires a
+ruler. **The decisions are the analysis, and the number is their residue.**
+
+## The coastline as a template for a measurement dispute
+
+The disagreement the paper provoked has a shape that recurs whenever a quantity turns out to depend on the
+instrument, and the shape is worth extracting.
+
+**The four moves of the dispute.**
+
+**A measurement is reported.** A length, a dimension, a scaling exponent.
+
+**A critic measures differently and reports a different number.** Both procedures are defensible. **The
+disagreement is not about arithmetic.**
+
+**The disagreement is resolved by identifying the procedure, not by reconciling the numbers.** The two results
+stand, each indexed to its method. **Neither is withdrawn and neither is wrong.**
+
+**The quantity is redefined to include the procedure.** What is reported becomes "the length measured this way
+over this range". **The redefinition is the resolution, and it is a change in what the number means rather
+than in what it is.**
+
+**Where the same shape appears in this book. Three places.**
+
+**Tail exponents.** Rank-based and likelihood estimators disagree, and the resolution is to report both with
+their cut-offs.
+
+**Memory parameters.** Estimators vary with bandwidth, and the resolution is the effective-sample correction.
+
+**Cross-sectional correlations.** Correlations depend on the window, and the resolution is to report the
+window.
+
+**What the template predicts.** A quantity that cannot be reported without its procedure will be contested for
+as long as the procedure is omitted. **The contest is not a sign that the field is confused; it is a sign that
+the reporting convention has not yet absorbed the dependence.**
+
+**Why the paper is worth reading for this reason alone.** Because it is a clean case of a measurement dispute
+resolved correctly, and the resolution is available in four pages. **Most such disputes in this book's material
+take decades, and the difference is that here the object was a coastline, which nobody had a position in.**
+
+## A note on what this chapter could not check
+
+The full text of Mandelbrot (1967) was not available to me. The argument above rests on the
+abstract, the figure captions, the reference list, and the passages quoted in the secondary
+literature; the six values and the paper's own descriptions of its selection criteria come from
+sources that reproduce the paper's page 637 table, and I have flagged which of my statements are
+interpretations rather than quotations.
+
+The critiques of box-counting cited in the estimation section were located by record rather than
+read in full, and their content is described here only at the level their titles and abstracts
+support.
+
+And the two-orders convention in the scale-span rule is mine. It is published in the constructed
+register so that it can be argued with.

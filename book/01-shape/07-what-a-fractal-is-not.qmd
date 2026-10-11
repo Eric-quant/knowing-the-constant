@@ -1,0 +1,438 @@
+# What a Fractal Is Not {#sec-fractal-misuses}
+
+The word fractal entered the language faster than the mathematics that produced it, and this is not
+Mandelbrot's fault. He coined the term in the 1970s for objects with non-integer dimension, and
+within two decades it was being used to describe coastlines, clouds, heartbeats, stock charts,
+organisational structures, and the internet.
+
+Some of those uses are legitimate. Most are decorative. A few are actively misleading, in the sense
+that they lead people to expect a specific behaviour from a system that has never shown it.
+
+This chapter collects the misuses, maps each back to the source it came from, and states the
+correction. It is the last chapter of Part I that deals with objects, before Part II turns to
+decisions.
+
+## The nine misuses
+
+| Misuse | What it asserts | Where it comes from | Correction |
+| --- | --- | --- | --- |
+| Self-similar at every scale | An object looks the same at any magnification | The mathematical ideal, where the construction is iterated without limit | Natural objects are statistically self-similar over a finite range, and the range matters more than the exponent |
+| Dimension is a property | Each object has one dimension | The similarity dimension of a constructed curve, which is exact by counting | An estimated dimension is a joint property of object, method, and window |
+| Fractal means random | Roughness and randomness are the same thing | The stochastic examples, which dominate the popular literature | Deterministic constructions are the clearest fractals; randomness is one way to generate roughness, not the definition |
+| Fractal markets cannot be forecast | Geometry implies unpredictability | An inference from a description to a decision | A geometric description contains no timing information either in favour of or against forecasting |
+| Fractal means complex | Rough shapes are complicated systems | Confusion with complexity science, a different field with different tools | A coastline is geometrically complex and dynamically simple; the two are separate axes |
+| No characteristic scale anywhere | Scaling holds globally | Extrapolation from the fitted range | Finite ranges are the rule; most objects scale within an interval and not outside it |
+| Fractals are natural | Nature is made of fractals | The famous examples, which are selected cases | Most fractals are mathematical objects; in nature, approximate scaling appears in some systems over some ranges |
+| Dimension tells you risk | A higher dimension means more danger | The association between thick tails and rough paths | Dimension describes geometry; risk describes consequences, and the two are connected only through the process that generates both |
+| Fractal geometry replaces calculus | Smooth mathematics is obsolete | Rhetoric, mostly Mandelbrot's own | Calculus works within regimes; fractal geometry describes the transitions between and the boundaries of regimes |
+
+## Where the misuses came from, in order
+
+The nine rows did not appear simultaneously, and their order tells a story about how mathematical
+vocabulary enters public use.
+
+**First came the pictures.** The Mandelbrot set and the Koch curve were visually extraordinary and
+were reproduced everywhere in the 1980s. They established the word without establishing the
+mathematics, and they attached the idea of fractality to the idea of beauty.
+
+**Then came the applications,** in fields with a ready supply of rough measurements: materials,
+physiology, geography, telecommunications. These were largely legitimate, and largely careful,
+because the practitioners had data and needed to fit it.
+
+**Then came the metaphors,** in management, strategy, and popular psychology. This is where the
+corrections in the table are mostly aimed, and it is where the damage is concentrated, because
+metaphors do not carry scopes.
+
+**Finally came the financial uses,** in two opposite directions: as a warning that risk models were
+understating tails, and as a source of trading signals built on dimension estimates. The first use
+was vindicated. The second is the misuse that costs money.
+
+The sequence matters because it explains why the corrections are needed even though the underlying
+research was careful. **The popularisation of a concept is a separate event from its discovery, and
+it has its own failure modes.**
+
+## Why the misuses cluster
+
+The pattern in the table is not random. Eight of the nine come from the same source: **the
+vocabulary travels further than the mathematics.**
+
+"The coastline is self-similar" is a sentence anyone can use after reading a paragraph. The
+statement it paraphrases — that the measured length follows a power law in the ruler opening over a
+specified range — requires a plot, a fit, and a reported window. The first sentence is portable;
+the second is not.
+
+Portable sentences get used out of context, and the context they lose is always the same three things: the range, the method, and the object's stationarity. Three losses. One habit fixes them. Every correction in the table
+restores one of them.
+
+**The single most useful habit, when reading any claim about fractals, is to ask over what range.**
+If the answer is not available, the claim is decorative.
+
+## A worked correction
+
+Take a claim of the kind that appears in the popular literature: "the market is fractal, which is
+why it crashes."
+
+Four questions, in the order the book's devices supply.
+
+**What is the claim, precisely?** Two claims are bundled. The first is that price series have
+self-similar statistical structure over some range of time scales. The second is that this structure
+explains crashes. The first is grade II when stated properly. The second is not a claim at all
+until a mechanism is specified.
+
+**Over what range?** Part I's answer: a scale-invariant description holds over a few orders of
+magnitude in volatility and considerably less reliably in returns. The claim as popularly stated
+has no range, which means it has no content.
+
+**Where did the link to crashes come from?** From the association established in Part I: rough
+paths and fat tails are both produced by the same processes. The association is real. The mechanism
+is not specified by the geometry, so the explanatory step is missing.
+
+**What would the correction sound like?** Something like: "prices show thick tails and
+scale-dependent roughness over ranges that vary by market and period; the same underlying processes
+— heterogeneous participants, feedback, lumpy information — plausibly produce both; the geometry
+therefore predicts nothing about timing, and any claim that it does requires a mechanism."
+
+That sentence is less quotable than the original and it is the version that survives audit.
+
+## The one misuse that does real damage
+
+Most of the nine are harmless, in the sense that a reader who takes them seriously will simply be
+puzzled rather than wrong.
+
+One of them costs money, and the mechanism by which it does so is worth tracing because it illustrates how a descriptive quantity becomes a decision input through a chain of inferences that nobody audits at any individual step. **Dimension tells you risk** has been used to justify position sizing, to
+argue that a market is "more dangerous" because its dimension is higher, and to build signals from
+dimension estimates. It fails for two reasons, and they are independent.
+
+The first is that dimension is a geometric property estimated with the window sensitivity of the
+previous chapter. A trading signal built on it inherits that sensitivity directly.
+
+The second is conceptual. Even a perfectly measured dimension says nothing about magnitudes. Two
+series can have the same exponent and produce completely different losses, because the exponent
+describes the scaling of frequencies, not the size of anything in particular.
+
+**Geometry and consequence are linked only through the mechanism that produces both.** A market
+with rough paths tends to have thick tails, because the same processes — heterogeneous
+participants, feedback, lumpy information — generate both. But the link is through the mechanism,
+not through the geometry, and it therefore has to be argued case by case rather than assumed.
+
+## The rhetoric problem
+
+There is a second-order effect worth naming, because it affected the reception of the material in
+this part.
+
+Fractal geometry arrived with unusually strong rhetoric attached. Its popular presentations
+emphasised a break with the smooth mathematics of the previous three centuries, and the standard
+examples — the Koch curve, the Mandelbrot set, the coastline — were chosen because they are
+striking.
+
+The striking examples had a cost. A reader who comes to fractals through the pictures expects a
+theory that replaces calculus and explains nature. What is actually on offer is narrower and more
+useful: a set of tools for describing objects whose roughness behaves in a certain way over a
+certain range, and a warning that the usual summary statistics may not apply to them.
+
+**The gap between the rhetoric and the content is the reason the corrections in this chapter are
+needed at all.** A mathematics with a smaller publicity footprint would have generated fewer
+decorative uses.
+
+## Claim and tool
+
+There is no new claim here. The chapter is a catalogue of the ways a set of established results has
+been over-extended, with each over-extension traced to a specific lost condition.
+
+The tool is the catalogue itself, and it is the book's, in the narrow sense that nobody had
+assembled it in one place with the sources attached. It is offered as an appendix-quality product
+rather than as an argument.
+
+## Boundary conditions
+
+The catalogue applies to the use of fractal concepts outside mathematics. Inside mathematics, the
+notions are precise and the misuses do not arise.
+
+It does not apply to work in which the range is reported and the estimator is specified. Such work
+is not captured by any of the nine rows, and the reader who expects it to be has misread the
+chapter.
+
+And it does not claim that natural scaling is rare. It claims that natural scaling is bounded, and
+that the bounds are more informative than the exponent.
+
+## The reception problem, in the author's own terms
+
+There is a pattern in how Mandelbrot's later writing treats his early reception, and it is instructive
+for anyone who publishes a mathematical result with practical implications.
+
+**He kept returning to the objections.** The 1963 paper was followed by a correction in 1972, and the
+coastline paper of 1967 was preceded by a long period of unpublished work on the same question. In
+the *Selected Works* and in the retrospective essays, the tone is that of a researcher who felt the
+objections had been answered and the answers had not been read.
+
+**He was partly right and the pattern is general.** Partly right, because the empirical regularity
+did survive and the practice of looking at tails directly did spread. General, because a reception is
+not a verdict on a claim; it is a social process with its own timescale, and the timescale for a
+mathematical argument to change practice is measured in decades.
+
+**What a reader should take from it.** Two things, and they pull in opposite directions.
+
+The first is patience. A result that is dismissed on its first appearance is not thereby wrong, and
+the record in this material contains several cases where the scepticism turned out to be about the
+author's chosen family rather than about the phenomenon.
+
+The second is scepticism about that patience. A researcher who believes the objections were not
+answered is not a reliable judge of whether they were. **The claim that the critics were wrong is
+itself a claim, and it needs the same treatment as the original.**
+
+**Why this matters for the book's argument.** The four-column protocol rests on the observation that
+claims decay while tools survive. The reception history adds a third element: **the vocabulary can
+survive while both the claim and the tool are contested**, which is the state of the word "fractal"
+in most of its uses today.
+
+## Saying it correctly
+
+The chapter's table lists misuses. This section offers the corrected formulations, because a reader who
+has been told what not to say needs a version that can be said.
+
+**Instead of "the market is fractal", say** that returns show scale-dependent roughness over a stated
+range, measured by a stated method, with the range and the method reported.
+
+**Instead of "this has dimension 1.7", say** that a measurement procedure applied over a stated range
+yields a slope of about 1.7, and that the value depends on the range and the method.
+
+**Instead of "fractals explain crashes", say** that rough paths and fat tails are both consistent with
+the same family of generating processes, and that the geometry alone makes no prediction about timing.
+
+**Instead of "nature is fractal", say** that many natural objects show structure across scales, that the
+description is useful for some purposes, and that the range over which it holds is an empirical question
+in each case.
+
+**What the four corrections share.** Each names the procedure, the range, or the purpose, and each gives
+up a claim to intrinsic properties. **The corrected versions are longer, less quotable, and the only
+versions that survive an expert reader.**
+
+**A practical test.** Before using a fractal description, ask what could be done differently depending
+on whether it were true. Where the answer is nothing, the description is decoration, and the honest
+statement is that the comparison is a metaphor rather than a measurement.
+
+## What the vocabulary cost
+
+The word spread faster than the mathematics, and the cost of that spread is worth an accounting because it
+recurs with every popularised technical term.
+
+**What was gained.** A real benefit. A name for structure across scales, which made a class of observations discussable
+outside specialist literature. Researchers in materials, physiology, geography and telecommunications found
+each other's work because they shared a word. **That is a real benefit and it is why the term survived the
+family that carried it.**
+
+**What was lost.** The conditions. The conditions. A term that travels without its scope invites uses that the original
+work would not license, and the mechanism is not ignorance but grammar: **a noun suggests a property, and a
+property suggests that it is present or absent rather than present over a range and to a degree.**
+
+**Three costs.** In order.
+
+**Measurement claims became descriptions.** Checkability lost. "This object is fractal" replaced "this object's measured
+properties scale over this range", and the second is checkable while the first is not.
+
+**Comparisons became classifications.** Quantities to labels. Two objects could be compared quantitatively; instead they were
+sorted into fractal and not.
+
+**Disagreement became definitional.** Unresolvable, by construction. Arguments about whether something is a fractal cannot be resolved,
+because no measurement settles a definition. **Arguments about scaling ranges can be resolved, because the
+measurements are comparable.**
+
+**What the pattern predicts for current vocabulary.** The same trajectory awaits any term that names a
+structure without carrying its conditions: "black swan", "tail risk", "antifragile", "complex system".
+**The prediction is falsifiable and worth recording: a term's usefulness declines as its use spreads, unless
+the conditions travel with it.** The practical remedy is to write the conditions into every use, which is
+what this chapter has done and what makes its prose slower than the writing it criticises.
+
+## What to do with a fractal claim you did not make
+
+Most readers encounter the vocabulary second hand, in a document they are reviewing or a proposal they are
+assessing. The practical task is not to avoid misuse but to detect it, and the detection has a routine.
+
+**Step one. Find the claim's verb.** "Is fractal", "exhibits fractal structure", "has dimension". **A
+copular claim asserts a property and cannot be checked; a measurement claim can.**
+
+**Step two. Look for a range.** Any sentence containing a scaling claim without a range is incomplete, and its
+incompleteness is the finding. **The absence is not a stylistic matter; it means the claim has no empirical
+content.**
+
+**Step three. Look for the method.** Where two methods appear, the claim is likely measured. **Where none
+appears, the number came from a source rather than from an analysis.**
+
+**Step four. Ask what the claim is doing.** In a document, a fractal claim usually supports an argument about
+complexity, unpredictability or self-similarity across domains. **Where the supported argument does not depend
+on the scaling result, the claim is decoration, and saying so is more useful than correcting the
+mathematics.**
+
+**What to say when the claim fails the routine. Three options.**
+
+**"The range and the method need to be stated."** The minimal correction, and the one most likely to be
+accepted.
+
+**"This is a description of a measurement, not a property of the object."** The substantive correction.
+
+**"The claim is not load-bearing for the argument, so it can be dropped."** The most useful correction, and
+the least often offered, because reviewers treat claims as needing correction rather than removal. **Dropping
+a decorative claim improves a document; correcting one adds length without changing the conclusion.**
+
+## Three claims that look alike and are not
+
+The misuse catalogue is a list of errors. Its underlying content is a distinction between three kinds of claim
+that share a vocabulary, and stating the three makes the list memorable.
+
+**Kind one. A geometric description.** The object's measured properties scale over a range. **Empirical,
+checkable, modest.**
+
+**Kind two. A generative claim.** The object was produced by a process that is self-similar by construction.
+**Mechanistic, and falsifiable by identifying the process.**
+
+**Kind three. A metaphor about complexity.** The object resembles other complex things. **Neither empirical
+nor mechanistic. Rhetorical.**
+
+**Why the three are confused.** Because all three are expressed with the same words, and the vocabulary does not
+distinguish them. **"The market is fractal" could be any of the three, and the reader must infer which from
+context — which is exactly the failure mode the word enables.**
+
+**What follows for reading. One question.** Which of the three is being claimed. **The answer determines
+whether an objection is possible: kind one can be measured, kind two can be investigated, and kind three can
+only be agreed with or ignored.**
+
+**What follows for writing.** State which kind is intended. **A writer who means kind three and writes as
+though it were kind one has produced a claim that cannot be evaluated, and the production is usually
+accidental.**
+
+**Why this distinction is worth carrying beyond the chapter.** Because the same three kinds appear wherever a
+technical vocabulary enters general use: complexity, emergence, resilience, systematicity. **The question —
+description, mechanism, or metaphor — is answerable in one sentence and prevents most of the misuse the
+chapter catalogues.**
+
+## The corrected sentence in three contexts
+
+The chapter offers corrected formulations. Their value depends on fitting the context, and three contexts
+require different versions.
+
+**A research paper.** The measured form, with range and method. "The slope over the range measured by
+box-counting between scales A and B is approximately 1.3, with a standard error of 0.08 and no evidence of
+curvature within the span." **Which is what a methods section requires and what a reader can check.**
+
+**A decision memo.** The operative form, with the consequence. "The roughness measure is stable over the range
+comparable to our operational horizon, and it is measured by one method; a second method was not available."
+**Which tells a decision-maker what the number supports and what it does not.**
+
+**A general audience.** The structural form, with the caveat attached. "Many natural objects show the same
+kind of structure at different scales, which is useful for some purposes and does not imply anything about
+what happens next." **Which is longer than the slogan and shorter than the paper, and it carries the boundary in
+the sentence.**
+
+**What the three versions share. One property.** Each names the range, the method, or the purpose. **None
+ascribes a property to the object without qualification, which is the error the chapter catalogues.**
+
+**Why three versions rather than one.** Because the improper formulation is popular precisely because it is
+portable, and only a portable proper formulation can displace it. **A strict version that works in a paper but
+not in a conversation leaves the conversation to the slogan.**
+
+**What to do when the three versions conflict.** They do not: they differ in what the audience needs to
+check. **The paper's version is checkable, the memo's is actionable, and the general version is defensible, and
+a writer who can produce all three has understood the distinction.**
+
+## The vocabulary test in three questions
+
+The chapter catalogues misuses and offers corrections. The practical skill is detecting a misuse in a document
+one did not write, and three questions do most of that work.
+
+**One. Is the claim a description or a property.** A description names a procedure and a range; a property is
+ascribed to an object. **"Measured as X over this range by this method" is a description; "is fractal" is a
+property and cannot be checked.**
+
+**Two. Is there a number, and does it come with a method.** A number without a procedure has been quoted rather
+than measured. **Which is detectable from the presence of a reference rather than of a description.**
+
+**Three. What is the claim doing in the argument.** A decorative scaling claim can be dropped without changing
+the conclusion, and dropping it is more useful than correcting it. **Which is the most frequent finding when
+the questions are applied to a document.**
+
+**What the three questions produce. A judgement about the claim rather than about the paper.** Which matters
+because a paper can be sound and carry one decorative misuse, and treating the misuse as a defect of the work
+misreads both.
+
+**What the questions cannot detect. An error in the mathematics.** A claim can be a description with a range and
+a method and still be wrong. **The questions detect category errors, not mistakes, and the two require different
+reviews.**
+
+**How to use the questions in a review. One sentence per claim.** Which turns a marginal comment into an
+actionable note: "the range and method are needed", or "the claim is not load-bearing and can be cut". **Two
+sentences, and the second is the one that improves the document.**
+
+**Why the questions are worth stating rather than the list of misuses.** Because the list is long and the
+questions are three. **A reader who has the questions will detect the misuses in the list and the ones the list
+does not contain.**
+
+Three questions. Description or property. Number with a method. Load-bearing or not. Ask them. Then move on.
+
+## The vocabulary and three kinds of reader
+
+The chapter catalogues misuses that arose from a technical term entering general use. Three kinds of reader meet
+the term, and each needs a different thing from this material.
+
+**A specialist reading a paper.** Who needs the measured form and will find the misuse if the paper contains
+one. **What this material offers is the range-and-method requirement as a reviewing standard.**
+
+**A practitioner reading a proposal.** Who needs the second question: what is the claim doing in the argument.
+**Which is the practical test, and the most common finding is that the claim is decorative and can be cut.**
+
+**A general reader meeting the word in journalism.** Who needs the corrected form and a reason to distrust the
+slogan. **Which is the structural version with the boundary in the sentence.**
+
+**What the three readers share. One requirement.** Each needs to know whether the claim is a description or a
+property. **Which is the first of the three questions and the one that works at every level.**
+
+**What differs across the three. The action.** The specialist reviews; the practitioner cuts; the general reader
+distrusts. **Which is why the chapter offers three corrected formulations rather than one.**
+
+**What the material cannot do for the general reader. Supply the mathematics.** Which is not needed for the
+distrust. **A reader who knows that a scaling claim without a range carries no content has the operative part, and
+the mathematics would refine it rather than establish it.**
+
+**Why the three readers are worth naming.** Because the chapter's corrections were written for one of them and
+apply to all three. **Three readers, one requirement, three actions, and the requirement is the first
+question.**
+
+## The vocabulary and three ways to keep it honest
+
+The chapter argues that a term's usefulness declines as its use spreads unless the conditions travel with it.
+Three practices keep them travelling.
+
+**State the range in the same sentence as the claim.** Not in a footnote or a methods section: in the sentence.
+**Which is the only practice that survives compression, because the sentence is what gets quoted.**
+
+**Use the hedged form as the default and the strong form only when measured.** "Appears scale-invariant over this
+range" rather than "is fractal". **Which costs one clause and prevents the ascription of a property.**
+
+**Say what would falsify it.** A break in the scaling, a second method disagreeing, a mechanism change. **Which
+converts a description into a claim with a test and takes one clause.**
+
+**What the three practices have in common. One property.** Each is a clause rather than a section, and each fits
+in the sentence that carries the claim. **Which is why they are adoptable at the point of writing.**
+
+**Which practice does most of the work. The first.** Because the range is the condition that most uses drop and
+the one a reader can act on. **A claim with a range and no hedging is checkable; a hedged claim with no range is
+not.**
+
+**What the practices cannot do. Prevent the spread of the word.** Which is beyond a writer's control. **What they
+can do is make each use carry its conditions, so that a reader who meets the term in a series of texts finds the
+conditions rather than losing them.**
+
+**Why the practices are listed here rather than in the corrections.** Because the corrections are formulations and
+the practices are habits, and a reader who has the habits will generate the formulations. **Three clauses, and the
+practices are what keep the corrections in place.**
+
+## A note on what this chapter could not check
+
+The attributions in the table — which misuse comes from which kind of source — are my
+characterisation based on reading across the popular and applied literature. I did not construct a
+sample of texts and code them, so the table is a taxonomy with illustrative instances, not a
+measurement of how common each misuse is.
+
+The claim that Mandelbrot's own rhetoric oversold the subject is my reading of his popular writing
+and its reception. He was also careful, in the technical papers, to state limits, as the previous
+chapters have shown. The rhetorical criticism is aimed at the popular presentation, not the
+research.

@@ -1,0 +1,488 @@
+# The Ledger as an Instrument {#sec-ledger-instrument}
+
+Chapter 16 introduced the irreversibility ledger as an accounting device. This chapter treats it as
+something more demanding: an instrument that decides what happens next.
+
+The distinction matters. An account records. An instrument acts. That is the difference. A risk register that lists
+exposures and is then filed is an account. A ledger whose rule is **closed to new entries until this
+side is empty or bounded** is an instrument, because it forecloses options before any estimate is
+made.
+
+## What makes something an instrument
+
+Three properties, and they are worth stating because most decision aids have only the first.
+
+Where the constraint is absent the instrument is decoration, however carefully the entries are written, because a document that lists exposures without limiting what may be done next has produced a description rather than an instrument. The ledger's output is a set of permitted moves,
+not a set of considerations.
+
+**It operates before the estimates exist.** Before, not after. The screen runs on structure, so it does not wait for the
+parameter work that may never be completed.
+
+**Its output can be checked by someone else.** Anyone. A ledger entry names the exposure, the mechanism, the
+stress-case exit cost, and the bounding move. A colleague can disagree with any of those four, which
+makes the instrument auditable in a way that a judgement cannot be.
+
+## How the three devices compose
+
+Part IV has introduced three constructed devices. They are not alternatives, and the order in which
+they apply is forced.
+
+**The Ledger first.** Always, and the reason it comes first is not that irreversibility is the most important consideration but that it is the only one of the three that can be assessed without any estimate at all, which makes it both the cheapest and the most decisive of the stages. Enumerate irreversible exposures and bound or remove them. This stage requires
+no estimates and it eliminates the options that could end the sequence.
+
+**The existence-estimability grid second.** Then the grid. For what remains, ask whether the quantities involved
+exist and can be estimated. This stage determines whether numerical reasoning is available at all.
+
+**Sizing third, with the discount.** Sizing last. Only for decisions that reach this stage and land in the Compute
+cell does the fraction machinery apply, and only with a discount for parameter uncertainty.
+
+| Stage | Device | Input required | Output |
+| --- | --- | --- | --- |
+| 1 | Irreversibility ledger | Structure of the exposure | A bounded or removed set of options |
+| 2 | Existence–estimability grid | Defining expressions; two estimators | A cell, and therefore a method |
+| 3 | Discounted sizing | Estimates with standard errors | A fraction, or a bound |
+
+**The order is not a preference.** Sizing before the ledger computes a fraction for a decision that
+may have no tomorrow. Sizing before the grid computes a fraction from a quantity whose defining
+integral may not converge. **Each stage removes options that the later stages cannot recover**, which
+is why running them out of order produces output that looks complete and is not.
+
+## A worked decision
+
+An illustration, with the specifics deliberately generic.
+
+A firm is considering a large commitment to a new operating model. The commitment is long-dated and
+would require retiring an existing capability.
+
+**Stage one.** Is any exposure irreversible? The retirement of the capability is: the skills leave
+and the institutional knowledge with them. The commitment is contractual: exit requires a
+counterparty's agreement. There is also a social component, because an executive sponsored the
+change. **The ledger's rule applies: bound the exposure before proceeding.** The bounding moves
+available are a pilot at limited scale, a staged transition, and a pre-committed review. The decision
+changes shape before any estimate is made.
+
+**Stage two.** For what now remains — a bounded pilot — is there a quantity that must be estimated?
+Yes: the operating cost differential. Does it exist? Yes. Can it be estimated? Weakly, because the
+pilot's scale changes the cost structure. **The grid puts it in Bound, not Compute.** The correct
+output is a range and a decision rule, not a point estimate.
+
+**Stage three.** Because the cell is Bound, the sizing machinery is not applicable. The output is a
+cap: proceed while the cost differential is below a stated threshold, at a scale that keeps the
+exposure bounded.
+
+**Note what produced the decision.** Not an estimate of the probability of success. Not a discounted
+cash-flow calculation. Two structural questions and one bounded comparison.
+
+## The three possible outputs. Name them.
+
+The instrument returns one of three things, and naming them makes the system honest.
+
+**A decision.** A fraction, a cap, or a go-ahead, with its conditions.
+
+**A bound.** A range and a decision rule, where the quantity exists but cannot be estimated well.
+
+**A refusal.** Or nothing at all. Where the exposure cannot be bounded, the quantity does not exist, and the decision
+procedure has nothing to operate on. The output is that the decision cannot be made by this method,
+which is a finding rather than a failure.
+
+**The refusal is the output most often suppressed**, and suppressing it is how an instrument becomes
+a ritual. An analyst who is required to produce a number will produce one, and the three-cell
+structure exists to make that harder.
+
+## Two failure modes
+
+**Ritual use.** Common, and the reason the instrument specifies the contents of each entry rather than merely requiring an entry, since a requirement to fill in a field cannot be satisfied badly if the field demands a mechanism, a stress-case cost, and a named bounding move. The devices are completed as forms: a ledger with every exposure marked "bounded"
+because the entries were written carelessly; a grid populated without any attempt at two estimators;
+a discount applied with a coefficient of variation invented for the occasion. **Forms invite
+completion, and completion is not what the instrument is for.**
+
+The defence is that the ledger's second column must name a mechanism, the grid's second question
+requires an actual comparison of estimators, and the discount requires a standard error. Each
+requirement is a place where a careless entry becomes visible to an auditor.
+
+**Device shopping.** Also common, and the reason the devices are more reliable in the hands of an auditor than in the hands of the person producing the decision. Choosing the device that produces the answer one wanted. A practitioner who
+prefers a structural decision will find a way to classify the problem into the Avoid cell; one who
+prefers a quantitative answer will find a way to reach Compute.
+
+I do not have a clean defence against this, and I would rather say so than imply otherwise. **The
+devices are more reliable in the hands of someone checking the work than in the hands of someone
+producing it** — the same limitation the Constant chapter recorded about itself, and it is worth repeating that the devices are proposals rather than validated instruments, offered with their failure conditions attached because a proposal that cannot fail is not a proposal.
+
+## The instrument applied to itself
+
+**What transformation should it survive?** Changes of scale and domain: it should work for a firm, an
+individual, and a public body.
+
+**Does it?** The three stages and their order are domain-general. What does not travel is the
+standard for an acceptable exit cost and the tolerance for drawdown, both of which are properties of
+resources rather than of the method.
+
+**Verdict.** A grade II construction, with the third stage's discount at grade II and its κ
+convention at grade III.
+
+## Claim and tool
+
+The claim: irreversible exposures must be screened before anything numerical happens, and the three
+constructed devices compose into a decision procedure when applied in a forced order.
+
+The tool: the ordering itself, and the three possible outputs, including the refusal.
+
+## Boundary conditions
+
+The instrument presumes that exposures and their mechanisms can be identified, which is a judgement
+and is often contested inside organisations.
+
+It presumes that a decision-maker can act on structure — that a pilot is available, that a cap can be
+imposed, that an exit can be pre-committed. Where the available choices are binary, the first stage
+has nothing to work with and the instrument reduces to a yes-or-no vote with better vocabulary.
+
+And it does not tell you which decision to make. It tells you which decisions can be made by which
+method, which is a prior question and the only one this book claims to answer.
+
+## Running the three stages in ninety minutes
+
+The procedure is often described as a way of thinking. It is more useful as a way of scheduling an
+afternoon.
+
+**First thirty minutes. Structure only.** List the exposures. No probabilities, no forecasts, no
+discussion of likelihood. For each, identify the mechanism of irreversibility and the stress-case exit
+cost. If someone raises a probability, note it and defer it.
+
+**Second thirty minutes. The grid.** Take the quantities the decision depends on, one or two rather
+than ten. For each: write the defining expression, and where possible run two estimators. Most of the
+time is spent on the definitions, which is the point.
+
+**Third thirty minutes. The output form.** Decide for each quantity whether the output is a number, a
+range, a substitute or a refusal. Then write the decision, with its conditions and its review date.
+
+**What the schedule produces.** A decision that is safer before any estimate was made, a stated method
+for each quantity, and one page of output. **The page is the deliverable, and its most useful feature
+may be what it omits: quantities that appeared in the discussion and did not survive stage two.**
+
+**What disrupts it.**
+
+**Argument about probabilities in stage one.** The most common interruption. It is a signal that
+someone has skipped the ordering.
+
+**A demand for a number.** Stage three cannot supply one for a quantity in the Bound cell, and the
+pressure to produce one appears here.
+
+**More than three quantities.** A decision depending on ten estimates is usually a decision that has
+not been specified, and the schedule's discipline is to send the specification back.
+
+**Why ninety minutes matters.** Because a procedure that takes a quarter will not be run, and a
+procedure that takes an afternoon will be run on the decisions that matter.
+
+## The instrument's audit trail
+
+An instrument that produces a decision should leave a record that a stranger can check. The three
+stages each generate one, and the records are different in kind.
+
+**Stage one leaves a list.** Exposures, mechanisms, stress-case exit costs, bounding moves. Every field
+is checkable against a document or a named person. The record's weakness is that the judgment about
+what counts as irreversible is not in the list, only its results.
+
+**Stage two leaves a method statement.** For each quantity: the defining expression, the two
+estimators, and the resulting cell. The weakness is that the second estimator can be chosen to agree,
+and the record does not show the alternatives that were considered.
+
+**Stage three leaves a decision rule.** A fraction with its discount, a bound with its threshold, or a
+refusal with its reason. The weakness is that the rule is only as good as the parameters, which are
+recorded elsewhere.
+
+**What an auditor can do with the three.** Check the list against the project's documents. Recompute
+the second estimator independently. Reproduce the decision from the rule and the parameters. **Each is
+a mechanical check, which is the property that makes the instrument auditable rather than merely
+documented.**
+
+**What an auditor cannot do.** Judge whether the enumeration was complete, because the omissions are
+invisible by construction. This is the instrument's structural weakness, and the only mitigation is
+that a second person doing the enumeration alone will usually find what the first missed. **Two lists
+are worth more than one careful list.**
+
+## Training the instrument on a past decision
+
+The instruments in this book are learned by use, and the safest way to begin is retrospectively, on a
+decision whose outcome is known and whose record is available.
+
+**Why retrospective practice works despite the hindsight problem.** The purpose is not to evaluate the
+decision, which hindsight corrupts, but to learn the notation. **Running the three stages on a past
+decision teaches what a stress-case exit cost looks like, and that knowledge transfers.**
+
+**The procedure.**
+
+**Pick a decision from at least two years ago whose records survive.** A project approval, a hire, an
+investment, a contract.
+
+**Write the exposures as they were at the time.** Not as they turned out. Where the record is thin, write
+what a participant remembers, and mark it as such.
+
+**Name the mechanisms and the stress-case exit costs.** This is where the exercise teaches, because the
+categories are unfamiliar.
+
+**List the quantities the decision depended on, and classify them.** Most retrospective exercises end
+with at least one quantity that should have been in a different cell.
+
+**Write the output the procedure would have produced.** A fraction, a bound, a substitute or a refusal.
+
+**Compare with what was actually done.** Not to grade the decision, but to see whether the procedure would
+have changed it. **Where the answer is no, the exercise has established that the procedure was
+unnecessary for that decision, which is a useful result about the procedure's scope.**
+
+**What repeated practice produces.** A practitioner who can run the three stages in twenty minutes on a
+live decision, which is the capability the ninety-minute version is designed to build.
+
+## The instrument without the framework
+
+The three stages are presented as a composite. A practitioner can use the first one alone, and the partial use
+is worth describing because it is the most likely adoption path.
+
+**What the first stage requires. Nothing but structure.** Exposures, mechanisms, stress-case exit costs,
+bounding moves. **No quantities, no definitions, no opinions about tails.**
+
+**What it delivers on its own. Three things.**
+
+**A list of exposures with named mechanisms.** The most transferable output, and the one that changes
+discussions immediately.
+
+**The identification of the social mechanism.** The one most often omitted from risk registers, and the one
+that explains persistence in losing positions.
+
+**A bounded option set.** Where the bounding moves are adopted, the decision's shape changes before any
+analysis. **That change is available without believing anything about fat tails.**
+
+**What is lost by stopping at the first stage.** The classification of quantities, which determines the form
+of the output. **A practitioner who skips stage two will still produce point estimates for quantities that
+should be bounded, and the grid is the cheapest part of the method.**
+
+**Why the partial adoption is nonetheless reasonable.** Because stage one requires no theory, no data and no
+vocabulary beyond four words for mechanisms. **An organisation that adopts one page of this book has adopted
+the page with the largest effect per minute spent, and the remaining stages require a level of analytical
+buy-in that not every setting can supply.**
+
+**What the book claims about partial use. Nothing measured.** The claim that the stages are ordered is logical;
+the claim that the first stage is the most valuable per minute is a judgement about adoption, and the book has
+no evidence for it.
+
+## The instrument and the written record
+
+The three stages produce a decision. They also produce documents, and the documents are what survive the
+decision's authors.
+
+**What the record contains. Four items.**
+
+**The exposure list, with mechanisms and stress-case exit costs.**
+
+**The quantity list, with defining expressions and cells.**
+
+**The output, with its discount, bound or threshold.**
+
+**The review date and its trigger.**
+
+**Why the record matters more than the decision. Three reasons.**
+
+**The decision is one event and the record is reusable.** The next decision in the same domain starts from the
+list.
+
+**The record is auditable and the decision is not.** A decision can be defended by its outcome; a record can be
+checked by its contents.
+
+**The record survives its author.** Which matters for an instrument whose value depends on the mechanisms being
+named rather than on the conclusion.
+
+**What the record should not contain. Two things.**
+
+**Probabilities in the exposure section.** They belong with the quantities, where they are labelled.
+
+**Scenarios of the future.** A scenario is a mechanism claim, and the mechanism field carries it.
+
+**How long the record should be. One page.** Shorter than a memo and longer than a note. **A page is short
+enough to be written in the ninety minutes the procedure takes and long enough to carry the four items.**
+
+**What happens without it. One thing.** The instrument becomes a conversation. **Conversations are how the
+procedure is learned and records are how it is retained, and an organisation that holds the first without the
+second will re-derive the same exposures every year.**
+
+**Why this section closes the chapter.** Because the instrument's value is realised over a sequence of
+decisions rather than in any one of them, and the sequence exists only if the record does. **The page is the
+instrument's memory and therefore the instrument.**
+
+## The instrument's three outputs in a decision log
+
+A decision log records what was decided and why. The instrument produces three kinds of output, and each
+belongs in the log in a different form.
+
+**A decision. One line plus conditions.** The action, the size, the discount. **Conditions travel with it,
+because a fraction without its cell is uninterpretable.**
+
+**A bound. One line plus threshold.** The range and the rule. **The threshold is part of the output, and a log
+that records only the range has lost the operative content.**
+
+**A refusal. One line plus reason.** Which is the output most often omitted, and its omission is what makes a
+log misleading. **A log of decisions only will show a firm that acted in every case, when the instrument
+recommended refusal in some.**
+
+**What the log's structure should make visible. Two things.**
+
+**Which outputs were refusals.** Because the pattern of refusals is what a reviewer should examine.
+
+**Which decisions came from which stage.** Because a decision that skipped stage one leaves a trace in the
+absence of an exposure list.
+
+**What a reviewer does with the log. Three questions.**
+
+**Which entries are refusals, and were they revisited.** A refusal is a finding and it has an expiry.
+
+**Which entries have no exposure list.** Which identifies the decisions that skipped the screen.
+
+**Which entries' review dates have passed without a review.** Which is the most common failure and the
+cheapest to detect.
+
+**Why the log belongs in this chapter.** Because the instrument's adoption depends on its being visible, and a
+log is what makes it visible to people who were not in the room. **Three output forms, three lines, and the
+structure of the log does the work of the framework.**
+
+**What the log cannot replace. The instrument.** A log records outputs. **A log that shows every decision
+reaching stage three is a record of a process that is being skipped, and the log's value is that it shows
+that.**
+
+## The instrument when the decision is already made
+
+The three stages are presented for a decision not yet taken. Their most frequent use in practice is on a
+decision already made, and the response differs.
+
+**The situation. Common.** A commitment exists and the question is what to do about it. **The ledger's first
+stage re-read as an audit rather than a screen.**
+
+**What the audit asks. Three questions.**
+
+**Which exposures exist now, with their mechanisms.** Not which would have existed at the decision. **A
+commitment changes the exposure set, and the current set is what matters.**
+
+**What the stress-case exit cost is now.** Which is usually higher than it would have been at the decision,
+because the counterparty's position has strengthened and the firm's alternatives have narrowed.
+
+**What bounding moves remain available.** Which are fewer. **A pre-committed exit was available before the
+commitment and may not be now, which is the cost of not having written one.**
+
+**What the audit produces. Two outputs.**
+
+**A revised option set.** The bounding moves still available, applied now rather than at the decision.
+
+**A record of what the first stage would have recommended.** Which is the material for the next decision of
+the same kind.
+
+**What the audit cannot do. Undo the decision.** Which is why the third output is the most valuable: **an
+audit that ends with a written note about what the screen would have said is a training exercise for the next
+commitment rather than a remedy for this one.**
+
+**Why this section belongs in the chapter.** Because the instrument's ordinary use is retrospective, and a
+chapter that presents it only as a screen will be set aside by practitioners whose decisions are already made.
+**Three questions, two outputs, and the second one is what changes behaviour.**
+
+**What the audit costs. An hour.** Which is the reason it is worth running even when the exposure set is
+known: **writing the stress-case exit costs makes them comparable across commitments, which is what turns a
+list of contracts into a portfolio of exposures.**
+
+## The instrument and the three kinds of disagreement
+
+The three stages produce outputs that can be disagreed with, and the disagreements differ in kind. Knowing
+which kind is occurring determines whether the argument is about facts or about values.
+
+**Disagreement about the exposure list. Factual.** One party sees an irreversible exposure that the other does
+not. **Which is settled by evidence: a document, a contract term, a departure clause. The four mechanisms make
+the disagreement specific rather than general.**
+
+**Disagreement about the cell. Partly factual.** One party believes a quantity exists and can be estimated; the
+other does not. **Which is settled by a convergence check and two estimators, and the fact that it is settleable
+is the grid's contribution.**
+
+**Disagreement about the bound or the stake. A value judgement.** Two parties who agree on the facts and the
+cells can differ about how much protection to buy. **Which is not settleable and should be negotiated.**
+
+**Where the instrument helps. Two of the three.**
+
+**The exposure list.** Because the mechanisms give the disagreement a form. **"Which mechanism, and what is the
+stress-case exit cost" is answerable and turns a general worry into a specific claim.**
+
+**The cell.** Because the tests are cheap. **An hour of estimation settles what a day of argument will not.**
+
+**Where it cannot help.** The third kind. **Which is where the framework's usefulness typically ends and where
+the book's closing rule applies: the parties disagree about consequences, and someone bears them.**
+
+**What follows for practice. One procedure.** Classify the disagreement first. **A factual disagreement
+conducted as a values disagreement wastes an afternoon; a values disagreement conducted as a factual one wastes
+a month and produces a number nobody trusts.** The classification takes a sentence, and it determines whether
+the next step is a document, an estimator, or a negotiation.
+
+## The instrument and three kinds of record
+
+The instrument produces a decision and, if it is used well, a record. Three kinds of record serve different
+purposes, and all three appear in the book.
+
+**The exposure list. Structural.** Mechanisms, stress-case exit costs, bounding moves. **Which is the record
+that makes the next decision in the same domain faster and is the one most worth keeping.**
+
+**The quantity record. Methodological.** Defining expressions, estimators, cells. **Which is the record that makes
+an analysis auditable by someone who did not perform it.**
+
+**The decision rule. Operational.** The fraction with its discount, the bound with its threshold, the refusal
+with its reason. **Which is the record that makes the decision executable by someone who was not in the room.**
+
+**What the three share. One property.** Each is usable without the others. **A reader with only the exposure list
+can screen; one with only the quantity record can audit; one with only the decision rule can execute.**
+
+**Which is the most valuable. The exposure list.** Because it is the least specific to a particular analysis and
+therefore the most reusable. **Which is also why it is the one an organisation is least likely to have, since it
+looks like documentation rather than analysis.**
+
+**How the three should be stored. Together.** In the same file, because they are produced by one procedure and
+read by one reviewer. **Three sections of a page rather than three documents.**
+
+**Why the separation from the decision matters.** Because the three records outlive the decision. **A decision is
+an event and the records are assets, which is why the instrument's value is realised over a sequence rather than
+in any one use.**
+
+**What a reviewer should ask for. The exposure list.** Because it is the first output and its absence is the
+finding. **Which is the same question the three-cases chapter suggests and the one that costs nothing to ask.**
+
+## The instrument and three failure modes of adoption
+
+The three stages fail in use for three reasons, and each is institutional rather than analytical.
+
+**The stages are run but their outputs are not recorded.** Which makes the instrument a conversation that
+produces nothing reusable. **The tell is a decision with a rationale and no exposure list.**
+
+**The stages are recorded but not read.** Which makes the instrument documentation for its own sake. **The tell is
+a review date that passes without a review.**
+
+**The stages are read but not acted on.** Which makes the instrument a form of dissent that has no effect. **The
+tell is a refusal recorded and the commitment made anyway.**
+
+**What the three have in common. One property.** Each is a failure of the institution rather than of the
+analysis. **Which is why the book's method sections keep arriving at the same requirement: an independent reviewer
+with the standing to ask.**
+
+**Which failure is most common. The first.** Because recording is the step with no immediate benefit and the
+analysis already feels complete. **Which is why the one-page memo format matters: it makes the record the
+analysis rather than an addition to it.**
+
+**What an organisation can do about the three. One item each.**
+
+**Make the exposure list a required field.**
+
+**Put the review date in whatever system generates reminders.**
+
+**Require the record to accompany the decision rather than the analysis.**
+
+**Why the three are worth separating from the analysis.** Because the analysis is the part practitioners are
+trained for and the adoption failures are where the method dies. **Three failures, one requirement each, and none
+of them is analytical.**
+
+## A note on what this chapter could not check
+
+The composition is proposed by this book. No organisation has been studied using it, and there is no
+evidence in this chapter that the ordering improves outcomes; the argument is that the order is
+forced by the logic of the three devices rather than that it has been validated.
+
+The worked decision is constructed for illustration, and its specifics are generic by design.

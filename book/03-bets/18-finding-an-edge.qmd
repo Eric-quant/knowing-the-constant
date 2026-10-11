@@ -1,0 +1,474 @@
+# Finding an Edge {#sec-finding-an-edge}
+
+Part III changes the question. Parts I and II were about what to do when the world cannot be
+averaged. This part is about what to do when a genuine advantage exists: how to find it, how much
+to stake on it, and how to survive the execution.
+
+The first paper in the sequence is two pages long. Edward Thorp's "A Favorable Strategy for
+Twenty-One" appeared in the *Proceedings of the National Academy of Sciences*, volume 47, issue 1,
+pages 110 to 112, in January 1961 [@thorp1961]. OpenAlex records 29 citations for it.
+
+Twenty-nine citations is a small number for a paper that changed an industry's operating rules and
+started a line of research that runs to the present. The disparity is itself an argument: **some
+results propagate through practice rather than through citation**, and a book that ranked
+contributions by citation count would rank this paper last among the nine it covers.
+
+## The structure that makes a casino game beatable
+
+Casino games are usually designed so that each round is independent and the odds are fixed. Roulette
+is the model: the wheel has no memory, the payouts are set by rule, and no sequence of observations
+changes the expectation of the next spin.
+
+Blackjack breaks the pattern in one specific way, and the whole paper turns on it.
+
+**The cards are dealt from a finite deck without replacement.** After each hand, the deck that
+remains is compositionally different from the deck that was shuffled, and the difference is
+observable to anyone who has been paying attention.
+
+That single fact converts the game from a sequence of identical independent trials into a
+**state-dependent** process. The house edge is an average over states. Some states are better than
+the average, some worse, and the expectation in a particular state depends on which cards remain.
+
+The asymmetry that makes states matter is the rules themselves. The player acts first and may stop
+at will; the dealer must draw according to a fixed schedule. When the remaining deck is rich in
+ten-value cards, that asymmetry works in the player's favour, because a dealer required to draw into
+a ten-heavy deck busts more often. When the deck is poor in them, the asymmetry works the other way.
+
+Note the shape of the argument. No probability is estimated. The deck's composition is computed by
+subtraction. **The edge is not forecast; it is read off a state.**
+
+## Three kinds of advantage, and the one that fools people
+
+The literature on this material conflates three distinct things, and the confusion survives into
+present-day writing about trading.
+
+| Kind | What it is | What it is not |
+| --- | --- | --- |
+| Reduced disadvantage | Playing the basic strategy well, so the house edge is as small as the rules allow | An edge: the expectation is still negative |
+| State edge | Some compositions of the remaining deck produce a positive expectation | A certainty: individual hands still lose |
+| Outcome | Having won money | Evidence of an edge: it is also what variance looks like |
+
+The third row is the one that costs money, and it costs money outside casinos more than inside them.
+
+**Inside a casino the distinction is decidable.** The deck's composition is known, the payouts are
+fixed, and the expectation in a state can be computed. A player who has won is not thereby a player
+with an edge, and the arithmetic can prove it.
+
+**Outside a casino it is not decidable, or not cheaply.** When the edge must be estimated rather
+than computed, a winning record and a genuine edge look the same for a long time, which is why
+sample-size questions that are trivial at a card table become the central practical problem in
+investing. Part III returns to this in Chapter 24.
+
+## What makes an edge usable
+
+From the paper's structure, four requirements, and they are worth stating because each is routinely
+missing in domains where people claim edges.
+
+**Observability.** The state must be readable. Card composition is readable by counting. Many
+market states are not readable, or are readable only with a delay that removes the advantage.
+
+**Computability.** The state must translate into an expectation by a rule the practitioner can
+apply. The paper's contribution is partly the counting scheme — a reduction of the deck to one or
+two numbers a person can hold in mind.
+
+**Stationarity of the rule.** The relationship between state and expectation must hold while you
+are using it. It did, until the casinos changed the rules.
+
+**Exposure to the favourable states.** The edge is realised only if the stake is larger in the good
+states than in the bad ones. **Finding the edge is the first half; Chapter 20 handles the second.**
+
+## From the card table to the market
+
+The migration of this mathematics into finance is not a metaphor. The same author made it, and the
+same structure appears on both sides.
+
+**In both cases there is a state, and the expectation depends on it.** In the casino the state is
+the deck; in a market it might be a spread, a volatility level, a funding condition, or a
+positioning imbalance.
+
+**In both cases the practitioner's job is to read the state and size the stake accordingly.**
+
+The difference is decisive, and it is the reason Part III is harder than Parts I and II.
+
+**At a card table the edge is computed. In a market it is estimated.** Computation has an error of
+zero — the arithmetic is the truth about the deck — while estimation has an error that is not merely
+nonzero but hard to quantify, for all the reasons Part I assembled.
+
+That difference propagates into everything downstream. A computed edge supports an optimal stake
+computed to the decimal. An estimated edge supports a stake you can defend, which is a weaker object
+and the reason Chapter 21 exists.
+
+## Grading it
+
+In the vocabulary of Chapter 26.
+
+**The structural claim is grade I.** That a state-dependent game with an observable state and a
+computable expectation contains favourable states is arithmetic, and it does not depend on any
+estimate.
+
+**Its practical form is grade II.** That a particular game is beatable in practice depends on rules,
+enforcement, and costs. The casino version did not survive its regime change: when the operating
+rules were altered, the advantage shrank.
+
+**The transfer to other domains is grade III, and it is where the paper is most often over-read.**
+"States with favourable expectations exist everywhere" is a statement about the structure of
+stochastic processes and is true almost by definition. "You can find them in any given market" is
+an empirical claim that requires the four requirements above, and they are not usually met.
+
+## Claim and tool
+
+The claim: that a game with a finite deck and a fixed dealer rule has states in which the player's
+expectation is positive, and that the states are identifiable in real time.
+
+The tool: the state-dependence argument itself, and the discipline of separating an edge from a
+result. **The tool is what transferred; the specific counting schemes did not.**
+
+## Boundary conditions
+
+The result requires an observable state, a stable rule linking state to expectation, and a stake
+that can be varied. Remove any of the three and the advantage cannot be realised even if it exists.
+
+It fails where the rule is changed in response to its discovery, which is what happened and which
+recurs in every domain where a structural advantage becomes visible.
+
+And it says nothing about size. A positive expectation with the wrong stake produces ruin, which is
+the subject of the next chapter.
+
+## Where state dependence appears outside a casino
+
+The structural feature that made blackjack beatable is not unique to cards, and identifying it
+elsewhere is the transferable part of the paper.
+
+**The feature, restated.** An observable state influences the expectation of the next outcome, and the
+state is not fully priced.
+
+**Four instances, with the requirement they fail or satisfy.**
+
+**Order flow and inventory.** A dealer who must quote regardless of inventory has a state — the
+position — that shifts the price at which they will trade. The state is observable in the quotes. What
+fails is stationarity: the relationship is well known to the participants, and its value depends on who
+else is present.
+
+**Funding conditions.** The price of borrowing a security moves with scarcity, and scarcity is
+observable before the price adjusts. Computable, stable over months, and crowded almost immediately.
+**This is the pattern of an edge whose life is short.**
+
+**Volatility regimes.** Where the scale of fluctuations clusters, the state is partly observable and
+persistent. What fails is the requirement of a computable expectation: the state predicts dispersion,
+which is not a payoff.
+
+**Seasonal and calendar structure.** An observable state with a documented effect, whose failure mode
+is that it has been documented. **Publication is the erosion mechanism.**
+
+**What the four have in common.** Each satisfies some of the four requirements and fails others, and
+the requirement most often failed is stability — not of the statistics, but of the rule linking state
+to expectation. **That is the requirement that makes a structural source valuable, which is the
+argument Chapter 25 develops at length.**
+
+## An edge that would not survive the four requirements
+
+A negative example is worth as much as the positive one, and the fastest way to apply the framework is
+to test candidate edges against the four requirements in order.
+
+Take a claim of the form: this asset class outperforms after a particular policy announcement.
+
+**Observability.** The state is public at the announcement. Satisfied, and satisfied for everyone at
+once, which is already a problem for the second requirement.
+
+**Computability.** The expected excess return cannot be computed from the announcement; it is
+estimated from the history of previous announcements. This is the transition from the casino to the
+market, and it is where most candidate edges fail: the edge is inferred rather than read off.
+
+**Stationarity.** Policy regimes change, and the sample of previous announcements is small. The rule
+linking announcement to return is itself an estimated object with a decay rate that cannot be
+measured from the sample that generated it.
+
+**Exposure to favourable states.** Requires knowing which states are favourable, which requires the
+second and third requirements.
+
+**The verdict.** One requirement satisfied, three failed, and the failure of the second is decisive:
+the edge is estimated, so everything in Part III's sizing machinery applies with its discount, and
+everything in Chapter 24's sampling arithmetic applies to the evidence. **An edge that fails the
+computability requirement is not thereby unusable. It is an edge that has to be sized with a large
+discount and treated as one of many candidates rather than as a discovery.**
+
+## The edge checklist in one page
+
+Chapter 18's four requirements and Part III's machinery reduce to a page. A practitioner evaluating a
+candidate edge runs it in this order, because the early questions are cheap and each can end the
+exercise.
+
+**One. Is the state observable, in real time, by me?** If the state is visible only after the fact, the
+edge cannot be used whatever its statistical properties.
+
+**Two. Is the expectation computable from the state, or must it be estimated?** This is the decisive
+question. **Computed means the casino case: exact arithmetic, no discount. Estimated means everything in
+Parts I and III applies, including the sampling arithmetic of Chapter 24.**
+
+**Three. How long will the rule linking state to expectation hold?** Mechanism stability, institutional
+stability, statistical evidence. **Where none is available, the answer is "unknown" and the edge is a
+candidate rather than a position.**
+
+**Four. What is the capacity?** An order of magnitude is enough. **A strategy whose capacity is smaller
+than the capital available to it is a component, not a strategy.**
+
+**Five. What is the annual cost, and what fraction of the capital can pay it?** Where the cost cannot be
+funded from a source independent of the edge, the position will be abandoned at the wrong moment.
+
+**Six. What is the discount, and what coefficient of variation justifies it?** Writing the number is the
+step that most often ends the analysis, which is the point of requiring it.
+
+**Seven. What is the exit condition, set in advance?** A rule, a date, or a threshold. **Without one, the
+decision to stop will be made monthly by the person with the strongest interest in continuing.**
+
+**What the checklist is not.** It is not a scoring system. A candidate that fails question two can still
+be worth running at a size that assumes the estimate is wrong. **What it does is force the failure to be
+stated rather than discovered.**
+
+## The edge that is real but unactionable
+
+Between edges that work and edges that do not, there is a category that causes more institutional difficulty
+than either: edges that exist and cannot be used.
+
+**The sources of unactionability. Four.**
+
+**Observability with a delay.** The state is identifiable only after the position would have to be taken.
+
+**Size below the minimum.** The edge exists at a scale smaller than the smallest position the institution can
+hold, after costs and minimum ticket sizes. **A strategy returning two percent annually on a million dollars
+is not a strategy for a fund with a hundred million to deploy.**
+
+**Operational impossibility.** The edge requires a capability the institution does not have: intraday
+execution, a short borrow, a legal structure, a licence.
+
+**Constraint conflict.** The edge requires a position the institution's mandate forbids, or requires
+concentration that its risk limits prohibit.
+
+**Why this category is difficult.** Because the edge is real, the analysis is correct, and the conclusion is
+that nothing can be done. **An organisation that evaluates research by the quality of its findings will
+reward the analysis and have nothing to show for it, which produces pressure to overlook the
+unactionability.**
+
+**What to record.** For each candidate, the constraint that binds, and whether it is structural or
+institutional. **Institutional constraints can be changed by a decision; structural ones cannot. Confusing
+the two is how organisations spend years on research they cannot deploy.**
+
+**What to do with a portfolio of unactionable edges.** Keep them. **A constraint that binds now may not bind
+later, and an edge documented at the time it was found is a cheaper asset than one that must be rediscovered
+under time pressure. This is the pipeline argument of Chapter 25, applied to a category of candidate that
+usually gets discarded.**
+
+## The edge versus the strategy
+
+A candidate edge and a tradeable strategy are different objects, and the gap between them is where most
+research time is lost.
+
+**The edge. A claim about a state.** The expectation of an outcome differs from the market's implied
+expectation under specified conditions.
+
+**The strategy. The edge plus five decisions.** Position sizing, entry and exit rules, execution venue,
+holding period, and risk limits.
+
+**Why they are confused.** Because an edge presented in isolation looks like a strategy. **The five decisions
+determine whether the edge is realised, and none of them is implied by the edge.**
+
+**Three cases where the gap is large.**
+
+**An edge that requires a size the market cannot absorb.** The capacity problem, arriving before any
+execution work is done.
+
+**An edge whose exit rule determines the outcome.** A mispricing that converges in a year and a funding
+constraint of three months are incompatible, and the incompatibility is a property of the strategy.
+
+**An edge requiring a holding period longer than the evidence base.** The edge is measured over one regime
+and requires a position lasting through another.
+
+**What to record when an edge is found.** The edge, the five decisions with their justifications, and the
+constraint that binds. **A one-page note per candidate, and the discipline converts a research finding into a
+deployable object or exposes the constraint early.**
+
+**Why this matters for the checklist.** The four requirements of this chapter establish that an edge exists.
+**They do not establish that a strategy exists, and the checklist's later questions — capacity, cost, exit —
+are the ones that close the gap.**
+
+## What a favourable state is not
+
+The paper's contribution is a state whose expectation is positive. The term is used loosely in the material
+that followed, and the four common misreadings are worth naming.
+
+**Not an unlikely event.** A favourable state is one where the expectation is positive, which says nothing
+about the probability of winning the next round. **A state can be favourable and the next hand can lose,
+and both statements are consistent.**
+
+**Not an edge in the market's sense.** A favourable state is a property of the game's structure. **An edge
+in a market requires the state to be observable, the expectation to be computable or estimable, and the
+rules to persist — the four requirements the chapter sets out.**
+
+**Not a prediction.** The state is read from the current configuration rather than forecast. **A player who
+predicts the state rather than reading it has replaced a computation with an estimate, which is the
+transition the chapter's later sections describe.**
+
+**Not a licence to bet the maximum.** A favourable state means positive expectation, and positive
+expectation with the wrong stake produces ruin. **The sizing rules of Part III apply to a favourable state
+exactly as they apply to an estimated edge, with the discount determined by whether the expectation was
+computed or estimated.**
+
+**Why the misreadings matter. One reason.** Each of them converts a statement about the structure of a game
+into a statement about the future, and the conversion is the same error in four forms. **The paper's claim is
+narrow: a state, an expectation, a rule. Widening it is what produces the confident and wrong uses.**
+
+**What to check in a claimed favourable state. Three questions.**
+
+**Is the state observable now?** Not predicted, observed.
+
+**Is the expectation computed or estimated?** Which determines the discount and the evidential status.
+
+**What ends the state?** A deck, a rule, a market structure. **A state without an ending condition is a
+strategy without a duration, and the chapter on decay applies.**
+
+A closing summary. Read the state. Not forecast it. Compute if possible. Estimate if not. Discount either way. Check capacity first. Cap the size. Set the exit. Review the mechanism.
+
+## The four requirements as a screening interview
+
+The four requirements are stated as an analytical checklist. They also function as a list of questions for
+someone presenting an edge, and the interview form is worth having.
+
+**Observability. One question.** What does the state look like, and when can you see it. **Which asks for an
+operational description rather than a definition.**
+
+**Computability. One question.** How is the expectation obtained from the state. **An arithmetic answer
+indicates a computed edge; a historical answer indicates an estimated one, and the two carry different
+discounts.**
+
+**Stationarity. One question.** What has to stay the same for the rule to keep working, and what would tell you
+it had not. **Which asks for the monitor as well as the assumption.**
+
+**Exposure to favourable states. One question.** How does the size vary with the state, and who decides that.
+**Which asks whether the edge is connected to the position.**
+
+**What the interview establishes. Two things.**
+
+**Whether the edge exists as a description.** Oddly, this is not the primary output. **Most candidates fail the
+second or third question rather than the first.**
+
+**Whether the presenter has thought about duration.** Which is the question that separates a research finding
+from a deployable strategy.
+
+**What the interview does not establish. The edge itself.** The four questions are about structure. **An edge
+that passes all four may still be worthless, and one that fails the third may be worth running at a size that
+assumes it will die.**
+
+**Why the interview form is worth stating.** Because a checklist is filled in by one person and an interview
+produces answers that can be recorded. **Four questions, four recorded answers, and the record is what makes
+the edge's evaluation revisitable when the monitor fires.**
+
+**What to do when an answer is missing.** Record it as missing. **The missing answer is the finding, and it is
+more useful than an answer supplied under pressure.**
+
+## The four requirements and the transition to Part III
+
+The four requirements establish that an edge exists. The next chapters assume one does, and the transition
+between them is where the requirements do their work for the sizing argument.
+
+**What the requirements determine. One thing.** Whether the expectation is computed or estimated. **Computed
+means the casino case; estimated means everything in Parts I and III applies, including the sampling arithmetic
+and the discount.**
+
+**What follows for the sizing rule. Two branches.**
+
+**Computed. The parameters are known.** The fraction is arithmetic and the discount's coefficient of variation
+is small. **Which is the case the criterion was designed for.**
+
+**Estimated. The parameters are uncertain.** The fraction is discounted, the drawdown is checked against
+tolerance, and the sampling arithmetic determines what evidence would justify a larger commitment. **Which is
+the case the rest of the book addresses.**
+
+**What the transition requires of a reader. One judgement.** Which branch applies. **A reader who treats an
+estimated edge as computed will size it too large; one who treats a computed edge as estimated will size it
+too small and will distrust a rule that is exact.**
+
+**Why the four requirements are placed before the sizing chapters.** Because they determine the branch. **An
+edge's observability, computability, persistence and exposure are the inputs to the question "computed or
+estimated", and the question is what the rest of Part III answers.**
+
+**What happens when the branch is unclear. One rule.** Treat it as estimated. **The cost is a smaller position
+and a discount that turns out to have been unnecessary, and the alternative cost is a position sized on an
+assumption that was not tested.**
+
+**What the chapter leaves for the next one.** The stake. **The requirements establish that an edge exists and
+how well it is known; the currency of the next chapters is how much of the capital it justifies.**
+
+## The edge and the three documents it needs
+
+An edge that is going to be funded needs three documents, and their absence is what turns a research finding
+into an unmanaged position.
+
+**One. A statement of the state.** What is observed, how it is observed, and when. **Which is the observability
+requirement, written down, and it is what makes the monitor possible.**
+
+**Two. A statement of the connection.** How the expectation is obtained from the state, whether computed or
+estimated, and with what uncertainty. **Which is the computability requirement and it determines the discount.**
+
+**Three. A statement of the ending.** What has to stay the same, what would signal that it had not, and the exit
+condition. **Which covers the persistence requirement and the pre-committed exit together, and it is the document
+most often missing.**
+
+**What the three documents produce. One thing.** A strategy rather than an edge. **The five decisions of the
+chapter's later section — sizing, entry and exit, venue, holding period, limits — are each informed by one of the
+three.**
+
+**What their absence produces. Two failures.**
+
+**A position with no monitor.** Which is a position held until its returns become obviously bad.
+
+**A position with no exit condition.** Which is a position held past the point where its justification expired.
+
+**Why three documents rather than a memorandum.** Because each answers a question that arises at a different
+moment: the state at the monitor, the connection at the sizing decision, the ending at the review. **Three
+one-page notes, each used at its own occasion.**
+
+**What a funder should ask for. The third document.** Because the first two are what the presenter has thought
+about and the third is what they have not. **The absence of an ending is the finding, and asking for it is the
+cheapest available test of whether the edge has been considered as a position.**
+
+## The edge and three questions about its size
+
+The chapter establishes whether an edge exists. Three questions about size determine whether it can be used, and
+they are asked in this order.
+
+**How large is the position the edge supports.** Which follows from the expectation and its uncertainty, and
+requires the sizing machinery of Part III. **The answer is a fraction with a discount, or a bound.**
+
+**How large is the position the market will absorb.** Which is the capacity question and comes before the
+sizing one in practice, because a fraction of capital that exceeds capacity is not available. **The answer is an
+order of magnitude.**
+
+**How large is the position the firm can fund through its drawdown.** Which is the holder's constraint and is
+usually the binding one. **The answer is a number derived from the sources of capital that do not depend on the
+strategy.**
+
+**Which of the three binds. Usually the smallest.** Which is why the order matters: computing the sizing
+fraction first produces a number that the other two constraints then overrule.
+
+**What the three questions have in common. One input each.** The first needs an estimate and its uncertainty, the
+second needs market structure, and the third needs the firm's balance sheet. **Three different bodies of
+information for one decision.**
+
+**How to use the three in a decision. One line per question.** Which produces a position size and a record of
+which constraint bound it. **The record is what makes the next decision faster, because the binding constraint is
+usually the same across a firm's strategies.**
+
+**Why the three belong with the edge's evaluation.** Because an edge that cannot be sized within all three is not
+deployable at the size the analysis implies. **Three questions, three inputs, and the smallest answer is the
+position.**
+
+## A note on what this chapter could not check
+
+The paper's text was not available to me. The argument above follows its title, abstract, citation
+record, and the account given in the author's own later writing; no counting scheme, threshold, or
+numerical result from the paper is reproduced here, and the description of the basic strategy is
+presented without citing a specific source because I could not verify the reference I had in mind.
+
+The claim that casino rules were altered in response to the work is well documented as a sequence of
+events; the chapter uses it as an example of a regime change rather than as a factual finding about
+any particular establishment.

@@ -1,0 +1,504 @@
+# Precaution Without Paralysis {#sec-precaution-without-paralysis}
+
+The objection to the precautionary principle is always the same, and it is a good one: taken
+literally, it forbids everything, because everything carries some risk. Chapter 11 answered it with
+a criterion rather than with courage. This chapter applies the criterion in four domains where the
+question is live, and shows where it says no.
+
+The criterion, restated. Precaution applies where two conditions hold together: exposure is
+systemic rather than local, and the relevant distribution is fat-tailed. Where either fails,
+ordinary cost-benefit analysis is the correct instrument and the principle is silent. Silence is the point. Deliberately so. No implication.
+
+**The test of a rule is whether it can be used against the person invoking it.** Most rules fail it. Nearly all. Three of the
+applications below end in "no precaution required", which is the only reason to trust the one that
+ends in "yes".
+
+## Climate
+
+Exposure is systemic by construction: the atmosphere is a single connected system, and emissions
+from one jurisdiction affect all of them. The distribution of outcomes is commonly argued to be
+fat-tailed, though this is contested and the tail index is not well identified — the diagnosis of
+the previous chapters applies plainly here.
+
+Under the criterion, the case falls inside the principle. The consequences that drive it are
+irreversible in the physical sense of Chapter 16: a species lost, an ice sheet committed. No
+bounding move is available on the damage side, which is what makes it a ruin problem rather than a
+risk problem.
+
+The cost side matters. It does not disappear. Ever. Not even there. Mitigation resources have alternatives, and a
+framework that ignored that would be an advocacy document rather than a method. What the criterion
+does is place the burden of demonstrating safety on whoever proposes continued loading of the
+system, not to declare that mitigation is free.
+
+## Technology deployment
+
+The useful question is rarely "is this technology safe". It is "at what scale, and with what
+reversibility".
+
+The criterion gives three separable questions. Is the exposure systemic — does a failure propagate
+through a network? Is the tail fat — can the worst case end the game? Is the harm reversible at
+acceptable cost?
+
+A pilot is generally a bounded exposure even for a dangerous technology, because its scale limits
+the loss and it can be halted. Full deployment removes both properties, and the same technology can
+therefore change cells as it scales. **This is the way the framework avoids paralysis: it prescribes
+a scale and a structure, not a verdict on the technology.**
+
+The bounding moves of Chapter 16 apply directly. Cap the size; make the deployment staged; keep a
+second source; prefer the reversible pilot to the irreversible commitment; pre-commit the review
+that will decide whether to continue.
+
+## Medicine
+
+The domain is instructive because the principle is usually invoked in the wrong direction.
+
+Clinical practice is precautionary in its default posture: evidence of benefit is required before
+intervention, and uncertainty usually argues for waiting. That is the opposite of the burden
+allocation in Chapter 11, and the reason is not inconsistency. The exposure in ordinary medicine is
+local and largely reversible, so the criterion places it outside the principle.
+
+Where the criterion does apply is at the level of population-level interventions with irreversible
+systemic effects — and in the other direction as well: a decision *not* to intervene
+can itself create a systemic, irreversible exposure. **The framework is indifferent to whether the
+action is to do something or to refrain. What it constrains is the shape of the resulting
+exposure.** A framework that only ever counseled inaction would be a projection, not a method.
+
+## Personal decisions
+
+The smallest scale, and the one where the instrument is most directly usable, because the four
+mechanisms of irreversibility are visible without any modelling.
+
+A career commitment that consumes ten years of a narrow skill set is contractual and informational
+in the Chapter 16 sense. A health decision with permanent consequences is physical. A public
+position that would be painful to reverse is social, and the remedy is a pre-committed review.
+
+None of this requires a probability. The questions are what the worst case is, whether it is
+bounded, and whose agreement exit requires. **A person who answers those three questions honestly
+has done most of what the framework offers, at any scale.**
+
+## Where the grids say no
+
+The most useful part of this chapter is the negative one, and it is worth stating as a list because
+frameworks are judged by what they refuse.
+
+**Vaccination:** excluded, on the criterion's own terms, because the exposure is not systemic.
+
+**Small-scale nuclear:** excluded at that scale, because the harms are comparatively limited and
+better characterised, though the exclusion does not survive scaling up.
+
+**Ordinary clinical interventions:** excluded, because exposure is local and largely reversible.
+
+**Individual dietary and lifestyle choices:** excluded, because no absorbing state is involved and
+the exposures are bounded.
+
+**Pilot programmes of any technology:** generally excluded at pilot scale, which is the practical
+content of the framework's advice to deploy reversibly.
+
+A framework that returned "precaution" for every entry on that list would be unusable, and its
+proponents would be right to abandon it.
+
+## The cost that does not disappear
+
+Two things need saying, because the framework is often presented as though they did not.
+
+**Not acting has costs, and they are real.** So does acting. Always. Delayed deployment of a beneficial technology means
+foregone benefits, in lives and in resources. The framework reallocates the burden of proof; it does
+not abolish the cost.
+
+**"Wait for more evidence" is not a neutral option.** Waiting is a decision with consequences, and
+in a ruin problem the consequence of waiting can be the outcome one was trying to avoid. The
+criterion does not say wait. It says that where the exposure is systemic and irreversible, the
+demonstration of safety is the proposer's job, and it must be done before the exposure rather than
+after.
+
+## The recurring error
+
+The failure mode of this framework is not over-application. It is one-directional application.
+
+A practitioner who invokes the criterion to block a technology while ignoring an equivalent
+systemic exposure created by the status quo is not applying the framework; they are using its
+vocabulary. The test remains the same in both directions: **name the exposure, name its mechanism,
+and ask whether the loss can be bounded.**
+
+## Claim and tool
+
+The claim: with the two conditions applied, precaution is a workable filter rather than a recipe for
+inaction, and it prescribes scale and structure rather than verdicts.
+
+The tool: the four-domain application, and the negative list, which is what makes the positive
+applications credible.
+
+## Boundary conditions
+
+The applications above depend on judgements about systemic exposure and tail behaviour, and those
+judgements are contestable in every domain except perhaps the first.
+
+The framework presumes a decision-maker able to act on structure — to choose a pilot instead of a
+rollout, to accept a cap, to pre-commit a review. Where the only available choices are binary, the
+framework loses most of its content.
+
+And it does not resolve the underlying disagreement about how much cost to bear now for how much
+protection later. That is a political question, and the framework's contribution is to make it
+arguable in terms of exposures and reversibility rather than assertions about worst cases.
+
+## A personal decision, worked
+
+The framework's smallest application is also its most directly useful, because the four mechanisms of
+irreversibility can be inspected without any modelling.
+
+Suppose a person is offered a two-year appointment that would require moving country and would
+foreclose a parallel offer that must be answered within a month.
+
+**Conditions.** Is the exposure systemic? In the technical sense, no: the consequences are
+confined to one household and they propagate nowhere. So the restricted principle does not apply, and
+the ordinary comparison is appropriate. That is the answer the framework gives, and the answer is unhelpful on its own.
+
+**The ledger applies.** It always does. The move is physically reversible at a cost, and the cost is
+estimable. The lost parallel offer is irreversible and cannot be bounded by any action available to
+the person. The reputational effect of withdrawing after acceptance is social, and its remedy is a
+pre-committed review date rather than a decision made under pressure.
+
+**What the two instruments produced together.** One classified judgement and one structural inventory, and the second was the useful output because it identified which exposure could not be bounded by any action the person could take within the time available to them. A decision the framework declined to classify, plus a
+statement of which exposures are bounded and which are not. The second is the useful output. It says
+that the irreversible component is the foregone alternative, and that the way to bound it is to
+negotiate the deadline rather than to decide faster.
+
+**No probability appears here.** None at all. Not because probabilities are unavailable, but because
+the structural facts were sufficient to change what the person should do next.
+
+## What the framework cannot arbitrate
+
+The chapter's four domains each ended in a recommendation, and the recommendations share a limit worth
+stating plainly.
+
+**It cannot weigh a foregone benefit against an avoided absorbing state.** No exchange rate. Those are the two
+currencies of the framework, and it asserts that they are different in kind rather than providing an
+exchange rate. Where the costs of caution are large and the exposure is genuinely systemic and
+irreversible, the framework says the screening applies. It does not say how much caution.
+
+**It cannot adjudicate.** Between parties, never. Two people who agree on every structural fact can disagree
+about how much protection to buy, because the disagreement is about what they are willing to trade.
+The framework narrows the space in which that disagreement occurs, and that is all.
+
+**It cannot supply the missing mechanism knowledge.** It cannot, and the reason is that the mechanisms in question are properties of physical, biological and institutional systems that have to be investigated one at a time, which means the framework can tell a decision-maker which questions to ask while leaving the answers to the disciplines that own them. Whether a technology's failure propagates, and
+whether a harm is permanent, are judgements about mechanisms. The framework tells you which judgements
+to make; it does not make them.
+
+**Why the limits matter for the book's argument.** Because the alternative to stating them is a
+framework that appears to decide everything and in fact smuggles the decision into the vocabulary.
+**An instrument that names its limits can be used by people who disagree about values. An instrument
+that claims to settle values will be used by whoever controls its definitions.**
+
+## A checklist for the precaution decision
+
+The chapter's four domains produce a procedure. Stated as a checklist, in the order that avoids wasted
+work.
+
+**One. Is the exposure systemic?** This is the question that decides whether the rest of the checklist is reached at all, and the reason it comes first is that the systemic cases are rare enough that answering it honestly usually ends the analysis in a paragraph, which is a far better use of an afternoon than building a precautionary case for something whose consequences stop at the fence line. Does failure propagate, or does it stay local. **Local is the common
+answer and the one that ends the analysis. Stop here and use the ordinary framework.**
+
+**Two. Is the distribution fat-tailed over the relevant range?** Not whether the outcome is important,
+but whether the worst case can end the sequence. **Where the tail is thin, ordinary risk management is
+the right instrument.**
+
+**Three. Is the harm reversible at acceptable cost?** If it is, the divergence argument does not apply
+and cost-benefit analysis resumes.
+
+**Four. Is the screening applied in both directions?** The status quo may carry the same exposure as the
+proposal. **Where it does, the burden falls on the incumbent arrangement, and a framework that cannot
+say so is advocacy.**
+
+**Five. What scale is available?** A pilot changes the cell. Where a bounded version of the proposal
+exists, deploy it and reclassify. **This step is where the framework's contribution to practice
+actually lies.**
+
+**What the checklist prevents.** Two errors. Applying precaution to local reversible risks, which is
+where most bad regulatory arguments originate. And accepting a proposal without asking the fifth
+question, which is where most unnecessary refusals originate.
+
+**What it cannot do.** Decide how much protection to buy. That is a values question, and the checklist's
+function is to make the question visible rather than to answer it.
+
+## The precaution argument in a public forum
+
+The chapter's applications are analytical. Public arguments have a different structure, and the differences
+are worth stating because they determine whether the framework survives contact with a controversy.
+
+**Three features of the public setting.**
+
+**The audience is not deciding the technical question.** It is deciding whom to trust, and a framework's
+precision does not transfer. **What transfers is whether its scope can be stated in a sentence.**
+
+**The two conditions are contested by partisans.** Systemic-or-not and fat-tailed-or-not are argued by
+parties with interests, and the framework's answers will be attributed to a side. **The attribution is
+unavoidable; what is avoidable is supplying it, which is what the negative list does.**
+
+**Costs are counted and benefits are not.** Foregone improvement is invisible in a public argument, which
+systematically favours the precautionary side of any application.
+
+**Three rules for the forum.**
+
+**State the scope before the conclusion.** The two conditions, in the order the framework uses them. **A
+conclusion stated before its scope will be heard as a position.**
+
+**Give the negative list.** The cases where the framework says ordinary analysis applies. **This is the only
+move that distinguishes a method from a camp, and it costs the speaker some support.**
+
+**Name the level rather than the verdict.** The framework usually prescribes a scale, not a decision. **"A
+pilot with a documented exit" is a position that can be argued with; "do not proceed" cannot.**
+
+**What the framework cannot contribute to a public argument.** The exchange rate between a foregone benefit
+and an avoided absorbing state. **That is a political question, and the framework's contribution is to make
+it a question rather than an implication of a technical finding.**
+
+## When the framework says no to your own proposal
+
+The chapter's test is whether the framework can be used against the person invoking it. The hardest case is
+when it is used against the reader's own proposal, and the response is worth rehearsing.
+
+**The situation.** A proposal with a genuine benefit, a systemic exposure, and an irreversible component.
+The framework says the burden is on the proposer.
+
+**Three unhelpful responses.**
+
+**Dispute the classification.** Argue that the exposure is local after all. **This is the evasion the
+framework's first question is designed to detect, and it is usually transparent.**
+
+**Argue that the benefit outweighs.** The framework has no exchange rate, so the argument cannot be made
+within it. **It is not a refutation; it is a change of subject, which may be the right move but should be
+named as one.**
+
+**Argue that the rule is too strict.** This may be true. **It is also the argument every proposer makes, which
+makes it unpersuasive as a general claim and potentially persuasive as a specific one.**
+
+**Three responses that work.**
+
+**Bound the exposure.** Reduce the scale, shorten the term, stage the commitment, pre-commit the review.
+**This is the framework's actual recommendation and it usually preserves most of the benefit.**
+
+**Offer the monitoring specification.** Name the indicator, the threshold and the action. **A proposer who
+brings a monitoring plan has answered the burden shift rather than resisted it.**
+
+**Ask what would change the classification.** If the exposure's systemic character depends on an assumption,
+identifying the assumption is a research programme. **The answer converts an objection into a condition, which
+is the most useful outcome available.**
+
+**Why this section matters.** Because the framework is easy to wield against other people and hard to accept
+when it lands on one's own proposal, and a reader who cannot do the second has not adopted the method.
+
+## The framework in a single sentence per domain
+
+The chapter's four applications each took a section. Compressed, each is a sentence, and the sentences are what
+a reader is likely to remember.
+
+**Climate. Systemic by construction.** The exposure propagates through one connected system and no bounding move
+is available on the damage side, so the criterion places it inside the principle and the burden shifts to
+whoever proposes continued loading.
+
+**Technology. Scale determines the cell.** A pilot is a bounded exposure and a rollout is not, so the framework
+prescribes a scale and a structure rather than a verdict on the technology.
+
+**Medicine. Usually outside the principle.** Clinical exposure is local and largely reversible, so the criterion
+places ordinary practice outside it, and the framework is indifferent to whether the action is doing or
+refraining.
+
+**Personal decisions. The ledger applies, the criterion usually does not.** Most personal exposures are local; the
+useful instrument is the two-sided account, and the four mechanisms are visible without any modelling.
+
+**What the four sentences share.** Each ends with a prescription about scale or structure rather than a verdict.
+**A framework whose applications all end in a scale has a different character from one whose applications end
+in a prohibition, and the difference is the criterion rather than the author's disposition.**
+
+**What they do not share.** The confidence. The first is well supported, the second well supported at pilot scale,
+the third is mostly an exclusion, and the fourth is an analogy from institutional practice. **Stating the
+confidence alongside the sentence is the discipline, and the four-sentence summary is where it is easiest to
+lose.**
+
+**Why a compressed version is worth writing.** Because the framework will be remembered in this form or not at
+all, and a compressed form that drops the confidences misrepresents it. **Four sentences with four confidence
+levels, and the levels are part of the sentences rather than a caveat attached to them.**
+
+## The four domains and the same three questions
+
+The chapter applied the criterion in four domains. Each application asked the same questions in the same
+order, and the sameness is the chapter's contribution.
+
+**The three questions. Fixed.**
+
+**One. Is the exposure systemic?** Does failure propagate, or does it stay local. **Local ends the analysis.**
+
+**Two. Is the harm reversible at acceptable cost?** If it is, the divergence argument does not apply and
+ordinary cost-benefit resumes.
+
+**Three. What scale is available?** A pilot changes the cell, and the scale question is where the framework's
+practical contribution lies.
+
+**What changes across domains. The answers, not the questions.** Which is why the framework travels: the
+questions are about structure and the structures differ.
+
+**What the four domains established. Three contrasts.**
+
+**Climate. Inside the principle.** Systemic by construction, no bounding move on the damage side.
+
+**Technology. Scale determines the cell.** A pilot is bounded and a rollout is not, so the same technology can
+change cells with size.
+
+**Medicine. Mostly outside the principle.** Local and largely reversible exposure.
+
+**Personal decisions. The ledger applies, the criterion usually does not.** Most personal exposures are local,
+and the four mechanisms are visible without modelling.
+
+**What the contrasts teach. One thing.** The framework's value is in the exclusions rather than in the
+applications. **Three of the four cases are resolved by the first two questions, and the fourth is resolved by
+the third. A framework whose output is always "precaution" would be unusable, and this one is usable because
+three of four of its answers are negative.**
+
+**Why the fixed questions matter.** Because a framework whose questions change with the domain cannot be
+checked. **The same three questions in the same order, and the answers are what differ.**
+
+## The framework and the standard of proof
+
+The criterion shifts the burden of proof. It does not say what standard the demonstration must meet, and the
+silence is worth filling because a burden without a standard is an argument.
+
+**Three possible standards. Increasingly demanding.**
+
+**A plausible mechanism.** The proposer names how harm could propagate. **Which is a low standard and would
+rarely be satisfied in a contested case, because mechanisms can usually be named.**
+
+**Evidence that the mechanism is present in this case.** Not that the mechanism exists somewhere, but that the
+specific exposure exhibits it. **Which is the standard the framework's first condition implies and the one the
+chapter's four domains are assessed against.**
+
+**Quantification of the exposure.** Which the chapter argues is usually unavailable, since the quantities may
+not exist. **Which is why the framework cannot demand it and why the burden is a demonstration of structure
+rather than of magnitude.**
+
+**What the middle standard requires. Three items.**
+
+**The propagation path, or its absence.** Named rather than asserted.
+
+**The evidence for it.** Documentation, a network diagram, a measured correlation.
+
+**What would falsify it.** The observation that would show the exposure is local.
+
+**Why the standard matters for the framework's use.** Because a burden shifted without a standard can be met with
+an assertion, which is what the framework's evasion section describes. **The three items are what turns the
+burden into a check, and they are answerable in a meeting.**
+
+**What the framework says when the standard is not met.** That the demonstration is incomplete rather than that
+the proposal fails. **Which is the correct output: the question is what has been demonstrated, and an incomplete
+demonstration is a research or engineering programme rather than a refusal.**
+
+**Why the silence on standards is worth filling in this chapter rather than in the one on the principle.**
+Because the chapter is where the framework is applied, and an applied framework needs a standard. **Three items,
+stated once, and the burden becomes answerable.**
+
+## The framework and the four answers
+
+The chapter worked four domains. Each produced an answer, and the four answers together are the framework's
+content.
+
+**Climate. Inside the principle.** Systemic by construction, fat tailed over the relevant range, no bounding move
+on the damage side. **Burden on the proposer of continued loading.**
+
+**Technology. Scale determines the cell.** A pilot is bounded; a rollout is not. **A scale and a structure, not
+a verdict.**
+
+**Medicine. Outside the principle.** Local and largely reversible. **Ordinary analysis, and the framework is
+indifferent to doing or refraining.**
+
+**Personal decisions. The ledger applies.** Most exposures are local; the four mechanisms are visible without
+modelling. **A structural instrument rather than the criterion.**
+
+**What the four answers share. One form.** Each prescribes a scale or a structure rather than a verdict. **Which
+is what distinguishes a criterion from a disposition.**
+
+**What the four do not share. The confidence.** The first is well supported. The second holds at pilot scale. The
+third is mostly an exclusion. The fourth is an analogy from institutional practice. **Stating the confidence
+alongside each answer is the discipline, and compression is where it is easiest to lose.**
+
+**What a reader should notice. Two of four are exclusions.** Which is the framework's own test of itself: a rule
+that excludes half the cases it is applied to is a rule that can be used against its own invocation. **The
+negative answers are the evidence that the positive one is a finding rather than a prior.**
+
+**Why the four answers are worth stating together.** Because a reader who has only the positive case will apply
+the framework everywhere, and the negative cases are what make it usable. **Four answers, four confidence levels,
+and the second half of the list is the more useful half.**
+
+## The framework and three ways it can be misused
+
+The chapter applies the criterion and warns about paralysis. Three misuses appear in practice, and each has a
+recognisable form.
+
+**Invoking precaution where the exposure is local. The common one.** Which uses the framework's vocabulary for a
+risk the ordinary apparatus handles. **The form: the propagation path is asserted rather than demonstrated.**
+
+**Invoking it only against proposals. The partisan one.** Which applies the criterion to change and not to the
+status quo. **The form: no comparison with the exposure the existing arrangement carries.**
+
+**Invoking it to defer rather than to bound. The procedural one.** Which uses the framework's requirement of
+demonstration to postpone a decision indefinitely. **The form: a demonstration that is always incomplete and never
+specified.**
+
+**What the three have in common. One property.** Each uses a true statement of the framework for a purpose the
+framework does not support. **Which is why the misuse is hard to detect from the framework's text alone.**
+
+**How to detect each. One question apiece.**
+
+**Local exposure: name the propagation path.**
+
+**Partisanship: state the incumbent's exposure.**
+
+**Deferral: state what would complete the demonstration.**
+
+**Which is the most damaging. The third.** Because it is procedurally correct and can be sustained. **The first two
+are arguments; the third is a process, and a process that produces no decision is harder to challenge than an
+argument that is wrong.**
+
+**What to do about deferral. One requirement.** A date and a completion condition. **Which is the same instrument
+the ledger applies to irreversible commitments, and it is the reason the book's two devices belong in the same
+part.**
+
+## The framework and three things it cannot decide
+
+The chapter applies the criterion in four domains. Three questions remain outside it, and saying so is what keeps
+the framework from being used as a general decision procedure.
+
+**How much protection to buy.** The framework shifts the burden of demonstration and prescribes a scale. **It does
+not say how much caution, because that requires an exchange rate between a foregone benefit and an avoided
+absorbing state, and the framework asserts that the two are different in kind.**
+
+**Whether a mechanism exists.** Whether a technology's failure propagates and whether a harm is permanent are
+mechanism claims. **The framework tells you which claims to make and leaves the making to the relevant
+disciplines.**
+
+**Which of two exposures matters more.** Two systemic irreversible exposures can both fall inside the principle.
+**The framework provides no ranking, and the ranking is a political question rather than an analytical one.**
+
+**What the three have in common. One property.** Each is a question the framework identifies and cannot answer.
+**Which is not a defect: a framework that identified questions it could answer would be one that had smuggled
+assumptions about values into its definitions.**
+
+**What a user should do when one of the three arises. One thing.** Name it as outside the framework and decide it
+by whatever procedure applies: a negotiation, a research programme, or a political process. **Which is more honest
+than deriving a threshold from a criterion that does not supply one.**
+
+**Why the limits are worth stating in the chapter that applies the framework.** Because an applied framework
+acquires the authority of its applications. **A reader who has seen four applications will extend it to the
+questions above unless told that the extension is not available.**
+
+**What the framework is therefore for. One thing.** Identifying the class of decisions where the standard
+apparatus does not apply. **Which is a substantial contribution and is smaller than the set of questions a
+regulator faces, and the difference is what the three limits mark out.**
+
+## A note on what this chapter could not check
+
+The chapter applies a criterion from Chapter 11 to domains whose empirical literature is vast, and
+it does so at the level of structure rather than of evidence. No specific climate, technology, or
+medical finding is asserted here; where the analysis depends on a contested empirical premise, the
+text says so.
+
+The negative list is drawn from the source paper's own discrimination plus the criterion's logic.
+Where a reader's judgement differs about whether a given exposure is systemic, the disagreement is
+about the premises of that case, not about the framework.

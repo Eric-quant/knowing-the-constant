@@ -1,0 +1,657 @@
+# The Tail That Would Not Go Away {#sec-fat-tails}
+
+In October 1963, *The Journal of Business* published a paper with a title that promised very
+little: "The Variation of Certain Speculative Prices." The author was Benoit Mandelbrot, then at
+IBM's Watson Research Center. The paper is thirty-six pages long and its central move is small
+enough to state in a sentence. It replaces one probability distribution with another.
+
+That sentence undersells it. What the paper actually did was take the most widely used
+assumption in the study of prices — that changes in price are drawn from a Gaussian
+distribution — and show that the assumption fails, not by a little, and not in a way that more
+data would fix.
+
+The paper has since been cited 4,826 times, according to OpenAlex [@mandelbrot1963]. In 1982
+Eugene Garfield selected it for the *Citation Classic* series, which is the closest thing the
+citation industry has to a hall of fame. Citations are a poor measure of quality. They are a
+reasonable measure of how many people had to come to terms with something.
+
+This chapter is about what Mandelbrot found, what he proposed instead, what happened to the
+proposal, and what remains.
+
+## The assumption nobody wrote down
+
+Here is the standard model of a price, as it stood in 1963 and largely as it stands now.
+
+Take the logarithm of the price. Assume that over any fixed interval it moves by a random amount
+drawn from a normal distribution. Assume further that successive movements are independent: what
+happened yesterday tells you nothing about what happens tomorrow.
+
+Normal and independent. Those two words do an enormous amount of work. They are what makes it
+possible to write down a formula for the value of an option, to compute a portfolio's risk with
+a single number, and to treat the standard error of a regression as a meaningful quantity. Most
+of applied finance rests on them.
+
+The strange part is that for decades nobody made much of a fuss about the first word. The
+"independent" assumption was argued over constantly, because it is the assumption that gives the
+efficient-market hypothesis its content. Normality sat underneath, unexamined, the way the
+foundation of a house is unexamined until something cracks.
+
+There was a reason for the neglect. Normality has a property that is easy to mistake for a fact
+about the world rather than a consequence of an assumption. In a Gaussian world, extreme events
+are so rare that they can be ignored without consequence. A daily move of five standard
+deviations has a probability of roughly one in three and a half million. If you are managing
+money, you can plan as though it will not happen during your career.
+
+So the assumption was comfortable. It was also load-bearing: a one-in-three-and-a-half-million event is not merely unlikely, it is the kind of thing a careful person can exclude from a planning horizon without feeling reckless, which is precisely what the industry did for thirty years. What makes the neglect understandable is that the Gaussian assumption was never really an assumption about markets; it was an assumption about the mathematics that had been developed to describe them, and that mathematics was inherited from physics, where the objects under study are made of very many small independent parts. Mandelbrot asked what happens if
+you look at the tail directly instead of taking it on faith.
+
+## What he did
+
+He took prices — cotton, in the original paper, along with a set of other series — and looked at
+the distribution of changes rather than at averages. The procedure sounds crude when written down, and it is crude, but it has one virtue that matters: it requires no assumption about the middle of the distribution, which is the part of the standard model that is hardest to test and least consequential for the question at hand.
+
+The comparison he made is the one that matters. If changes are Gaussian, then plotting the
+frequency of a given size of change against its size, on logarithmic axes, should give a curve
+that bends away from you and then dives. The dive is fast, and it gets faster. Doubling the
+distance from the centre should cut the frequency by a factor that grows as the distance grows.
+That is what "thin tail" means: the further out you go, the less there is, and the difference
+compounds.
+
+Mandelbrot's data did not dive. It fell, and kept falling, at a rate that stayed roughly
+constant.
+
+That is the whole finding, and it is worth stating in its plainest form. **In the Gaussian
+model, the probability of a large move collapses geometrically as the move gets larger. In the
+data, it collapses at something close to a fixed power.** Those two sentences are the difference
+between a world where the biggest event you have seen is a fair guide to the biggest event you
+will see, and a world where it is not. If that is right, then the largest observation in a sample is not an outlier to be trimmed but the most informative point in the data, and the standard practice of discarding it removes exactly the thing one needs.
+
+The paper's proposal followed from the shape of the evidence. Instead of the Gaussian family, he
+suggested the stable Paretian family: a class of distributions that share the Gaussian's useful
+property of stability — sums of stable variables are stable — while permitting tails that decay
+at a power.
+
+## The plot, and why it is the right test
+
+The empirical procedure deserves its own paragraph, because it is portable and almost nobody runs
+it.
+
+Take a series of price changes. Bucket them by size. Count how often each size occurs. Plot the
+counts against the sizes on logarithmic axes, so that a constant proportional relationship
+becomes a straight line and a geometric collapse becomes a curve that bends away and steepens.
+
+That is the whole test. It needs no model, no estimated parameters, and no assumption about the
+middle of the distribution, which matters because the middle is where competing models agree and
+where empirical disputes carry the least information. Everything that separates a Gaussian world
+from a fat-tailed one lives in the right-hand tail of that plot.
+
+The diagnostic signature is the shape of the line at the far right.
+
+In a Gaussian world the points dive. Double the distance from the centre, and the frequency falls
+by a factor that itself grows. Extrapolate, and you conclude that nothing interesting will happen
+for the rest of your career.
+
+In the data the points stay roughly straight. The frequency still falls, but at a rate that does
+not accelerate. Extrapolate, and you conclude something quite different: events that should be
+impossible are merely rare.
+
+The test has a limit, and it is the source of most confusion in this area. It says nothing about
+*when*. A distribution is a statement about frequencies over long periods, and it has no clock
+inside it. The next chapter's author spent his career repeating this point to people who wanted
+to hear something else.
+
+## What the middle of the distribution hides
+
+There is a reason the Gaussian assumption survived so long, and it is not stupidity.
+
+The middle of a distribution is where the data is. If you fit a model to a few thousand daily
+observations, almost all of them land near the centre, and almost any reasonable family will fit
+that region well. Gaussian, Student's t, stable, and a mixture of two normals will all produce
+curves that are visually indistinguishable over the range where 99 percent of the points live.
+
+So the empirical tests that people naturally run — goodness of fit, residual plots, comparison of
+information criteria — are dominated by observations that carry almost no information about the
+question at issue. The disagreement between the models lives in a region containing a handful of
+points, and the models agree everywhere else.
+
+I find this the most useful single lesson in the paper, and it is a lesson about method rather
+than about markets. **When two theories disagree, find the region where they predict different
+things, and look only there.** In most empirical work, the reflex is the opposite: use all the
+data, because using all the data feels like the honest thing to do.
+
+Using all the data is how a fat tail gets averaged into invisibility.
+
+The correction is not statistical sophistication. It is a decision about where to look. Plot the
+tail. Fit nothing. Count the points that fall beyond five standard deviations, then ask the model
+to predict how many should have. The comparison is crude, and it is decisive in a way that a
+goodness-of-fit statistic is not.
+
+## What happens to a variance that does not exist
+
+The consequence is not a matter of degree, and this is where the argument becomes uncomfortable.
+
+For the stable family, a single parameter controls how much weight sits in the tail. Call it
+α. When α equals 2, the distribution is Gaussian. As α falls below 2, the tail thickens. And
+below α = 2, the variance is infinite.
+
+Infinite means infinite. Not large. Not hard to estimate. The integral that defines the variance
+does not converge.
+
+Now consider what the practice of risk management is built on. Portfolio optimisation needs
+variances and covariances. The Sharpe ratio needs a standard deviation. Standard errors need
+variances. Value at Risk, in most of its implementations, needs them too. If the variance does
+not exist, none of these quantities is being estimated badly. They are not being estimated at
+all. The formula is being applied to an object that is not there.
+
+I find it useful to keep two different failures apart, because they get run together in
+discussion. The first is estimation error: you are measuring something real, and your sample is
+too small. The second is that the quantity you are measuring does not exist. The first improves
+with more data. The second does not improve with anything.
+
+Mandelbrot was pointing at the second kind.
+
+## What infinite variance does to specific instruments
+
+The force of the point is easier to see by walking through the instruments that stop working, one
+at a time.
+
+| Instrument | What it requires | What happens when the variance does not exist |
+| --- | --- | --- |
+| Mean-variance portfolio optimisation | Variances and covariances | The objective has no finite value; the optimiser reports a number driven by the sample's largest observations |
+| Sharpe ratio | A standard deviation | The denominator grows with the sample; the ratio drifts downward as data accumulates |
+| Regression standard errors | Finite second moments | Reported significance levels are not calibrated; t-statistics concentrate instead of stabilising |
+| Value at Risk, most implementations | A fitted distribution, usually Gaussian in the tail | Understates the tail, because the body is used to extrapolate into a region where the fit fails |
+| Volatility targeting | A stable measure of dispersion | The target is met in calm periods and missed when it matters |
+| Diffusion-based option pricing | A finite diffusion coefficient | Implied volatilities need a strike-dependent patch, which is what the volatility smile is |
+
+The last row is worth pausing on. The smile is not a curiosity of the options market. It is the
+market pricing in, every day, the failure of the model used to quote the prices.
+
+## How reliable is a tail claim?
+
+An empirical claim about tails rests on the largest observations in the sample, which are exactly
+the observations most likely to have been removed before the analysis.
+
+The reason is mundane. Data cleaning has rules, and one of the standard rules is that a value
+which cannot be true is dropped. A price change of forty percent in an instrument that has never
+moved more than five percent looks like a data error, so it gets checked, and if the check is
+inconclusive it gets dropped. Every practitioner who has cleaned a price series has made this
+decision. Most have made it in the direction of discarding the extreme value.
+
+Now consider what that does to a tail estimate. The tail is estimated from the extremes. Remove
+one of them and the fitted exponent moves; remove several and the estimate can change enough to
+determine whether a variance is finite.
+
+I could not examine Mandelbrot's own data preparation — the paper's text was not available to me
+— so I cannot say how he handled outliers, and I am not going to guess. What I can say is that
+this issue is general, and that it is the most underrated threat to every tail claim in the
+literature, including the ones made in this book. **A tail estimate is a statement about the data
+that survived the cleaning, and the cleaning is a choice.**
+
+The practical implication is a reporting convention this book will follow: when a tail claim is
+made, say what happened to the extremes. If they were kept, say so. If they were trimmed or
+winsorised, say by how much.
+
+## What the paper did not claim
+
+The paper is often read as a prophecy of crashes. It is not one, and Mandelbrot said so
+repeatedly.
+
+A distribution is a description of how often things of a given size happen. It contains no
+information about *when*. Nothing in the shape of the tail tells you that next year is dangerous
+or that this decade is safe. The fat tail is a fact about the frequency of large moves over long
+periods, not a signal about the near future.
+
+The distinction matters because it is precisely the one that gets lost when the finding is turned
+into a trading strategy. Later chapters deal with two people who made opposite mistakes with it:
+one who argued that a thick tail means you cannot base decisions on probability at all, and one
+who insisted that a real edge, once found, should be sized carefully rather than avoided.
+
+## The proposal that did not survive
+
+Here the story turns, and it is worth telling carefully, because the usual telling gets the
+lesson wrong.
+
+Mandelbrot's positive proposal — use stable Paretian distributions rather than the Gaussian —
+was not adopted. Financial economists tested it, found it awkward, and moved on to other
+families. The critiques start early. Blattberg and Gonedes (1974) and, later, Akgiray and Booth
+(1990) are among the papers that argued the stable family was not the right description of
+returns [@mandelbrot1963]. I have not read those critiques in full, and I am not going to
+summarise their arguments; their existence and their titles are what I can vouch for here, and
+the claim register in `verify/claims.csv` records exactly that.
+
+What matters for the argument of this book is not which alternative won. It is *why* the
+proposal failed. The reason was not that the tails turned out to be thin. The reason was that the
+stable family is hard to work with: estimating α from a finite sample is unstable, and a model
+whose parameter cannot be pinned down is a poor basis for calculation.
+
+Mandelbrot himself returned to the paper. In 1972 he published a correction to it — four pages,
+in the same journal, titled "Correction of an Error in 'The Variation of Certain Speculative
+Prices' (1963)" [@mandelbrot1972correction]. An author who publishes a correction to his own most
+famous paper is an author who is reading his own work with the same suspicion he applies to
+everyone else's.
+
+So: the proposal was replaced. And the finding was not. Thick tails are now part of the standard
+vocabulary of finance. Extreme value theory, the GARCH family, and the study of long memory all
+exist downstream of the observation that returns are not Gaussian. The models changed; the
+regularity stayed.
+
+## The decade when it was nearly accepted
+
+For a few years it looked as though the stable Paretian family would become the standard model of
+price changes.
+
+Eugene Fama's 1963 paper is titled "Mandelbrot and the Stable Paretian Hypothesis," which tells
+you what was in the air: a young financial economist treating the proposal as the new foundation
+and testing it against data [@fama1963]. Two years later came a long survey, "The Behavior of
+Stock-Market Prices," still among the most cited papers in the field [@fama1965]. For a few years
+after that, the question on the table was which stable distribution fitted each market, not
+whether the family was right.
+
+Then the programme receded. Not with a refutation, and not with a scandal. It receded the way
+research programmes usually do, one practical obstacle at a time.
+
+The obstacles were real. The family requires estimating a tail index, and tail indices estimated
+from finite samples are unstable, a point made systematically three decades later by Taqqu and
+his coauthors [@taqqu1995]. A model whose parameter cannot be pinned down is hard to use for
+anything, and the alternatives that replaced it were easier to fit.
+
+What strikes me about the episode is that the finding survived and the proposal did not, and that
+this is a good outcome rather than a consolation. The data said the tails are thick, and the data
+kept saying it after the stable family was dropped. Extreme value theory, the conditional
+variance models, and the long-memory literature are all downstream of a paper whose central
+proposal was abandoned. That is what it looks like when a claim fails and a tool succeeds in the
+same decade.
+
+## The parameter that is hard to estimate
+
+One more thing has to be said, because it recurs in every chapter of this book.
+
+Even after everyone accepted that tails are thick, the question of *how* thick stayed open. That
+question is answered by an exponent, and exponents estimated from data are slippery. Taqqu,
+Teverovsky and Willinger published a systematic comparison of the standard estimators in 1995
+and found that they carry systematic biases and are sensitive both to the method used and to the
+range of scales fitted [@taqqu1995]. I have verified the citation record for that paper, not its
+tables; the direction of its finding is consistent across the literature that cites it, and that
+is the level of confidence this book claims.
+
+This is not a defect of any particular estimator; it is a property of the problem. The information about how thick a tail is lives in the rare observations, and there are by construction very few of them. The practical consequence is easy to state and hard to live with. "Returns have fat tails" is a
+robust statement. "The tail exponent of this market is 1.7" is not. The first survives changes of
+sample, method, and period. The second does not, and it is the second that gets quoted in
+presentations.
+
+## A computation the reader can run
+
+The test above takes ten minutes and needs no data. Generate two series of equal length from two
+distributions with the same standard deviation: one Gaussian, one with a Pareto-shaped tail.
+Bucket both by size, count, and plot on log axes.
+
+The two series will look nearly identical in the middle. The Gaussian will lose points faster on
+the right. That is the entire phenomenon, and it is better experienced than read about, because
+the experience is what makes the conclusion credible: **the diagnostic information is not in the
+body of the data. It is in the last few observations on the right, and there are by construction
+very few of them.**
+
+That asymmetry explains why reasonable people disagree about tail thickness. Someone with a
+short, calm sample looks at the same plot and sees a dive. Someone with a long sample containing
+one crisis sees a straight line. Both report what their data shows. The disagreement is about how
+much of the tail the sample visited.
+
+## A first look at the Constant
+
+Here the book begins building rather than reporting, so the distinction below is labelled: **it is
+mine, not Mandelbrot's.**
+
+Suppose you want to know whether a claim about markets is robust. A useful first question is what
+the claim survives. Call a claim **a constant** to the extent that it survives a specified
+transformation of the observing conditions, and always name the transformation:
+
+- a **scale constant** survives a change in the scale at which you measure;
+- a **distributional constant** survives a change in the assumed distribution family;
+- a **structural constant** survives a change of regime, instrument, or population.
+
+Now apply this to the paper at hand.
+
+"Prices have thicker tails than the Gaussian" is a distributional constant. It survives replacing
+one family with another, because it does not name a family, and it has survived six decades of
+exactly that, including the abandonment of the family Mandelbrot himself proposed.
+
+"Price changes follow a stable Paretian distribution with tail index α" is not. It names the
+instrument it depends on, and it did not survive.
+
+The two statements use almost the same words. The difference between them is the difference
+between a result that accumulates evidence for sixty years and a result that is superseded within
+a decade. Chapter 26 makes the device precise; here it earns its place by resolving a puzzle,
+which is why a paper whose proposal failed is cited by people who use none of its machinery.
+
+## The asymmetry of the two errors
+
+Suppose you accept the argument so far. Two mistakes are now available, and they are not
+symmetrical.
+
+**The first mistake is to keep assuming thin tails.** You understate the frequency of large
+moves, size positions as though the worst case were mild, and find out otherwise once. The cost
+of this error is borne in a single event, and it can be total.
+
+**The second mistake is to over-react: to treat every fat-tailed series as unmanageable.** You
+refuse to act, you hold excessive reserves, you forgo real returns in exchange for a comfort that
+was never actually at risk. The cost of this error is paid continuously, in small increments, and
+it never announces itself as an error.
+
+Notice how the two failures present themselves. The first arrives as a catastrophe and gets
+blamed on the model. The second arrives as a mediocre decade and gets blamed on the market.
+
+This asymmetry shapes the rest of the book, and it is worth stating as a rule here. **When the
+two errors have different shapes — one sudden and total, one gradual and partial — the asymmetry
+of the consequences, not the difference in probabilities, determines what you should do.** Part II
+builds a decision procedure out of that observation, and the procedure has an uncomfortable
+feature: it sometimes tells you not to act even when you think you know something.
+
+## Testing a distributional constant
+
+Chapter 1 has now used the Constant device twice, so it is worth saying how the middle grade is
+actually tested, since the procedure is short and it is the book's, not the paper's.
+
+Take a claim that is supposed to survive a change of distribution family. The test has three
+steps.
+
+**Step one: state the transformation class.** Write down which families the claim is supposed to
+be invariant to. "Tails are thick" is claimed to survive any family with an exponent below some
+threshold. A fitted exponent is claimed to survive none.
+
+**Step two: sweep the families and re-measure.** Fit at least three families that differ in tail
+behaviour. If the qualitative conclusion — thick versus thin — flips when the family changes, the
+claim was never a distributional constant. If the qualitative conclusion holds across all three
+while the numbers move, it was.
+
+**Step three: report both.** A Grade II claim survives with its qualitative content intact and its
+quantitative content discarded. The reverse pattern — numbers stable, qualitative conclusion
+unstable — is a warning that the fit is being dictated by the body of the data.
+
+The device earns its keep at step three, because that is where papers and their citations usually
+part company. The paper reports a qualitative result and a number. The citation keeps the number
+and drops the qualifier. Sixty years later the number is quoted as a property of markets, and the
+qualifier is nowhere in sight.
+
+[N] The Constant, its three grades, and this test are proposed by this book. They are recorded in
+`verify/constructed.csv` as entries B-001 and B-002, with their own preconditions and refutation
+conditions. Nothing in this section is a finding from the literature.
+
+## The claim and the tool
+
+Every chapter in this book ends with the same separation, and it is worth doing here in full
+because this paper is the clearest case of it.
+
+**The claim** was that prices follow a stable Paretian distribution with infinite variance. That
+claim was tested and effectively abandoned.
+
+**The tool** was the act of looking at the tail directly, and the recognition that a summary
+statistic can fail for a reason more fundamental than noise. That tool was kept, and it is now
+standard.
+
+It is tempting to treat the second as a consolation prize. I do not think it is one. A claim
+about the world is a bet, and bets can lose. A way of asking a question is not a bet; it is
+equipment, and equipment gets reused. A claim about the world is a bet, and bets can lose; a way of asking a question is not a bet, and that asymmetry is why the second kind of contribution accumulates while the first kind gets dated. Mandelbrot lost the first bet and supplied the second kind of thing, which is why the paper is cited four thousand times by people who do not use stable distributions at all.
+
+The pattern — claim replaced, tool retained — repeats in every one of the nine papers this book
+covers. It is the closest thing to a lesson that the material offers. When reading a paper of
+this kind, keep two columns in your head: what it asserts, and what it makes possible. Transfer
+your trust from the first column to the second, slowly, and only when the evidence is in.
+
+## Where this leaves the argument
+
+Three things have been established, and it is worth separating them because they have different
+kinds of support.
+
+**First, the empirical claim.** Daily changes in speculative prices have thicker tails than a
+Gaussian model allows, and the discrepancy is large enough to matter for any use of the data. This
+is now standard; the argument for it rests on data and has survived six decades.
+
+**Second, the technical claim.** For certain distribution families, a thick tail implies that the
+variance does not exist, and the instruments that depend on it are therefore not being used
+badly but used on nothing. This is a mathematical fact about those families, not an empirical
+finding, and it is the part that people find hardest to keep in view.
+
+**Third, the book's own claim.** Robustness can be graded, and the grade of a claim determines
+how much trust it deserves and how long it should take to decay. This is a proposal, labelled as
+one, and Chapter 26 will try to make it precise enough to be worth arguing with.
+
+Those three layers — a fact from data, a fact from mathematics, and a construction — are the
+shape of nearly every chapter that follows. The next one moves from the magnitude of change to
+its geometry, from how far a thing moves to how its shape behaves when you look more closely. The
+question changes, and so does the answer, but the method does not: find the region where the
+models disagree, and look only there.
+
+## Boundary conditions
+
+The result holds, and fails, under conditions that can be listed.
+
+It holds when the sample is long enough to contain large moves. A five-year sample of daily
+returns from a calm market will not reveal a fat tail, not because the tail is thin but because
+the sample has not visited it. **Absence of evidence and evidence of absence are different
+things, and in tail estimation the confusion is the default error.**
+
+It fails as a guide to timing: the distribution says nothing whatever about the next observation. And a sample drawn from a period without a crisis will produce an estimate of tail thickness that is not merely imprecise but biased towards thinness, because the observations that carry the information are exactly the ones that did not occur.
+
+Its proposal fails when the parameter cannot be estimated reliably, which is most of the time.
+
+And it says nothing about magnitude of loss, only about frequency of moves. A thick tail makes
+large moves more likely. Whether a particular large move ruins you is a separate question, and it
+is the question the next part of this book takes up.
+
+## What an exponent cannot do
+
+An exponent is a description of how a tail declines. It is not a forecast, and the gap between the
+two is where most of the misuse of this material occurs.
+
+Three things a fitted exponent cannot support, whatever its precision.
+
+**It cannot give you timing.** A tail index says that large events occur more often than a normal
+distribution would predict. It says nothing about when. The expected waiting time to the next event
+of a given size is computable *if* the process is stationary and the family is correct, and both
+conditions are exactly what the applications cannot guarantee.
+
+**It cannot give you the size of the next extreme.** A tail index combined with a scale parameter
+implies a distribution over magnitudes, and the implication is only as good as the family. Chapter 12
+shows what happens when two families with the same visual fit disagree about whether the relevant
+moment exists at all.
+
+**It cannot give you a mechanism.** The arithmetic of a power law is compatible with contagion,
+with heterogeneity in the size of the underlying units, with self-organised criticality, and with
+several mechanisms that produce similar-looking tails for unrelated reasons. **A tail is a symptom.
+Several diseases produce it, and the index does not distinguish among them.**
+
+That list is defensive, and the reason it needs stating is that a number invites commitments the
+number cannot support. A reader given an exponent will use it as though it were a parameter of a
+model rather than a summary of a sample, which is the error Chapter 4 organises into three types.
+
+## Four questions for a fitted exponent
+
+If an exponent is going to be used at all, four questions, and the answers should be reported rather
+than the number alone.
+
+**Over what range was it fitted?** The cut-off matters, and its effect is usually large. An estimate
+computed from the upper five percent of a sample and one computed from the upper one percent will
+differ, and reporting only one conceals the choice. Part I's scale-span rule requires the range to be
+stated, for the reason that a scale-invariant description is only meaningful over a span.
+
+**By what method?** Rank-based estimators, likelihood methods and regression on a log-log plot give
+different answers on the same data, and the differences are systematic rather than random. Chapter 5
+uses the requirement that at least two methods be run as the operational definition of estimability,
+which is the same standard this question imposes.
+
+**Is it stable across subperiods?** Split the sample and refit. Where the halves disagree by more
+than the effect the decision depends on, the exponent is not estimable at the precision claimed.
+This test costs nothing and is rarely reported.
+
+**How sensitive is the decision to it?** If the answer is insensitive, the estimation problem does
+not matter and the other three questions can be answered casually. If it is sensitive — and where a
+moment's existence is at stake, it always is — the sensitivity is the finding, and it belongs in the
+output rather than in an appendix.
+
+The four questions produce a description rather than a number, which is the point. **An exponent
+reported with its range, method, stability and sensitivity is a usable object. An exponent reported
+alone is a claim to knowledge that the estimate cannot carry.**
+
+## The 1963 claim and its correction
+
+The book's first paper is worth reading closely at the level of what it asserted, because the shape of
+its failure recurs.
+
+**What the claim said.** Commodity price changes follow a stable distribution with a characteristic
+exponent below two. The choice was elegant: the stable family shares the normal's property of closure
+under addition, so sums of returns stay in the family. A theorist gets a well-defined object that
+behaves under aggregation.
+
+**Why it was attractive.** It replaced one assumption with another and kept the arithmetic. A
+researcher who needed returns to aggregate could keep doing so, at the cost of a parameter and the
+loss of the variance.
+
+**Why it failed.** Not because the tails were thin — they were, and are, fat. It failed on the
+family's rigidity. The stable family requires the same exponent across horizons and across assets,
+and the empirical record did not cooperate. Where the shape of the tail changes with the time scale
+of measurement, closure under addition is not a help; it is a constraint that the data violate.
+
+**What replaced it.** Not one model but a practice. Conditional-variance models allowed the scale of
+fluctuations to change over time while leaving the distributional question open, and the empirical
+habit of examining tails directly — without committing to a family — persisted and spread.
+
+**What survived.** The regularity itself. Price changes have fatter tails than a normal distribution
+predicts, and this is the most robust empirical finding in the material this book covers. It survived
+the failure of the family that was proposed to explain it.
+
+**The correction of 1972** belongs in that account, and the reason the book gives it a paragraph is worth stating. A tabulation error requiring correction is a small thing, and the reason it matters is
+that it shows the claim being used before it was fully checked — which is the ordinary condition of
+empirical work rather than a scandal. **The useful lesson is about reception rather than about
+arithmetic: the claim was adopted quickly, and the tools that outlived it were the ones that did not
+depend on the family being right.**
+
+That pattern is the first instance of the nine, and the book's four-column protocol at the end is a
+formalisation of it.
+
+## Why the finding was resisted
+
+The empirical regularity is among the most robust in the material, and its acceptance took decades.
+The reasons are worth spelling out because they are structural rather than personal.
+
+**It was inconvenient for the dominant framework.** A model built on finite variance requires the
+second moment to exist. A finding that the second moment may not exist does not refine that framework;
+it removes a premise. **Resistance to a result that deletes a premise is not the same as resistance to
+a result that contradicts a measurement.**
+
+**The proposed replacement was more rigid than the problem.** The stable family fitted the tail and
+imposed a fixed shape across horizons and assets. When the data refused, the rejection was recorded
+against the phenomenon rather than against the family, which is the most consequential error in the
+sequence.
+
+**The tools for examining tails were immature.** Estimating an exponent requires either long samples or
+careful methods, and the machinery available in the early 1960s was limited. A finding that depends on
+a difficult estimate will be doubted for reasons that have nothing to do with the finding.
+
+**Financial economics had a productive alternative.** Conditional-variance models explained a great
+deal of observed behaviour and were well suited to the data and the questions of the period. **A field
+with a working framework does not adopt a result whose main contribution is to complicate it.**
+
+**What eventually changed.** Not a single decisive paper. The 1987 episode and its successors made tail
+risk a practical concern, machine-readable data made tail estimation routine, and the empirical
+regularity was absorbed into practice without the family that originally carried it. **The
+regularity won by attrition rather than by argument, and the vocabulary that spread is the one that
+survived the family.**
+
+## The finding stated so that it can be used
+
+The regularity that survived the family is worth stating in its strongest usable form, because the version
+in circulation is usually either too weak to matter or too strong to be true.
+
+**The usable statement.** Over the ranges and at the frequencies at which the series have been measured,
+extreme price changes occur substantially more often than a normal distribution implies, and the frequency of
+exceedance declines more slowly than exponentially. **The empirical content is a comparison of frequencies at
+levels far from the centre, and it is robust to the choice of family.**
+
+**What is not claimed.** That the second moment fails. That the process is stable or self-similar. That the
+tails follow a power law exactly. **Each of those is a family claim, and each has been contested; none is
+needed for the usable statement.**
+
+**Three things the usable statement supports.**
+
+**Risk measurement that does not rely on a fitted tail.** Frequency comparisons at specified levels require
+no exponent. **This is the form that has been most widely adopted in practice and the one least discussed in
+the literature, because it is not a model.**
+
+**A bias correction for standard machinery.** Where the machinery assumes normality, its intervals are too
+narrow and its risk measures too small. **The correction is an order of magnitude rather than a factor, which
+is the practical significance of the finding.**
+
+**An argument for the structural screens.** If the tail is heavy enough to matter, absorbing states are
+reachable, and the screening of Part II has something to screen. **The finding is the empirical basis of the
+book's later halves.**
+
+**How to falsify it.** Measure the frequency of exceedances at several levels, over several instruments and
+periods, and compare against a normal fitted to the same data. **The comparison has been made many times and
+has not been overturned; a reader who wants to challenge it can make it again in an afternoon.**
+
+## The comparison that does the work
+
+The empirical finding is a comparison, and performing it requires three choices that the finding's popular form
+leaves unstated.
+
+**The comparison. Frequencies at a level.** How often the series exceeded some threshold, against how often a
+normal distribution fitted to the same data would predict.
+
+**Choice one. The level.** Far enough from the centre that the frequency is small, close enough that the sample
+contains several exceedances. **Percentile choices are conventional, and the finding is robust across the
+conventional range.**
+
+**Choice two. The normal's parameters.** Estimated from the same sample, with the centre and the scale taken from
+the data. **A normal fitted to a poor estimate of the scale will understate or overstate the comparison, and the
+direction matters for the argument.**
+
+**Choice three. The window.** The finding is stronger over long windows containing stress periods and weaker
+over calm ones. **A comparison run on a calm subperiod can fail to reproduce the finding, and the failure is
+informative rather than contradictory: it localises the heaviness in time.**
+
+**What the three choices mean for a reader.** The finding is checkable in an afternoon by anyone with a return
+series, and the check requires the three choices to be stated. **A reader who reproduces it on a different
+sample and finds a smaller effect has not refuted it; they have measured it under other conditions, which is
+what the finding predicts.**
+
+**Why this section is in the chapter.** Because a finding that is described qualitatively invites agreement or
+disagreement. **A finding described as a comparison invites measurement, and measurement is what turned this
+one from a claim into a regularity.**
+
+## A note on what this chapter could not check
+
+The text of Mandelbrot (1963) was not available to me in full while writing. The claims above
+rest on its title, abstract, and citation record, on Mandelbrot's own restatement of the argument
+in his 1967 *Science* paper [@mandelbrot1967], and on the secondhand literature. No quotation
+from the 1963 paper appears in this chapter, and no numerical estimate from it is reported — in
+particular, none of the parameter values often attributed to it.
+
+One widely repeated number is worth flagging explicitly, because it circulates in Chinese and
+English sources alike: that Mandelbrot (1967) gives the fractal dimension of a circle as 1.15.
+It does not. The figure caption of that paper states only that a circle's measured length
+converges to a limit. The number appears in the secondary literature and not in the paper. The
+claim register records this as a verified absence, which is a category this book uses whenever
+the relevant fact is that something is missing.
+
+Three further limits on what this chapter can assert, since part of its argument rests on the
+reception history.
+
+The claim that the stable Paretian programme was abandoned for practical reasons rather than
+refuted is my reading of the secondary literature, not a finding. What is checkable is the
+sequence: an enthusiastic 1963 paper [@fama1963], a long survey two years later [@fama1965], and
+a subsequent literature that fitted alternative families. Whether the field's stated reasons
+matched its actual reasons, I cannot settle from the records I used.
+
+The citation figure of 4,826 is one database on one date. Other services record different counts
+for the same paper, which is normal, and is why this book names the database whenever it gives a
+number.
+
+And the critiques of the stable family cited above are recorded by title and record only. I have
+not read them, and I do not summarise their arguments.
+
+![Two worlds, one horizontal axis. Under a Gaussian assumption, the probability of a move falls away geometrically; under a fat-tailed assumption it falls away at a fixed power, so events that should be vanishingly rare remain visible. Computed for this book from the stated distribution families.](../../figures/fig01-tail-comparison.png){#fig-tail-comparison}
+
+The figure is generated by `scripts/make_figures.py` from the family of distributions discussed in
+this chapter. It is not reproduced from any published source, and the code that produces it is in
+the repository.

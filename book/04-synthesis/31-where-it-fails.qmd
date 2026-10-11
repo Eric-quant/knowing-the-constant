@@ -1,0 +1,446 @@
+# Where It Fails {#sec-where-it-fails}
+
+A book that constructs devices owes the reader an account of when they stop working, and the account has to be written by the same person who proposed the devices, which is a weak position from which to audit one's own instruments and the reason this chapter exists as a separate unit rather than as caveats distributed through the text. This chapter is
+that account, and it is deliberately placed before the closing chapter rather than folded into it,
+because a failure section that arrives after the summary reads as a disclaimer.
+
+The failures come in three kinds. Here they are. conditions the devices require and may not have, structural
+weaknesses that no amount of care removes, and settings where the whole method should be abandoned.
+
+## Three requirements, and what happens when they are missing
+
+**The enumeration requirement.** Lists first. No list, no device. Every device in this book needs a list. The ledger needs exposures
+with mechanisms. The grid needs defining expressions. The ordering needs to know what the options
+are.
+
+Where the list cannot be written — where the exposures are not identifiable, or where the options
+are not enumerable in advance — the devices have nothing to operate on. This is not a failure of
+effort. **There are decisions whose exposure set genuinely cannot be specified**, and the honest
+response is to say so rather than to produce a short list and call it complete.
+
+**The agency requirement.** Structure needs an actor. Often absent. The devices prescribe structure: a cap, a pilot, a pre-committed exit, a
+staged commitment. Each requires someone able to act on structure rather than only on forecasts.
+
+Where the available choices are binary — approve or reject, go or no-go — the first stage has nothing
+to work with, and the method reduces to a vote with better vocabulary. **This is common in
+bureaucratic settings, and it is the most frequent practical failure I expect readers to encounter.**
+
+**The audit requirement.** Checkers, not producers. Rarely available. The devices are more reliable in the hands of someone checking the work
+than in the hands of the person producing it. A ledger entry that names a mechanism can be
+challenged. A grid populated without an attempt at two estimators cannot, because the failure is
+invisible in the output.
+
+This is a weakness of the method rather than of its users. **Every device here is a proposal whose
+correct use cannot be verified from the outside**, which puts it in the same category as the
+judgements it was designed to discipline.
+
+## The failure table
+
+Each device, its characteristic failure, and the signal that it is failing.
+
+| Device | Its failure condition | The signal |
+| --- | --- | --- |
+| Irreversibility ledger | Exit costs estimated under present conditions | Every entry marked bounded; no stress-case column |
+| Existence–estimability grid | Estimability judged by assertion rather than by two estimators | Every quantity in Compute |
+| Discount | Coefficient of variation invented for the occasion | δ close to one for every decision |
+| Four-column protocol | Tool column populated with implications rather than with named users | No later paper cited in column four |
+| The ordering | Stages entangled, or the option set not enumerable | Stage one produces no changes to the option set |
+| The Constant's grades | Grades assigned to make a claim look stronger | Everything at grade II |
+
+**The right-hand column is the useful part.** Read it first. A user who notices one of those signals has a concrete
+reason to suspect the device is being completed rather than used.
+
+## The demand for a number
+
+One failure is institutional rather than technical, and it deserves its own heading because it
+affects all the devices at once.
+
+**An analyst whose work is evaluated by whether a number was produced will produce a number.** The
+three-cell structure and the refusal output exist to make that harder by giving the analyst something
+else to deliver. But the pressure is structural and the structure does not remove it.
+
+The consequence is predictable: in organisations where the deliverable is a figure, the grid will be
+filled in the Compute column, the ledger's entries will be marked bounded, and the discount will be
+applied with a small coefficient of variation. **Nothing in this book prevents that. The most it can
+do is make the forgery visible to whoever reads the output, which requires a reader who knows what a
+stress-case exit cost looks like.**
+
+## Where the whole method should be abandoned
+
+Four settings, and the first is the most common by a wide margin.
+
+**Reversible, low-stakes decisions.** Most decisions. Skip the method. Screening a decision that can be changed cheaply and whose
+failure has no consequence is pure cost. The ordinary approach is correct, and applying this book's
+procedure to it is a way of feeling diligent rather than being diligent.
+
+**Settings where enumeration fails.** No list, no method. Say so. Where the exposures cannot be identified, the ledger and the
+ordering have no input. The correct response is the ordinary one, informed by the awareness that
+enumeration failed.
+
+**Decisions that are fundamentally about values.** Not ours. The third worked case ended in a refusal for a
+technical reason: the alternatives did not share a scale. Where that failure is fundamental rather
+than incidental, the decision is a matter of priorities, and a method that produces a figure for it
+is producing a figure for something else.
+
+**Where the method would be used to defer.** Paralysis again. A procedure with three stages and a refusal output can
+be used to postpone a decision indefinitely, on the grounds that the screening is not complete.
+**This is the paralysis the precautionary principle is accused of, arriving through a different
+door**, and the defence is the same: the method's purpose is to identify what can be decided and
+what cannot, not to decide nothing.
+
+## What this book does not claim
+
+A list, so that a reader can check the book against it.
+
+It does not claim that the devices improve outcomes. None has been tested. **No study has been run, and the book says so
+wherever the devices appear.**
+
+It does not claim that the constructed devices are novel in their components. The ledger borrows from
+real-options thinking, the discount from shrinkage, the grid from decision analysis, and the ordering
+from nothing in particular.
+
+It does not claim that the papers' claims are wrong. It claims that they were weakened, and it
+documents where the weakening is contested.
+
+It does not claim to have read every text it cites. The verification register records what was read,
+what was inferred, and what could not be checked.
+
+It does not claim that the reader should adopt any of it. Quite the opposite. **The most a device can do is make a
+reasoning step visible, and visible reasoning can be rejected.**
+
+## Refutation of the book as a whole
+
+The book's central structure would fail if any of the following held.
+
+**If the nine papers' claims had not been weakened.** The pattern the book documents depends on the
+weakening being real, and the verified register is the evidence. A reader who checks those entries
+and finds the claims standing would be entitled to dismiss the framing.
+
+**If structural screening did not change decisions.** The whole of Part IV rests on screening
+altering which options are on the table. If, in practice, screened decisions usually reach the same
+conclusion as unscreened ones, then the method is overhead.
+
+**If the constructed devices' failure conditions were never met.** A device whose refutation
+conditions are unreachable in practice is not falsifiable in any useful sense, and this book attaches
+refutation conditions to every device on the assumption that they can be met.
+
+## Claim and tool
+
+The claim: the devices have three requirements that are often unmet, one institutional weakness that
+cannot be designed away, and four settings in which the method should be abandoned.
+
+The tool: the failure table's signal column, which converts "the device is being used badly" from a
+suspicion into something a reader can look for.
+
+## Boundary conditions
+
+The chapter's own claims are tentative. The failure signals are drawn from the devices' internal
+logic, not from observing practitioners fail, and the four abandonment settings are judgements about
+where structure is unavailable rather than findings about how often that occurs.
+
+## Failure modes of the individual devices
+
+The chapter's table gives each device's characteristic failure. This section states what those failures
+look like in sequence, because the failures compound.
+
+**Stage one fails silently.** A ledger whose exit costs are all present-condition estimates produces a
+list that looks complete. Nothing downstream can detect it, because the downstream stages take the list
+as given.
+
+**Stage two fails plausibly.** A grid populated with one estimator per quantity looks like an analysis.
+**The failure is invisible because the second estimator, which would have disagreed, was never run.**
+
+**Stage three fails vigorously.** A discount applied with a coefficient of variation chosen to justify
+the position the practitioner already wanted produces a number, and the number is defensible to anyone
+who does not ask how the input was derived.
+
+**What the compounding produces.** A decision process that is complete on paper, uses every device, and
+is no better than the ordinary approach. **This is the most likely way for the book's method to be
+adopted and to fail, and it requires no bad faith — only an organisation that rewards completed forms.**
+
+**What prevents it.** Nothing internal to the devices. The prevention is a reviewer who asks the
+specific questions: what is the stress-case exit cost, which two estimators did you run, and what is the
+coefficient of variation. **Three questions, asked by someone who was not in the room when the decision
+was made.**
+
+**The uncomfortable conclusion.** The devices' value depends on an institutional condition — an
+independent reviewer with the standing to ask those questions and the technical literacy to evaluate the
+answers — that this book cannot supply. **A method whose effectiveness depends on its reviewers is a
+method that will fail in organisations without them.**
+
+## What would make the book's method unnecessary
+
+A framework is worth less in the conditions it addresses well than in recognising when it can be
+bypassed. Four such conditions.
+
+**A short decision horizon with bounded stakes.** Where the worst outcome is affordable and the position
+can be reversed cheaply, the ordinary approach is correct. Most decisions people describe as difficult
+are in this class.
+
+**A well-specified model with a validated range.** Where the process is engineered rather than observed
+— an industrial process, a clinical trial protocol, a designed pricing system — the estimation problem
+is smaller and the machinery of Part I is unnecessary.
+
+**A decision that is genuinely about values.** Where the disagreement is about what to trade rather than
+about the world, no method of this kind helps and the questions are philosophical.
+
+**A situation where the data are good enough that the uncertainty does not bind.** Some domains have
+long samples, stable mechanisms and low measurement error. In those, the discount is a formality and the
+screening has nothing to screen.
+
+**What the four conditions share.** Each removes one of the book's premises: boundedness removes the ruin
+problem, specification removes the estimation problem, values remove the factual problem, and data
+quality removes the identification problem.
+
+**The test for a reader.** Ask which premise of the book fails in your situation. **Where one clearly
+fails, the correct response is to use the standard tools for that part of the problem and the book's
+devices only for the remainder — which is usually a small part.**
+
+## What the failure analysis implies for adoption
+
+The chapter has catalogued where the method fails. The practical question is what a reader should do with
+that catalogue, and there are three defensible answers.
+
+**Adopt the parts whose failure conditions you can meet.** A practitioner with an independent reviewer can
+use the ledger and the grid; one without can use the ordering's stage one, which requires no review beyond
+the decision-maker's own honesty, and skip the stages whose correctness is unverifiable from outside.
+
+**Adopt the vocabulary without the procedure.** The distinctions — estimable versus not, bounded versus
+unbounded, decay by mechanism rather than by returns — are useful in conversation and require no
+infrastructure. **A team that shares the vocabulary will ask better questions even if nobody runs the
+stages.**
+
+**Adopt nothing and read the book as a description.** This is a legitimate response. The material's claims
+about the nine papers are verified independently of the constructed devices, and a reader who finds the
+devices unpersuasive keeps the reading.
+
+**What the three answers have in common.** They are all conditional on the reader's setting, which is the
+honest structure of advice about a method whose effectiveness depends on institutional conditions the author
+cannot supply.
+
+**The test a reader can apply to their own setting.** Five questions. Is there an independent reviewer? Can
+the decision-maker act on structure, or are the choices binary? Are there more than a handful of quantities
+the decision depends on? Is the exposure bounded already? Is the horizon short? **Two or more affirmative
+answers place the reader in the segments where the method is worth the friction, and the book's value to
+those readers is the ordering. Two or more negative answers place the reader in the segments where the
+ordinary apparatus is correct, and the book's value to those readers is the reading of the nine papers.**
+
+**Why this section matters more as the book ends.** Because a method presented without a threshold for
+adoption will be adopted everywhere by the enthusiastic and nowhere by the sceptical, and both responses
+lose the part that would have helped. **A stated scope is not a hedge. It is the difference between a tool
+and a cause.**
+
+## What a reader should take if they take nothing else
+
+The book has argued for a method and catalogued its failures. For a reader who adopts none of the
+constructions, three habits transfer without any apparatus.
+
+**One. Ask whether the quantity exists, before asking how precise it is.** The question costs minutes and it
+is the one that most analyses skip. **Applied even once, it changes what a reader notices in every subsequent
+report.**
+
+**Two. Ask who bears the consequences.** The closing rule of the book and the easiest to apply. **It separates
+description from decision, and it is the reason a practitioner's advice and an academic's advice can differ
+while agreeing on every proposition.**
+
+**Three. Ask what would have to stay the same.** A regularity that is not indexed to a mechanism or a rule has
+no stated duration, and a claim without a duration is a claim about the future disguised as a description of
+the present. **The question converts an assumption into a monitorable condition.**
+
+**What the three have in common. No apparatus, no register, no vocabulary.** They can be asked in a meeting by
+someone who has read only this page, and each produces a specific follow-up rather than a general doubt.
+
+**Why the book ends this way.** Because a method's adoption depends on its being usable at the moment when
+the decision is being made, and the moment is usually short. **The three questions fit in a minute. Everything
+else in this book is the argument for why they are the right ones.**
+
+**What remains after them.** The papers. Nine results, most of them short, whose claims were weakened and
+whose tools survived, and the reading of them is the part of this material that does not depend on the
+author's constructions at all. **The questions are how to read them; the papers are why.**
+
+## The book's own grades
+
+A book that grades nine results should grade itself, and this section does it in the book's own vocabulary.
+
+**The verification apparatus. Grade I by construction.** The registers, the scripts and the checks are checkable
+by execution rather than by argument. **A reader can run them, and the running either works or does not.**
+
+**The reading of the nine papers. Grade II.** The claim that their claims were weakened while their tools
+survived is robust across changes of domain and contested at its boundary. **The register is the evidence and the
+interpretation is the author's.**
+
+**The three-layer structure. Grade II, and organisationally so.** The constraint direction is logical; the
+mapping onto the material is a reading. **None of the three authors stated it in these terms.**
+
+**The constructed devices. Grade III until tested.** Which is the weakest grade, and it is the grade the devices
+have earned rather than the one they were assigned. **Every entry in the constructed register carries a
+refutation test precisely so that the grade can be improved or confirmed.**
+
+**The policy applications. Grade III and contested.** The four domains are argued from structure rather than
+from evidence, and the chapter says so.
+
+**What the grades imply for a reader. One instruction.** Rely on the apparatus, read the readings, treat the
+constructions as proposals. **Which is exactly the disposition the four-column protocol prescribes for other
+people's work, applied to this one.**
+
+**Why the self-grading is not a rhetorical gesture.** Because the grades are checkable in the same way the
+book's other claims are: the apparatus can be run, the readings can be compared to the sources, and the devices
+can be attacked at their fourth field. **A self-grade that could not be checked would be decoration; this one
+names three tests.**
+
+**What the grades do not cover. The prose.** The style rules are implemented in a script and the script is in
+the repository, which makes the book's register a checkable claim in the same way its claims are. **The
+apparatus extends further than the argument, and that is the unusual part.**
+
+## What to do in the first month of use
+
+A method's failure modes are described in this chapter. Its adoption has failure modes of its own, and the
+first month is where they appear.
+
+**Week one. One decision, one page.** Take a live decision and write the one-page memo of Chapter 30. **No
+training, no template, no vocabulary beyond the four mechanisms.**
+
+**Week two. One quantity.** Write a defining expression and run two estimators on a quantity the decision
+depends on. **The exercise's purpose is to discover how often the two disagree, which is usually a
+surprise.**
+
+**Week three. One discount.** Compute a coefficient of variation for an edge estimate and apply the formula.
+**The number will be larger than expected, and the reaction to it is the point of the week.**
+
+**Week four. One review.** Compare the week-one decision against what has happened, and ask whether the
+screening changed anything. **Which is the only available test of the method in the absence of the study the
+book does not have.**
+
+**What the month establishes. Three things.**
+
+**Whether the procedure fits the setting.** The agency requirement — whether the decision-maker can act on
+structure — is discovered in week one rather than argued about.
+
+**Whether the reviewer exists.** Week four reveals whether anyone other than the author can check the memo.
+
+**Whether the vocabulary is adopted.** Which is the leading indicator of whether the method will survive the
+second quarter.
+
+**What the month does not establish. That outcomes improve.** Which requires years and a comparison group.
+**The month tests fit, not efficacy, and saying so is the difference between a trial and a demonstration.**
+
+**Why a month rather than a training programme.** Because the method is four pages and the failure modes are
+institutional. **A training programme teaches the pages; a month of use discovers whether the institution can
+support them.**
+
+## The failure table read as a checklist
+
+The chapter's failure table lists each device with its failure condition and its signal. Read as a checklist
+before a decision is filed, it becomes the instrument's self-test.
+
+**Before filing a decision, four checks.**
+
+**One. Does the ledger have a stress-case exit cost for every entry.** A missing column means present-condition
+costs, which is the first row of the failure table.
+
+**Two. Do the grid's cells rest on two estimators, or on an assertion.** Every quantity in Compute with no
+comparison recorded is the second row.
+
+**Three. Does the discount have a coefficient of variation with a named basis.** The third row's signal is a
+discount close to one for every position.
+
+**Four. Does the fourth column of the protocol name a later user.** The fourth row's signal is a tool column
+populated with implications rather than with named papers.
+
+**What the four checks cost. Ten minutes.** Which is the argument for running them: a signal caught here is a
+device used rather than completed.
+
+**What the checks cannot detect. Two things.**
+
+**An enumeration that is incomplete.** Because the omissions are invisible by construction, which is the
+instrument's structural weakness.
+
+**A judgement that is convenient.** A cell assigned to reach a desired method will look exactly like a cell
+assigned honestly.
+
+**What the second limitation implies. One requirement.** An independent reviewer, which the chapter's
+concluding sections name as the institutional condition the method depends on. **The four checks are the
+reviewer's agenda, and a method whose effectiveness depends on its reviewers is one that fails in organisations
+without them, as the chapter says.**
+
+**Why the table works as a checklist.** Because its signal column was written to be observable rather than
+inferential. **Four fields, ten minutes, and the signals are the residual use of the chapter's catalogue.**
+
+**What to do when a check fails.** Record the failure and proceed. **Which is not the same as correcting it, and
+is the honest alternative to filing a decision whose self-test was not run.**
+
+## The three requirements and the three questions that test them
+
+The chapter names three requirements the devices impose. Each has a question that tests whether it is met, and
+the questions are what make the requirements usable in a review.
+
+**The enumeration requirement. One question.** What is not on this list. **Which is asked of the author rather
+than of the list, and the answer is a residual category rather than a missing item. Where the answer is "nothing",
+the enumeration has not been attempted seriously.**
+
+**The agency requirement. One question.** What can be done differently after this decision. **Where the answer is
+nothing, the decision-maker cannot act on structure and the method reduces to a vote with better
+vocabulary.**
+
+**The audit requirement. One question.** Who else has seen this. **Where the answer is nobody, the record is
+unaudited and the failure modes are invisible from outside.**
+
+**What the three questions detect. Three failures.**
+
+**An enumeration that stops at the obvious.** Detected by the first question.
+
+**A setting where the method cannot be applied.** Detected by the second, and it is the most common practical
+failure the chapter predicts.
+
+**An instrument used as a ritual.** Detected by the third.
+
+**Why questions rather than criteria.** Because criteria are applied by the person producing the work and
+questions are asked by someone else. **The three requirements are properties of a document; the three questions
+are how a reader establishes whether the document has them.**
+
+**What to do with the answers. One rule.** Record them alongside the decision. **"Enumeration incomplete,
+residual bounded by cap; agency available; audited by X." Which is a sentence and which makes the method's
+applicability a recorded fact rather than an assumption.**
+
+**What the questions cannot establish. That the work is good.** They establish whether the method was applied in
+a setting that supports it. **Which is the most a review of method can establish, and it is more than a review of
+conclusions can.**
+
+## The failure analysis and three readers
+
+The chapter catalogues failure modes. Three readers will use the catalogue differently, and the differences
+determine what each should take.
+
+**A practitioner deciding whether to adopt the method.** Whose question is whether the requirements can be met in
+their setting. **Which the three requirements and the three test questions answer in a page.**
+
+**A reviewer auditing a decision.** Whose question is which signals to look for. **Which the failure table's
+signal column answers, one row per device.**
+
+**A researcher testing the method.** Whose question is what would falsify it. **Which the three empirical studies
+of the closing chapter answer, each named precisely enough to be run.**
+
+**What the three share. One property.** Each needs a different part of the chapter, and the parts do not
+overlap. **The requirements for the adopter, the signals for the reviewer, the studies for the researcher.**
+
+**What the three do not share. The effort.** A page for the first, ten minutes for the second, and a project for
+the third. **Which is why the chapter is arranged in that order and why the last section is the shortest.**
+
+**How to use the chapter as a reader. One question.** Which of the three am I. **Which determines the section to
+read and prevents the common failure of reading the whole catalogue when only one part applies.**
+
+**Why the chapter does not merge the three.** Because a chapter that mixed them would serve none. **Three readers,
+three sections, and the arrangement is the same device the book applies elsewhere: the audience determines
+which part is operative.**
+
+**What the catalogue cannot supply. Adoption.** Which depends on a setting the chapter describes in the abstract.
+**The month of use in the earlier section is the substitute, and it is a substitute rather than a
+demonstration.**
+
+## A note on what this chapter could not check
+
+No empirical study of device misuse exists, and this chapter does not pretend otherwise. It is an
+inventory of the ways the book's own instruments can fail, argued from their construction.
+
+The prediction that the agency requirement is the most frequent practical failure is a guess about
+the distribution of settings, and I have no evidence for the distribution.

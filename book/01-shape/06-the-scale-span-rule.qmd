@@ -1,0 +1,456 @@
+# The Scale-Span Rule {#sec-scale-span}
+
+Chapter 2 proposed a rule, and this chapter is where it has to defend itself.
+
+The rule is short. **An exponent may be reported only together with the span of scales over which
+it was fitted, and a span below two orders of magnitude may not be reported as a property of the
+object.** Everything else in this chapter is either the reasoning behind it, an attack on it, or a case where it fires wrongly. All three are needed.
+
+I put the rule in a chapter of its own because it is the first device in this book that constrains
+what other people are allowed to say. Rules that constrain speech deserve more scrutiny than
+observations that describe the world, and I would rather state the attacks myself than wait for
+them.
+
+## What the rule is, and what it is not
+
+Three clarifications, because most objections I have received turn out to be about something else.
+
+**It is a reporting convention, not a statistical test.** The distinction matters. It does not tell you whether an exponent
+exists. It tells you what you may call it once you have estimated one.
+
+**It applies to exponents, not to power laws as models.** Models with a power-law component can be
+fitted to any series at any span. The rule constrains the interpretation of the fitted exponent,
+not the fitting.
+
+**It binds the claim, not the study.** The study survives. The claim changes. A short-span study remains useful: it can report a local
+slope, compare two objects whose measurements were made the same way, or serve as a diagnostic of
+regime change. What it cannot do is report the exponent as a fact about the object.
+
+That last distinction is the one that matters in practice, and it is the reason the rule is not as
+restrictive as it sounds.
+
+## Why a span requirement is necessary
+
+The difficulty is elementary. It is also routinely ignored.
+
+Any smooth function looks like a power law over a sufficiently short interval. Take a parabola:
+over a small enough window, on log-log axes, it is straight, and its slope is a number you can
+report. That number is not the parabola's exponent, because a parabola does not have one. It is the
+parabola's local behaviour in the window.
+
+Now extend the reasoning. If a short window makes a parabola look like a power law, then a short
+window makes almost anything look like a power law. The fitted exponent, in that window, is a joint
+property of the object and the window, and there is no way to separate them from the data alone.
+
+| Object | Local log-log slope over one decade | True power-law exponent |
+| --- | --- | --- |
+| Parabola | Approximately 2 (in the domain where it dominates) | Does not exist |
+| Exponential decay | Varies continuously with the window | Does not exist |
+| Logistic curve | Changes sign across the window | Does not exist |
+| True power law | Constant across all windows | The fitted value |
+
+The table's fourth row is the point: the power law is the only member of the family whose local
+slope is window-invariant. **That invariance is the property you are trying to detect, and you
+cannot detect it inside a window.**
+
+## Three attacks on the rule
+
+**Attack one: precision substitutes for span.** If the data are measured with negligible error and
+the window is short, surely a clean fit identifies the exponent?
+
+Response: precision reduces one of the three error sources from the previous chapter, and it is the
+source the rule is not about. The problem with a short span is not that the points are noisy. It is
+that the alternative models predict the same thing over that span. A perfect measurement of a
+logistic curve over one decade is a perfect measurement that cannot distinguish the logistic curve
+from a power law.
+
+**Attack two: the rule disqualifies legitimate research.** A great deal of published work in
+materials science, physiology, and finance rests on exponents fitted over one to two decades.
+
+Response: partly true, and the rule's effect is narrower than the objection assumes. Most of that
+work uses exponents comparatively, in the descriptive sense described in Chapter 2. Those
+conclusions survive; what changes is the wording. A smaller subset treats the exponent as a model
+input, and for those the objection is valid, and the work is affected. **I accept the implication
+rather than soften the rule.**
+
+**Attack three: any threshold is arbitrary.** Why two decades rather than three, or one and a half?
+
+Response: correct, and conceded in advance. It always is. The threshold is a convention, chosen because a decade
+is roughly the span over which the curvature of a plausible alternative becomes visible in a
+log-log plot. The rule's content is the reporting requirement. A reader who prefers a different
+threshold has kept the substance and changed the number, which is the intended outcome.
+
+## Two cases where the rule fires wrongly
+
+A rule that never misfires is not a rule. It is a slogan. Here are two false positives.
+
+**Case one: an object with a genuine characteristic scale.** Some systems have a dominant length
+scale and no scaling regime at all. The rule would classify their fitted exponents as window
+descriptions, which is technically right and substantively unhelpful, because the correct statement
+is not "the exponent is a description of the window" but "this object has no exponent."
+
+The rule needs a companion: if the object has a characteristic scale, do not fit a power law. The
+checklist in Chapter 2 covers this at step four, which is why step four exists.
+
+**Case two: the decisions do not depend on the exponent.** A process engineer may need to know only
+that roughness is high rather than low, and may not care whether the exponent is 1.6 or 1.9. Under
+those conditions the rule's insistence on the span is pedantic: the uncertainty is irrelevant to
+the decision.
+
+I accept the case and draw a different conclusion from it than the objector would. When the
+decision is robust to the exponent's uncertainty, the finding should be reported as a **bound** —
+"the exponent is above 1.5" — which the rule permits and which is more useful than a point estimate
+anyway.
+
+## Is the rule itself a constant?
+
+The book's own device should be applied to the book's own rule, or the device is a decoration.
+
+**What transformation should the rule survive?** If it is a genuine constant, it should hold across
+domains: the same reporting standard for exponents in finance, in materials, in traffic data, in
+biology.
+
+**Does it?** Partly. The reporting requirement holds everywhere. The threshold's calibration does not: what
+counts as an adequate span differs between a system with physical limits at both ends and one
+measured by an instrument with a known resolution.
+
+So the rule is a **Grade II constant**: the requirement survives the change of domain, and the
+number attached to it does not. That is the same grade as the claim "tails are thick," and it is
+the grade at which I would advise readers to hold it.
+
+## Claim and tool
+
+The claim embedded in the rule is that for scale-dependent quantities, the span is part of the
+measurement. I regard this as established by the elementary argument above rather than as a
+proposal.
+
+The tool is the reporting convention, and it is a proposal. It is registered as entry B-008 with
+its preconditions, and it has been applied to every exponent quoted in this book.
+
+I should note what the rule does for the book's own credibility. It removes from my vocabulary a
+class of sentence that is otherwise very tempting: "the exponent is X," with no window. Having
+given up those sentences, I have also given up the ability to look more precise than the evidence
+allows, which is a useful constraint to accept in public.
+
+## Boundary conditions
+
+The rule presumes that a scale span can be measured and stated, which excludes series with unknown
+or changing sampling resolution.
+
+It presumes that a single exponent is the object of interest. Where the relationship is piecewise —
+different exponents in different regimes — the span must be reported per regime, and the rule's
+threshold applies to each piece.
+
+And it presumes that the reader will use the span. A convention that is not enforced by readers
+does nothing, which is why the last section of this chapter is the one that matters most.
+
+## What a reader can do
+
+Three actions, in increasing order of effort.
+
+**Ask for the span.** When someone reports an exponent, ask over what range. The question takes a
+sentence and it is usually unanswerable from the published text, which is itself informative.
+
+**Ask what else fits.** A stretched exponential, a lognormal, or a mixture will often fit as well
+over the reported span. If the conclusion depends on the choice, the span is carrying more weight
+than the data.
+
+**Ask what changes if the exponent is wrong by 30 percent.** If nothing changes, report a bound and
+move on. If something changes, the estimation problem is the finding, and the chapter's job is to
+say so.
+
+## Calibrating a span
+
+The scale-span rule says that a scale-invariant claim must state the range over which it holds. This
+section is about how to choose the range and what to do when the data do not offer a good one.
+
+**The trade-off is unavoidable.** Both ways cost something. A short span gives an estimate computed from data that are
+relatively homogeneous, at the cost of few points on the log-log line and an estimate dominated by
+noise. A long span gives more leverage on the slope, at the cost of mixing regimes that may not share
+a single exponent.
+
+**Three orders of magnitude is a working minimum** for the applications in this book, and it is a
+convention rather than a result. The Nile records span more than that; high-frequency financial data
+over a decade span about eight orders of magnitude in time, though not all of it is usable; a
+three-year sample of daily data spans roughly a single order, which is why claims of long memory from
+such samples should be treated as hypotheses rather than estimates.
+
+**Four checks before accepting a span.**
+
+**Do the points lie on a line?** Look at the residuals. Fit, then look at the residuals. Curvature within the span means the
+span contains a boundary, and the boundary is the finding.
+
+**Does the slope survive shortening?** Recompute and compare. Recompute with the upper and lower thirds removed. An estimate
+that moves by more than the decision's tolerance is not a stable description of the span.
+
+**Are the points independent?** Usually they are not. If the series has long memory, successive observations carry
+overlapping information and the effective number of independent points is far smaller than the count
+suggests. The uncertainty on the slope is correspondingly larger, and this is the most commonly
+omitted correction in applied work.
+
+**Does the span contain the range the decision cares about?** Often it does not. A well-measured exponent over three
+orders of magnitude that does not include the horizon of the decision is a description of the wrong
+interval. This is the point of stating the range at all.
+
+**What to do when the span is short.** Report the estimate with the range, mark it as provisional, and
+treat it as one input among the structural considerations rather than as a parameter. Where a decision
+depends on behaviour outside the measured range, the honest output is a bound derived from
+considerations that do not require extrapolation — which is what the fourth quadrant's rules are for.
+**A short span is not a failure of method. Treating a short span as though it were a long one is.**
+
+## The rule in one page
+
+The scale-span rule has been stated in this chapter and used throughout the book. For reference, the
+whole rule in a page.
+
+**State the range. Always.** A scale-invariant description is meaningful over an interval, and the
+interval is part of the claim rather than a detail of the method.
+
+**State the procedure.** Stepping, covering and spectral estimates measure different properties. The
+procedure belongs next to the number.
+
+**Check stability within the range.** Recompute with the extremes discarded. A slope that moves by more
+than the decision's tolerance is not a description of the interval.
+
+**Correct for dependence.** Where the series has long memory, successive observations overlap and the
+effective sample is smaller than the count. **The uncertainty is larger than the naive calculation
+reports, and this correction is the one most often omitted.**
+
+**Report the sensitivity.** What changes in the decision if the exponent is at the low end of its
+range rather than the point estimate. Where nothing changes, the estimation problem does not matter.
+
+**Say when the range is short. Explicitly.** A span of one order of magnitude supports a provisional
+statement, not a conclusion. **The failure mode is not a short span; it is treating a short span as a
+long one.**
+
+**Why one page.** Because the rule is applied by people who will not read a chapter before using it,
+and a rule that requires a chapter to state is a rule that will be applied from memory and get the
+range wrong. **One page is the length at which a practitioner can actually check what they did.**
+
+## Two spans in one series
+
+The rule's most useful application is not to a single measured range but to a series that contains two.
+
+**The pattern.** A financial series measured over decades and over minutes often displays different
+scaling in the two regimes, with a boundary somewhere between. The boundary is not an artefact; it is
+usually the scale at which a different mechanism takes over.
+
+**Three examples of the mechanism change.**
+
+**Microstructure.** At very short horizons, the discreteness of prices and the mechanics of order
+matching dominate, producing a scaling that has nothing to do with the process the analyst is studying.
+
+**Institutional rhythm.** Daily and weekly horizons contain reporting cycles, settlement conventions and
+scheduled announcements, which introduce periodicities absent at other scales.
+
+**Aggregation.** At long horizons, the series is an average over regimes, and the scaling reflects the
+regime distribution rather than the dynamics within any regime.
+
+**What the analyst should do.** Fit each regime separately, and report the boundary with its uncertainty.
+**A single exponent fitted across a boundary is a number that describes neither regime, which is why
+looking at the residual plot is not optional.**
+
+**Why the boundary is the interesting object.** Because it locates the scale at which one mechanism gives
+way to another, and that location is a substantive finding about the market or system. **The exponent
+describes the regimes; the boundary describes the machinery.**
+
+**The practical consequence for decisions.** A decision whose horizon sits near a boundary is a decision
+whose inputs are least reliable, because small errors in the boundary location change which regime's
+estimate applies. **Where that is the case, the honest output is a bound that holds under either regime
+rather than an estimate from one.**
+
+## Reporting a scaling result
+
+The rule prescribes what to report. A template, because the format is what gets adopted.
+
+**One sentence of result.** Slope, uncertainty, range. The slope, its uncertainty, and the range over which it was measured.
+
+**One sentence of method.** Procedure and parameters. The procedure and its parameters, including the cut-off and the fitting weight.
+
+**One sentence of stability.** Extremes discarded. The slope recomputed with the extremes discarded, and the difference.
+
+**One sentence of dependence.** Effective count. The effective sample size, where the series is dependent.
+
+**One sentence of sensitivity.** What changes. What changes in the decision if the slope sits at the low end of its range
+rather than the point estimate.
+
+**One sentence of duration.** And its monitor. What has to stay the same for the scaling to persist, and how that would be
+monitored.
+
+**Six sentences, and the result is usable.** A reader can check the method, audit the stability, apply the
+sensitivity and set a review condition. **None of the six requires a new analysis; all of them require the
+analysis to have been done with the six questions in mind.**
+
+**What the template replaces.** The paragraph that reports a slope significant at some level, names the
+estimator, and stops. **That paragraph is compatible with every one of the six sentences being false, which
+is the problem with the convention rather than with any particular paper.**
+
+**Why templates work.** Because a reporting format is a checklist that survives contact with a deadline. **A
+rule stated in prose is honoured by the careful and forgotten by everyone under time pressure; a format is
+honoured by the fact that the field is empty.**
+
+## The rule and the sample size
+
+The span rule is about the range of measurement and the statistical power question is about the number of
+observations. The two interact, and the interaction explains why some scaling results are unstable.
+
+**The interaction. Two senses of more data.**
+
+**More observations within a fixed range.** This improves the estimate's precision. **It does not extend the
+range, and the range is what licenses a claim.**
+
+**A wider range with the same number of observations.** This extends the claim's scope and coarsens the estimate.
+**The two kinds of improvement trade off, and a study cannot have both without more total data.**
+
+**Three consequences.**
+
+**A long sample at one frequency does not extend the span.** High-frequency data over a year and daily data
+over a decade have different ranges and different precisions, and neither substitutes for the other.
+
+**Pooling across instruments is not the same as a wider window.** Cross-sectional pooling increases the number
+of observations at each scale; it does not extend the scales covered.
+
+**A claim about behaviour outside the measured span requires an assumption, not more data.** Extrapolation is a
+statement about a mechanism, and no additional observation inside the span supports it.
+
+**What to record.** The range, the number of observations, and whether the claim extends beyond the range. **The
+third item is the one that is usually left to the reader, and it is the one that decides whether the result is a
+measurement or an extrapolation.**
+
+**Why this matters for the book's material.** Because tail and memory claims are frequently made across ranges
+where the evidence is thin, and the sample-size question is often invoked as though it addressed the range.
+**Two different shortages, and only one of them is fixed by collecting more of the same thing.**
+
+## The span rule and three kinds of exponent
+
+The rule applies to any scale-dependent quantity. Three kinds appear in the book's material, and each has a
+characteristic failure.
+
+**A dimension. Geometric.** Estimated by stepping, covering, or spectral methods, with the span measured in the
+units of the object. **The characteristic failure is measuring below the resolution of the source data, which
+measures the map rather than the object.**
+
+**A tail index. Distributional.** Estimated from the largest observations, with the span measured in ranks or in
+the size of the deviations. **The characteristic failure is a cut-off chosen to make the log-log plot look
+straight.**
+
+**A memory parameter. Temporal.** Estimated from the autocorrelation structure, with the span measured in lags.
+**The characteristic failure is a bandwidth chosen without regard to the dependence being measured, and the
+competing explanations of non-stationarity.**
+
+**What the three have in common. Two things.**
+
+**The span is a choice and it belongs in the report.** For the dimension, the range of rulers; for the index, the
+cut-off; for memory, the bandwidth. **Three different names for the same requirement.**
+
+**The competing explanations are structural.** A boundary in a scaling relation, a non-stationarity, an
+aggregation effect. **Each is a mechanism claim and none is ruled out by more data within the same span.**
+
+**What differs across the three. The remedy for a short span.** A dimension can be measured with a finer ruler
+if the source data allow. A tail index cannot manufacture observations. A memory parameter can sometimes use a
+longer series at a lower frequency. **Which makes the three failures differently repairable, and the differences
+are worth a reader's attention because they determine what a study can fix.**
+
+**Why the three kinds are worth naming together.** Because the rule is stated once in the book and applied three
+times, and the applications differ in what can be repaired. **Three names, one requirement, three remedies.**
+
+## The span rule and three ways to report a window
+
+The rule requires the window. Three ways of reporting it appear in practice, and they are not equally useful.
+
+**The range of measurement. Necessary.** "Between scales A and B." **Which is the minimum and is often the only
+thing reported.**
+
+**The range of validity. Stronger.** "The relationship holds between A and B and fails outside them." **Which
+requires testing past the boundary and is the version a decision needs.**
+
+**The range of applicability. The most useful.** "The decision's horizon lies inside the range." **Which connects
+the window to the purpose and is the sentence that determines whether the measurement is relevant.**
+
+**What the three report. Increasingly more work.** The first is a by-product of the fitting; the second requires
+an additional test; the third requires knowing what the decision depends on. **Which is why the third is rare and
+why it is the one that changes a decision.**
+
+**How to use the three in a document. One sentence each.** Which is three sentences and reads as a complete
+scaling result. **"Measured between A and B. The relationship appears to fail below A. The decision's horizon sits
+inside the range, so the measurement applies."**
+
+**What the third sentence adds. One thing.** It states that the measurement is relevant, rather than leaving a
+reader to compare the ranges. **Which is the step that most often goes unperformed, because the analyst knows the
+horizon and the reader does not.**
+
+**What to do when the horizon falls outside.** Report the bound rather than the estimate. **Which is the same
+substitution the book makes for non-estimable quantities, and it is what the third sentence makes visible.**
+
+**Why the three ways are worth separating.** Because the rule requires the window and the requirement is satisfied
+by any of the three, while only the third makes the result usable. **Three sentences, increasing work, and the
+third is the one a decision needs.**
+
+## The span rule and three ways a span is chosen
+
+The rule requires a range and does not say how to choose it. Three selection procedures appear in the material,
+and each has a bias.
+
+**By the data's resolution. Mechanical.** The span runs from the finest measurable scale to the coarsest. **Which
+is defensible and produces a span determined by instrumentation rather than by the question.**
+
+**By the straight part of the plot. Circular.** The span is chosen where the log-log relation looks linear. **Which
+produces a good fit and no information, because the search for linearity has consumed the evidence for it.**
+
+**By the decision's horizon. Purposeful.** The span is chosen to contain the range the decision depends on. **Which
+is the only one of the three that connects the measurement to its use, and it can produce a span too short to
+estimate the slope.**
+
+**What the three imply. One requirement.** Report which procedure was used. **"Data-determined" and
+"purpose-determined" are different claims about the same number.**
+
+**How to combine them. One sequence.** Choose by the horizon, then check whether the resulting span supports an
+estimate. **Where it does not, report the horizon requirement and the shortfall rather than extending the
+span.**
+
+**Why the circular procedure is the most common.** Because it produces the most convincing plot. **Which is the
+reason it is dangerous: a span selected for linearity cannot be used to test linearity.**
+
+**What to record. Two items per span.** The selection procedure and the shortfall if any. **Which is a clause and
+which makes the number's provenance available to a reader who will otherwise assume the span was chosen for
+statistical reasons.**
+
+## The span rule and three questions from a reviewer
+
+A reviewer receiving a scaling result asks three questions, and each is answerable from the report.
+
+**What range, and how was it chosen.** Not only the numbers: the procedure that produced them. **A span chosen for
+the straightness of the plot cannot be used to test straightness, and the procedure is the only way to tell.**
+
+**What happens at the edges.** Whether the relationship was tested beyond the span, and what the residual plot
+showed. **Curvature within the span means a boundary, and a boundary is a finding rather than a defect.**
+
+**Does the span contain the decision's horizon.** Which is the applicability question and the one that determines
+whether the measurement is relevant. **A well-measured exponent outside the horizon is a description of the wrong
+interval.**
+
+**What the three have in common. One property.** Each is answerable from what a competent report contains: the
+range, the method, the residual behaviour, and the decision. **Which is why the four-sentence form of the earlier
+section is what a reviewer needs rather than a table.**
+
+**Which question is most often unanswerable. The third.** Because it requires the analyst to know what the decision
+depends on. **And it is the question that decides whether the work is relevant, which is why the chapter's
+practical advice is to write the horizon into the report.**
+
+**What a reviewer should do when the third cannot be answered.** Ask for the horizon rather than for more
+analysis. **The information is in the decision, not in the data, and the request costs nothing.**
+
+**Why the three questions are worth stating.** Because the rule requires a window and the requirement is satisfied
+by a range alone. **Three questions, and the third is the one that turns a measurement into a usable
+result.**
+## A note on what this chapter could not check
+
+This chapter is a construction, and the honest statement is that its central argument is elementary
+rather than empirical: smooth functions have local log-log slopes. The table is illustrative, and
+the fitted-slope values in the middle column are described qualitatively rather than computed here,
+because the exact slope depends on the window chosen, which is the point.
+
+The two false positives are cases I have encountered in reading, not a systematic survey. A proper
+test of the rule would take a corpus of published exponents, extract the reported spans, and
+measure how often the conclusion depends on the fit window. I have not run that study, and the rule
+would be better if someone did.

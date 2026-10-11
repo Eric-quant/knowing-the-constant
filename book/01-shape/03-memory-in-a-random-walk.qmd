@@ -1,0 +1,483 @@
+# Memory in a Random Walk {#sec-memory}
+
+In 1951, a British hydrologist published a paper in the transactions of the American Society of
+Civil Engineers about how much water a reservoir should hold. The paper is 30 pages long, it has
+6,272 citations according to OpenAlex [@hurst1951], and it contains an anomaly that took seventeen
+years to become a mathematical object.
+
+The anomaly is simple to state and hard to believe. If the yearly flow of a river were
+independent from year to year — wet years and dry years occurring in no particular order — then the
+cumulative departure of the flow from its average would grow in a specific, slow way. Hurst
+looked at the records, including long series from the Nile, and found that the cumulative
+departure grew faster than that.
+
+Wet years cluster. Dry years cluster. The river remembers.
+
+This chapter follows that observation from a practical engineering worry, through an object
+invented to explain it, into a market where the object broke, and back out again into a different
+field where it worked. Along the way it introduces the second half of the book's central
+distinction, because the thing that broke in the market was not the memory. It was the assumption
+that a model with memory can be priced with the same machinery as a model without one.
+
+## What Brownian motion cannot do
+
+Start with the standard model, because the anomaly is only visible against it.
+
+A Brownian motion is a random function of time with three properties. It starts at zero. Its
+increments are independent: what happens in one interval tells you nothing about the next. And its
+increments are Gaussian, with a variance proportional to the length of the interval.
+
+The third property is where the familiar square root comes from. Over a period of length n, the
+typical size of the deviation is proportional to the square root of n. That is why uncertainty
+about the average of a series shrinks as the square root of the sample size, and why ten thousand
+observations buy you a hundredfold reduction in error.
+
+Now consider what independence rules out. If the increments are independent, then a long run of
+above-average years carries no information about the next year. In fact, a long run should be
+rare, and its length should follow a simple distribution in which the probability of a run
+decaying geometrically.
+
+**Independence is not a technical convenience. It is a claim about how the world is arranged, and
+the claim is that the past is uninformative.**
+
+Hurst's data said otherwise. He described the discrepancy with a statistic — the rescaled range,
+usually written R/S — which divides the range of the cumulative departures within a segment by
+the standard deviation of that segment's increments. Under independence, the rescaled range should
+grow as the square root of the segment length. Hurst's records grew faster.
+
+If you write the growth rate as a power, R/S proportional to n raised to the power H, then
+independence corresponds to H = 1/2, and Hurst's data gave values above it.
+
+I am not quoting a fitted number for H from the 1951 paper, because I did not have the text, and
+the value commonly attributed to it — around 0.7 — appears in the secondary literature more often
+than it appears in the original record. What is checkable is the direction of the finding and the
+fact that the instrument was R/S.
+
+## Hurst's world
+
+It helps to know what kind of document the 1951 paper is.
+
+It appeared in the *Transactions of the American Society of Civil Engineers*, a venue for
+engineering practice rather than for probability theory. Its subject was reservoir design: how much
+storage does a dam need so that it does not run dry? That is an engineering question with a
+capital budget attached, and it had been answered for decades by assuming that annual flows are
+independent draws.
+
+Hurst's contribution was to check the assumption against very long records, including Nile series
+that extend back into the nineteenth century, and to find it wanting. He then proposed a statistic
+that could be computed by an engineer with a table of numbers and no particular training in
+stochastic processes.
+
+**The instrument was designed for the audience that needed it.** That is worth noting because it
+explains both the paper's influence in engineering and its invisibility to statisticians: a
+rescaled-range heuristic published in an engineering transactions volume is not addressed to the
+people who would eventually formalise it.
+
+Seventeen years separate the engineering paper from the mathematical object. That gap is not
+slowness. It is the distance between a profession that needs a number and a discipline that owns
+the theory of such numbers.
+
+## Two kinds of memory, and why the distinction matters
+
+The word memory is used loosely, and the loose use causes real confusion in the applied
+literature. Two quite different things get called memory.
+
+**Short memory:** the correlation between observations decays fast enough that the sum of all
+correlations converges. An autoregressive process has short memory. The past influences the
+present, but its total influence is finite, and the sample mean behaves almost as it would under
+independence.
+
+**Long memory:** the correlation decays slowly enough that the sum diverges. Each individual
+correlation is small, but there are so many of them that their total is unbounded. The past
+influences the present, and its total influence never settles.
+
+The distinction matters because it is exactly the line between a world where the standard
+statistical machinery works and one where it does not. Under long memory the variance of the
+sample mean does not shrink at the usual rate, so confidence intervals computed the usual way are
+too narrow, and the error in a historical estimate decays more slowly than an analyst expects.
+
+That is the deep reason the reservoir needed to be bigger than the standard calculation suggested.
+The engineer's problem and the statistician's problem were the same problem.
+
+## The R/S statistic, and its small-sample problem
+
+The statistic is worth describing precisely, because its construction determines its biases.
+
+Take a series of length n. Subtract the mean, producing a sequence of departures. Within the whole
+series, track the running sum of those departures — the cumulative deviation from the mean at each
+point — and record its maximum and its minimum. The difference between them is the range R.
+
+Then divide by the standard deviation S of the original series. That quotient is R/S.
+
+Under independence, R/S grows as the square root of n. If R/S grows faster, the series shows
+persistence; slower, anti-persistence. Writing the growth as a power of n gives H, with 1/2 as the
+independent case.
+
+Three properties of this construction matter and are often forgotten.
+
+**It is sensitive to short-run correlation.** A single autocorrelated component can inflate the
+range without any long-memory structure being present.
+
+**It is sensitive to non-stationarity.** A trend in the mean produces a cumulating sum that grows
+faster than the square root, which reads as persistence. This is the most common source of spurious
+long memory in applied work.
+
+**It is sensitive to the sample size in a way that does not vanish quickly.** The small-sample
+distribution of R/S is far from the asymptotic one, and the correction factors needed are
+themselves contentious.
+
+Taqqu and his coauthors examined these sensitivities systematically across the family of standard
+estimators [@taqqu1995], and Franzke and coauthors showed that the behaviour changes again under
+non-Gaussian data [@franzke2012]. The practical summary is that a point estimate of H from a few
+hundred observations is a weak instrument, and the sign of the bias depends on which nuisance is
+present.
+
+## The construction: fractional Brownian motion
+
+In 1968, Mandelbrot and Van Ness published a long paper in *SIAM Review* that turned Hurst's
+anomaly into an object [@mandelbrotvanness1968]. It is his most cited paper: 7,747 citations
+according to OpenAlex, 7,986 according to Semantic Scholar. Both figures are reported here because
+they differ and neither is canonical.
+
+The paper does what the other two papers in this part do not: it proceeds by construction. Rather
+than looking for a model that fits a dataset, it writes down the properties it wants and then asks
+whether anything satisfies them.
+
+The properties are three.
+
+**Self-similarity.** Scaling time by a factor a scales the process by a factor a to the power H.
+The shape of the process looks the same at every time resolution.
+
+**Stationary increments.** The distribution of a change over an interval depends only on the length
+of the interval, not on where it sits in time.
+
+**Gaussian increments with the right variance.** The variance of an increment over an interval of
+length t is proportional to t raised to the power 2H.
+
+Three conditions, one parameter. When H equals 1/2 the third condition reproduces Brownian motion
+exactly. For other values of H the result is a different process with the same self-similar
+structure.
+
+I have described the standard formulation rather than quoting the paper, because I did not have its
+text. The formulation is stable across the literature that uses it; the paper's own presentation,
+including its construction of the process as an integral over past noise, is described in the
+secondary sources and I have not reproduced it here.
+
+## What H controls
+
+The parameter has three faces, and the bookkeeping is worth doing carefully because the three get
+confused.
+
+**Roughness.** Small H gives a jagged path; the path is continuous but almost nowhere
+differentiable, and the smaller H is, the rougher it looks. Large H gives something that looks
+almost like a smooth trend with noise on top.
+
+**Dimension.** The graph of fractional Brownian motion has a box dimension of 2 − H. At H = 0.5
+this gives 1.5, the value for Brownian motion. At H = 0.7 it gives 1.3, smoother. This is the
+connection back to the previous chapter: dimension is the same instrument, applied to a time
+series instead of a map.
+
+**Memory.** For H above 1/2 the increments are positively correlated: an increase tends to be
+followed by an increase. For H below 1/2 they are negatively correlated: an increase tends to be
+followed by a decrease. In the first case, which is Hurst's, the correlation decays slowly enough
+that its sum diverges. That is the long-memory condition.
+
+So one number carries roughness, dimension, and memory. The convenience is real, and so is the
+trap: three properties that are distinct in intuition — how jagged, how space-filling, how
+remembering — are locked together by the construction. **A model that forces three concepts to
+move together should be suspected whenever the three disagree in the data.**
+
+## Using a grid before it is defined
+
+Part II introduces a two-question device for deciding what to do with a quantity: does it exist,
+and can it be estimated? The device is defined formally in Chapter 14. It is used here informally,
+because H is the case that motivated it.
+
+**Does H exist?** For the constructed process, yes. H is a parameter of the model, and the model is
+well defined. This is not a matter of opinion.
+
+**Can H be estimated from the data at hand?** Often, no, or only weakly. The estimator is biased,
+its bias depends on nuisances that are not observable, and two defensible procedures disagree by
+more than their nominal error bars.
+
+Combining the two answers puts H in an awkward cell: **the quantity is real and the estimate is
+unreliable.** Two responses are available, and the wrong one is the most natural.
+
+The wrong response is to report the point estimate with its nominal standard error, which conveys a
+precision that the procedure does not have. The right response is to report bounds, or to report
+the disagreement between methods, and to treat the number as a description of the sample window
+rather than a property of the process.
+
+This is why the scale-span rule from Chapter 2 generalises. Its content is not the two-orders
+threshold. Its content is that **an estimate of a scale-dependent quantity must travel with the
+window it came from**, because outside that window it is not an estimate of anything.
+
+## What the tool cost
+
+Here the story turns, and this turn is the reason the chapter belongs in a book about survival
+rather than in a book about time series.
+
+Fractional Brownian motion is Gaussian, self-similar, stationary, and has memory. It looks exactly
+like what a financial modeller would want, since real markets show persistence in volatility and
+long runs in prices. For a period in the 1990s it was used for exactly that.
+
+Then the mathematics caught up with the use.
+
+In 1997, L. C. G. Rogers published a short paper with a title that is hard to misunderstand:
+"Arbitrage with Fractional Brownian Motion" [@rogers1997]. The result is that option prices and
+hedging arguments built on a fractional Brownian motion model admit arbitrage — a trading strategy
+that produces a riskless profit. The paper's significance is that it identifies the structural
+reason: for H not equal to 1/2, the process is not a semimartingale, and the entire apparatus of
+stochastic integration, including the construction of a risk-neutral measure, is not available.
+
+The reason is worth stating in ordinary language. A semimartingale is a process that can be
+decomposed into a drift and a fair game. Long memory is precisely a violation of the fair-game
+part: the past carries information about the future. **The informational content of memory is what
+makes the model attractive and what makes it impossible to price with standard methods. The
+property is not a defect to be patched; it is the source of the difficulty and the reason anyone
+wanted the model.**
+
+Two repairs followed, and both are hedges rather than solutions. Cheridito showed that mixing
+fractional Brownian motion with ordinary Brownian motion can restore the semimartingale property
+under conditions on H [@cheridito2003]. Guasoni showed that with transaction costs, the arbitrage
+opportunities in these models are not attainable in practice [@guasoni2006].
+
+Notice what both repairs do. The first buys back the mathematics by diluting the memory. The
+second keeps the model and prices the friction. **Neither makes the pure model work, and neither
+claims to.**
+
+## Where the tool went instead
+
+The object did not die. It changed departments.
+
+In 1994, a group at Bellcore measured traffic on an Ethernet network and reported that it was
+self-similar over a wide range of time scales [@leland1994]. The paper has 5,265 citations
+according to OpenAlex. It is the reason network engineers stopped treating traffic as a Poisson
+process, and the reason buffer-sizing calculations changed: a Poisson model assumes that bursts are
+local and independent, and a self-similar model says that the same burstiness reappears at every
+scale.
+
+That finding came from the same mathematical family Hurst's anomaly had produced, applied by people
+who were not thinking about rivers or markets.
+
+The second return is stranger. In 2018, a group studying volatility reported that it behaves like a
+fractional process with H of order 0.1 [@gatheral2018]. They called it roughness, and the term
+stuck. Note what that value means: far below 1/2, in the regime of strong negative correlation —
+not long memory but the opposite, a series that zigzags rather than persists.
+
+So the instrument Mandelbrot built to describe persistence came back twenty-five years after his
+death carrying a result about anti-persistence in the one quantity he had devoted the most
+attention to. The instrument was indifferent to the direction of the answer. That is what a tool
+is, as distinct from a claim.
+
+## Estimatability, previewed
+
+One more thing about H and its friends, because it sets up Part II.
+
+Estimating a long-memory parameter is not like estimating a mean. The information about persistence
+lives in the correlation structure across scales, and the estimators available disagree with each
+other in ways that are systematic rather than random. Taqqu and his coauthors documented this for
+the standard methods [@taqqu1995], and Franzke and coauthors later showed the estimators behave
+differently again when the data are not Gaussian, which financial and network data never are
+[@franzke2012].
+
+There is a further, more interesting problem, and it belongs to 2018. When Gatheral and his
+coauthors fitted their rough model, they made a remark with implications well beyond volatility:
+standard statistical procedures designed to detect long memory tend to conclude that long memory is
+present, even in data generated by a model that does not have it.
+
+**The detection procedure has a bias toward finding the thing it is looking for.** A reader who
+wants to know whether a series has long memory is asking a question that the available instruments
+answer in the affirmative rather too often.
+
+This is the first appearance in the book of a distinction that Part II will formalise: the
+difference between a quantity that does not exist and a quantity that exists but cannot be
+estimated reliably. H exists. Whether the H of a given series can be recovered from the data
+available is a separate question, and the answer is often no.
+
+## Claim and tool
+
+**The claim** is that natural and financial time series display long memory, describable by a
+fractional process with a parameter above one half. The claim is contested. Some of the persistence
+measured in financial series may be an artefact of the estimators, and the most careful recent work
+in volatility finds the opposite sign.
+
+**The tool** is the construction itself: write down the properties you want, prove that an object
+satisfies them, and study its consequences. That move is what produced the most cited paper in the
+material this book covers, and it is what made the anomaly productive rather than merely puzzling.
+
+Seen through the book's device: the tool is a Grade II constant. The construction — self-similar
+plus stationary increments plus a variance scaling — survives changes of application domain, from
+hydrology to network traffic to volatility. The claim attached to it, that a particular series has
+a particular H, does not survive a change of estimator.
+
+## Boundary conditions
+
+The construction holds as mathematics. Every failure below is a failure of application.
+
+It fails in finance when used for pricing, because the process is not a semimartingale and the
+standard arbitrage arguments do not apply.
+
+It fails in estimation when the sample is short, because the information about persistence is
+carried by long-range correlations that a short sample cannot resolve.
+
+It fails in interpretation when H is read as a prediction. Persistence is a statement about the
+autocorrelation structure over a population of paths, not about the direction of the next
+observation.
+
+And it fails when the three faces of H are treated as independent. Roughness, dimension, and memory
+are bound together by the construction; data in which one indicates persistence and another
+indicates roughness is evidence against the model, not an invitation to average.
+
+## Why long memory is hard to establish
+
+The statistical tests for long memory are among the least powerful in common use, and the reason is
+structural rather than a matter of sample size.
+
+**The property being tested is a limit.** Long memory means that the sum of the autocorrelations
+diverges as the lag grows without bound. A finite sample cannot observe a divergence; it can observe
+that correlations are still positive at the longest lag examined, which is consistent with long
+memory and also with several other things.
+
+**The competing explanations are not exotic.** They are the ordinary features of economic and
+geophysical series.
+
+**Non-stationarity.** A series that shifts between two levels a few times in a sample produces
+positive autocorrelations at long lags. The pattern is caused by the shifts, not by a slowly decaying
+dependence structure, and the two are difficult to separate in any sample of realistic length.
+
+**Regime changes in the variance.** A series whose volatility alternates between high and low periods
+generates apparent dependence at long lags. The 2012 work extending the diagnosis to atmospheric
+series takes this possibility seriously, which is why it is worth reading alongside the earlier
+results rather than as a confirmation of them.
+
+**Aggregation.** Summing a short-memory process over long intervals can produce apparent long memory
+at those intervals, an effect documented in the literature rather than a curiosity of it.
+
+**Why the dispute resists resolution.** Because the tests are weak and the alternatives are
+plausible, the evidence that survives is not the evidence that a particular exponent was estimated.
+It is the evidence about **where the property holds and where it does not**. Volatility series show
+long-memory-like behaviour across many markets and periods; return series show less agreement, and
+the disagreement is itself a finding.
+
+**What the practitioner should take from it.** Two things. First, a fitted memory parameter is among
+the least reliable numbers in this book's material, for the reasons Chapter 5 sets out. Second, the
+useful question is not whether long memory is real in general but whether it is present at the scale
+that matters for the decision, which is the scale-span rule again and the reason the rule earns its
+own chapter.
+
+**The resolution the book adopts.** Not a verdict on the statistical question, which this material
+cannot support, but the practical position: where long memory is present, the standard machinery's
+confidence intervals understate uncertainty, and where it is absent the machinery is only slightly
+conservative. **The asymmetry means that assuming independence is the more expensive error.**
+
+## What the finance literature did with the construction
+
+The debate over fractional Brownian motion in finance is worth following as a case study in how a
+mathematical object is received.
+
+**The object.** A Gaussian process whose increments are stationary and whose correlations decay slowly
+enough to produce long memory. Defined by its covariance rather than by a mechanistic construction from
+simpler ingredients, which is what makes it tractable and what makes its interpretation contested.
+
+**The objection.** A process with long memory has, in the continuous-time limit, enough predictability
+to admit arbitrage. This is not a subtlety; it means the object cannot be a model of a traded price
+under the standard assumptions.
+
+**The responses, in order.** Restrict the parameter range; add frictions; change the object. Leland's
+transaction-cost result and Guasoni's more general treatment show that under broad conditions the
+no-arbitrage property is restored once costs are present. **The objection is therefore about the
+frictionless limit rather than about the family.**
+
+**What the sequence demonstrates.** A model can be unusable in one setting and useful in another, and
+the difference is a property of the setting. The literature's initial verdict — that the process is
+unsuitable for prices — was correct for the setting it examined and was generalised too far, in both
+directions.
+
+**What a practitioner should carry away.** Two things. A dependence estimate from a long-memory model
+is one input among several, and its use requires knowing whether the decision's horizon sits inside the
+measured range. And the arbitrage objection is a reminder that a statistical description of a price
+series is not a model of a market. **The description can be right while the market is organised in a way
+that prevents anyone from trading on it.**
+
+## Memory in a portfolio context
+
+Long memory is usually discussed as a property of a series. Its consequence for a portfolio is where the
+practical content lies, and the consequence is about effective sample size.
+
+**The arithmetic.** Where observations are dependent, the variance of the mean is not the variance of a single
+observation divided by the count. It is that quantity multiplied by a factor that grows with the strength of
+the dependence. **The factor can be large: a strongly persistent series of a thousand observations can carry
+the information of fewer than a hundred.**
+
+**Three consequences for practice.**
+
+**Confidence intervals are too narrow.** Every interval computed under an independence assumption is
+understated by the square root of that factor. **This is the most cited and least corrected error in applied
+work with dependent data.**
+
+**Backtests overstate.** A strategy evaluated on a dependent series has fewer independent observations than
+the record suggests, which reduces the evidence in favour of any edge found in it. **The correction is in the
+same direction as the one Chapter 24 makes about track-record length, and the two compound.**
+
+**Diversification overstates.** Assets whose fluctuations share a persistent component are less diversifying
+than their contemporaneous correlations suggest, because the shared component does not average away.
+
+**What to do. Two steps, both cheap.**
+
+**Estimate the effective sample size** from the autocorrelation structure, using any of the available
+adjustments. **The estimate is rough and the correction is large, which is the right trade when an interval
+is being computed.**
+
+**Report both the nominal and the effective count.** A reader who sees "one thousand observations, effective
+count one hundred and forty" understands the evidence differently from one who sees the first number alone.
+**The second number is the one that should appear in the abstract.**
+
+## What a practitioner should do with the dispute
+
+The academic argument over long memory is unresolved. The practical position, and it is a position rather than a
+finding, is what this section states.
+
+**The position. Assume dependence.** Where a series shows persistent behaviour, compute as though it does,
+because the two errors are asymmetric. **Assuming independence when dependence is present understates
+uncertainty and overstates evidence; assuming dependence when it is absent costs a modest widening of
+intervals.**
+
+**Three consequences of the position.**
+
+**Intervals widen by the square root of the effective sample ratio.** A series with an effective count a fifth
+of its length has intervals roughly twice as wide. **The correction is large enough to change conclusions.**
+
+**Backtest evidence shrinks correspondingly.** The number of independent observations is the currency of
+evidence, and the exchange rate is unfavourable.
+
+**Diversification claims weaken.** Correlations among persistent series understate the shared component, which
+does not average away.
+
+**What the position does not claim.** That the process has long memory in the technical sense, or that any
+particular exponent is correct. **It claims only that the burden of proof sits with the assumption of
+independence, because the cost of being wrong about it is asymmetric.**
+
+**How to apply it without an estimate.** Where an estimate of the memory parameter is unavailable, apply a
+discount to the effective sample size of a factor between two and five and state the factor as a convention
+rather than a measurement. **A crude correction that is disclosed is better than a precise one that is not, and
+better than no correction at all.**
+
+**Why a convention is acceptable here.** Because the alternative is a point estimate of a parameter whose
+estimators disagree, and the disagreement is the finding the chapter documents. **A disclosed convention is the
+honest form of a correction that cannot be estimated reliably.**
+
+## A note on what this chapter could not check
+
+The full texts of Mandelbrot and Van Ness (1968) and Hurst (1951) were not available. The
+description of the construction is the standard formulation used across the literature that cites
+those papers; where the book quotes the papers' own words it says so, and it does not quote terms
+or parameters attributed to them without a source.
+
+The value of Hurst's exponent is deliberately not given, for the reason stated in the text: the
+figure commonly cited, around 0.7, is more reliably attested in the secondary literature than in
+the primary record, and this book does not launder numbers through secondary sources.
+
+The results of Rogers, Cheridito and Guasoni are described at the level of their abstracts,
+titles, and the citing literature, which is where the claims above come from. Their proofs are not
+reproduced or evaluated here.
