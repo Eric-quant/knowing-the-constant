@@ -69,8 +69,8 @@ jobs:
       - name: Gather release files
         run: |
           mkdir -p release
-          find . -maxdepth 2 -name '*.epub' -exec cp {} release/ \;
-          find . -maxdepth 2 -name '*.pdf' -exec cp {} release/ \;
+          find . -path ./.git -prune -o -type f \( -name '*.epub' -o -name '*.pdf' \) -print
+          find . -path ./.git -prune -o -type f \( -name '*.epub' -o -name '*.pdf' \) -exec cp {} release/ \;
           ls -la release
 
       - uses: softprops/action-gh-release@v2
