@@ -12,6 +12,11 @@ book:
   site-url: https://eric-quant.github.io/knowing-the-constant/
   repo-url: https://github.com/Eric-quant/knowing-the-constant
   repo-actions: [edit, issue]
+  downloads: [pdf, epub]
+  tools:
+    - icon: github
+      text: "GitHub"
+      href: https://github.com/Eric-quant/knowing-the-constant
   chapters:
     - index.qmd
     - part: "I — Shape"
