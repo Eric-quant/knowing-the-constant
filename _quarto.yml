@@ -11,7 +11,7 @@ book:
   repo-url: https://github.com/Eric-quant/knowing-the-constant
   repo-actions: [edit, issue]
   chapters:
-    - book/index.qmd
+    - index.qmd
     - part: "I — Shape"
       chapters:
         - book/01-shape/01-the-tail-that-would-not-go-away.qmd
