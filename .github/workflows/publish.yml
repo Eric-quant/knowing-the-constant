@@ -33,7 +33,9 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install numpy pillow
           sudo apt-get update
-          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended fonts-dejavu
+          sudo apt-get install -y --no-install-recommends \
+            texlive-xetex texlive-fonts-recommended texlive-latex-extra \
+            lmodern fonts-dejavu
 
       - name: Regenerate all figures from their scripts
         run: python scripts/make_figures.py
