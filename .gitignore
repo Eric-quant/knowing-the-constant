@@ -1,0 +1,25 @@
+# Build output. Quarto writes `_book/`; the workflow copies it to `dist/` and
+# collects `release/`. None of it belongs in the repository.
+_book/
+dist/
+release/
+.quarto/
+
+# Python bytecode. One cache file was committed before this file existed and
+# still needs a `git rm --cached` (or an ordinary commit after deleting it).
+__pycache__/
+*.py[cod]
+
+# Local check output and scratch files.
+checks.json
+
+# Virtual environments.
+.venv/
+venv/
+
+# OS and editor noise.
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp

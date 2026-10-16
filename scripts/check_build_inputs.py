@@ -37,6 +37,17 @@ CONFIG = os.path.join(ROOT, "_quarto.yml")
 BOOK = os.path.join(ROOT, "book")
 
 
+def chapter_path(ch: str) -> str:
+    """Absolute path of a chapter listed in `_quarto.yml`.
+
+    The published layout puts the preface at the repository root (`index.qmd`)
+    and every chapter under `book/`. Try the root first, then `book/`, so both
+    layouts resolve and a genuinely missing file is still reported.
+    """
+    at_root = os.path.join(ROOT, ch)
+    return at_root if os.path.exists(at_root) else os.path.join(BOOK, ch)
+
+
 def read(path: str) -> str:
     with open(path, encoding="utf-8") as fh:
         return fh.read()
@@ -74,11 +85,12 @@ def check_chapters(chapters: list[str], problems: list[str]) -> None:
         if ch in seen:
             problems.append(f"chapter listed more than once: {ch}")
         seen.add(ch)
-        path = os.path.join(BOOK, ch)
+        path = chapter_path(ch)
+        shown = os.path.relpath(path, ROOT).replace(os.sep, "/")
         if not os.path.exists(path):
-            problems.append(f"listed chapter does not exist: book/{ch}")
+            problems.append(f"listed chapter does not exist: {shown}")
         elif len(read(path).strip()) < 200:
-            problems.append(f"listed chapter is nearly empty: book/{ch}")
+            problems.append(f"listed chapter is nearly empty: {shown}")
 
 
 def check_orphans(chapters: list[str], problems: list[str]) -> None:
@@ -119,19 +131,20 @@ FIG = re.compile(r"!\[[^\]]*\]\(([^)\s]+)")
 def check_figures(chapters: list[str], problems: list[str]) -> int:
     count = 0
     for ch in chapters:
-        path = os.path.join(BOOK, ch)
+        path = chapter_path(ch)
         if not os.path.exists(path):
             continue
+        shown = os.path.relpath(path, ROOT).replace(os.sep, "/")
         for m in FIG.finditer(read(path)):
             target = m.group(1)
             if target.startswith(("http://", "https://")):
                 continue
             count += 1
-            chapter_dir = os.path.dirname(os.path.join(BOOK, ch))
+            chapter_dir = os.path.dirname(path)
             resolved = os.path.normpath(os.path.join(chapter_dir, target))
             if not os.path.exists(resolved):
                 problems.append(
-                    f"figure referenced but missing: {target} (in book/{ch})")
+                    f"figure referenced but missing: {target} (in {shown})")
     return count
 
 

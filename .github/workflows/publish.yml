@@ -46,6 +46,9 @@ jobs:
       - name: Verify the claim registers are well formed
         run: python scripts/check_registers.py
 
+      - name: Verify the build inputs
+        run: python scripts/check_build_inputs.py
+
       # NOTE: every `quarto render --to <format>` clears the _book output
       # directory, so each format's artefacts are collected immediately
       # after it is rendered — otherwise only the last format survives.

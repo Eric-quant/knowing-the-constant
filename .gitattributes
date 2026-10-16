@@ -1,0 +1,38 @@
+# Line endings.
+#
+# Why this file exists: the working tree on this machine is Windows and its text
+# files use CRLF, while Git stores LF. Without the attributes below, `git status`
+# reports dozens of files as modified even though their content is byte-identical
+# once the line endings are normalised — a comparison against the published
+# repository found 49 such files and 0 genuine differences.
+#
+# `text=auto` lets Git decide what is text, normalise it to LF in the repository,
+# and — because that normalisation also applies when Git compares the working
+# tree — stop the false "modified" reports. Checking out still produces the
+# platform's native endings where no `eol` is given.
+
+* text=auto
+
+# The files the CI reads and renders. Pinned to LF in the working tree as well,
+# so that a checkout on Windows cannot reintroduce CRLF into the manuscript,
+# the configuration, the registers or the bibliography.
+*.qmd    text eol=lf
+*.yml    text eol=lf
+*.yaml   text eol=lf
+*.md     text eol=lf
+*.py     text eol=lf
+*.csv    text eol=lf
+*.bib    text eol=lf
+*.csl    text eol=lf
+*.css    text eol=lf
+*.txt    text eol=lf
+
+# Assets and build products. Never convert, never diff.
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.epub   binary
+*.pyc    binary
